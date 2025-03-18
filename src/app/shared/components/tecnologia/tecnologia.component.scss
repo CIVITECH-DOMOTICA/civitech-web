@@ -1,0 +1,67 @@
+@import "../../../../styles.scss";
+
+/*--------------------Seccion tecnologia------------------*/
+
+.tecnologia-content {
+  padding: 0px;
+}
+
+.row-tecnologia
+{
+  display: flex;
+  justify-content: space-between; /* Evita espacios no deseados */
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0px;
+}
+.imagen-container-tecnologia img{
+  width: 100%;
+}
+
+.imagen-container-tecnologia
+{
+  background-image: url('../../../../assets/images/contacto.jpg');
+  background-size: cover; /* Ajusta la imagen al contenedor */
+  background-position: center center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 50vh;
+
+}
+.fondo-container-tecnologia h1
+{
+  font-size: 50px;
+  color: white;
+  text-align: left !important;
+}
+
+.fondo-container-tecnologia
+{
+
+  background-color: $primary-color;
+  background-image: url('../../../../assets/images/home_fondoAmarillo.png');
+  text-align: center;
+  background-size: cover;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center flex-start;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.fondo-container-tecnologia div{
+  width: 60%;
+
+}
+
+.boton-proyectos
+{
+  background-color: transparent;
+  border:1px solid white;
+  color: white;
+  font-size: 15px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 50px;
+}

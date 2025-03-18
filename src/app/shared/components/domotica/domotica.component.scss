@@ -1,0 +1,65 @@
+@import "../../../../styles.scss";
+// .card-domotica
+// {
+//   // padding: 20px;
+//   justify-content:start ;
+//   align-items: center;
+//   text-align: justify;
+//   border-radius: 4px; /* Bordes redondeados */
+//   border: 1px solid black;
+//   width: 100%;
+// }
+// .container-card
+// {
+//   // padding: 0px 50px;
+//   justify-content: space-around;
+// }
+
+
+.container-card {
+  display: flex;
+  flex-wrap: wrap; // Permite que los elementos se acomoden en varias líneas si es necesario
+  justify-content: start; // Espaciado uniforme
+  gap: 40px; // Espaciado entre tarjetas
+  padding: 0px 0px 0px 60px; // Espacio interno
+}
+
+.card-domotica {
+  flex: 1 1 calc(25% - 10px); // Tamaño dinámico con 4 columnas y espacio entre ellas
+  max-width: 300px; // Para evitar que se hagan muy grandes en pantallas grandes
+  background-color: white; // Fondo blanco
+  border-radius: 8px; // Bordes más suaves
+  border: 1px solid #ddd; // Un borde más sutil
+  padding: 15px 20px; // Espaciado interno dentro de la tarjeta
+  text-align: start; // Centra el texto
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  transition: transform 0.3s ease-in-out; // Efecto al pasar el mouse
+}
+
+.card-domotica .titulo
+{
+  color: black;
+  font-weight: bold;
+}
+
+.card-domotica:hover {
+  transform: translateY(-5px); // Efecto sutil al pasar el mouse
+}
+
+.container-icon-domotica i {
+  font-size: 2rem; /* Ajusta el tamaño */
+  color: $text-color-primary;
+  margin-bottom: 10px; /* Añade espacio */
+  padding: 15px;
+
+}
+
+.container-icon-domotica
+{
+  text-align: left;
+}
+
+.domotica-mensaje-container
+{
+  padding: 30px 0px 30px 50px;
+}

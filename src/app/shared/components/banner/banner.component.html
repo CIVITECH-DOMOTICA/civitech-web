@@ -1,0 +1,12 @@
+
+<div class="banner-container" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}">
+  <div class="overlay"></div>
+  <div class="banner-content">
+    <div class="mensaje-container">
+      <div class="mensaje-items">
+        <h1>{{mensaje}}</h1>
+        <a routerLink='/contactanos'> <button>{{textoBoton}}</button></a>
+      </div>
+    </div>
+  </div>
+</div>

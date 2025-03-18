@@ -1,0 +1,162 @@
+// @import 'styles/variables';
+
+
+$primary-color: #B30000;
+$secondary-color: #121524;
+$background-color: #f8f9fa;
+$text-color-primary: #4F4F4F;
+$text-color-secundary: #A7A7A7;
+// Variables de fuente
+$font-title: 'Hanken Grotesk', sans-serif;
+$font-subtitle: 'Hanken Grotesk', sans-serif;
+$font-body: 'Hanken Grotesk', sans-serif;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600&family=Rubik:wght@300;400;600&display=swap');
+
+
+.color-white {
+  color: white !important;
+}
+.color-gris {
+  color: #E1E1E1 !important;
+}
+.padding-0
+{
+  padding: 0px !important;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 600; /* Semi-bold */
+}
+
+.p-link
+{
+  background-color: $primary-color !important;
+  border: none;
+  height: 5px;
+  width: 30px;
+}
+
+.p-carousel-prev, .p-carousel-next
+{
+  display: none;
+}
+
+.p-carousel-indicator
+{
+  list-style: none !important;
+}
+
+// *
+// {
+//   outline: 1px solid red;
+// }
+
+
+/**------------------------------------- MEDIA QUERYS -------------------------------------*/
+/* Extra Small (xs) - Móviles pequeños (menos de 576px) */
+@media (max-width: 575px) {
+  /*---------CARROUSEL---------*/
+  .datos-resenia-content {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .resenia-container {
+    padding: 40px 20px 20px 20px;
+  }
+  .imagen-cliente {
+    width: 50px;
+    height: 50px;
+  }
+  .fa-star {
+    font-size: 18px;
+  }
+  p-carousel {
+    width: 100%;
+  }
+  /*--------------------------*/
+}
+
+/* Small (sm) - Móviles grandes (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /*---------CARROUSEL---------*/
+  .datos-resenia-content {
+    // padding: 15px;
+    font-size: 14px;
+  }
+  .resenia-container {
+    padding: 40px 15px 15px 15px;
+  }
+  .imagen-cliente {
+    width: 50px;
+    height: 50px;
+  }
+  .fa-star {
+    font-size: 18px;
+  }
+  p-carousel {
+    width: 100%;
+  }
+  /*--------------------------*/
+}
+
+/* Medium (md) - Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /*---------CARROUSEL---------*/
+  .datos-resenia-content {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .resenia-container {
+    padding: 40px 10px 10px 10px;
+  }
+  .imagen-cliente {
+    width: 50px;
+    height: 50px;
+  }
+  .fa-star {
+    font-size: 18px;
+  }
+  p-carousel {
+    width: 100%;
+  }
+  /*--------------------------*/
+}
+
+/* Large (lg) - Laptops y PCs pequeños (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /*---------CARROUSEL---------*/
+  .datos-resenia-content {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+  .resenia-container {
+    padding: 50px 15px 15px 15px;
+  }
+  /*--------------------------*/
+
+}
+
+/* Extra Large (xl) - PCs grandes (1200px o más) */
+@media (min-width: 1200px) {
+  /*---------CARROUSEL---------*/
+  .datos-resenia-content {
+    padding: 30px 50px;
+    font-size: 14px;
+  }
+  .resenia-container {
+    padding: 60px 45px 45px 45px;
+  }
+  /*--------------------------*/
+}

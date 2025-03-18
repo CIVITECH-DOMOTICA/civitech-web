@@ -1,0 +1,36 @@
+@import "../../../../styles.scss";
+
+.fa-quote-left, .fa-quote-right {
+  font-size: 80px; /* Tamaño grande */
+  color: #B70000; /* Rojo guinda */
+  border: none;
+}
+
+.container-mensaje-domotica
+{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 100px 0px 150px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.container-mensaje-domotica {
+ text-align: center;
+}
+
+.mensaje-content
+{
+  background-image: url('../../../../assets/images/home_circuloAmarillo2.png');
+  text-align: center;
+  background-size: cover;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center flex-start;
+  align-items: center;
+  justify-content: center;
+}

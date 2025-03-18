@@ -1,0 +1,18 @@
+<p-carousel [value]="opiniones" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" [circular]="true" [autoplayInterval]="6000">
+  <ng-template pTemplate="item" let-opinion>
+    <div class="resenia-container">
+        <div class="datos-resenia-content ">
+          <img class="imagen-carrousel" [src]="opinion.src" >
+          <h5>{{opinion.nombre}}</h5>
+          <div class="estrellas" style="font-size: 24px; color: #f4b183;">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>{{opinion.resenia}}</p>
+        </div>
+    </div>
+  </ng-template>
+</p-carousel>

@@ -1,0 +1,35 @@
+<div class="container-fluid contacto-formulario-content d-flex justify-content-center">
+  <div class="contact-form">
+    <form>
+      <div class="row">
+        <div class="col-md-6 mb-3 item-contact">
+          <label for="nombre">Nombres</label>
+          <input id="nombre" type="text"  class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-6 mb-3 item-contact">
+          <label for="apellido">Apellidos</label>
+          <input id="apellido" type="text"  class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-6 mb-3 item-contact">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" type="email" pInputText class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-6 mb-3 item-contact">
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" type="tel" pInputText class="form-control" placeholder="" />
+        </div>
+        <div class="col-12 mb-2 d-flex align-items-center  item-contact-terminos d-flex justify-content-center">
+          <p-checkbox name="privacidad" value="14años" ></p-checkbox>
+          <label class="ms-2">Tengo más de 14 años, he leído y acepto la Política de Privacidad</label>
+        </div>
+        <div class="col-12 mb-3 d-flex align-items-center item-contact-politica d-flex justify-content-center">
+          <p-checkbox name="terminos" value="acepto"></p-checkbox>
+          <label class="ms-2">He leído y acepto los <strong>términos de servicio y políticas de privacidad</strong></label>
+        </div>
+        <div class="col-12">
+          <button pButton type="submit" label="Enviar" class="btn-enviar"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

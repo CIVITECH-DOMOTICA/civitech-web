@@ -1,0 +1,17 @@
+@import "../../../../styles.scss";
+
+.separador-seccion
+{
+  background-color: $primary-color;
+  height: 102px;
+  color: white;
+  width: 80%;
+  padding: 20px;
+  position: relative;
+  z-index: 3;
+  margin-top: -50px;
+}
+
+.separador-seccion h1{
+  font-size: 40px;
+}
