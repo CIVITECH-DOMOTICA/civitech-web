@@ -45,6 +45,6 @@ jobs:
           lftp -c "
           set ssl:verify-certificate no;
           open -u $HOSTINGER_FTP_USERNAME,$HOSTINGER_FTP_PASSWORD $HOSTINGER_FTP_SERVER;
-          mirror -R --overwrite ./dist/civitech.web/. /public_html;
+          mirror -R --overwrite ./dist/civitech.web/ /public_html;
           bye
           "
