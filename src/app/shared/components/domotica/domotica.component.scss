@@ -15,7 +15,10 @@
 //   justify-content: space-around;
 // }
 
-
+.domotica-content
+{
+  padding-bottom: 30px;
+}
 .container-card {
   display: flex;
   flex-wrap: wrap; // Permite que los elementos se acomoden en varias líneas si es necesario

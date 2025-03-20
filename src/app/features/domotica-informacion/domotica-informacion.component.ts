@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-proyectos',
-  templateUrl: './proyectos.component.html',
-  styleUrls: ['./proyectos.component.scss']
+  selector: 'domotica-informacion',
+  templateUrl: './domotica-informacion.component.html',
+  styleUrls: ['./domotica-informacion.component.scss']
 })
-export class ProyectosComponent {
-  constructor(private router: Router) {}
-  urlBoton: string ='/acerca-de-nosotros'
+export class DomoticaInformacionComponent {
+   constructor(private router: Router) {}
+   urlBoton: string ='/acerca-de-nosotros'
   opiniones = [
 
     {
@@ -35,4 +35,5 @@ export class ProyectosComponent {
       console.warn('URL de destino no válida');
     }
   }
+
 }

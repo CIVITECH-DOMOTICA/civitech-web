@@ -39,6 +39,7 @@
           <a href="https://www.tiktok.com/@civitech.es?_t=ZG-8t9VrCIYaPo&_r=1" target="_blank"><span class="color-gris"><i class="fa-brands fa-tiktok"></i></span></a>
         </p>
       </div>
+
     </div>
 
 
@@ -59,14 +60,60 @@
         <button class="close-btn" (click)="closeMenu()">
           <i class="fas fa-times"></i>
         </button>
+ <!-- <li><a [routerLink]="['/contactanos']" routerLinkActive="active-link" (click)="closeMenu()" class="text-decoration-none text-shadow">Domótica</a></li>
+          <li><a [routerLink]="['/contactanos']" routerLinkActive="active-link" (click)="closeMenu()" class="text-decoration-none text-shadow">Proyectos</a></li> -->
 
-        <ul class="menu">
-          <li><a href="#" (click)="closeMenu()">Inicio</a></li>
-          <li><a href="#" (click)="closeMenu()">Servicios</a></li>
-          <li><a href="#" (click)="closeMenu()">Proyectos</a></li>
-          <li><a href="#" (click)="closeMenu()">Nosotros</a></li>
-          <li><a href="#" (click)="closeMenu()">Contacto</a></li>
-        </ul>
+          <ul class="menu">
+            <li>
+              <a
+                href="#"
+                (click)="navigateTo('/acerca-de-nosotros'); $event.preventDefault();"
+                routerLink="/acerca-de-nosotros"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="text-decoration-none text-shadow">
+                Acerca de Nosotros
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                (click)="navigateTo('/domotica-informacion'); $event.preventDefault();"
+                routerLink="/domotica-informacion"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="text-decoration-none text-shadow">
+                Domótica
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                (click)="navigateTo('/proyectos'); $event.preventDefault();"
+                routerLink="/proyectos"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="text-decoration-none text-shadow">
+                Proyectos
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                (click)="navigateTo('/contactanos'); $event.preventDefault();"
+                routerLink="/contactanos"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="closeMenu()"
+                class="text-decoration-none text-shadow item-menu-contacto">
+                Contáctanos <i class="fas fa-chevron-down"></i>
+              </a>
+            </li>
+          </ul>
+
       </nav>
     </div>
   </header>

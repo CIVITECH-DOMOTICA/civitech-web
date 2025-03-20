@@ -26,7 +26,7 @@
                 <p><i class="fa-solid fa-phone"></i></p>
               </div>
               <div class="col-md-10 col-sm-10 col-xs-9 datos">
-                <p><span class="color-gris">Virgen de Val 10, Madrid</span></p>
+                <p><span class="color-gris">Virgen del Val 10, Madrid</span></p>
                 <p><span class="text-decoration-underline"><a class="color-gris" href="mailto:usuario@example.com">civitecreformas&#64;gmail.com</a></span></p>
                 <p><span class="color-gris">624074920</span></p>
               </div>
@@ -39,18 +39,56 @@
           <div class="col-md-6">
             <p><b class="color-white titulo">Nosotros</b></p>
             <ul class="list-unstyled contact-list">
-              <li><a href="" class="text-decoration-none color-gris">Acerca de nosotros</a></li>
-              <li><a href="" class="text-decoration-none color-gris">Proyectos</a></li>
-              <li><a href="" class="text-decoration-none color-gris">Domótica</a></li>
-              <li><a href="" class="text-decoration-none color-gris">Contáctanos</a></li>
+              <li>
+                <a
+                  href="#"
+                  (click)="navigateTo('/acerca-de-nosotros'); $event.preventDefault();"
+                  routerLink="/acerca-de-nosotros"
+                  routerLinkActive="active-link"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  class="text-decoration-none color-gris">
+                  Acerca de Nosotros
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#"
+                  (click)="navigateTo('/domotica-informacion'); $event.preventDefault();"
+                  routerLink="/domotica-informacion"
+                  routerLinkActive="active-link"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  class="text-decoration-none color-gris">
+                  Domótica
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#"
+                  (click)="navigateTo('/proyectos'); $event.preventDefault();"
+                  routerLink="/proyectos"
+                  routerLinkActive="active-link"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  class="text-decoration-none color-gris">
+                  Proyectos
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#"
+                  (click)="navigateTo('/contactanos'); $event.preventDefault();"
+                  routerLink="/contactanos"
+                  routerLinkActive="active-link"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  class="text-decoration-none color-gris">
+                  Contáctanos
+                </a>
+              </li>
             </ul>
+
           </div>
-          <!-- <div class="col-md-4">
-            <p><b class="color-white titulo">Reformas</b></p>
-            <ul class="list-unstyled">
-              <li><a href="" class="text-decoration-none color-gris">Reformas integrales</a></li>
-            </ul>
-          </div> -->
           <div class="col-md-4">
             <p><b class="color-white titulo">Ayuda</b></p>
             <ul class="list-unstyled contact-list">

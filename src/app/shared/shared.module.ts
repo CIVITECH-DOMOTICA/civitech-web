@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DomoticaComponent } from './components/domotica/domotica.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { DomoticaComponent } from './components/domotica/domotica.component';
     ButtonModule,
     CardModule,
     BrowserAnimationsModule,
+    AppRoutingModule
   ],
   exports: [
     BannerComponent,
