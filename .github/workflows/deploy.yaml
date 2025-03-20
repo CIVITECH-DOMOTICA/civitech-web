@@ -5,6 +5,9 @@ on:
     branches:
       - master  # Rama que activará la acción
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
