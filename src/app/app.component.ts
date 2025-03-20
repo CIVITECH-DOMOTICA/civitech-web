@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Civitech.Web';
 
-  urlPrincipal: string = '../../../../assets/images/contact_3.jpg';
+  urlPrincipal: string = '/../../../../assets/images/contact_3.jpg';
 }
