@@ -29,6 +29,9 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
+      - name: List dist directory
+        run: ls -l ./dist
+
       - name: Configure lftp
         run: echo "set ssl:verify-certificate no" > ~/.lftp.rc
 
@@ -41,6 +44,6 @@ jobs:
           echo "Deploying to Hostinger..."
           lftp -c "
           open -u $HOSTINGER_FTP_USERNAME,$HOSTINGER_FTP_PASSWORD $HOSTINGER_FTP_SERVER
-          mirror -R ./dist/civitech-web /public_html
+          mirror -R ./dist/civitech.web /public_html
           bye
           "
