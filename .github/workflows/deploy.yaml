@@ -30,7 +30,7 @@ jobs:
         run: sudo apt-get install -y lftp
 
       - name: List dist directory
-        run: ls -l ./dist
+        run: ls -l ./dist/civitech.web
 
       - name: Configure lftp
         run: echo "set ssl:verify-certificate no" > ~/.lftp.rc
