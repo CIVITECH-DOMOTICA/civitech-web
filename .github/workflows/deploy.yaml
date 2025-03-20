@@ -43,8 +43,7 @@ jobs:
         run: |
           echo "Deploying to Hostinger..."
           lftp -c "
-          set ssl:verify-certificate no;
-          open -u $HOSTINGER_FTP_USERNAME,$HOSTINGER_FTP_PASSWORD $HOSTINGER_FTP_SERVER
-          mirror -R ./dist/civitech.web /public_html
+          open -u $HOSTINGER_FTP_USERNAME,$HOSTINGER_FTP_PASSWORD $HOSTINGER_FTP_SERVER;
+          mirror -R --overwrite ./dist/civitech.web/. /public_html;
           bye
           "
