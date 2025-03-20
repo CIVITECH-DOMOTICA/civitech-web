@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'header-civitech',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  isMenuOpen = false; // Estado del menú
 
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
 }

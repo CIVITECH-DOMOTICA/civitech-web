@@ -1,4 +1,4 @@
-<div class="header">
+<!-- <div class="header">
   <div class="menu-principal-redes">
     <div class="siguenos d-flex ">
       <p class="redes align-items-center justify-content-start">
@@ -26,4 +26,51 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <header>
+
+    <div class="menu-principal-redes">
+      <div class="siguenos d-flex ">
+        <p class="redes align-items-center justify-content-start">
+          <a href="https://www.facebook.com/share/1A3PRQzJHb/" target="_blank"><span class="color-gris"><i class="fa-brands fa-facebook-f"></i></span></a>
+          <a href="https://www.instagram.com/civitech.es?igsh=MTVxNjQwcjkwODNsaw==" target="_blank"><span class="color-gris"><i class="fa-brands fa-instagram"></i></span></a>
+          <a href=""><span class="color-gris"><i class="fa-brands fa-linkedin-in" target="_blank"></i></span></a>
+          <a href="https://www.tiktok.com/@civitech.es?_t=ZG-8t9VrCIYaPo&_r=1" target="_blank"><span class="color-gris"><i class="fa-brands fa-tiktok"></i></span></a>
+        </p>
+      </div>
+    </div>
+
+
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="" ><img class="logo" src="../../../../assets/images/logo_negro_horizontal.png" alt=""></a>
+      </div>
+
+      <!-- Botón de menú hamburguesa (visible en XS, SM) -->
+      <button class="hamburger" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Menú de navegación -->
+      <nav [ngClass]="{ 'active': isMenuOpen }">
+        <!-- Botón de cerrar dentro del menú en móviles (solo se muestra en SM y XS) -->
+        <button class="close-btn" (click)="closeMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <ul class="menu">
+          <li><a href="#" (click)="closeMenu()">Inicio</a></li>
+          <li><a href="#" (click)="closeMenu()">Servicios</a></li>
+          <li><a href="#" (click)="closeMenu()">Proyectos</a></li>
+          <li><a href="#" (click)="closeMenu()">Nosotros</a></li>
+          <li><a href="#" (click)="closeMenu()">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Capa de fondo oscurecido cuando el menú está abierto -->
+  <div class="overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+
