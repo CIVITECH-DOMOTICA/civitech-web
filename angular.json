@@ -20,7 +20,7 @@
             "outputPath": "dist/civitech.web",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/civitech-web/",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
