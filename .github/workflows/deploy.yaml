@@ -38,8 +38,8 @@ jobs:
       - name: Deploy to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
-          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          server: ftp.civitech.es
+          username: u824079794.hostinger
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
           local-dir: ./dist/civitech.web/
-          server-dir: /public_html/
+          server-dir: /home/u824079794/domains/civitech.es/public_html/
