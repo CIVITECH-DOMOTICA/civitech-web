@@ -18,12 +18,16 @@
           <label for="telefono">Teléfono</label>
           <input id="telefono" type="tel" pInputText class="form-control" placeholder="" />
         </div>
-        <div class="col-12 mb-2 d-flex align-items-center  item-contact-terminos d-flex justify-content-center">
-          <p-checkbox name="privacidad" value="14años" ></p-checkbox>
+        <div class="col-md-6 mb-3 item-contact">
+          <label for="mensaje">Mensaje</label>
+          <textarea name="" id="mensaje" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="col-12 mb-2 d-flex align-items-center  item-contact-terminos d-flex justify-content-start">
+          <input type="checkbox" name="privacidad" value="14años" />
           <label class="ms-2">Tengo más de 14 años, he leído y acepto la Política de Privacidad</label>
         </div>
-        <div class="col-12 mb-3 d-flex align-items-center item-contact-politica d-flex justify-content-center">
-          <p-checkbox name="terminos" value="acepto"></p-checkbox>
+        <div class="col-12 mb-3 d-flex align-items-center item-contact-politica d-flex justify-content-start">
+          <input  type="checkbox" name="terminos" value="acepto" />
           <label class="ms-2">He leído y acepto los <strong>términos de servicio y políticas de privacidad</strong></label>
         </div>
         <div class="col-12">

@@ -20,7 +20,7 @@
 
 .imagen-container-tecnologia
 {
-  background-image: url('../../../../assets/images/contacto.jpg');
+  background-image: url('/../../../../assets/images/contacto.jpg');
   background-size: cover; /* Ajusta la imagen al contenedor */
   background-position: center center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -38,7 +38,7 @@
 {
 
   background-color: $primary-color;
-  background-image: url('../../../../assets/images/home_fondoAmarillo.png');
+  background-image: url('/../../../../assets/images/home_fondoAmarillo.png');
   text-align: center;
   background-size: cover;
   flex-direction: column;

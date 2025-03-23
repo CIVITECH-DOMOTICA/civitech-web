@@ -158,7 +158,12 @@ h1 {
     font-size: 30px !important;
     text-align: center !important;
   }
-  /*----------------------------------*/
+  /*----------------formulario contacto---------------*/
+  .contact-form {
+    max-width: 95% !important;
+  }
+  /*--------------------------------------------------*/
+
 }
 
 /* Small (sm) - Móviles grandes (576px - 767px) */
@@ -257,7 +262,11 @@ h1 {
       font-size: 30px !important;
       text-align: center !important;
     }
-    /*----------------------------------*/
+    /*----------------formulario contacto---------------*/
+    .contact-form {
+      max-width: 95% !important;
+    }
+    /*--------------------------------------------------*/
 }
 
 /* Medium (md) - Tablets (768px - 991px) */
@@ -350,7 +359,11 @@ h1 {
     text-align: center !important;
   }
 
-  /*----------------------------------*/
+   /*----------------formulario contacto---------------*/
+   .contact-form {
+    max-width: 65% !important;
+  }
+  /*--------------------------------------------------*/
 }
 
 /* Large (lg) - Laptops y PCs pequeños (992px - 1199px) */
@@ -400,7 +413,11 @@ h1 {
       padding-left: 40px !important;
       padding-right: 40px !important;
     }
-    /*----------------------------------*/
+     /*----------------formulario contacto---------------*/
+     .contact-form {
+      max-width: 60% !important;
+    }
+    /*--------------------------------------------------*/
 
 }
 
@@ -438,5 +455,9 @@ h1 {
   .resenia-container {
     padding: 60px 45px 45px 45px;
   }
-  /*--------------------------*/
+   /*----------------formulario contacto---------------*/
+   .contact-form {
+    max-width: 60% !important;
+  }
+  /*--------------------------------------------------*/
 }
