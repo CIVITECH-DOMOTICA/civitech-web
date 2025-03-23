@@ -1,0 +1,45 @@
+name: Build and Deploy Angular App
+
+on:
+  push:
+    branches:
+      - master  # Rama que activará la acción
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build -- --configuration production
+
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      - name: List dist directory
+        run: ls -l ./dist/civitech.web
+
+      - name: Configure lftp
+        run: echo "set ssl:verify-certificate no" > ~/.lftp.rc
+
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.civitech.es
+          username: u824079794.hostinger
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          local-dir: ./dist/civitech.web/
+          server-dir: /
