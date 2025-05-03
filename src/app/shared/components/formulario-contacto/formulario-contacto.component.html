@@ -1,16 +1,19 @@
 <div class="container-fluid contacto-formulario-content d-flex justify-content-center">
   <div class="contact-form">
     <form
-      action="https://formspree.io/f/mnndpobz"
+      action="https://api.web3forms.com/submit"
       method="POST"
-      onsubmit="desactivarBoton()"
+      id="contact-form"
     >
-      <input type="hidden" name="_redirect" value="https://www.civitech.es/gracias" />
+      <!-- Clave de acceso de Web3Forms -->
+      <input type="hidden" name="access_key" value="a825ec4b-62db-4b29-826e-6f116e7c8bb7" />
+      <!-- URL de redirección personalizada -->
+      <input type="hidden" name="redirect" value="https://www.civitech.es/gracias" />
 
       <div class="row">
         <div class="col-md-6 mb-3 item-contact">
           <label for="nombre">Nombre*</label>
-          <input name="nombre" id="nombre" type="text" class="form-control" required />
+          <input name="name" id="nombre" type="text" class="form-control" required />
         </div>
         <div class="col-md-6 mb-3 item-contact">
           <label for="apellido">Apellidos</label>
@@ -26,7 +29,7 @@
         </div>
         <div class="col-md-6 mb-3 item-contact">
           <label for="mensaje">Mensaje</label>
-          <textarea name="mensaje" id="mensaje" class="form-control" rows="4"></textarea>
+          <textarea name="message" id="mensaje" class="form-control" rows="4"></textarea>
         </div>
         <div class="col-12 mb-2 d-flex align-items-center item-contact-terminos justify-content-start">
           <input type="checkbox" name="privacidad" value="sí" required />
@@ -43,11 +46,3 @@
     </form>
   </div>
 </div>
-
-<script>
-  function desactivarBoton() {
-    const boton = document.getElementById('btnEnviar');
-    boton.disabled = true;
-    boton.innerText = 'Enviando...';
-  }
-</script>
