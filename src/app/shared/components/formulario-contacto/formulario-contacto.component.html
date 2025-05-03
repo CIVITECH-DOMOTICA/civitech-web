@@ -1,39 +1,53 @@
 <div class="container-fluid contacto-formulario-content d-flex justify-content-center">
   <div class="contact-form">
-    <form>
+    <form
+      action="https://formspree.io/f/mnndpobz"
+      method="POST"
+      onsubmit="desactivarBoton()"
+    >
+      <input type="hidden" name="_redirect" value="https://www.civitech.es/gracias" />
+
       <div class="row">
         <div class="col-md-6 mb-3 item-contact">
-          <label for="nombre">Nombres</label>
-          <input id="nombre" type="text"  class="form-control" placeholder="" />
+          <label for="nombre">Nombre*</label>
+          <input name="nombre" id="nombre" type="text" class="form-control" required />
         </div>
         <div class="col-md-6 mb-3 item-contact">
           <label for="apellido">Apellidos</label>
-          <input id="apellido" type="text"  class="form-control" placeholder="" />
+          <input name="apellido" id="apellido" type="text" class="form-control" />
         </div>
         <div class="col-md-6 mb-3 item-contact">
-          <label for="correo">Correo electrónico</label>
-          <input id="correo" type="email" pInputText class="form-control" placeholder="" />
+          <label for="correo">Correo electrónico*</label>
+          <input name="email" id="correo" type="email" class="form-control" required />
         </div>
         <div class="col-md-6 mb-3 item-contact">
-          <label for="telefono">Teléfono</label>
-          <input id="telefono" type="tel" pInputText class="form-control" placeholder="" />
+          <label for="telefono">Teléfono*</label>
+          <input name="telefono" id="telefono" type="tel" class="form-control" required />
         </div>
         <div class="col-md-6 mb-3 item-contact">
           <label for="mensaje">Mensaje</label>
-          <textarea name="" id="mensaje" class="form-control" rows="4"></textarea>
+          <textarea name="mensaje" id="mensaje" class="form-control" rows="4"></textarea>
         </div>
-        <div class="col-12 mb-2 d-flex align-items-center  item-contact-terminos d-flex justify-content-start">
-          <input type="checkbox" name="privacidad" value="14años" />
-          <label class="ms-2">Tengo más de 14 años, he leído y acepto la Política de Privacidad</label>
+        <div class="col-12 mb-2 d-flex align-items-center item-contact-terminos justify-content-start">
+          <input type="checkbox" name="privacidad" value="sí" required />
+          <label class="ms-2">Tengo más de 14 años, he leído y acepto la Política de Privacidad*</label>
         </div>
-        <div class="col-12 mb-3 d-flex align-items-center item-contact-politica d-flex justify-content-start">
-          <input  type="checkbox" name="terminos" value="acepto" />
-          <label class="ms-2">He leído y acepto los <strong>términos de servicio y políticas de privacidad</strong></label>
+        <div class="col-12 mb-3 d-flex align-items-center item-contact-politica justify-content-start">
+          <input type="checkbox" name="terminos" value="sí" required />
+          <label class="ms-2">He leído y acepto los <strong>términos de servicio y políticas de privacidad*</strong></label>
         </div>
         <div class="col-12">
-          <button pButton type="submit" label="Enviar" class="btn-enviar"></button>
+          <button id="btnEnviar" type="submit" class="btn-enviar">Enviar</button>
         </div>
       </div>
     </form>
   </div>
 </div>
+
+<script>
+  function desactivarBoton() {
+    const boton = document.getElementById('btnEnviar');
+    boton.disabled = true;
+    boton.innerText = 'Enviando...';
+  }
+</script>
