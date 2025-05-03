@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gracias',
@@ -23,4 +24,9 @@ export class GraciasComponent {
       resenia: 'Nos especializamos en domótica con enfoque en estilo, funcionalidad y soluciones tecnológicas.'
     }
   ];
+  constructor(private router: Router) {}
+
+  volverInicio(): void {
+    this.router.navigateByUrl('/acerca-de-nosotros');
+  }
 }
