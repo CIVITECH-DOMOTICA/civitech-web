@@ -1,0 +1,60 @@
+export const proyectosItems = [
+  {
+    id: 'casa-rural',
+    titulo: 'Domotización Casa Rural en Asturias',
+    subtitulo: 'Automatizamos iluminación, seguridad y climatización',
+    imagenPrincipal: '/assets/images/domotica.jpg',
+    descripcion: `Cliente necesita modernizar su casa rural con automatización a medida: seguridad y climatización.`,
+    instalacion: `Instalación de iluminación inteligente, sistemas de control de seguridad y termostatos automáticos.`,
+    resultados: [
+      { icono: 'fa-regular fa-lightbulb', texto: 'Control remoto completo' },
+      { icono: 'fa-regular fa-leaf', texto: 'Ahorro energético del 30%' },
+      { icono: 'fa-solid fa-sliders', texto: 'Automatización total' },
+      { icono: 'fa-solid fa-shield-halved', texto: 'Mejora en seguridad' },
+    ],
+    imagenSecundaria: '/assets/images/contacto.jpg',
+    testimonio: {
+      nombre: 'Montse',
+      calificacion: 5,
+      comentario: 'Ahora que mi casa está automatizada, todo es más cómodo y seguro. ¡Muy satisfecha con los resultados!',
+    },
+  },
+  {
+    id: 'consumo-barcelona',
+    titulo: 'Monitorización de Consumo Energético Chalet en Barcelona',
+    subtitulo: 'Control de energía eficiente en chalet moderno',
+    imagenPrincipal: '/assets/images/domotica.jpg',
+    descripcion: `Monitorización del consumo de energía en tiempo real para ahorro consciente.`,
+    instalacion: `Sensores de consumo y análisis en dashboards inteligentes.`,
+    resultados: [
+      { icono: 'fa-regular fa-bolt', texto: 'Control de energía en tiempo real' },
+      { icono: 'fa-regular fa-chart-line', texto: 'Reducción del 25% en consumo' },
+      { icono: 'fa-solid fa-house', texto: 'Optimización de la eficiencia' },
+    ],
+    imagenSecundaria: '/assets/images/contacto.jpg',
+    testimonio: {
+      nombre: 'Jordi',
+      calificacion: 5,
+      comentario: 'El control detallado de consumo me ayudó a optimizar mis gastos energéticos.',
+    },
+  },
+  {
+    id: 'vivienda-madrid',
+    titulo: 'Vivienda Unifamiliar en Madrid',
+    subtitulo: 'Automatización integral de iluminación y seguridad',
+    imagenPrincipal: '/assets/images/domotica.jpg',
+    descripcion: `Proyecto integral de automatización de vivienda con control de iluminación y seguridad.`,
+    instalacion: `Instalación de sistemas inteligentes para control remoto de luces y cámaras.`,
+    resultados: [
+      { icono: 'fa-solid fa-lightbulb', texto: 'Iluminación Inteligente' },
+      { icono: 'fa-solid fa-shield-alt', texto: 'Sistema de Seguridad Avanzado' },
+      { icono: 'fa-solid fa-wifi', texto: 'Conexión remota y control total' },
+    ],
+    imagenSecundaria: '/assets/images/contacto.jpg',
+    testimonio: {
+      nombre: 'Teresa',
+      calificacion: 5,
+      comentario: 'El control de persianas automatizado es muy cómodo y añade más seguridad a mi hogar.',
+    },
+  },
+];

@@ -1,0 +1,37 @@
+<div class="detalle-domotica">
+  <!-- Imagen Principal + Título -->
+  <div class="detalle-hero" [ngStyle]="{'background-image': 'url(' + item?.imagenPrincipal + ')'}">
+    <div class="detalle-hero-texto">
+      <h1>{{ item?.titulo }}</h1>
+      <p>{{ item?.subtitulo }}</p>
+    </div>
+  </div>
+
+  <!-- Características -->
+  <section class="detalle-caracteristicas container">
+    <div class="caracteristica" *ngFor="let caracteristica of item?.caracteristicas">
+      <i class="{{ caracteristica.icono }}"></i>
+      <div>
+        <h3>{{ caracteristica.titulo }}</h3>
+        <p>{{ caracteristica.descripcion }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imagen Secundaria + Testimonio -->
+  <section class="detalle-testimonio container">
+    <div class="testimonio-imagen">
+      <img [src]="item?.imagenSecundaria" alt="Imagen secundaria" />
+    </div>
+    <div class="testimonio-contenido">
+      <h3>{{ item?.testimonio.nombre }}</h3>
+      <div class="estrellas">
+        <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+          <i class="fa-solid" [ngClass]="i < item?.testimonio.calificacion ? 'fa-star' : 'fa-star-half-alt'"></i>
+        </ng-container>
+      </div>
+      <p>{{ item?.testimonio.comentario }}</p>
+      <button class="btn-asesoria"  (click)="irAContacto()">Solicita asesoría</button>
+    </div>
+  </section>
+</div>

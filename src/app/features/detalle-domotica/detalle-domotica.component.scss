@@ -1,0 +1,108 @@
+.detalle-domotica {
+  .detalle-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+
+    .detalle-hero-texto {
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 20px;
+      border-radius: 8px;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .detalle-caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+
+    .caracteristica {
+      width: 45%;
+      display: flex;
+      align-items: flex-start;
+      margin: 20px;
+      i {
+        font-size: 2rem;
+        margin-right: 15px;
+        color: #d32f2f; // Color rojo corporativo
+      }
+      h3 {
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+      }
+      p {
+        color: #555;
+      }
+    }
+  }
+
+  .detalle-testimonio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+
+    .testimonio-imagen {
+      flex: 1 1 300px;
+      img {
+        width: 100%;
+        border-radius: 12px;
+      }
+    }
+
+    .testimonio-contenido {
+      flex: 1 1 300px;
+      padding: 20px;
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .estrellas {
+        margin: 10px 0;
+        i {
+          color: #ffc107; // Amarillo estrellas
+          font-size: 1.5rem;
+          margin-right: 4px;
+        }
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 1.1rem;
+      }
+
+      .btn-asesoria {
+        background-color: #d32f2f;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background-color: #b71c1c;
+        }
+      }
+    }
+  }
+}

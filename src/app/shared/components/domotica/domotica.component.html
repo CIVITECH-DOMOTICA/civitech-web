@@ -1,8 +1,8 @@
-<div class=" domotica-mensaje-container">
+<!-- <div class=" domotica-mensaje-container">
   <h1>Un hogar conectado, una vida mejor...</h1>
-</div>
+</div> -->
 
-<div class="domotica-content">
+<!-- <div class="domotica-content">
   <div class="container-fluid">
         <div class=" container-card d-flex">
           <div class=" card-domotica">
@@ -58,4 +58,97 @@
           </div>
         </div>
 
+  </div> -->
+
+<div class="domotica-content">
+  <div class="container-fluid">
+    <section class="categorias">
+      <div class="grid-categorias">
+        <div *ngFor="let cat of categorias" class="categoria-card">
+          <i class="icon" [ngClass]="cat.icon"></i>
+          <h3>{{ cat.titulo }}</h3>
+          <!-- <p>{{ cat.descripcion }}</p> -->
+          <!-- <a [routerLink]="cat.link" class="btn-link">Ver más</a> -->
+          <a [routerLink]="['/domotica', cat.id]" class="btn-link">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="estadisticas">
+      <div class="estadistica">
+        <h2>+500</h2>
+        <h3>hogares automatizados</h3>
+      </div>
+      <div class="estadistica">
+        <h2>30%</h2>
+        <h3>ahorro energético promedio</h3>
+      </div>
+      <div class="estadistica">
+        <h2>48h</h2>
+        <h3>tiempo promedio de instalación</h3>
+      </div>
+    </section>
+
+    <!-- componente de proyectos  -->
+    <section class="casos-exito">
+      <h2 class="section-title">Casos de Éxito</h2>
+      <div class="grid-casos">
+        <div *ngFor="let caso of casosExito" class="caso-card">
+          <img [src]="caso.imagen" [alt]="caso.titulo" class="caso-imagen" />
+          <div class="caso-content">
+            <h3>{{ caso.titulo }}</h3>
+            <p class="ubicacion">{{ caso.ubicacion }}</p>
+            <p class="descripcion">{{ caso.descripcion }}</p>
+            <div class="estrellas" style="font-size: 24px; color: #f4b183;">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <a [routerLink]="caso.link" class="btn-caso">Descubre más</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="integraciones">
+      <div class="grid-logos">
+        <!-- Google Home -->
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" class="logo-icon">
+            <text x="0" y="35" font-size="35" fill="currentColor">Google Home</text>
+          </svg>
+        </div>
+
+        <!-- Alexa -->
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" class="logo-icon">
+            <text x="0" y="35" font-size="35" fill="currentColor">Alexa</text>
+          </svg>
+        </div>
+
+        <!-- KNX -->
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" class="logo-icon">
+            <text x="0" y="35" font-size="35" fill="currentColor">KNX</text>
+          </svg>
+        </div>
+
+        <!-- Motter -->
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" class="logo-icon">
+            <text x="0" y="35" font-size="35" fill="currentColor">Motter</text>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+
+
   </div>
+</div>
+
+
+

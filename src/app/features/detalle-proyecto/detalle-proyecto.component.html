@@ -1,0 +1,46 @@
+<div *ngIf="data">
+  <div class="banner">
+    <img [src]="data.imagenPrincipal" alt="Imagen Proyecto">
+    <div class="overlay">
+      <h1>{{ data.titulo }}</h1>
+      <p>{{ data.subtitulo }}</p>
+    </div>
+  </div>
+
+  <section class="descripcion">
+    <div class="text">
+      <h2>Descripción del Proyecto</h2>
+      <p>{{ data.descripcion }}</p>
+
+      <h3>Instalación:</h3>
+      <p>{{ data.instalacion }}</p>
+    </div>
+    <div class="resultados">
+      <h3>Resultados</h3>
+      <ul>
+        <li *ngFor="let resultado of data.resultados">
+          <i [class]="resultado.icono"></i> {{ resultado.texto }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="testimonio">
+    <div class="imagen">
+      <img [src]="data.imagenSecundaria" alt="Imagen">
+    </div>
+    <div class="comentario">
+      <h3>{{ data.testimonio.nombre }}</h3>
+      <div class="rating">
+        <ng-container *ngFor="let star of [].constructor(data.testimonio.calificacion)">
+          <i class="fa-solid fa-star"></i>
+        </ng-container>
+      </div>
+      <p>{{ data.testimonio.comentario }}</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <button (click)="irAContacto()">¿Quieres un hogar inteligente como este?</button>
+  </div>
+</div>

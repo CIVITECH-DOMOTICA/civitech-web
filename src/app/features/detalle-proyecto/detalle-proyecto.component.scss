@@ -1,0 +1,141 @@
+section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: #fff;
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.descripcion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .text, .resultados {
+    flex: 1 1 45%;
+  }
+
+  h2, h3 {
+    color: #1f1f1f;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      
+      i {
+        margin-right: 0.75rem;
+        color: #d32f2f;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.testimonio {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .imagen {
+    flex: 1 1 40%;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  .comentario {
+    flex: 1 1 50%;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .rating {
+      color: #f4c150;
+      margin-bottom: 1rem;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+  }
+}
+
+.cta {
+  text-align: center;
+  margin-top: 3rem;
+
+  button {
+    background-color: #a60000;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: #800000;
+    }
+  }
+}
