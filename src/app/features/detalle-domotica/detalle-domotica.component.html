@@ -1,5 +1,4 @@
 <div class="detalle-domotica">
-  <!-- Imagen Principal + Título -->
   <div class="detalle-hero" [ngStyle]="{'background-image': 'url(' + item?.imagenPrincipal + ')'}">
     <div class="detalle-hero-texto">
       <h1>{{ item?.titulo }}</h1>
@@ -7,7 +6,6 @@
     </div>
   </div>
 
-  <!-- Características -->
   <section class="detalle-caracteristicas container">
     <div class="caracteristica" *ngFor="let caracteristica of item?.caracteristicas">
       <i class="{{ caracteristica.icono }}"></i>
@@ -18,7 +16,6 @@
     </div>
   </section>
 
-  <!-- Imagen Secundaria + Testimonio -->
   <section class="detalle-testimonio container">
     <div class="testimonio-imagen">
       <img [src]="item?.imagenSecundaria" alt="Imagen secundaria" />
