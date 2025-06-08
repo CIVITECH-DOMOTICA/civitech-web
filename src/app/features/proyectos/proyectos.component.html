@@ -7,13 +7,100 @@
   </div>
 </div>
 
-<div class=" domotica-mensaje-container">
+<!-- <div class=" domotica-mensaje-container">
   <h1>Un hogar inteligente para una vida más cómoda...</h1>
-</div>
+</div> -->
 
-<div style="padding-bottom: 100px;">
+<!-- <div style="padding-bottom: 100px;">
   <carrousel-opiniones-civitech  [opiniones]="opiniones" ></carrousel-opiniones-civitech>
-</div>
+</div> -->
+
+<!-- <section class="proyectos">
+  <h2>PROYECTOS</h2>
+  <div class="filtros">
+    <button *ngFor="let filtro of filtros" 
+            (click)="filtroActivo = filtro" 
+            [class.activo]="filtroActivo === filtro">
+      {{ filtro }}
+    </button>
+  </div>
+
+  <div class="grid-proyectos">
+    <div class="tarjeta" *ngFor="let proyecto of proyectosFiltrados" (click)="seleccionarProyecto(proyecto)">
+      <img [src]="proyecto.imagen" alt="Proyecto Imagen">
+      <h3>{{ proyecto.titulo }}</h3>
+      <p>{{ proyecto.localizacion }}</p>
+      <p>{{ proyecto.descripcion }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="proyectoSeleccionado" class="detalle-proyecto">
+    <img [src]="proyectoSeleccionado.imagen" alt="Detalle Imagen">
+    <h3>{{ proyectoSeleccionado.titulo }}</h3>
+    <div class="caracteristicas" *ngFor="let carac of proyectoSeleccionado.detalle.caracteristicas">
+      <i [class]="carac.icono"></i>
+      <h4>{{ carac.titulo }}</h4>
+      <p>{{ carac.descripcion }}</p>
+    </div>
+    <div class="testimonio">
+      <h4>{{ proyectoSeleccionado.detalle.cliente.nombre }}</h4>
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>{{ proyectoSeleccionado.detalle.cliente.comentario }}</p>
+    </div>
+  </div>
+</section> -->
+
+<section class="proyectos">
+  
+  <div class="proyectos-filtros">
+    <button 
+      *ngFor="let categoria of categorias" 
+      [class.active]="categoria === categoriaSeleccionada"
+      (click)="filtrarCategoria(categoria)">
+      {{ categoria }}
+    </button>
+  </div>
+
+  <div class="proyectos-grid">
+    <div 
+      class="proyecto-card" 
+      *ngFor="let proyecto of proyectosFiltrados" 
+      (click)="seleccionarProyecto(proyecto)">
+      
+      <img [src]="proyecto.imagen" [alt]="proyecto.titulo" />
+      <h3>{{ proyecto.titulo }}</h3>
+      <p class="proyecto-ubicacion">{{ proyecto.localizacion }}</p>
+      <div class="proyecto-estrellas">
+        <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+      </div>
+      <p class="proyecto-descripcion">{{ proyecto.descripcion }}</p>
+      
+    </div>
+  </div>
+
+  <!-- Detalle Proyecto Seleccionado -->
+  <section class="detalle-proyecto" *ngIf="proyectoSeleccionado">
+    <div class="detalle-proyecto-container">
+      <div class="detalle-proyecto-imagen">
+        <img [src]="proyectoSeleccionado.imagen" [alt]="proyectoSeleccionado.titulo" />
+      </div>
+      <div class="detalle-proyecto-info">
+        <h2>{{ proyectoSeleccionado.titulo }}</h2>
+        <div class="detalle-proyecto-caracteristicas">
+          <div *ngFor="let c of proyectoSeleccionado.detalle.caracteristicas" class="detalle-proyecto-item">
+            <i [class]="c.icono"></i>
+            <div>
+              <h3>{{ c.titulo }}</h3>
+              <p>{{ c.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
 
 <separador-civitech title='Contáctanos' ></separador-civitech>
 

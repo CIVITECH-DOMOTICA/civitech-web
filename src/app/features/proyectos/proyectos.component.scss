@@ -27,3 +27,156 @@
 {
   padding: 30px 0px 0px 50px;
 }
+
+// nuevo código 
+.proyectos {
+  padding: 3rem 2rem;
+  background-color: #fff;
+
+  &-filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    button {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &.active {
+        background-color: #111;
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: #B30000;
+        color: #fff;
+      }
+    }
+  }
+
+  &-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+.proyecto-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 250px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 1rem 0;
+    font-weight: 600;
+  }
+
+  .proyecto-ubicacion {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0.5rem 1rem;
+  }
+
+  .proyecto-descripcion {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0.5rem 1rem 1rem;
+  }
+
+  .proyecto-estrellas {
+    color: #f5a623;
+    margin: 0 1rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.detalle-proyecto {
+  margin: 3rem;
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  &-imagen {
+    flex: 1 1 400px;
+    max-width: 500px;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &-info {
+    flex: 1 1 400px;
+    max-width: 600px;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #111;
+    }
+  }
+
+  &-caracteristicas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    i {
+      font-size: 2rem;
+      color: #B30000;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    p {
+      margin: 0.5rem 0 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+  }
+}
