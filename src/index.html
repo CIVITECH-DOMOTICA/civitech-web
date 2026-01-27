@@ -24,6 +24,16 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
 
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX'); // TODO: Reemplaza con tu ID de Medición real
+  </script>
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Civitech">
@@ -134,7 +144,7 @@
     import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
 
     Typebot.initBubble({
-      typebot: "civitech-presupuestos-h3z6r1b", // ID REAL CONFIGURADO
+      typebot: "civitech-auditor-a-premium-hj08tg6", // Bot Auditoría Premium V3
       theme: {
         button: {
           backgroundColor: "#0f172a", // Dark Slate (Negro Premium Moderno)
