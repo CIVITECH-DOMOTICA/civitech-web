@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
 })
 export class BannerComponent {
   @Input() imageUrl: string = '';
+  @Input() videoUrl: string = ''; // Nuevo input para vídeo
   @Input() mensaje: string = '';
-  @Input() textoBoton: string='';
-  @Input() urlBoton: string ='';
+  @Input() textoBoton: string = '';
+  @Input() urlBoton: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   navigate(): void {
     if (this.urlBoton) {

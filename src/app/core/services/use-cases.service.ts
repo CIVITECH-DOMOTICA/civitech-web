@@ -128,7 +128,7 @@ export class UseCasesService {
             descripcion: 'Aprovecha el sol en invierno y protégete del calor en verano. Automatiza según la posición del sol o el pronóstico del tiempo.',
             descripcionDetallada: 'Automatización inteligente de persianas, toldos y cortinas según posición solar, temperatura y meteorología. El sistema calcula la posición óptima para maximizar ganancia solar en invierno y protección en verano, reduciendo dramáticamente la necesidad de climatización.',
             imagen: '/assets/images/usecase-blinds.png',
-            icono: 'fa-blinds',
+            icono: 'fa-layer-group',
             categoria: 'Eficiencia',
             ahorroEstimado: '15-25% en clima',
             tiempoImplementacion: '0.5-1 día',
@@ -797,6 +797,57 @@ export class UseCasesService {
                 {
                     pregunta: '¿Es legal grabar la calle?',
                     respuesta: 'Configuramos las máscaras de privacidad para grabar solo tu propiedad cumpliendo estrictamente la LOPD.'
+                }
+            ]
+        },
+        {
+            id: '16',
+            slug: 'negocios-locales-inteligentes',
+            titulo: 'Negocios Inteligentes y Eficiencia',
+            subtitulo: 'Oficinas, locales y lavanderías que funcionan solas',
+            descripcion: 'Automatiza la apertura y cierre de tu negocio, controla el aire acondicionado en remoto y ahorra energía cuando no hay clientes.',
+            descripcionDetallada: 'Gestiona tu negocio desde el móvil. Abrimos puertas de forma remota para proveedores, encendemos escaparates solarmente y controlamos máquinas en lavanderías o gimnasios. Si tienes un local, la domótica se paga sola con el ahorro de luz.',
+            imagen: '/assets/images/usecase-business.png',
+            icono: 'fa-briefcase',
+            categoria: 'Negocios',
+            ahorroEstimado: '30% en climatización e iluminación',
+            tiempoImplementacion: '2-3 días',
+            roi: '6-12 meses (Ahorro energético)',
+            beneficios: [
+                'Apertura remota de puertas (sin llaves físicas)',
+                'Control automático de escaparates y rótulos',
+                'Gestión de clima según horario laboral',
+                'Cámaras de seguridad integradas',
+                'Control de acceso para empleados (Huella/NFC)',
+                'Alertas de corte de luz o inundación'
+            ],
+            casosUso: [
+                'Lavanderías autoservicio (apertura automática)',
+                'Oficinas (clima y luces automáticas)',
+                'Gimnasios 24h',
+                'Tiendas retail (iluminación de acento)'
+            ],
+            tecnologias: [
+                'Shelly Pro (Carril DIN)',
+                'Cámaras IP Empresariales',
+                'Control de Accesos Smart',
+                'Monitorización de Consumo Trifásico'
+            ],
+            ejemplos: [
+                {
+                    titulo: 'La lavandería autónoma',
+                    descripcion: 'El dueño controla apertura, cierre, luces y rearme de máquinas desde su casa.',
+                    resultado: 'Cero desplazamientos diarios y reducción del 25% en factura eléctrica al no dejar luces olvidadas.'
+                }
+            ],
+            faqs: [
+                {
+                    pregunta: '¿Puedo dar acceso temporal a un empleado?',
+                    respuesta: 'Sí, códigos temporales o acceso por app que caducan cuando tú digas.'
+                },
+                {
+                    pregunta: '¿Funciona con persianas metálicas de seguridad?',
+                    respuesta: 'Totalmente. Automatizamos la subida/bajada de persianas de seguridad con llave virtual.'
                 }
             ]
         }

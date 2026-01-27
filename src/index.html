@@ -144,15 +144,20 @@
     import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
 
     Typebot.initBubble({
-      typebot: "civitech-auditor-a-premium-hj08tg6", // Bot Auditoría Premium V3
+      typebot: "civitech-auditor-a-premium-hj08tg6",
       theme: {
         button: {
-          backgroundColor: "#0f172a", // Dark Slate (Negro Premium Moderno)
-          // customIconSrc: Eliminado para usar la burbuja por defecto que es más limpia
+          backgroundColor: "#0f172a",
+          // customIconSrc: Eliminado
         },
         chatWindow: {
           backgroundColor: "#ffffff",
         },
+      },
+      proactiveMessage: {
+        textContent: "👋 ¿Te ayudo a configurar tu presupuesto?",
+        delay: 3500,
+        avatarUrl: "https://civitech.es/assets/icons/favicon.png",
       },
     });
   </script>

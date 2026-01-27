@@ -1,32 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gracias',
   templateUrl: './gracias.component.html',
   styleUrls: ['./gracias.component.scss']
 })
-export class GraciasComponent {
-  opiniones = [
-    {
-      src:'/../../../../assets/images/cliente1.jpg',
-      nombre: 'Domotización Casa Rural en Asturias',
-      resenia: 'Nos especializamos en domótica con enfoque en estilo, funcionalidad y soluciones tecnológicas.'
-    },
-    {
-      src:'/../../../../assets/images/cliente3.jpg',
-      nombre: 'Monitorización de Consumo Energético en Barcelona',
-      resenia: 'Nos especializamos en domótica con enfoque en estilo, funcionalidad y soluciones tecnológicas.'
-    },
-    {
-      src:'/../../../../assets/images/cliente2.jpg',
-      nombre: 'Domotización Piso en Castellón de la Plana',
-      resenia: 'Nos especializamos en domótica con enfoque en estilo, funcionalidad y soluciones tecnológicas.'
-    }
-  ];
-  constructor(private router: Router) {}
-
-  volverInicio(): void {
-    this.router.navigateByUrl('/acerca-de-nosotros');
-  }
-}
+export class GraciasComponent { }

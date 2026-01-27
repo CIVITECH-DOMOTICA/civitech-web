@@ -1,0 +1,441 @@
+{
+    "version": "6.1",
+    "id": "civitech-bot-v4-final",
+    "name": "Civitech Auditoría Premium V4",
+    "events": [
+        {
+            "id": "start",
+            "outgoingEdgeId": "edge-1",
+            "graphCoordinates": {
+                "x": 0,
+                "y": 0
+            },
+            "type": "start"
+        }
+    ],
+    "groups": [
+        {
+            "id": "bienvenida",
+            "title": "Bienvenida y Nombre",
+            "graphCoordinates": {
+                "x": 0,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Hola! 👋 Bienvenido a la Auditoría Inteligente de "
+                                    },
+                                    {
+                                        "bold": true,
+                                        "text": "Civitech"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "msg-2",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Soy tu asistente virtual. Voy a hacerte unas preguntas breves para diseñar tu solución a medida."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-nombre",
+                    "outgoingEdgeId": "edge-2",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "Name",
+                        "labels": {
+                            "placeholder": "¿Cómo te llamas?"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "vivienda",
+            "title": "Tipo Inmueble",
+            "graphCoordinates": {
+                "x": 400,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-viv-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Encantado {{Name}}. ¿Qué tipo de inmueble quieres domotizar?"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-tipo-viv",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "viv-piso",
+                            "content": "🏢 Piso"
+                        },
+                        {
+                            "id": "viv-chalet",
+                            "content": "🏡 Chalet / Unifamiliar"
+                        },
+                        {
+                            "id": "viv-local",
+                            "content": "🏪 Local / Oficina / Lavandería"
+                        },
+                        {
+                            "id": "viv-obra",
+                            "content": "🏗️ Obra Nueva"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "TipoVivienda"
+                    }
+                },
+                {
+                    "id": "msg-viv-2",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Describe brevemente el espacio (Ej: Nº estancias, escaparates, m2 aprox...)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-estancias",
+                    "outgoingEdgeId": "edge-3",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "DescripcionEspacio",
+                        "isLong": true,
+                        "labels": {
+                            "placeholder": "Ej: Lavandería de 50m2 con 2 puertas..."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "instalaciones",
+            "title": "Instalaciones Actuales",
+            "graphCoordinates": {
+                "x": 800,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-inst-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Hablemos de lo que YA tienes instalado. Marca todo lo que aplique:"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-inst-check",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "inst-persianas",
+                            "content": "🪟 Persianas Motorizadas (o Metálicas)"
+                        },
+                        {
+                            "id": "inst-calefaccion",
+                            "content": "🔥 Calefacción / Clima"
+                        },
+                        {
+                            "id": "inst-solar",
+                            "content": "☀️ Placas Solares"
+                        },
+                        {
+                            "id": "inst-toldo",
+                            "content": "⛱️ Toldo / Rótulo Luminoso"
+                        },
+                        {
+                            "id": "inst-riego",
+                            "content": "💧 Riego Automático"
+                        },
+                        {
+                            "id": "inst-alarma",
+                            "content": "🚨 Alarma Existente"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "Instalaciones",
+                        "isMultipleChoice": true
+                    }
+                },
+                {
+                    "id": "inp-inst-detalle",
+                    "outgoingEdgeId": "edge-4",
+                    "type": "text input",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¿Marcas importantes? (Ej: Caldera Saunier, Aire Daikin, Motores Somfy...)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "options": {
+                        "variableId": "DetalleTecnico",
+                        "labels": {
+                            "placeholder": "Escribe aquí o salta..."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "necesidades",
+            "title": "Necesidades",
+            "graphCoordinates": {
+                "x": 1200,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-nec-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¿Qué objetivos tienes? (Selecciona varios)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-nec-check",
+                    "outgoingEdgeId": "edge-5",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "nec-ahorro",
+                            "content": "💡 Ahorro Luz/Clima"
+                        },
+                        {
+                            "id": "nec-seguridad",
+                            "content": "🛡️ Seguridad y Cámaras"
+                        },
+                        {
+                            "id": "nec-control",
+                            "content": "📱 Control Remoto (App)"
+                        },
+                        {
+                            "id": "nec-acceso",
+                            "content": "🔑 Apertura Puertas (Gestión Accesos)"
+                        },
+                        {
+                            "id": "nec-voz",
+                            "content": "🗣️ Voz (Alexa/Google)"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "Necesidades",
+                        "isMultipleChoice": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cierre",
+            "title": "Contacto",
+            "graphCoordinates": {
+                "x": 1600,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-fin-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Perfecto! Ya tengo datos suficientes para un primer estudio."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-contacto",
+                    "outgoingEdgeId": "edge-fin",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "Contacto",
+                        "labels": {
+                            "placeholder": "Déjanos tu Email o Teléfono"
+                        }
+                    }
+                },
+                {
+                    "id": "msg-bye",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Recibido! 🚀 Te contactaremos en menos de 24h."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "id": "edge-1",
+            "from": {
+                "eventId": "start"
+            },
+            "to": {
+                "groupId": "bienvenida"
+            }
+        },
+        {
+            "id": "edge-2",
+            "from": {
+                "blockId": "inp-nombre"
+            },
+            "to": {
+                "groupId": "vivienda"
+            }
+        },
+        {
+            "id": "edge-3",
+            "from": {
+                "blockId": "inp-estancias"
+            },
+            "to": {
+                "groupId": "instalaciones"
+            }
+        },
+        {
+            "id": "edge-4",
+            "from": {
+                "blockId": "inp-inst-detalle"
+            },
+            "to": {
+                "groupId": "necesidades"
+            }
+        },
+        {
+            "id": "edge-5",
+            "from": {
+                "blockId": "inp-nec-check"
+            },
+            "to": {
+                "groupId": "cierre"
+            }
+        }
+    ],
+    "variables": [
+        {
+            "id": "Name",
+            "name": "Name",
+            "isSessionVariable": false
+        },
+        {
+            "id": "TipoVivienda",
+            "name": "TipoVivienda",
+            "isSessionVariable": false
+        },
+        {
+            "id": "DescripcionEspacio",
+            "name": "DescripcionEspacio",
+            "isSessionVariable": false
+        },
+        {
+            "id": "Instalaciones",
+            "name": "Instalaciones",
+            "isSessionVariable": false
+        },
+        {
+            "id": "DetalleTecnico",
+            "name": "DetalleTecnico",
+            "isSessionVariable": false
+        },
+        {
+            "id": "Necesidades",
+            "name": "Necesidades",
+            "isSessionVariable": false
+        },
+        {
+            "id": "Contacto",
+            "name": "Contacto",
+            "isSessionVariable": false
+        }
+    ],
+    "theme": {
+        "general": {
+            "font": "Outfit"
+        }
+    },
+    "settings": {
+        "general": {
+            "isBrandingEnabled": false
+        }
+    }
+}

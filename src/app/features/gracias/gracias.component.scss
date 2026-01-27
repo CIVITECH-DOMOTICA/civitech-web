@@ -1,26 +1,126 @@
-@import "../../../styles.scss";
+@import '../../../styles/variables';
 
-.gracias-content {
-  padding: 50px;
-  background-color: $primary-color;
-  background-image: url('/../../../assets/images/home_fondoAmarillo.png');
-  text-align: center;
-  background-size: cover;
+.thank-you-container {
+  min-height: 90vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-family: 'Hanken Grotesk', sans-serif;
+  background: linear-gradient(135deg, $light-gray 0%, #fff5f5 100%);
+  padding: $spacing-4;
 }
 
-.btn-volver {
-  margin-top: 2rem;
-  padding: 12px 24px;
-  background-color: white;
-  color: $primary-color;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+.content-card {
+  background: white;
+  padding: $spacing-10;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-2xl;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: $primary-gradient;
+  }
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background: $p-50;
+  color: $p-500;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto $spacing-6;
+  animation: success-bounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+h1 {
+  font-family: $font-primary;
+  font-size: $text-4xl;
+  font-weight: $font-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-2;
+}
+
+.subtitle {
+  font-size: $text-lg;
+  color: $text-secondary;
+  margin-bottom: $spacing-6;
+}
+
+.message-body {
+  background: $bg-light;
+  padding: $spacing-6;
+  border-radius: $radius-lg;
+  margin-bottom: $spacing-8;
+  color: $slate-600;
+  line-height: $leading-relaxed;
+
+  strong {
+    color: $p-600;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-4;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .btn-primary {
+    background: $primary-color;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: $radius-full;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: $p-600;
+    }
+  }
+
+  .btn-secondary {
+    background: #25d366; // WhatsApp Green
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: $radius-full;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+  }
+}
+
+@keyframes success-bounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

@@ -1,0 +1,433 @@
+{
+    "version": "6.1",
+    "id": "civitech-web-bot-v2",
+    "name": "Civitech Presupuestos V2",
+    "events": [
+        {
+            "id": "start-event",
+            "outgoingEdgeId": "edge-to-welcome",
+            "graphCoordinates": {
+                "x": 0,
+                "y": 0
+            },
+            "type": "start"
+        }
+    ],
+    "groups": [
+        {
+            "id": "group-welcome",
+            "title": "Bienvenida",
+            "graphCoordinates": {
+                "x": 1,
+                "y": 148
+            },
+            "blocks": [
+                {
+                    "id": "block-text-welcome",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Hola! 👋 Bienvenido a "
+                                    },
+                                    {
+                                        "bold": true,
+                                        "text": "Civitech"
+                                    },
+                                    {
+                                        "text": "."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "block-text-question-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¿En qué podemos ayudarte hoy?"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "block-choice-start",
+                    "outgoingEdgeId": "edge-to-name",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "item-presupuesto",
+                            "content": "💰 Quiero un presupuesto"
+                        },
+                        {
+                            "id": "item-duda",
+                            "content": "🤔 Tengo una duda técnica"
+                        },
+                        {
+                            "id": "item-hablar",
+                            "content": "📞 Quiero que me llaméis"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "group-name",
+            "title": "Nombre",
+            "graphCoordinates": {
+                "x": 340,
+                "y": 143
+            },
+            "blocks": [
+                {
+                    "id": "block-text-name",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Perfecto. Para dirigirme a ti, ¿cómo te llamas?"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "block-input-name",
+                    "outgoingEdgeId": "edge-to-vivienda",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "var-name",
+                        "labels": {
+                            "placeholder": "Tu nombre..."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "group-vivienda",
+            "title": "Tipo Vivienda",
+            "graphCoordinates": {
+                "x": 680,
+                "y": 143
+            },
+            "blocks": [
+                {
+                    "id": "block-text-vivienda",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Encantado/a {{Name}}. ¿Para qué tipo de inmueble sería el proyecto?"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "block-choice-vivienda",
+                    "outgoingEdgeId": "edge-to-services",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "item-piso",
+                            "content": "🏢 Piso / Apartamento"
+                        },
+                        {
+                            "id": "item-chalet",
+                            "content": "🏡 Chalet / Unifamiliar"
+                        },
+                        {
+                            "id": "item-local",
+                            "content": "🏪 Local / Oficina"
+                        },
+                        {
+                            "id": "item-otro",
+                            "content": "Otro"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "var-tipo-vivienda"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "group-services",
+            "title": "Intereses (Múltiple)",
+            "graphCoordinates": {
+                "x": 1020,
+                "y": 144
+            },
+            "blocks": [
+                {
+                    "id": "block-text-services",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¿Qué te interesa integrar? (Puedes seleccionar varios si quieres, o escribir abajo)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "block-choice-services",
+                    "outgoingEdgeId": "edge-to-details",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "item-luces",
+                            "content": "💡 Iluminación"
+                        },
+                        {
+                            "id": "item-clima",
+                            "content": "🌡️ Clima/Calefacción"
+                        },
+                        {
+                            "id": "item-seguridad",
+                            "content": "🛡️ Alarmas y Cámaras"
+                        },
+                        {
+                            "id": "item-persianas",
+                            "content": "🪟 Persianas/Toldos"
+                        },
+                        {
+                            "id": "item-riego",
+                            "content": "💧 Riego/Jardín"
+                        },
+                        {
+                            "id": "item-red",
+                            "content": "📶 WiFi y Redes"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "var-interes",
+                        "isMultipleChoice": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": "group-details",
+            "title": "Detalles Libres",
+            "graphCoordinates": {
+                "x": 1360,
+                "y": 144
+            },
+            "blocks": [
+                {
+                    "id": "block-text-details",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Entendido. ¿Quieres contarnos algo más específico sobre lo que necesitas? (Ej: 'Tengo persianas viejas', 'Quiero controlar la piscina'...). Si no, escribe 'No'."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "block-input-details",
+                    "outgoingEdgeId": "edge-to-email",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "var-detalles-libres",
+                        "isLong": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": "group-email",
+            "title": "Email y Cierre",
+            "graphCoordinates": {
+                "x": 1700,
+                "y": 141
+            },
+            "blocks": [
+                {
+                    "id": "block-text-email-ask",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Perfecto! Un ingeniero revisará tus necesidades. ¿A qué email o WhatsApp te enviamos la propuesta?"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "block-input-email",
+                    "outgoingEdgeId": "edge-to-bye",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "var-contacto",
+                        "labels": {
+                            "placeholder": "Email o Teléfono..."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "group-bye",
+            "title": "Despedida",
+            "graphCoordinates": {
+                "x": 2040,
+                "y": 143
+            },
+            "blocks": [
+                {
+                    "id": "block-text-bye",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Recibido! 🚀 Nos pondremos en contacto contigo en breve. ¡Gracias!"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "id": "edge-to-welcome",
+            "from": {
+                "eventId": "start-event"
+            },
+            "to": {
+                "groupId": "group-welcome"
+            }
+        },
+        {
+            "id": "edge-to-name",
+            "from": {
+                "blockId": "block-choice-start"
+            },
+            "to": {
+                "groupId": "group-name"
+            }
+        },
+        {
+            "id": "edge-to-vivienda",
+            "from": {
+                "blockId": "block-input-name"
+            },
+            "to": {
+                "groupId": "group-vivienda"
+            }
+        },
+        {
+            "id": "edge-to-services",
+            "from": {
+                "blockId": "block-choice-vivienda"
+            },
+            "to": {
+                "groupId": "group-services"
+            }
+        },
+        {
+            "id": "edge-to-details",
+            "from": {
+                "blockId": "block-choice-services"
+            },
+            "to": {
+                "groupId": "group-details"
+            }
+        },
+        {
+            "id": "edge-to-email",
+            "from": {
+                "blockId": "block-input-details"
+            },
+            "to": {
+                "groupId": "group-email"
+            }
+        },
+        {
+            "id": "edge-to-bye",
+            "from": {
+                "blockId": "block-input-email"
+            },
+            "to": {
+                "groupId": "group-bye"
+            }
+        }
+    ],
+    "variables": [
+        {
+            "id": "var-name",
+            "name": "Name",
+            "isSessionVariable": false
+        },
+        {
+            "id": "var-contacto",
+            "name": "Contacto",
+            "isSessionVariable": false
+        },
+        {
+            "id": "var-tipo-vivienda",
+            "name": "TipoVivienda",
+            "isSessionVariable": false
+        },
+        {
+            "id": "var-interes",
+            "name": "Interes",
+            "isSessionVariable": false
+        },
+        {
+            "id": "var-detalles-libres",
+            "name": "Detalles",
+            "isSessionVariable": false
+        }
+    ],
+    "theme": {},
+    "settings": {
+        "general": {
+            "isBrandingEnabled": false
+        }
+    },
+    "icon": "🤖"
+}

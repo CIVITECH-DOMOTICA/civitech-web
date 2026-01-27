@@ -1,0 +1,532 @@
+{
+    "version": "6.1",
+    "id": "civitech-bot-v3-pro",
+    "name": "Civitech Auditoría Premium",
+    "events": [
+        {
+            "id": "start",
+            "outgoingEdgeId": "edge-1",
+            "graphCoordinates": {
+                "x": 0,
+                "y": 0
+            },
+            "type": "start"
+        }
+    ],
+    "groups": [
+        {
+            "id": "bienvenida",
+            "title": "Bienvenida y Nombre",
+            "graphCoordinates": {
+                "x": 0,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Hola! 👋 Bienvenido a la Auditoría Inteligente de "
+                                    },
+                                    {
+                                        "bold": true,
+                                        "text": "Civitech"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "msg-2",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Voy a hacerte unas preguntas breves para diseñar tu presupuesto a medida (como si un ingeniero visitara tu casa ahora mismo)."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-nombre",
+                    "outgoingEdgeId": "edge-2",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "Name",
+                        "labels": {
+                            "placeholder": "¿Cómo te llamas?"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "vivienda",
+            "title": "Descripción Vivienda",
+            "graphCoordinates": {
+                "x": 400,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-viv-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Encantado {{Name}}. Empecemos por la vivienda."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-tipo-viv",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "viv-piso",
+                            "content": "🏢 Piso"
+                        },
+                        {
+                            "id": "viv-chalet",
+                            "content": "🏡 Chalet / Unifamiliar"
+                        },
+                        {
+                            "id": "viv-obra",
+                            "content": "🏗️ Obra Nueva"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "TipoVivienda"
+                    }
+                },
+                {
+                    "id": "msg-viv-2",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Describe brevemente las estancias (Ej: Salon, Cocina, 3 Hab, 2 Baños, Pasillo largo, Terraza...)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-estancias",
+                    "outgoingEdgeId": "edge-3",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "Estancias",
+                        "isLong": true,
+                        "labels": {
+                            "placeholder": "Ej: Entrada, Cocina, Salón, 2 Baños..."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "instalaciones",
+            "title": "Instalaciones Actuales",
+            "graphCoordinates": {
+                "x": 800,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-inst-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Hablemos de lo que YA tienes instalado. Marca todo lo que aplique:"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-inst-check",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "inst-persianas",
+                            "content": "🪟 Persianas Motorizadas"
+                        },
+                        {
+                            "id": "inst-calefaccion",
+                            "content": "🔥 Calefacción Gas/Individual"
+                        },
+                        {
+                            "id": "inst-aire",
+                            "content": "❄️ Aire Acondicionado"
+                        },
+                        {
+                            "id": "inst-solar",
+                            "content": "☀️ Placas Solares"
+                        },
+                        {
+                            "id": "inst-toldo",
+                            "content": "⛱️ Toldo Motorizado"
+                        },
+                        {
+                            "id": "inst-riego",
+                            "content": "💧 Riego Automático"
+                        },
+                        {
+                            "id": "inst-alarma",
+                            "content": "🚨 Alarma Existente"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "Instalaciones",
+                        "isMultipleChoice": true
+                    }
+                },
+                {
+                    "id": "msg-inst-2",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¿Puedes detallar marcas/modelos importantes? (Ej: Caldera Saunier, Aire Daikin, Videoportero Fermax...)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-inst-detalle",
+                    "outgoingEdgeId": "edge-4",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "DetalleTecnico",
+                        "labels": {
+                            "placeholder": "Escribe aquí o pon 'No lo sé'"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "deseos-basicos",
+            "title": "Automatizaciones (Básico)",
+            "graphCoordinates": {
+                "x": 1200,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-deseo-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "Ahora la magia ✨. ¿Qué te gustaría que hiciera tu casa? (Selecciona)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-deseos-check",
+                    "outgoingEdgeId": "edge-5",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "d-luces-pasillo",
+                            "content": "💡 Luces automáticas (Pasillos/Baños)"
+                        },
+                        {
+                            "id": "d-persianas-sol",
+                            "content": "☀️ Persianas inteligentes (Amanecer/Anochecer)"
+                        },
+                        {
+                            "id": "d-voz",
+                            "content": "🗣️ Control por Voz (Alexa/Google)"
+                        },
+                        {
+                            "id": "d-app",
+                            "content": "📱 Control total desde App Móvil"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "DeseosBasicos",
+                        "isMultipleChoice": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": "deseos-avanzados",
+            "title": "Automatizaciones (Avanzado)",
+            "graphCoordinates": {
+                "x": 1600,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-adv-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¿Vamos un paso más allá? Marca las funciones PRO:"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-adv-check",
+                    "outgoingEdgeId": "edge-6",
+                    "type": "choice input",
+                    "items": [
+                        {
+                            "id": "da-clima-geo",
+                            "content": "🌡️ Clima/Calefacción por Geolocalización (se apaga si salgo)"
+                        },
+                        {
+                            "id": "da-avisos",
+                            "content": "🔔 Aviso Ventana Abierta / Intrusión a Telegram"
+                        },
+                        {
+                            "id": "da-simulacion",
+                            "content": "👻 Simulación de Presencia (persianas/luces)"
+                        },
+                        {
+                            "id": "da-toldo",
+                            "content": "☔ Toldo Inteligente (Lluvia/Sol)"
+                        },
+                        {
+                            "id": "da-solar",
+                            "content": "🔋 Gestión Excedentes Solares"
+                        },
+                        {
+                            "id": "da-bonsai",
+                            "content": "🌳 Cuidar los Bonsáis / Riego"
+                        }
+                    ],
+                    "options": {
+                        "variableId": "DeseosAvanzados",
+                        "isMultipleChoice": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": "contacto",
+            "title": "Contacto y Cierre",
+            "graphCoordinates": {
+                "x": 2000,
+                "y": 150
+            },
+            "blocks": [
+                {
+                    "id": "msg-fin-1",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Espectacular! Con esto tenemos para un presupuesto muy preciso."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "msg-fin-2",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¿A qué email o WhatsApp quieres que te lo enviemos?"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "inp-contacto",
+                    "outgoingEdgeId": "edge-fin",
+                    "type": "text input",
+                    "options": {
+                        "variableId": "Contacto",
+                        "labels": {
+                            "placeholder": "Email o Teléfono"
+                        }
+                    }
+                },
+                {
+                    "id": "block-bye",
+                    "type": "text",
+                    "content": {
+                        "richText": [
+                            {
+                                "type": "p",
+                                "children": [
+                                    {
+                                        "text": "¡Recibido! 🚀 Nos ponemos manos a la obra."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "id": "edge-1",
+            "from": {
+                "eventId": "start"
+            },
+            "to": {
+                "groupId": "bienvenida"
+            }
+        },
+        {
+            "id": "edge-2",
+            "from": {
+                "blockId": "inp-nombre"
+            },
+            "to": {
+                "groupId": "vivienda"
+            }
+        },
+        {
+            "id": "edge-3",
+            "from": {
+                "blockId": "inp-estancias"
+            },
+            "to": {
+                "groupId": "instalaciones"
+            }
+        },
+        {
+            "id": "edge-4",
+            "from": {
+                "blockId": "inp-inst-detalle"
+            },
+            "to": {
+                "groupId": "deseos-basicos"
+            }
+        },
+        {
+            "id": "edge-5",
+            "from": {
+                "blockId": "inp-deseos-check"
+            },
+            "to": {
+                "groupId": "deseos-avanzados"
+            }
+        },
+        {
+            "id": "edge-6",
+            "from": {
+                "blockId": "inp-adv-check"
+            },
+            "to": {
+                "groupId": "contacto"
+            }
+        }
+    ],
+    "variables": [
+        {
+            "id": "Name",
+            "name": "Name",
+            "isSessionVariable": false
+        },
+        {
+            "id": "TipoVivienda",
+            "name": "TipoVivienda",
+            "isSessionVariable": false
+        },
+        {
+            "id": "Estancias",
+            "name": "Estancias",
+            "isSessionVariable": false
+        },
+        {
+            "id": "Instalaciones",
+            "name": "Instalaciones",
+            "isSessionVariable": false
+        },
+        {
+            "id": "DetalleTecnico",
+            "name": "DetalleTecnico",
+            "isSessionVariable": false
+        },
+        {
+            "id": "DeseosBasicos",
+            "name": "DeseosBasicos",
+            "isSessionVariable": false
+        },
+        {
+            "id": "DeseosAvanzados",
+            "name": "DeseosAvanzados",
+            "isSessionVariable": false
+        },
+        {
+            "id": "Contacto",
+            "name": "Contacto",
+            "isSessionVariable": false
+        }
+    ],
+    "theme": {
+        "general": {
+            "font": "Inter"
+        }
+    },
+    "settings": {
+        "general": {
+            "isBrandingEnabled": false
+        }
+    }
+}

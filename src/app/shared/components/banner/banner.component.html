@@ -1,4 +1,7 @@
-<div class="banner-container" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}">
+<div class="banner-container" [ngStyle]="!videoUrl ? {'background-image': 'url(' + imageUrl + ')'} : {}">
+  <!-- Video Background -->
+  <video *ngIf="videoUrl" [src]="videoUrl" autoplay muted loop playsinline class="banner-video"></video>
+
   <div class="overlay"></div>
   <div class="banner-content" data-aos="fade-right" data-aos-duration="1200">
     <div class="mensaje-container">
