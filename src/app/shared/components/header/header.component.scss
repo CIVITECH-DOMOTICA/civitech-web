@@ -47,7 +47,7 @@ header {
 }
 
 .logo img {
-  height: 60px; // Larger logo as requested
+  height: 85px; // Logo aumentado significativamente
   width: auto;
   filter: brightness(0) invert(1);
   @include tr-smooth;
