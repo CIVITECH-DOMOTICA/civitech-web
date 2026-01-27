@@ -1,8 +1,26 @@
-<p-carousel [value]="opiniones" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" [circular]="true" [autoplayInterval]="6000">
+<p-carousel [value]="opiniones" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions"
+  [circular]="true" [autoplayInterval]="6000">
   <ng-template pTemplate="item" let-opinion>
     <div class="resenia-container">
-        <div class="datos-resenia-content ">
-          <img class="imagen-carrousel" [src]="opinion.src" >
+      <div class="datos-resenia-content clickable" (click)="onCardClick(opinion)">
+        <img class="imagen-carrousel" [src]="opinion.src || opinion.imagenPrincipal" [alt]="opinion.nombre">
+
+        <!-- Si es un proyecto (tiene slug) mostramos info detallada -->
+        <ng-container *ngIf="opinion.slug">
+          <div class="proyecto-badge" *ngIf="opinion.tipo">{{opinion.tipo}}</div>
+          <h5>{{opinion.nombre}}</h5>
+          <p class="proyecto-ubicacion" *ngIf="opinion.ubicacion">
+            <i class="fas fa-map-marker-alt"></i> {{opinion.ubicacion}}
+          </p>
+          <p class="proyecto-resumen">{{opinion.resumen || opinion.resenia || opinion.opinion}}</p>
+          <div class="proyecto-stats" *ngIf="opinion.fecha || opinion.duracion">
+            <span *ngIf="opinion.fecha"><i class="fas fa-calendar"></i> {{opinion.fecha}}</span>
+            <span *ngIf="opinion.duracion"><i class="fas fa-clock"></i> {{opinion.duracion}}</span>
+          </div>
+        </ng-container>
+
+        <!-- Si es una opinión normal -->
+        <ng-container *ngIf="!opinion.slug">
           <h5>{{opinion.nombre}}</h5>
           <div class="estrellas" style="font-size: 24px; color: #f4b183;">
             <i class="fa-solid fa-star"></i>
@@ -11,8 +29,9 @@
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
           </div>
-          <p>{{opinion.resenia}}</p>
-        </div>
+          <p>{{opinion.resenia || opinion.opinion}}</p>
+        </ng-container>
+      </div>
     </div>
   </ng-template>
 </p-carousel>

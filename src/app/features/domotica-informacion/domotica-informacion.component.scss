@@ -1,25 +1,49 @@
-@import "../../../styles.scss";
+@import '../../../styles/variables';
 
-.proyectos-content
-{
-  padding: 50px ;
-  background-color: $primary-color;
-  background-image: url('/../../../assets/images/home_fondoAmarillo.png');
-  text-align: center;
+.proyectos-content {
+  height: 400px;
+  background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(102, 126, 234, 0.8) 100%), url('/../../../assets/images/contact_3.jpg');
   background-size: cover;
-  flex-direction: column;
-  box-sizing: border-box;
-  display: flex;
-  place-content: center flex-start;
-  align-items: center;
-  justify-content: center;
+  background-position: center;
+  @include flex-center;
+  text-align: center;
   color: white;
-  font-family: 'Hanken Grotesk', sans-serif;
+
+  h1 {
+    font-family: $font-primary;
+    font-size: $text-6xl;
+    font-weight: $font-extrabold;
+    margin-bottom: $spacing-4;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    @include responsive($breakpoint-md) {
+      font-size: $text-4xl;
+    }
+  }
+
+  p {
+    font-size: $text-xl;
+    max-width: 600px;
+    margin: 0 auto $spacing-8;
+    color: rgba(255, 255, 255, 0.9);
+
+    @include responsive($breakpoint-md) {
+      font-size: $text-lg;
+    }
+  }
 }
 
-.boton-proyectos
-{
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+.boton-proyectos {
+  @extend %btn-modern;
+  @extend %btn-glass;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: $spacing-4 $spacing-10;
+  font-size: $text-base;
+
+  &:hover {
+    background: white;
+    color: $primary-color;
+    border-color: white;
+  }
 }

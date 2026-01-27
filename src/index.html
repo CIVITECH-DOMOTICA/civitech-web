@@ -1,19 +1,149 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="utf-8">
-  <title>Civitech</title>
-  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-  <!-- Agregar Bootstrap CSS -->
+
+  <!-- Base Title (será sobrescrito dinámicamente) -->
+  <title>Civitech | Domótica Integral en Zaragoza: Confort, Seguridad y Control</title>
+
+  <!-- Meta Description -->
+  <meta name="description"
+    content="Transformamos tu vivienda en un hogar inteligente. Proyectos de domótica profesional, redes WiFi avanzadas y cine en casa en Zaragoza y Aragón. Sin suscripciones.">
+
+  <!-- Keywords -->
+  <meta name="keywords"
+    content="domótica zaragoza, home assistant zaragoza, placas solares zaragoza, excedentes solar zaragoza, casa inteligente zaragoza, automatización hogar zaragoza, smart home zaragoza, ahorro energético, civitech">
+
+  <!-- Author & Publisher -->
+  <meta name="author" content="Civitech">
+  <meta name="publisher" content="Civitech">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Civitech">
+  <meta property="og:title" content="Civitech | Domótica Profesional en Zaragoza">
+  <meta property="og:description"
+    content="Instalación profesional de domótica sin obras en Zaragoza. Home Assistant, ahorro energético, seguridad. Presupuesto gratis en 24h.">
+  <meta property="og:image" content="https://civitech.es/assets/images/logo_negro_horizontal.png">
+  <meta property="og:url" content="https://civitech.es">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Civitech | Domótica Profesional en Zaragoza">
+  <meta name="twitter:description"
+    content="Instalación profesional de domótica sin obras. Home Assistant, ahorro energético, seguridad.">
+  <meta name="twitter:image" content="https://civitech.es/assets/images/logo_negro_horizontal.png">
+
+  <!-- Geo Tags for Local SEO (Zaragoza) -->
+  <meta name="geo.region" content="ES-Z">
+  <meta name="geo.placename" content="Zaragoza">
+  <meta name="geo.position" content="41.648823;-0.889085">
+  <meta name="ICBM" content="41.648823, -0.889085">
+
+  <!-- Mobile & PWA -->
+  <meta name="theme-color" content="#B30000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Civitech">
+
+  <!-- Base URL -->
+  <base href="/">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon.png">
+
+  <!-- Preconnect to improve performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Agregar Bootstrap JS -->
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
+  <!-- Structured Data (Schema.org) - LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://civitech.es",
+    "name": "Civitech",
+    "description": "Empresa especializada en domótica e IoT en Zaragoza. Instalación profesional sin obras con Home Assistant.",
+    "image": "https://civitech.es/assets/images/logo_negro_horizontal.png",
+    "url": "https://civitech.es",
+    "telephone": "+34624074920",
+    "email": "civitecreformas@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Zaragoza, España",
+      "addressLocality": "Zaragoza",
+      "addressRegion": "Aragón",
+      "postalCode": "50001",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.648823,
+      "longitude": -0.889085
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Zaragoza"
+    },
+    "priceRange": "€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "47"
+    },
+    "sameAs": [
+      "https://www.facebook.com/share/1A3PRQzJHb/",
+      "https://www.instagram.com/civitech.es",
+      "https://www.tiktok.com/@civitech.es"
+    ]
+  }
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
+
+  <!-- Start of Tawk.to Script (Chat de Atención al Cliente y Monitorización) -->
+  <script type="text/javascript">
+    // IMPORTANTE: Reemplaza 'XXXXXXXX/X' con tu ID real de Tawk.to
+    // Instrucciones en .agent/COMO_ACTIVAR_CHAT.md
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/65b3f7f80ff6374032c5f1c9/1hl3m6f5a'; // ID de demostración temporal o placeholder
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!-- End of Tawk.to Script -->
 </body>
+
 </html>

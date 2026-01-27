@@ -1,0 +1,92 @@
+@import '../../../../styles/variables';
+
+.stats-container {
+    padding: $spacing-24 0;
+    background: white;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, $p-200, transparent);
+    }
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: $spacing-12;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $spacing-8;
+}
+
+.stat-item {
+    text-align: center;
+    padding: $spacing-12 $spacing-8;
+    background: white;
+    border-radius: $radius-2xl;
+    border: 1px solid $border-color;
+    @include tr-smooth(all, 400ms);
+    position: relative;
+
+    &:hover {
+        transform: translateY(-8px);
+        border-color: $p-500;
+        box-shadow: $shadow-xl;
+
+        .stat-number {
+            transform: scale(1.1);
+        }
+    }
+
+    .stat-number {
+        display: block;
+        font-family: $font-primary;
+        font-size: $text-6xl;
+        font-weight: $font-extrabold;
+        color: $p-500;
+        margin-bottom: $spacing-4;
+        letter-spacing: -0.02em;
+        @include tr-smooth;
+        @include gradient-text($primary-gradient);
+    }
+
+    .stat-label {
+        font-family: $font-secondary;
+        font-size: $text-sm;
+        font-weight: $font-bold;
+        color: $text-secondary;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+    }
+
+    // Aesthetic dot
+    &::after {
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: $p-500;
+        border-radius: 50%;
+        position: absolute;
+        bottom: $spacing-6;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.3;
+    }
+}
+
+@include responsive($breakpoint-md) {
+    .stats-container {
+        padding: $spacing-16 0;
+    }
+
+    .stats-grid {
+        gap: $spacing-6;
+    }
+}

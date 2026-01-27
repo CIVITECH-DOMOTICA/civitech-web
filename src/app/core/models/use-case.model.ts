@@ -1,0 +1,38 @@
+export interface UseCase {
+    id: string;
+    slug: string;
+    titulo: string;
+    subtitulo: string;
+    descripcion: string;
+    descripcionDetallada: string;
+    imagen: string;
+    icono: string; // Font Awesome class
+    categoria: string;
+
+    // Beneficios y características
+    beneficios?: string[];
+    casosUso?: string[];
+    tecnologias?: string[];
+
+    // ROI y ahorro
+    ahorroEstimado?: string;
+    tiempoImplementacion?: string;
+    roi?: string;
+
+    // Ejemplos reales
+    ejemplos?: EjemploImplementacion[];
+
+    // FAQ
+    faqs?: FAQ[];
+}
+
+export interface EjemploImplementacion {
+    titulo: string;
+    descripcion: string;
+    resultado: string;
+}
+
+export interface FAQ {
+    pregunta: string;
+    respuesta: string;
+}

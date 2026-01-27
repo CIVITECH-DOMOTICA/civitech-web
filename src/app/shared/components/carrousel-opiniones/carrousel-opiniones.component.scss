@@ -1,34 +1,160 @@
-@import "../../../../styles.scss";
+@import '../../../../styles/variables';
 
-/* Ajustes generales del contenedor de las reseñas */
-.datos-resenia-content {
-  text-align: center;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-}
 .resenia-container {
-  padding: 50px 50px 30px 50px;
-}
-.datos-resenia-content p{
-  text-align: justify;
-}
-.imagen-carrousel {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.estrellas
-{
-  padding-bottom: 15px;
+  padding: $spacing-12 $spacing-4;
+  background: white;
 }
 
-/*----------------------------------------Asegura que el carrusel se adapte a móviles---------------------------------*/
-// @media (max-width: 768px) {
+.datos-resenia-content {
+  background: white;
+  border-radius: $radius-lg;
+  padding: $spacing-8 $spacing-6;
+  margin: 0 $spacing-2;
+  text-align: center;
+  border: 1px solid $border-color;
+  box-shadow: $shadow-sm;
+  @include tr-smooth(all, $transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-// }
+  &.clickable {
+    cursor: pointer;
+  }
 
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-md;
+    border-color: $p-500;
+  }
 
+  // Override internal HTML tags since they are used directly in template
+  .imagen-carrousel {
+    width: 60px;
+    height: 60px;
+    border-radius: $radius-full;
+    object-fit: cover;
+    margin: 0 auto $spacing-4;
+    border: 2px solid $p-100;
+  }
+
+  h5 {
+    font-family: $font-primary;
+    font-size: $text-lg;
+    font-weight: $font-bold;
+    color: $dark-bg;
+    margin-bottom: $spacing-2;
+  }
+
+  .estrellas {
+    color: #ffc107 !important; // Gold stars
+    margin-bottom: $spacing-4;
+    font-size: $text-sm !important; // Reduced size
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+  }
+
+  p {
+    font-family: $font-secondary;
+    font-size: $text-sm;
+    color: $text-secondary;
+    line-height: $leading-normal;
+    margin: 0;
+    font-style: italic;
+  }
+
+  // Estilos específicos para proyectos
+  .proyecto-badge {
+    background: $p-500;
+    color: white;
+    padding: $spacing-1 $spacing-3;
+    border-radius: $radius-full;
+    font-size: $text-xs;
+    font-weight: $font-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: $spacing-3;
+    display: inline-block;
+  }
+
+  .proyecto-ubicacion {
+    font-size: $text-xs;
+    color: $p-600;
+    font-style: normal !important;
+    font-weight: $font-semibold;
+    margin: $spacing-2 0 !important;
+
+    i {
+      margin-right: $spacing-1;
+    }
+  }
+
+  .proyecto-resumen {
+    font-size: $text-sm;
+    color: $text-secondary;
+    line-height: $leading-normal;
+    margin: $spacing-3 0 !important;
+    font-style: normal !important;
+  }
+
+  .proyecto-stats {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-4;
+    margin-top: $spacing-4;
+
+    span {
+      font-size: $text-xs;
+      color: $text-secondary;
+      display: flex;
+      align-items: center;
+      gap: $spacing-1;
+
+      i {
+        color: $p-500;
+      }
+    }
+  }
+}
+
+// PrimeNG Carousel Customization
+:host ::ng-deep {
+  .p-carousel-indicators {
+    padding: $spacing-8 0 0;
+
+    .p-carousel-indicator {
+      &.p-highlight button {
+        background-color: $p-500;
+        width: 25px;
+      }
+
+      button {
+        background-color: #cbd5e1;
+        width: 8px;
+        height: 8px;
+        border-radius: $radius-full;
+        @include tr-smooth(all);
+
+        &:hover {
+          background-color: $p-500;
+        }
+      }
+    }
+  }
+
+  .p-carousel-prev,
+  .p-carousel-next {
+    color: $p-500;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $radius-full;
+    @include tr-smooth;
+
+    &:hover {
+      background: $p-50;
+      color: $p-600;
+    }
+  }
+}

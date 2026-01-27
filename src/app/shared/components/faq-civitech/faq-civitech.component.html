@@ -1,0 +1,19 @@
+<section class="faq-container">
+    <div class="faq-title-area" data-aos="fade-up">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Todo lo que necesitas saber sobre nuestras soluciones de domótica en Zaragoza</p>
+    </div>
+
+    <div class="faq-list">
+        <div class="faq-item" *ngFor="let item of faqs; let i = index" [class.active]="activeIndex === i"
+            (click)="toggleFaq(i)" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+            <div class="faq-question">
+                {{ item.question }}
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                {{ item.answer }}
+            </div>
+        </div>
+    </div>
+</section>

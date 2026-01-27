@@ -1,16 +1,11 @@
-<div class="container-fluid tecnologia-content">
-  <div class=" row row-tecnologia">
-    <div class="col-md-6 col-sm-12 col-xs-12 fondo-container-tecnologia">
-      <div>
-        <h1>
-         {{mensaje}}
-        </h1>
-        <button class="boton-proyectos" (click)="navigate()">{{ boton }}</button>
+<div class="container-fluid tecnologia-content" data-aos="fade-up">
+  <div class="row row-tecnologia">
+    <div class="col-md-12 fondo-container-tecnologia">
+      <div data-aos="zoom-in" data-aos-delay="200">
+        <h1>{{mensaje}}</h1>
+        <button class="boton-proyectos" (click)="navigate()" data-aos="fade-up" data-aos-delay="400">{{ boton
+          }}</button>
       </div>
-    </div>
-    <div class="col-md-6 col-sm-12 col-xs-12 imagen-container-tecnologia">
-        <!-- <img src="../../../../assets/images/domotica.jpg" alt=""> -->
     </div>
   </div>
 </div>
-

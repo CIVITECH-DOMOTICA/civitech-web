@@ -1,0 +1,16 @@
+<div class="cookie-banner" *ngIf="showBanner" data-aos="fade-up" data-aos-offset="0">
+    <div class="cookie-content">
+        <div class="cookie-icon">
+            <i class="fas fa-cookie-bite"></i>
+        </div>
+        <div class="cookie-text">
+            <h4>¿Aceptas una galletita?</h4>
+            <p>Utilizamos cookies propias y de terceros para mejorar tu experiencia y analizar el tráfico para que
+                Civitech llegue a más hogares. <a href="/privacidad">Leer política</a></p>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn-decline" (click)="declineCookies()">Solo esenciales</button>
+            <button class="btn-accept" (click)="acceptCookies()">Aceptar todas</button>
+        </div>
+    </div>
+</div>

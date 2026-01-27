@@ -1,66 +1,120 @@
-@import "../../../../styles.scss";
+@import '../../../../styles/variables';
+
+.contacto-formulario-content {
+  padding: $spacing-24 $spacing-4;
+  background: white;
+}
 
 .contact-form {
-  max-width: 60%;
+  max-width: 900px;
   width: 100%;
-  border: none;
-  margin-top: 60px;
-  margin-bottom: 100px;
-  font-family: 'Hanken Grotesk', sans-serif;
- border-radius: 5px; /* Bordes redondeados */
-  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.1); /* Sombra difusa */
-  padding: 40px  20px!important;
+  padding: $spacing-12;
+  background: white;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-2xl;
+  border: 1px solid $border-color;
+  position: relative;
+  overflow: hidden;
+
+  // Aesthetic accent
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: $primary-gradient;
+  }
+
+  @include responsive($breakpoint-md) {
+    padding: $spacing-8 $spacing-6;
+  }
 }
 
-form
-{
-  border: none;
-  font-size: 15px !important;
-}
-label {
-  font-weight: 500;
+.item-contact {
+  margin-bottom: $spacing-6;
+
+  label {
+    display: block;
+    font-family: $font-primary;
+    font-weight: $font-bold;
+    margin-bottom: $spacing-2;
+    color: $dark-bg;
+    font-size: $text-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-control {
+    width: 100%;
+    border-radius: $radius-md;
+    padding: $spacing-4;
+    border: 1px solid $border-color;
+    background: $bg-light;
+    font-family: $font-secondary;
+    @include tr-smooth;
+
+    &:focus {
+      border-color: $p-500;
+      background: white;
+      box-shadow: 0 0 0 4px rgba($p-500, 0.1);
+      outline: none;
+    }
+  }
+
+  textarea.form-control {
+    min-height: 150px;
+    resize: none;
+  }
 }
 
-p-checkbox {
-  flex-shrink: 0;
+.item-contact-terminos,
+.item-contact-politica {
+  gap: $spacing-3;
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: $p-500;
+  }
+
+  label {
+    font-size: $text-sm;
+    color: $text-secondary;
+    line-height: $leading-relaxed;
+    cursor: pointer;
+    margin: 0;
+
+    strong {
+      color: $dark-bg;
+    }
+  }
 }
 
-.item-contact label{
-  padding-bottom: 10px !important;
-}
 .btn-enviar {
-  background-color: $primary-color;
-  border-radius: 6px;
-  border: none;
+  // Fixed class name to match HTML
+  @extend %btn-modern;
+  background: $p-500 !important;
+  color: white !important;
   width: 100%;
-  color: white;
-  padding: 10px 5px;
-  margin-top: 20px;
-}
+  padding: $spacing-5;
+  font-size: $text-lg;
+  font-weight: $font-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: $radius-full;
+  box-shadow: $shadow-primary;
+  margin-top: $spacing-6;
 
-.form-control
-{
-  background-color: #F9F9F9 !important;
-  border: none !important;
-  border-radius: 4px !important;
-padding: 10px 30px 10px 10px !important;
-}
+  &:hover {
+    background: $p-600 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(179, 0, 0, 0.3);
+  }
 
-.item-contact
-{
-  padding: 0px 30px!important;
-}
-
-.item-contact-terminos
-{
-  margin-top: 30px;
-  font-size: 12px;
-  text-align: center !important;
-}
-
-.item-contact-politica
-{
-  font-size: 12px;
-  margin-top: 15px;
-  text-align: center !important;
+  &:active {
+    transform: translateY(-1px);
+  }
 }

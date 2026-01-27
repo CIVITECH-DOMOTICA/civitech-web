@@ -1,38 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProyectosService } from '../../core/services/proyectos.service';
+import { Proyecto } from '../../core/models/proyecto.model';
 
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
   styleUrls: ['./proyectos.component.scss']
 })
-export class ProyectosComponent {
-  constructor(private router: Router) {}
-  urlBoton: string ='/acerca-de-nosotros'
-  opiniones = [
+export class ProyectosComponent implements OnInit {
+  urlBoton: string = '/acerca-de-nosotros';
+  proyectos: Proyecto[] = [];
 
-    {
-      src:'/../../../../assets/images/cliente1.jpg',
-      nombre: 'Domotizacion Casa Rural en Asturias',
-      resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
-    },
-    {
-      src:'/../../../../assets/images/cliente3.jpg',
-      nombre: 'Monitorizacion de Consumo Energetico Chalet en Barcelona',
-      resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
-    },
-    {
-      src:'/../../../../assets/images/cliente2.jpg',
-      nombre: 'Domotizacion Piso en Castellon de la Plana',
-      resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
-    }
-  ];
+  constructor(
+    private router: Router,
+    private proyectosService: ProyectosService
+  ) { }
+
+  ngOnInit(): void {
+    this.proyectos = this.proyectosService.getProyectos();
+  }
 
   navigate(): void {
     if (this.urlBoton) {
       this.router.navigateByUrl(this.urlBoton);
     } else {
       console.warn('URL de destino no válida');
+    }
+  }
+
+  verDetalle(proyecto: Proyecto): void {
+    if (proyecto && proyecto.slug) {
+      this.router.navigate(['/proyectos', proyecto.slug]);
     }
   }
 }

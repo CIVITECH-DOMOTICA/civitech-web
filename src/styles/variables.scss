@@ -1,11 +1,199 @@
-/* You can add global styles to this file, and also import other style files */
-// Variables de colores
-$primary-color: #B30000;
-$secondary-color: #121524;
-$background-color: #f8f9fa;
-$text-color-primary: #4F4F4F;
-$text-color-secundary: #A7A7A7;
-// Variables de fuente
-$font-title: 'Hanken Grotesk', sans-serif;
-$font-subtitle: 'Hanken Grotesk', sans-serif;
-$font-body: 'Hanken Grotesk', sans-serif;
+// ================================
+// 🎨 CIVITECH - PREMIUM RED IDENTITY SYSTEM
+// Modern SaaS Aesthetic with Civitech Red as Core
+// ================================
+
+// ===== COLORS =====
+// Core Brand: Civitech Red
+$p-50: #fff5f5;
+$p-100: #ffe3e3;
+$p-200: #ffc9c9;
+$p-300: #ffa8a8;
+$p-400: #ff6b6b;
+$p-500: #B30000; // Primary Brand Red
+$p-600: #900000; // Deep Red
+$p-700: #7d0000;
+$p-800: #600000;
+$p-900: #450000;
+
+// Semantic Colors
+$civitech-red: $p-500;
+$dark-bg: #0f172a; // Slate-900
+$dark-navy: #1e293b; // Slate-800
+$slate-700: #334155;
+$slate-600: #475569;
+$slate-500: #64748b;
+$light-gray: #f8fafc;
+$border-color: rgba(0, 0, 0, 0.08);
+
+// Roles
+$primary-color: $p-500;
+$secondary-color: #ff6b6b;
+$text-primary: #1e293b;
+$text-secondary: #475569;
+$text-muted: #64748b;
+$text-light: #cbd5e1; // ADDED
+$text-white: #ffffff;
+$bg-white: #ffffff;
+$bg-light: #f8fafc;
+
+// Gradients (Civitech Red Focused)
+$primary-gradient: linear-gradient(135deg, #B30000 0%, #7d0000 100%);
+$secondary-gradient: linear-gradient(135deg, #ff6b6b 0%, #B30000 100%);
+$accent-gradient: linear-gradient(135deg, #B30000 0%, #ff4d4d 100%);
+$dark-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+
+// ===== MEASURES =====
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-2xl: 24px;
+$radius-3xl: 32px;
+$radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+$shadow-2xl: 0 35px 60px -15px rgba(0, 0, 0, 0.25);
+$shadow-primary: 0 10px 30px rgba(179, 0, 0, 0.2);
+
+// ===== TYPOGRAPHY =====
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+$font-primary: 'Outfit', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 1.875rem;
+$text-4xl: 2.25rem;
+$text-5xl: 3rem;
+$text-6xl: 3.75rem;
+$text-7xl: 4.5rem;
+
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+$leading-normal: 1.5;
+$leading-relaxed: 1.7;
+$leading-tight: 1.2;
+
+// ===== SPACING =====
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+$spacing-10: 2.5rem;
+$spacing-12: 3rem;
+$spacing-16: 4rem;
+$spacing-20: 5rem;
+$spacing-24: 6rem;
+$spacing-32: 8rem;
+$spacing-base: 1rem;
+
+// ===== Z-INDEX =====
+$z-negative: -1;
+$z-elevate: 1;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal: 1050;
+$z-modal-backdrop: 1040;
+
+// ===== ANIMATION =====
+$transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+// ===== BREAKPOINTS =====
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// ===== MIXINS =====
+@mixin responsive($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin glass($opacity: 0.1, $blur: 10px, $border: 0.1) {
+    background: rgba(255, 255, 255, $opacity);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid rgba(255, 255, 255, $border);
+}
+
+@mixin gradient-text($gradient: $primary-gradient) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin tr-smooth($prop: all, $time: $transition-base, $ease: $ease-out) {
+    transition: $prop $time $ease;
+}
+
+@mixin hover-lift($dist: -8px) {
+    transform: translateY($dist);
+    box-shadow: $shadow-lg;
+}
+
+// ===== PLACEHOLDERS =====
+%btn-modern {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2.5rem;
+    font-family: $font-primary;
+    font-weight: 700;
+    border-radius: $radius-full;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    @include tr-smooth;
+    overflow: hidden;
+}
+
+%btn-primary {
+    background: $primary-gradient;
+    color: white !important;
+    box-shadow: $shadow-primary;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(179, 0, 0, 0.35);
+    }
+}
+
+%btn-glass {
+    @include glass(0.1, 10px, 0.2);
+    color: white !important;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+}

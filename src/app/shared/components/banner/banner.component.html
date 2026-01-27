@@ -1,11 +1,11 @@
-
 <div class="banner-container" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}">
   <div class="overlay"></div>
-  <div class="banner-content">
+  <div class="banner-content" data-aos="fade-right" data-aos-duration="1200">
     <div class="mensaje-container">
       <div class="mensaje-items">
-        <h1>{{mensaje}}</h1>
-        <button class="boton-proyectos" (click)="navigate()">{{textoBoton}}</button>
+        <h1 data-aos="fade-up" data-aos-delay="200">{{mensaje}}</h1>
+        <button class="boton-proyectos" (click)="navigate()" data-aos="fade-up"
+          data-aos-delay="400">{{textoBoton}}</button>
       </div>
     </div>
   </div>

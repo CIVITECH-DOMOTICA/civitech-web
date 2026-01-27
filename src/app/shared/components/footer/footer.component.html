@@ -8,10 +8,14 @@
             <div class="siguenos">
               <p><b class="color-white titulo">Siguenos</b></p>
               <p class="redes">
-                <a href="https://www.facebook.com/share/1A3PRQzJHb/" target="_blank"><span class="color-gris"><i class="fa-brands fa-facebook-f"></i></span></a>
-                <a href="https://www.instagram.com/civitech.es?igsh=MTVxNjQwcjkwODNsaw==" target="_blank"><span class="color-gris"><i class="fa-brands fa-instagram"></i></span></a>
-                <a href=""><span class="color-gris"><i class="fa-brands fa-linkedin-in" target="_blank"></i></span></a>
-                <a href="https://www.tiktok.com/@civitech.es?_t=ZG-8t9VrCIYaPo&_r=1" target="_blank"><span class="color-gris"><i class="fa-brands fa-tiktok"></i></span></a>
+                <a href="https://www.facebook.com/share/1A3PRQzJHb/" target="_blank"><span class="color-gris"><i
+                      class="fa-brands fa-facebook-f"></i></span></a>
+                <a href="https://www.instagram.com/civitech.es?igsh=MTVxNjQwcjkwODNsaw==" target="_blank"><span
+                    class="color-gris"><i class="fa-brands fa-instagram"></i></span></a>
+                <a href="https://www.linkedin.com/company/civitech-es" target="_blank"><span class="color-gris"><i
+                      class="fa-brands fa-linkedin-in"></i></span></a>
+                <a href="https://www.tiktok.com/@civitech.es?_t=ZG-8t9VrCIYaPo&_r=1" target="_blank"><span
+                    class="color-gris"><i class="fa-brands fa-tiktok"></i></span></a>
               </p>
             </div>
           </div>
@@ -26,8 +30,9 @@
                 <p><i class="fa-solid fa-phone"></i></p>
               </div>
               <div class="col-md-10 col-sm-10 col-xs-9 datos">
-                <p><span class="color-gris">Virgen del Val 10, Madrid</span></p>
-                <p><span class="text-decoration-underline"><a class="color-gris" href="mailto:usuario@example.com">civitecreformas&#64;gmail.com</a></span></p>
+                <p><span class="color-gris">Calle Nuestra Señora de Covadonga 39, Zaragoza</span></p>
+                <p><span class="text-decoration-underline"><a class="color-gris"
+                      href="mailto:info@civitech.es">info&#64;civitech.es</a></span></p>
                 <p><span class="color-gris">624074920</span></p>
               </div>
             </div>
@@ -40,48 +45,32 @@
             <p><b class="color-white titulo">Nosotros</b></p>
             <ul class="list-unstyled contact-list">
               <li>
-                <a
-                  href="#"
-                  (click)="navigateTo('/acerca-de-nosotros'); $event.preventDefault();"
-                  routerLink="/acerca-de-nosotros"
-                  routerLinkActive="active-link"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                  class="text-decoration-none color-gris">
+                <a href="#" (click)="navigateTo('/acerca-de-nosotros'); $event.preventDefault();"
+                  routerLink="/acerca-de-nosotros" routerLinkActive="active-link"
+                  [routerLinkActiveOptions]="{ exact: true }" class="text-decoration-none color-gris">
                   Acerca de Nosotros
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  (click)="navigateTo('/domotica-informacion'); $event.preventDefault();"
-                  routerLink="/domotica-informacion"
-                  routerLinkActive="active-link"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                  class="text-decoration-none color-gris">
+                <a href="#" (click)="navigateTo('/domotica-informacion'); $event.preventDefault();"
+                  routerLink="/domotica-informacion" routerLinkActive="active-link"
+                  [routerLinkActiveOptions]="{ exact: true }" class="text-decoration-none color-gris">
                   Domótica
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  (click)="navigateTo('/proyectos'); $event.preventDefault();"
-                  routerLink="/proyectos"
-                  routerLinkActive="active-link"
-                  [routerLinkActiveOptions]="{ exact: true }"
+                <a href="#" (click)="navigateTo('/proyectos'); $event.preventDefault();" routerLink="/proyectos"
+                  routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
                   class="text-decoration-none color-gris">
                   Proyectos
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  (click)="navigateTo('/contactanos'); $event.preventDefault();"
-                  routerLink="/contactanos"
-                  routerLinkActive="active-link"
-                  [routerLinkActiveOptions]="{ exact: true }"
+                <a href="#" (click)="navigateTo('/contactanos'); $event.preventDefault();" routerLink="/contactanos"
+                  routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
                   class="text-decoration-none color-gris">
                   Contáctanos
                 </a>
@@ -97,6 +86,20 @@
               <li><a href="" class="text-decoration-none color-gris">Política de privacidad</a></li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tecnologías Badges -->
+    <div class="row mt-4 tecnologias-footer">
+      <div class="col-12 text-center">
+        <p class="color-gris mb-2 small">Tecnologías Open Source & Estándares Profesionales</p>
+        <div class="tech-badges">
+          <span class="tech-badge" title="Expertos en Home Assistant"><i class="fas fa-home"></i> Home Assistant</span>
+          <span class="tech-badge"><i class="fas fa-wifi"></i> Zigbee</span>
+          <span class="tech-badge"><i class="fas fa-project-diagram"></i> MQTT</span>
+          <span class="tech-badge"><i class="fas fa-network-wired"></i> Matter</span>
+          <span class="tech-badge"><i class="fas fa-server"></i> Local Control</span>
         </div>
       </div>
     </div>

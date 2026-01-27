@@ -1,0 +1,727 @@
+@import '../../../styles/variables';
+
+.use-case-detalle-page {
+    min-height: 100vh;
+    background: #fafafa;
+}
+
+// ==========================================
+// HERO SECTION
+// ==========================================
+.hero-section {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        // Overlay más oscuro para mejor legibilidad
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.6), // Top más oscuro
+                rgba(0, 0, 0, 0.75) // Bottom aún más oscuro
+            );
+    }
+}
+
+.hero-overlay {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: $spacing-8;
+}
+
+.btn-volver {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.9);
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius-lg;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    cursor: pointer;
+    @include tr-smooth;
+    margin-bottom: $spacing-6;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateX(-4px);
+    }
+
+    i {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+        transform: translateX(-3px);
+    }
+}
+
+.categoria-badge {
+    display: inline-block;
+    background: $p-500;
+    color: white;
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius-full;
+    font-size: $text-xs;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $spacing-4;
+}
+
+.hero-title {
+    font-family: $font-primary;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: $font-bold;
+    margin-bottom: $spacing-4;
+    letter-spacing: -0.5px;
+    color: white; // Asegurar que sea blanco
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: $text-lg;
+    opacity: 0.95;
+    font-weight: $font-medium;
+    color: white; // Asegurar que sea blanco
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); // Legibilidad mejorada
+}
+
+// ==========================================
+// CONTAINER
+// ==========================================
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-6;
+}
+
+.section-title {
+    font-family: $font-primary;
+    font-size: $text-3xl;
+    font-weight: $font-bold;
+    text-align: center;
+    margin-bottom: $spacing-3;
+    color: $dark-bg;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: $p-500;
+        margin: $spacing-4 auto 0;
+        border-radius: $radius-full;
+    }
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #6b7280;
+    font-size: $text-base;
+    margin-bottom: $spacing-10;
+}
+
+// ==========================================
+// QUICK STATS
+// ==========================================
+.section-stats {
+    padding: $spacing-16 $spacing-6 $spacing-12;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-6;
+}
+
+.stat-card {
+    background: white;
+    border: 2px solid $p-500;
+    padding: $spacing-6;
+    border-radius: $radius-xl;
+    text-align: center;
+    @include tr-smooth;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(148, 108, 230, 0.15);
+    }
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: $p-500;
+    margin-bottom: $spacing-3;
+}
+
+.stat-valor {
+    font-size: 1.75rem;
+    font-weight: $font-bold;
+    color: $dark-bg;
+    margin-bottom: $spacing-2;
+}
+
+.stat-label {
+    font-size: $text-xs;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: $font-semibold;
+}
+
+// ==========================================
+// DESCRIPCIÓN CON IMAGEN
+// ==========================================
+.section-descripcion {
+    padding: $spacing-12 $spacing-6;
+}
+
+.descripcion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-10;
+    align-items: center;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: $spacing-8;
+    }
+}
+
+.descripcion-content {
+    h2 {
+        font-family: $font-primary;
+        font-size: $text-2xl;
+        color: $dark-bg;
+        margin-bottom: $spacing-4;
+        font-weight: $font-bold;
+    }
+
+    .descripcion-texto {
+        font-size: $text-base;
+        line-height: $leading-relaxed;
+        color: #6b7280;
+        margin-bottom: $spacing-8;
+    }
+}
+
+.descripcion-imagen {
+    background: white;
+    border-radius: $radius-xl;
+    padding: $spacing-6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: $radius-lg;
+        margin-bottom: $spacing-4;
+    }
+
+    .imagen-caption {
+        text-align: center;
+        color: #6b7280;
+        font-size: $text-sm;
+        font-style: italic;
+        margin: 0;
+    }
+}
+
+.trust-signal {
+    background: $p-50;
+    border-left: 4px solid $p-500;
+    padding: $spacing-4 $spacing-6;
+    border-radius: $radius-lg;
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+
+    i {
+        color: $p-500;
+        font-size: $text-xl;
+    }
+
+    span {
+        color: $dark-bg;
+        font-size: $text-sm;
+    }
+}
+
+// ==========================================
+// BENEFICIOS
+// ==========================================
+.section-beneficios {
+    padding: $spacing-12 $spacing-6;
+    background: white;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-4;
+}
+
+.beneficio-item {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3;
+    padding: $spacing-4;
+    background: #f9fafb;
+    border-radius: $radius-lg;
+    border: 1px solid #e5e7eb;
+    @include tr-smooth;
+
+    &:hover {
+        background: white;
+        border-color: $p-200;
+    }
+}
+
+.beneficio-icon {
+    width: 24px;
+    height: 24px;
+    background: $p-500;
+    color: white;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $text-xs;
+    flex-shrink: 0;
+}
+
+// ==========================================
+// CASOS DE USO
+// ==========================================
+.section-casos-uso {
+    padding: $spacing-12 $spacing-6;
+}
+
+.casos-uso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-6;
+}
+
+.caso-uso-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: $spacing-6;
+    border-radius: $radius-xl;
+    text-align: center;
+    @include tr-smooth;
+
+    &:hover {
+        border-color: $p-300;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.caso-icono {
+    width: 50px;
+    height: 50px;
+    background: $p-50;
+    color: $p-500;
+    border-radius: $radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $text-xl;
+    margin: 0 auto $spacing-4;
+}
+
+// ==========================================
+// TECNOLOGÍAS
+// ==========================================
+.section-tecnologias {
+    padding: $spacing-12 $spacing-6;
+    background: white;
+}
+
+.tecnologias-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-3;
+}
+
+.tech-badge {
+    background: $p-50;
+    color: $p-700;
+    padding: $spacing-3 $spacing-5;
+    border-radius: $radius-full;
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    border: 1px solid $p-200;
+    @include tr-smooth;
+
+    i {
+        margin-right: $spacing-2;
+        color: $p-500;
+    }
+
+    &:hover {
+        background: $p-100;
+        border-color: $p-300;
+    }
+}
+
+// ==========================================
+// EJEMPLOS REALES
+// ==========================================
+.section-ejemplos {
+    padding: $spacing-12 $spacing-6;
+}
+
+.ejemplos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: $spacing-8;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ejemplo-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: $radius-2xl;
+    padding: $spacing-8;
+    @include tr-smooth;
+
+    &:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border-color: #d1d5db;
+    }
+}
+
+.ejemplo-header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    margin-bottom: $spacing-6;
+
+    i {
+        font-size: $text-2xl;
+        color: #fbbf24;
+    }
+
+    h3 {
+        font-family: $font-primary;
+        font-size: $text-lg;
+        font-weight: $font-bold;
+        color: $dark-bg;
+        margin: 0;
+    }
+}
+
+.ejemplo-situacion,
+.ejemplo-resultado {
+    margin-bottom: $spacing-4;
+
+    strong {
+        display: block;
+        color: $dark-bg;
+        margin-bottom: $spacing-2;
+        font-size: $text-sm;
+
+        i {
+            color: #10b981;
+            margin-right: $spacing-2;
+        }
+    }
+
+    p {
+        color: #6b7280;
+        font-size: $text-sm;
+        line-height: $leading-relaxed;
+        margin: 0;
+    }
+}
+
+// ==========================================
+// FAQs
+// ==========================================
+.section-faqs {
+    padding: $spacing-12 $spacing-6;
+    background: white;
+}
+
+.faqs-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: $radius-lg;
+    margin-bottom: $spacing-4;
+    overflow: hidden;
+    background: white;
+}
+
+.faq-pregunta {
+    padding: $spacing-5;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tr-smooth;
+
+    &:hover {
+        background: #f9fafb;
+    }
+
+    &.active {
+        background: $p-50;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    h4 {
+        font-family: $font-primary;
+        font-size: $text-base;
+        font-weight: $font-bold;
+        color: $dark-bg;
+        margin: 0;
+    }
+
+    i {
+        color: $p-500;
+        @include tr-smooth;
+    }
+}
+
+.faq-respuesta {
+    padding: $spacing-5;
+    background: #f9fafb;
+
+    p {
+        color: #6b7280;
+        line-height: $leading-relaxed;
+        margin: 0;
+    }
+}
+
+// ==========================================
+// GARANTÍAS - GENERA CONFIANZA
+// ==========================================
+.section-garantias {
+    padding: $spacing-12 $spacing-6;
+}
+
+.garantias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-6;
+}
+
+.garantia-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: $spacing-8;
+    border-radius: $radius-xl;
+    text-align: center;
+    @include tr-smooth;
+
+    &:hover {
+        border-color: $p-300;
+        box-shadow: 0 8px 20px rgba(148, 108, 230, 0.1);
+    }
+
+    i {
+        font-size: 3rem;
+        color: $p-500;
+        margin-bottom: $spacing-4;
+    }
+
+    h3 {
+        font-family: $font-primary;
+        font-size: $text-lg;
+        font-weight: $font-bold;
+        color: $dark-bg;
+        margin-bottom: $spacing-3;
+    }
+
+    p {
+        color: #6b7280;
+        font-size: $text-sm;
+        line-height: $leading-relaxed;
+    }
+}
+
+// ==========================================
+// CTA FINAL
+// ==========================================
+.section-cta {
+    padding: $spacing-16 $spacing-6 $spacing-20;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: $spacing-12;
+    border-radius: $radius-2xl;
+    text-align: center;
+
+    h2 {
+        font-family: $font-primary;
+        font-size: $text-3xl;
+        font-weight: $font-bold;
+        margin-bottom: $spacing-3;
+    }
+
+    p {
+        font-size: $text-lg;
+        margin-bottom: $spacing-8;
+        opacity: 0.9;
+    }
+}
+
+.cta-buttons {
+    display: flex;
+    gap: $spacing-4;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-6;
+}
+
+.btn-cta-primary {
+    background: $p-500;
+    color: white;
+    border: none;
+    padding: $spacing-4 $spacing-8;
+    font-size: $text-base;
+    font-weight: $font-bold;
+    border-radius: $radius-full;
+    cursor: pointer;
+    @include tr-smooth;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+
+    &:hover {
+        background: $p-600;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(148, 108, 230, 0.3);
+    }
+}
+
+.btn-cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: $spacing-4 $spacing-8;
+    font-size: $text-base;
+    font-weight: $font-bold;
+    border-radius: $radius-full;
+    cursor: pointer;
+    @include tr-smooth;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+
+    &:hover {
+        background: white;
+        color: $dark-bg;
+        transform: translateY(-2px);
+    }
+}
+
+.cta-trust {
+    font-size: $text-sm;
+    opacity: 0.8;
+
+    i {
+        margin: 0 $spacing-2;
+    }
+}
+
+// ==========================================
+// ERROR STATE
+// ==========================================
+.error-state {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-6;
+}
+
+.error-card {
+    background: white;
+    padding: $spacing-10;
+    border-radius: $radius-xl;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+
+    i {
+        font-size: 3rem;
+        color: #ef4444;
+        margin-bottom: $spacing-4;
+    }
+
+    h2 {
+        font-family: $font-primary;
+        font-size: $text-xl;
+        color: $dark-bg;
+        margin-bottom: $spacing-3;
+    }
+
+    p {
+        color: #6b7280;
+        margin-bottom: $spacing-6;
+    }
+}
+
+// ==========================================
+// RESPONSIVE
+// ==========================================
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .casos-uso-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .garantias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}

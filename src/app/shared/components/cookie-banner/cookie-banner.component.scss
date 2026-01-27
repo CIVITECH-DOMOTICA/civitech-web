@@ -1,0 +1,114 @@
+@import '../../../../styles/variables';
+
+.cookie-banner {
+    position: fixed;
+    bottom: $spacing-6;
+    left: $spacing-6;
+    right: $spacing-6;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: $spacing-6;
+    border-radius: $radius-2xl;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid $border-color;
+    z-index: 9999;
+
+    @include responsive($breakpoint-md) {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        border-radius: $radius-2xl $radius-2xl 0 0;
+    }
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    gap: $spacing-6;
+
+    @include responsive($breakpoint-sm) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.cookie-icon {
+    font-size: 2.5rem;
+    color: #8b4513; // Cookie brown
+    background: #fff8f0;
+    width: 70px;
+    height: 70px;
+    @include flex-center;
+    border-radius: $radius-full;
+    flex-shrink: 0;
+}
+
+.cookie-text {
+    flex-grow: 1;
+
+    h4 {
+        margin-bottom: $spacing-1;
+        font-size: $text-xl;
+        color: $dark-bg;
+    }
+
+    p {
+        font-size: $text-sm;
+        color: $text-secondary;
+        margin: 0;
+        line-height: $leading-normal;
+
+        a {
+            color: $p-500;
+            font-weight: $font-bold;
+            text-decoration: underline;
+        }
+    }
+}
+
+.cookie-actions {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+    min-width: 180px;
+
+    @include responsive($breakpoint-sm) {
+        flex-direction: row;
+        width: 100%;
+
+        button {
+            flex: 1;
+        }
+    }
+}
+
+.btn-accept {
+    @extend %btn-modern;
+    background: $dark-bg !important;
+    color: white !important;
+    padding: $spacing-2 $spacing-4;
+    font-size: $text-sm;
+    border-radius: $radius-md;
+
+    &:hover {
+        background: #000 !important;
+        transform: translateY(-2px);
+    }
+}
+
+.btn-decline {
+    @extend %btn-modern;
+    background: transparent !important;
+    border: 1px solid $border-color !important;
+    color: $text-secondary !important;
+    padding: $spacing-2 $spacing-4;
+    font-size: $text-sm;
+    border-radius: $radius-md;
+
+    &:hover {
+        background: $bg-light !important;
+        color: $dark-bg !important;
+    }
+}

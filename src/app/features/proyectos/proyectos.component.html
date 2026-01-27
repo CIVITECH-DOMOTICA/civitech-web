@@ -1,5 +1,4 @@
-
-<div class="container-fluid d-flex proyectos-content">
+<div class="container-fluid d-flex proyectos-content" data-aos="fade-down">
   <div class="justify-content-center align-items-center">
     <h1>PROYECTOS</h1>
     <p>Descubre proyectos y explora soluciones inteligentes para tu hogar</p>
@@ -7,16 +6,14 @@
   </div>
 </div>
 
-<div class=" domotica-mensaje-container">
+<div class=" domotica-mensaje-container" data-aos="fade-up">
   <h1>Un hogar inteligente para una vida más cómoda...</h1>
 </div>
 
-<div style="padding-bottom: 100px;">
-  <carrousel-opiniones-civitech  [opiniones]="opiniones" ></carrousel-opiniones-civitech>
+<div style="padding-bottom: 100px;" data-aos="fade-up">
+  <carrousel-opiniones-civitech [opiniones]="proyectos" (cardClick)="verDetalle($event)"></carrousel-opiniones-civitech>
 </div>
 
-<separador-civitech title='Contáctanos' ></separador-civitech>
+<separador-civitech title='Contáctanos' data-aos="fade-up"></separador-civitech>
 
-<formulario-contacto-civitech></formulario-contacto-civitech>
-
-
+<formulario-contacto-civitech data-aos="fade-up"></formulario-contacto-civitech>

@@ -1,67 +1,84 @@
-@import "../../../../styles.scss";
-
-/*--------------------Seccion tecnologia------------------*/
+@import '../../../../styles/variables';
 
 .tecnologia-content {
-  padding: 0px;
+  background: $dark-bg;
+  overflow: hidden;
 }
 
-.row-tecnologia
-{
-  display: flex;
-  justify-content: space-between; /* Evita espacios no deseados */
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0px;
-}
-.imagen-container-tecnologia img{
-  width: 100%;
-}
-
-.imagen-container-tecnologia
-{
-  background-image: url('/../../../../assets/images/contacto.jpg');
-  background-size: cover; /* Ajusta la imagen al contenedor */
-  background-position: center center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  height: 50vh;
-
-}
-.fondo-container-tecnologia h1
-{
-  font-size: 50px;
-  color: white;
-  text-align: left !important;
-}
-
-.fondo-container-tecnologia
-{
-
-  background-color: $primary-color;
-  background-image: url('/../../../../assets/images/home_fondoAmarillo.png');
-  text-align: center;
+.fondo-container-tecnologia {
+  padding: $spacing-32 $spacing-8;
+  background: linear-gradient(135deg,
+      rgba($dark-bg, 0.9) 0%,
+      rgba($p-500, 0.2) 50%,
+      rgba($dark-bg, 0.9) 100%),
+    url('/../../../assets/images/contact_3.jpg');
   background-size: cover;
-  flex-direction: column;
-  box-sizing: border-box;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
+  position: relative;
+  min-height: 500px;
   display: flex;
-  place-content: center flex-start;
   align-items: center;
   justify-content: center;
+
+  // Premium overlay pattern
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      linear-gradient(rgba($dark-bg, 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($dark-bg, 0.5) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+  }
+
+  h1 {
+    font-family: $font-primary;
+    font-size: clamp(2.5rem, 6vw, $text-5xl);
+    font-weight: $font-extrabold;
+    margin-bottom: $spacing-12;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: $leading-tight;
+    color: white;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
 }
 
+.boton-proyectos {
+  // Matching the button class in HTML
+  @extend %btn-modern;
+  background: $p-500 !important;
+  color: white !important;
+  padding: 1.25rem 4rem;
+  font-size: $text-lg;
+  border-radius: $radius-full;
+  box-shadow: $shadow-primary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
 
-.fondo-container-tecnologia div{
-  width: 60%;
-
+  &:hover {
+    background: $p-600 !important;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(179, 0, 0, 0.4);
+  }
 }
 
-.boton-proyectos
-{
-  background-color: transparent;
-  border:1px solid white;
-  color: white;
-  font-size: 15px;
-  padding: 10px 30px;
-  border-radius: 5px;
-  margin-top: 50px;
+@include responsive($breakpoint-md) {
+  .fondo-container-tecnologia {
+    padding: $spacing-20 $spacing-6;
+
+    h1 {
+      font-size: $text-3xl;
+    }
+  }
 }

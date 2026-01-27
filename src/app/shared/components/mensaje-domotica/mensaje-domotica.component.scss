@@ -1,36 +1,52 @@
-@import "../../../../styles.scss";
-
-.fa-quote-left, .fa-quote-right {
-  font-size: 80px; /* Tamaño grande */
-  color: #B70000; /* Rojo guinda */
-  border: none;
-}
-
-.container-mensaje-domotica
-{
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  padding: 100px 0px 150px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-}
+@import '../../../../styles/variables';
 
 .container-mensaje-domotica {
- text-align: center;
-}
-
-.mensaje-content
-{
-  background-image: url('/../../../../assets/images/home_circuloAmarillo2.png');
+  padding: $spacing-24 $spacing-6;
   text-align: center;
-  background-size: cover;
+  background: $bg-light;
+  @include flex-center;
   flex-direction: column;
-  box-sizing: border-box;
-  display: flex;
-  place-content: center flex-start;
-  align-items: center;
-  justify-content: center;
+
+  h1 {
+    font-family: $font-primary;
+    font-size: $text-3xl;
+    font-weight: $font-extrabold;
+    line-height: 1.4;
+    max-width: 900px;
+    margin: 0 auto;
+    color: $dark-bg;
+    position: relative;
+    padding: $spacing-12;
+
+    @include responsive($breakpoint-md) {
+      font-size: $text-2xl;
+      padding: $spacing-8;
+    }
+
+    &::before,
+    &::after {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 3rem;
+      position: absolute;
+      color: $p-500;
+      opacity: 0.2;
+
+      @include responsive($breakpoint-sm) {
+        font-size: 2rem;
+      }
+    }
+
+    &::before {
+      content: "\f10d";
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: "\f10e";
+      bottom: 0;
+      right: 0;
+    }
+  }
 }

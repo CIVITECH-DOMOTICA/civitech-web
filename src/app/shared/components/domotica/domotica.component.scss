@@ -1,68 +1,190 @@
-@import "../../../../styles.scss";
-// .card-domotica
-// {
-//   // padding: 20px;
-//   justify-content:start ;
-//   align-items: center;
-//   text-align: justify;
-//   border-radius: 4px; /* Bordes redondeados */
-//   border: 1px solid black;
-//   width: 100%;
-// }
-// .container-card
-// {
-//   // padding: 0px 50px;
-//   justify-content: space-around;
-// }
+@import '../../../../styles/variables';
 
-.domotica-content
-{
-  padding-bottom: 30px;
+.domotica-mensaje-container {
+  padding: $spacing-24 $spacing-4;
+  text-align: center;
+  background: white;
+  position: relative;
+  overflow: hidden;
+
+  // Add a subtle tech pattern background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient($p-100 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  h1 {
+    color: $dark-bg;
+    font-size: $text-4xl;
+    font-weight: $font-extrabold;
+    margin-bottom: $spacing-4;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: $p-500;
+      margin: $spacing-6 auto;
+    }
+  }
+
+  .subtitle {
+    color: $text-secondary;
+    font-size: $text-lg;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: $font-medium;
+  }
 }
+
+.domotica-content {
+  background: white;
+  position: relative;
+}
+
 .container-card {
-  display: flex;
-  flex-wrap: wrap; // Permite que los elementos se acomoden en varias líneas si es necesario
-  justify-content: start; // Espaciado uniforme
-  gap: 40px; // Espaciado entre tarjetas
-  padding: 0px 0px 0px 60px; // Espacio interno
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $spacing-8;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 $spacing-8 $spacing-24;
 }
 
 .card-domotica {
-  flex: 1 1 calc(25% - 10px); // Tamaño dinámico con 4 columnas y espacio entre ellas
-  max-width: 300px; // Para evitar que se hagan muy grandes en pantallas grandes
-  background-color: white; // Fondo blanco
-  border-radius: 8px; // Bordes más suaves
-  border: 1px solid #ddd; // Un borde más sutil
-  padding: 15px 20px; // Espaciado interno dentro de la tarjeta
-  text-align: start; // Centra el texto
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
-  transition: transform 0.3s ease-in-out; // Efecto al pasar el mouse
-}
-
-.card-domotica .titulo
-{
-  color: black;
-  font-weight: bold;
-}
-
-.card-domotica:hover {
-  transform: translateY(-5px); // Efecto sutil al pasar el mouse
-}
-
-.container-icon-domotica i {
-  font-size: 2rem; /* Ajusta el tamaño */
-  color: $text-color-primary;
-  margin-bottom: 10px; /* Añade espacio */
-  padding: 15px;
-
-}
-
-.container-icon-domotica
-{
+  background: white;
+  padding: $spacing-12 $spacing-10;
+  border-radius: $radius-lg;
+  border: 1px solid $border-color;
+  @include tr-smooth(all, 400ms);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  // Subtle glow on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba($p-500, 0.03) 0%, transparent 70%);
+    opacity: 0;
+    @include tr-smooth;
+  }
+
+  &:hover {
+    border-color: $p-500;
+    transform: translateY(-8px);
+    box-shadow: $shadow-xl;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .container-icon-domotica {
+      background: $p-500;
+      color: white;
+      transform: rotate(5deg) scale(1.1);
+
+      i {
+        color: white;
+      }
+    }
+
+    .titulo {
+      color: $p-500;
+    }
+
+    .card-footer-info {
+      color: $p-500;
+
+      i {
+        transform: translateX(5px);
+      }
+    }
+  }
 }
 
-.domotica-mensaje-container
-{
-  padding: 30px 0px 30px 50px;
+.container-icon-domotica {
+  width: 80px; // Larger container
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $p-50;
+  border-radius: $radius-lg; // Softer corners
+  margin-bottom: $spacing-8;
+  @include tr-smooth;
+
+  i {
+    font-size: 2.8rem; // Larger icon
+    color: $p-500;
+    @include tr-smooth;
+  }
+}
+
+.titulo {
+  font-family: $font-primary;
+  font-weight: $font-bold;
+  font-size: $text-xl;
+  margin-bottom: $spacing-6;
+  color: $dark-bg;
+  line-height: $leading-tight;
+  min-height: 3.5rem; // Keep titles aligned even if 1 or 2 lines
+  display: flex;
+  align-items: flex-start;
+  @include tr-smooth;
+}
+
+p {
+  color: $text-secondary;
+  font-size: 1rem;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-6;
+  flex-grow: 1;
+}
+
+.card-footer-info {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  font-weight: $font-bold;
+  font-size: $text-sm;
+  color: $text-muted;
+  @include tr-smooth;
+
+  i {
+    @include tr-smooth;
+  }
+}
+
+@include responsive($breakpoint-md) {
+  .container-card {
+    grid-template-columns: 1fr;
+    padding: 0 $spacing-6 $spacing-16;
+  }
+
+  .card-domotica {
+    padding: $spacing-8;
+  }
 }

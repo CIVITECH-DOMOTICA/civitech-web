@@ -1,463 +1,90 @@
-// @import 'styles/variables';
+// ================================
+// ✨ CIVITECH - GLOBAL PREMIUM RED STYLES
+// ================================
 
+@import 'styles/variables';
 
-$primary-color: #B30000;
-$secondary-color: #121524;
-$background-color: #f8f9fa;
-$text-color-primary: #4F4F4F;
-$text-color-secundary: #A7A7A7;
-// Variables de fuente
-$font-title: 'Hanken Grotesk', sans-serif;
-$font-subtitle: 'Hanken Grotesk', sans-serif;
-$font-body: 'Hanken Grotesk', sans-serif;
+// AOS Animation Library
+@import 'aos/dist/aos.css';
 
-
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600&family=Rubik:wght@300;400;600&display=swap');
-
-
-.color-white {
-  color: white !important;
-}
-.color-gris {
-  color: #E1E1E1 !important;
-}
-.padding-0
-{
-  padding: 0px !important;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-
-html, body {
-  height: 100%;
+html,
+body {
+  height: auto; // Prevent scroll lock
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  font-family: $font-secondary;
+  color: $text-primary;
+  background-color: $bg-white;
+  line-height: 1.6;
+  overflow-x: hidden; // Only horizontal scroll prevention
 }
 
-h1 {
-  font-family: 'Hanken Grotesk', sans-serif;
-  font-weight: 600; /* Semi-bold */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+  font-weight: $font-extrabold;
+  margin-bottom: $spacing-4;
+  letter-spacing: -0.01em;
+  color: $dark-bg;
 }
 
-.p-link
-{
-  background-color: $primary-color !important;
-  border: none;
-  height: 5px;
-  width: 30px;
+a {
+  color: $p-500;
+  text-decoration: none;
+  @include tr-smooth;
+
+  &:hover {
+    color: $p-400;
+  }
 }
 
-.p-carousel-prev, .p-carousel-next
-{
-  display: none;
+// PREMIUM UTILITIES
+.gradient-text {
+  @include gradient-text($primary-gradient);
 }
 
-.p-carousel-indicator
-{
-  list-style: none !important;
+.btn-modern {
+  @extend %btn-modern;
 }
 
-// *
-// {
-//   outline: 1px solid red;
-// }
-
-
-/**------------------------------------- MEDIA QUERYS -------------------------------------*/
-/* Extra Small (xs) - Móviles pequeños (menos de 576px) */
-@media (max-width: 575px) {
-
-   /*---------BANNERR---------*/
-   .mensaje-items h1
-   {
-     font-size:35px  !important;
-   }
-   .banner-content {
-    width: 85% !important;
-  }
-   /*---------SEPARADOR---------*/
-   .separador-seccion
-   {
-    padding: 10px 0px !important;
-   }
-   .separador-seccion h1{
-     font-size: 35px !important;
-   }
-   /*---------MISION---------*/
-   .container-mision{
-    width: 80% !important;
-   }
-   /*---------TECNOLOGIA---------*/
-   .fondo-container-tecnologia h1
-   {
-     font-size: 35px !important;
-   }
-
-   .fondo-container-tecnologia
-   {
-    padding: 30px 0px !important;
-   }
-
-  /*---------MENSAJE DOMOTICA---------*/
-   .container-mensaje-domotica
-   {
-     font-size: 30px!important;
-     padding: 80px 0px 80px 0px !important;
-     width: 90% !important;
-   }
-
-   .fa-quote-left, .fa-quote-right {
-    font-size: 50px !important;
-  }
-
-  /*---------CARROUSEL---------*/
-  .datos-resenia-content {
-    padding: 15px;
-    font-size: 14px;
-  }
-  .resenia-container {
-    padding: 40px 20px 20px 20px;
-  }
-  .imagen-cliente {
-    width: 50px;
-    height: 50px;
-  }
-  .fa-star {
-    font-size: 18px;
-  }
-  p-carousel {
-    width: 100%;
-  }
-  /*---------FOOTER---------*/
-  .footer .vertical-hr
-  {
-    display: none !important;
-  }
-  .footer .siguenos
-  {
-    display: none !important;
-  }
-  .footer .contacto
-  {
-    display: none !important;
-  }
-  .footer .img_footer_logo
-  {
-    margin-bottom: 20px ;
-  }
-
-  /*---------ACERCA DE NOSOTROS / BENEFICIOS---------*/
-  .container-card
-  {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  .mensaje-beneficio h1
-  {
-    font-size: 30px !important;
-    text-align: center !important;
-  }
-  /*----------------formulario contacto---------------*/
-  .contact-form {
-    max-width: 95% !important;
-  }
-  /*--------------------------------------------------*/
-
+.btn-primary {
+  @extend %btn-primary;
 }
 
-/* Small (sm) - Móviles grandes (576px - 767px) */
-@media (min-width: 576px) and (max-width: 767px) {
-       /*---------BANNERR---------*/
-   .mensaje-items h1
-   {
-     font-size:35px  !important;
-   }
-   .banner-content {
-    width: 80% !important;
-  }
-   /*---------SEPARADOR---------*/
-   .separador-seccion
-   {
-    padding: 10px 0px !important;
-   }
-   .separador-seccion h1{
-     font-size: 35px !important;
-   }
-
-        /*---------TECNOLOGIA---------*/
-        .fondo-container-tecnologia h1
-        {
-          font-size: 35px !important;
-        }
-
-        .fondo-container-tecnologia
-        {
-        padding: 30px 0px !important;
-        }
-
-   /*---------MENSAJE DOMOTICA---------*/
-   .container-mensaje-domotica
-   {
-     font-size: 30px!important;
-     padding: 80px 0px 130px 0px !important;
-     width: 90% !important;
-   }
-
-   .fa-quote-left, .fa-quote-right {
-    font-size: 50px !important;
-  }
-   /*---------MISION---------*/
-   .container-mision{
-      width: 80% !important;
-    }
-  /*---------CARROUSEL---------*/
-  .datos-resenia-content {
-    // padding: 15px;
-    font-size: 14px;
-  }
-  .resenia-container {
-    padding: 40px 15px 15px 15px;
-  }
-  .imagen-cliente {
-    width: 50px;
-    height: 50px;
-  }
-  .fa-star {
-    font-size: 18px;
-  }
-  p-carousel {
-    width: 100%;
-  }
-    /*---------FOOTER---------*/
-    .footer  .vertical-hr
-    {
-      display: none !important;
-    }
-
-    .footer .siguenos
-    {
-      display: none !important;
-    }
-    .footer  .img_footer_logo
-    {
-      margin-bottom: 15px !important;
-      width: 110px !important;
-      height: 110px !important;
-    }
-
-    .footer .siguenos
-    {
-      padding-left: 10px !important;
-      margin-top: 30px !important;
-    }
-    /*---------ACERCA DE NOSOTROS---------*/
-    .container-card
-    {
-      padding-left: 60px !important;
-      padding-right: 60px !important;
-    }
-    .mensaje-beneficio h1
-    {
-      font-size: 30px !important;
-      text-align: center !important;
-    }
-    /*----------------formulario contacto---------------*/
-    .contact-form {
-      max-width: 95% !important;
-    }
-    /*--------------------------------------------------*/
+.padding-0 {
+  padding: 0 !important;
 }
 
-/* Medium (md) - Tablets (768px - 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-   /*---------BANNERR---------*/
-   .mensaje-items h1
-   {
-     font-size:45px  !important;
-   }
-
-   .banner-content {
-    width: 60% !important;
-  }
-   /*---------SEPARADOR---------*/
-   .separador-seccion
-   {
-    padding: 10px 0px !important;
-   }
-   /*---------MENSAJE DOMOTICA---------*/
-   .container-mensaje-domotica
-   {
-     font-size: 30px!important;
-     padding: 80px 0px 130px 0px !important;
-     width: 70% !important;
-   }
-
-   .fa-quote-left, .fa-quote-right {
-    font-size: 50px !important;
-  }
-    /*---------TECNOLOGIA---------*/
-    .fondo-container-tecnologia h1
-    {
-      font-size: 35px !important;
-    }
-
-    .fondo-container-tecnologia
-    {
-    padding: 30px 0px !important;
-    }
-      /*---------MISION---------*/
-      .container-mision{
-        width: 60% !important;
-       }
-   .separador-seccion h1{
-     font-size: 35px !important;
-   }
-  /*---------CARROUSEL---------*/
-  .datos-resenia-content {
-    padding: 15px;
-    font-size: 14px;
-  }
-  .resenia-container {
-    padding: 40px 10px 10px 10px;
-  }
-  .imagen-cliente {
-    width: 50px;
-    height: 50px;
-  }
-  .fa-star {
-    font-size: 18px;
-  }
-  p-carousel {
-    width: 100%;
-  }
-    /*---------FOOTER---------*/
-    .footer  .vertical-hr
-    {
-      display: none !important;
-    }
-    .footer .siguenos
-    {
-      padding-left: 10px !important;
-      margin-top: 30px !important;
-    }
-    .footer  .img_footer_logo
-    {
-      margin-bottom: 15px !important;
-      width: 110px !important;
-      height: 110px !important;
-    }
-  /*---------ACERCA DE NOSOTROS---------*/
-  .container-card
-  {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-  }
-  .mensaje-beneficio h1
-  {
-    font-size: 40px !important;
-    text-align: center !important;
-  }
-
-   /*----------------formulario contacto---------------*/
-   .contact-form {
-    max-width: 65% !important;
-  }
-  /*--------------------------------------------------*/
+// SCROLLBAR PREMIUM
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-/* Large (lg) - Laptops y PCs pequeños (992px - 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  /*---------BANNERR---------*/
-   .mensaje-items h1
-   {
-     font-size:50px  !important;
-   }
-   .banner-content {
-    width: 60% !important;
-  }
-   /*---------SEPARADOR---------*/
-   .separador-seccion
-   {
-    padding: 10px 0px !important;
-   }
-   .separador-seccion h1{
-     font-size: 30px !important;
-   }
-      /*---------MISION---------*/
-      .container-mision{
-        width: 50% !important;
-       }
-       /*---------MENSAJE DOMOTICA---------*/
-   .container-mensaje-domotica
-   {
-     font-size: 30px!important;
-     padding: 80px 0px 130px 0px !important;
-     width: 70% !important;
-   }
-
-   .fa-quote-left, .fa-quote-right {
-    font-size: 60px !important;
-  }
-  /*---------CARROUSEL---------*/
-  .datos-resenia-content {
-    padding: 20px 15px;
-    font-size: 14px;
-  }
-  .resenia-container {
-    padding: 50px 15px 15px 15px;
-  }
-    /*---------ACERCA DE NOSOTROS---------*/
-    .container-card
-    {
-      padding-left: 40px !important;
-      padding-right: 40px !important;
-    }
-     /*----------------formulario contacto---------------*/
-     .contact-form {
-      max-width: 60% !important;
-    }
-    /*--------------------------------------------------*/
-
+::-webkit-scrollbar-track {
+  background: $bg-light;
 }
 
-/* Extra Large (xl) - PCs grandes (1200px o más) */
-@media (min-width: 1200px) {
-   /*---------BANNERR---------*/
-   .mensaje-items h1
-   {
-     font-size: 60px !important;
-   }
-   .banner-content {
-    width: 55% !important;
-  }
-     /*---------MISION---------*/
-     .container-mision{
-      width: 50% !important;
-     }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
 
-  /*---------MENSAJE DOMOTICA---------*/
-   .container-mensaje-domotica
-   {
-     font-size: 30px!important;
-     padding: 80px 0px 130px 0px !important;
-     width: 60% !important;
-   }
+  &:hover {
+    background: #94a3b8;
+  }
+}
 
-   .fa-quote-left, .fa-quote-right {
-    font-size: 70px !important;
-  }
-  /*---------CARROUSEL---------*/
-  .datos-resenia-content {
-    padding: 30px 50px;
-    font-size: 14px;
-  }
-  .resenia-container {
-    padding: 60px 45px 45px 45px;
-  }
-   /*----------------formulario contacto---------------*/
-   .contact-form {
-    max-width: 60% !important;
-  }
-  /*--------------------------------------------------*/
+// FIX: AOS snappiness
+[data-aos] {
+  transition-duration: 600ms !important;
 }

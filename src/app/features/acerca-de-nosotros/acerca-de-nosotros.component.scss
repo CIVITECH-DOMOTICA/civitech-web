@@ -1,124 +1,172 @@
-@import "../../../styles.scss";
+@import '../../../styles/variables';
 
-/*---------------------------------------------------SECCION DE MISION------------------------------------------------*/
-
-.mision-content
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.container-mision{
- width: 45%;
-}
-
-.items{
-text-align: center;
-}
-.items p{
-  margin-top: 50px;
-}
-.mision-title
-{
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.mision-title::after {
-  content: "";
-  display: block;
-  width: 50px; /* Ajusta el ancho de la línea */
-  height: 6px; /* Ajusta el grosor de la línea */
-  background-color: $primary-color; /* Color rojo */
-  border-radius: 5px; /* Bordes redondeados */
-  margin: 8px auto 0; /* Espaciado desde el título */
-}
-/*-------------------------------------------------SECCION DE BENEFICIOS---------------------------------------------*/
-.beneficios-content
-{
-  // margin-top: 50PX;
-  padding-top: 50px;
-  // padding-bottom: 50px;
-  align-items: center;
-    display: flex;
-  justify-content: center;
-}
-.card-beneficio
-{
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
+.mision-content {
+  padding: $spacing-32 $spacing-4;
+  background: white;
   text-align: center;
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.1); /* Sombra difusa */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.container-card
-{
-  display: flex;
-  margin-bottom: 50px;
-  padding-left: 50px;
-}
-.card-beneficio .titulo
-{
-  color: $primary-color;
-  font-weight: bold;
-}
-.container-icon-beneficio i {
-  font-size: 2rem; /* Ajusta el tamaño */
-  color: $text-color-primary;
-  margin-bottom: 10px; /* Añade espacio */
-  padding: 15px;
-  // border: 1px solid black;
-  // border-radius: 50px;
-}
-.card-beneficio:hover {
-  transform: translateY(-5px); // Efecto sutil al pasar el mouse
-}
-/*----------------------------------------------------SECCION MENSAJE BENEFICIO---------------------------------------------*/
-
-.container-mensaje {
-  width: 80%; /* Ajusta el ancho del contenido */
-padding-bottom: 100px;
-  // margin: 0 auto;
+  position: relative;
 }
 
-.mensaje-beneficio
-{
-  background-image: url('/../../../assets/images/home_circuloAmarillo2.png');
+.container-mision {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  .mision-title {
+    color: $dark-bg;
+    font-weight: $font-extrabold;
+    font-size: $text-4xl;
+    margin-bottom: $spacing-12;
+    @include gradient-text($primary-gradient);
+    display: inline-block;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: $p-500;
+      margin: $spacing-6 auto;
+      border-radius: $radius-full;
+    }
+  }
+
+  p {
+    color: $dark-bg;
+    font-size: 1.25rem;
+    line-height: $leading-relaxed;
+    font-weight: $font-medium;
+  }
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-6;
+  margin-bottom: $spacing-8;
+
+  @include responsive($breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.beneficios-content {
+  padding: $spacing-24 0;
+  background: $bg-light;
+  overflow: hidden;
+}
+
+.container-card {
+  height: 100%;
+}
+
+.card-beneficio {
+  background: white;
+  padding: $spacing-12 $spacing-8;
+  border-radius: $radius-lg;
+  border: 1px solid $border-color;
   text-align: center;
-  background-size: cover;
+  @include tr-smooth(all, 400ms);
+  margin-bottom: $spacing-8;
+  height: calc(100% - #{$spacing-8});
+  display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 
-  place-content: center center;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-xl;
+    border-color: $p-500;
+
+    .container-icon-beneficio {
+      background: $p-500;
+      color: white;
+      transform: translateY(-5px);
+    }
+  }
+
+  .titulo {
+    font-weight: $font-bold;
+    font-size: $text-xl;
+    color: $dark-bg;
+    margin: $spacing-6 0 $spacing-4;
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    font-size: $text-base;
+    color: $text-secondary;
+    margin: 0;
+    flex-grow: 1;
+  }
+}
+
+.container-icon-beneficio {
+  width: 70px;
+  height: 70px;
+  background: $p-50;
+  color: $p-500;
+  border-radius: 50%;
+  @include flex-center;
+  margin: 0 auto;
+  font-size: 2rem;
+  @include tr-smooth;
+}
+
+.mensaje-beneficio {
+  background: $dark-gradient;
+  color: white;
+  padding: $spacing-20 $spacing-12;
+  border-radius: $radius-2xl;
   display: flex;
-  padding-top:50px ;
-  justify-content: center; /* Centra horizontalmente */
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  box-shadow: $shadow-primary;
+
+  h1 {
+    color: white;
+    font-size: $text-4xl;
+    font-weight: $font-extrabold;
+    margin-bottom: $spacing-8;
+    line-height: $leading-tight;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: $text-lg;
+    line-height: $leading-relaxed;
+  }
+
+  .fa-quote-left {
+    color: $p-500;
+    font-size: 4rem;
+    margin-bottom: $spacing-8;
+    opacity: 0.8;
+  }
 }
 
-.mensaje-beneficio h1
-{
-  font-size: 60px;
-  text-align: left !important;
-}
+@include responsive($breakpoint-md) {
 
-.fa-quote-left, .fa-quote-right {
-  font-size: 110px; /* Tamaño grande */
-  color: #B70000; /* Rojo guinda */
-  border: none;
-}
+  .mision-content,
+  .beneficios-content {
+    padding: $spacing-16 $spacing-4;
+  }
 
-.container-mensaje p {
-  margin-top: 50px;
-  text-align: left !important;
-}
+  .mensaje-beneficio {
+    margin-top: $spacing-12;
+    padding: $spacing-12 $spacing-8;
+    text-align: center;
 
-.card-primero-beneficio
-{
-  display: flex;
-  padding-left: 20px;
-}
+    h1 {
+      font-size: $text-3xl;
+    }
+  }
 
+  .card-beneficio {
+    padding: $spacing-10 $spacing-6;
+  }
+}

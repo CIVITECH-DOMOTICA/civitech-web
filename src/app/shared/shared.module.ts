@@ -10,6 +10,7 @@ import { MensajeDomoticaComponent } from './components/mensaje-domotica/mensaje-
 import { SeparadorComponent } from './components/separador/separador.component';
 import { CarrouselOpinionesComponent } from './components/carrousel-opiniones/carrousel-opiniones.component';
 import { FormularioContactoComponent } from './components/formulario-contacto/formulario-contacto.component';
+import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-button.component';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
@@ -19,6 +20,9 @@ import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DomoticaComponent } from './components/domotica/domotica.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { StatsCivitechComponent } from './components/stats-civitech/stats-civitech.component';
+import { FaqCivitechComponent } from './components/faq-civitech/faq-civitech.component';
+import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { AppRoutingModule } from '../app-routing.module';
     SeparadorComponent,
     CarrouselOpinionesComponent,
     FormularioContactoComponent,
-    DomoticaComponent
+    DomoticaComponent,
+    WhatsappButtonComponent,
+    StatsCivitechComponent,
+    FaqCivitechComponent,
+    CookieBannerComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +61,11 @@ import { AppRoutingModule } from '../app-routing.module';
     SeparadorComponent,
     CarrouselOpinionesComponent,
     FormularioContactoComponent,
-    DomoticaComponent
+    DomoticaComponent,
+    WhatsappButtonComponent,
+    StatsCivitechComponent,
+    FaqCivitechComponent,
+    CookieBannerComponent
   ],
 
 })

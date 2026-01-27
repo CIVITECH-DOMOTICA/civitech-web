@@ -1,45 +1,44 @@
 <div class="container-fluid contacto-formulario-content d-flex justify-content-center">
   <div class="contact-form">
-    <form
-      action="https://api.web3forms.com/submit"
-      method="POST"
-      id="contact-form"
-    >
+    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
       <!-- Clave de acceso de Web3Forms -->
       <input type="hidden" name="access_key" value="a825ec4b-62db-4b29-826e-6f116e7c8bb7" />
       <!-- URL de redirección personalizada -->
       <input type="hidden" name="redirect" value="https://www.civitech.es/gracias" />
 
-      <div class="row">
-        <div class="col-md-6 mb-3 item-contact">
+      <div class="row" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-6 mb-3 item-contact" data-aos="fade-up" data-aos-delay="300">
           <label for="nombre">Nombre*</label>
           <input name="name" id="nombre" type="text" class="form-control" required />
         </div>
-        <div class="col-md-6 mb-3 item-contact">
+        <div class="col-md-6 mb-3 item-contact" data-aos="fade-up" data-aos-delay="400">
           <label for="apellido">Apellidos</label>
           <input name="apellido" id="apellido" type="text" class="form-control" />
         </div>
-        <div class="col-md-6 mb-3 item-contact">
+        <div class="col-md-6 mb-3 item-contact" data-aos="fade-up" data-aos-delay="500">
           <label for="correo">Correo electrónico*</label>
           <input name="email" id="correo" type="email" class="form-control" required />
         </div>
-        <div class="col-md-6 mb-3 item-contact">
+        <div class="col-md-6 mb-3 item-contact" data-aos="fade-up" data-aos-delay="600">
           <label for="telefono">Teléfono*</label>
           <input name="telefono" id="telefono" type="tel" class="form-control" required />
         </div>
-        <div class="col-md-6 mb-3 item-contact">
+        <div class="col-md-12 mb-3 item-contact" data-aos="fade-up" data-aos-delay="700">
           <label for="mensaje">Mensaje</label>
           <textarea name="message" id="mensaje" class="form-control" rows="4"></textarea>
         </div>
-        <div class="col-12 mb-2 d-flex align-items-center item-contact-terminos justify-content-start">
+        <div class="col-12 mb-2 d-flex align-items-center item-contact-terminos justify-content-start"
+          data-aos="fade-up" data-aos-delay="800">
           <input type="checkbox" name="privacidad" value="sí" required />
           <label class="ms-2">Tengo más de 14 años, he leído y acepto la Política de Privacidad*</label>
         </div>
-        <div class="col-12 mb-3 d-flex align-items-center item-contact-politica justify-content-start">
+        <div class="col-12 mb-3 d-flex align-items-center item-contact-politica justify-content-start"
+          data-aos="fade-up" data-aos-delay="900">
           <input type="checkbox" name="terminos" value="sí" required />
-          <label class="ms-2">He leído y acepto los <strong>términos de servicio y políticas de privacidad*</strong></label>
+          <label class="ms-2">He leído y acepto los <strong>términos de servicio y políticas de
+              privacidad*</strong></label>
         </div>
-        <div class="col-12">
+        <div class="col-12" data-aos="zoom-in" data-aos-delay="1000">
           <button id="btnEnviar" type="submit" class="btn-enviar">Enviar</button>
         </div>
       </div>

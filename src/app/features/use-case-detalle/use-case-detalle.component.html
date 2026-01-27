@@ -1,0 +1,205 @@
+<div class="use-case-detalle-page" *ngIf="useCase">
+
+    <!-- Hero Section -->
+    <div class="hero-section" [style.background-image]="'url(' + useCase.imagen + ')'">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <button class="btn-volver" (click)="volver()">
+                <i class="fas fa-arrow-left"></i> Volver a Soluciones
+            </button>
+            <div class="categoria-badge">{{ useCase.categoria }}</div>
+            <h1 class="hero-title">{{ useCase.titulo }}</h1>
+            <p class="hero-subtitle">{{ useCase.subtitulo }}</p>
+        </div>
+    </div>
+
+    <!-- Quick Stats - Genera Confianza -->
+    <div class="container section-stats" data-aos="fade-up">
+        <div class="stats-grid">
+            <div class="stat-card" *ngIf="useCase.ahorroEstimado">
+                <div class="stat-icon"><i class="fas fa-piggy-bank"></i></div>
+                <div class="stat-valor">{{ useCase.ahorroEstimado }}</div>
+                <div class="stat-label">Ahorro Estimado</div>
+            </div>
+            <div class="stat-card" *ngIf="useCase.tiempoImplementacion">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <div class="stat-valor">{{ useCase.tiempoImplementacion }}</div>
+                <div class="stat-label">Tiempo de Implementación</div>
+            </div>
+            <div class="stat-card" *ngIf="useCase.roi">
+                <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="stat-valor">{{ useCase.roi }}</div>
+                <div class="stat-label">Retorno de Inversión (ROI)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Descripción Detallada con Imagen -->
+    <div class="container section-descripcion" data-aos="fade-up">
+        <div class="descripcion-grid">
+            <div class="descripcion-content">
+                <h2>¿En qué consiste esta solución?</h2>
+                <p class="descripcion-texto">{{ useCase.descripcionDetallada }}</p>
+
+                <!-- Trust Signal -->
+                <div class="trust-signal">
+                    <i class="fas fa-check-circle"></i>
+                    <span><strong>Garantía de Satisfacción:</strong> Nuestro equipo de expertos te acompaña en todo el
+                        proceso</span>
+                </div>
+            </div>
+
+            <!-- Imagen Explicativa según el caso -->
+            <div class="descripcion-imagen" *ngIf="useCase.slug === 'optimizacion-solar'">
+                <img src="/assets/images/solar-dashboard.png" alt="Dashboard de gestión solar" />
+                <p class="imagen-caption">Dashboard en tiempo real de producción y consumo solar</p>
+            </div>
+            <div class="descripcion-imagen" *ngIf="useCase.slug === 'climatizacion-inteligente'">
+                <img src="/assets/images/clima-zones.png" alt="Zonas climáticas inteligentes" />
+                <p class="imagen-caption">Control independiente por zonas para máxima eficiencia</p>
+            </div>
+            <div class="descripcion-imagen" *ngIf="useCase.slug === 'persianas-automaticas'">
+                <img src="/assets/images/persianas-control.png" alt="Control de persianas automáticas" />
+                <p class="imagen-caption">Automatización según posición solar y meteorología</p>
+            </div>
+            <div class="descripcion-imagen"
+                *ngIf="useCase.slug !== 'optimizacion-solar' && useCase.slug !== 'climatizacion-inteligente' && useCase.slug !== 'persianas-automaticas'">
+                <img [src]="useCase.imagen" [alt]="useCase.titulo" />
+                <p class="imagen-caption">Sistema {{ useCase.categoria }} profesional</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Beneficios -->
+    <div class="container section-beneficios" data-aos="fade-up" *ngIf="useCase.beneficios">
+        <h2 class="section-title">Beneficios Clave</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio-item" *ngFor="let beneficio of useCase.beneficios" data-aos="zoom-in">
+                <div class="beneficio-icon"><i class="fas fa-check"></i></div>
+                <span>{{ beneficio }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Casos de Uso Típicos -->
+    <div class="container section-casos-uso" data-aos="fade-up" *ngIf="useCase.casosUso">
+        <h2 class="section-title">Ideal Para</h2>
+        <div class="casos-uso-grid">
+            <div class="caso-uso-card" *ngFor="let caso of useCase.casosUso">
+                <div class="caso-icono"><i class="fas fa-home"></i></div>
+                <p>{{ caso }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tecnologías - Genera Confianza Técnica -->
+    <div class="container section-tecnologias" data-aos="fade-up" *ngIf="useCase.tecnologias">
+        <h2 class="section-title">Tecnologías que Utilizamos</h2>
+        <p class="section-subtitle">Trabajamos solo con marcas líderes y tecnología probada</p>
+        <div class="tecnologias-grid">
+            <div class="tech-badge" *ngFor="let tech of useCase.tecnologias">
+                <i class="fas fa-microchip"></i> {{ tech }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Ejemplos Reales - Prueba Social -->
+    <div class="container section-ejemplos" data-aos="fade-up" *ngIf="useCase.ejemplos && useCase.ejemplos.length > 0">
+        <h2 class="section-title">Casos de Éxito Reales</h2>
+        <p class="section-subtitle">Proyectos que hemos implementado para clientes satisfechos</p>
+        <div class="ejemplos-grid">
+            <div class="ejemplo-card" *ngFor="let ejemplo of useCase.ejemplos" data-aos="flip-up">
+                <div class="ejemplo-header">
+                    <i class="fas fa-award"></i>
+                    <h3>{{ ejemplo.titulo }}</h3>
+                </div>
+                <div class="ejemplo-situacion">
+                    <strong>Situación:</strong>
+                    <p>{{ ejemplo.descripcion }}</p>
+                </div>
+                <div class="ejemplo-resultado">
+                    <strong><i class="fas fa-check-circle"></i> Resultado:</strong>
+                    <p>{{ ejemplo.resultado }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQs - Resuelve Dudas = Confianza -->
+    <div class="container section-faqs" data-aos="fade-up" *ngIf="useCase.faqs && useCase.faqs.length > 0">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Resolvemos tus dudas antes de que las tengas</p>
+        <div class="faqs-container">
+            <div class="faq-item" *ngFor="let faq of useCase.faqs; let i = index">
+                <div class="faq-pregunta" (click)="toggleFaq(i)" [class.active]="faqExpandido[i]">
+                    <h4>{{ faq.pregunta }}</h4>
+                    <i class="fas" [class.fa-chevron-down]="!faqExpandido[i]"
+                        [class.fa-chevron-up]="faqExpandido[i]"></i>
+                </div>
+                <div class="faq-respuesta" *ngIf="faqExpandido[i]" [@slideDown]>
+                    <p>{{ faq.respuesta }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Garantías y Trust Signals -->
+    <div class="container section-garantias" data-aos="fade-up">
+        <h2 class="section-title">¿Por Qué Confiar en Civitech?</h2>
+        <div class="garantias-grid">
+            <div class="garantia-card">
+                <i class="fas fa-users"></i>
+                <h3>Equipo Especializado</h3>
+                <p>Técnicos certificados con años de experiencia en domótica profesional</p>
+            </div>
+            <div class="garantia-card">
+                <i class="fas fa-headset"></i>
+                <h3>Soporte Continuo</h3>
+                <p>Asistencia técnica y formación personalizada incluida en la instalación</p>
+            </div>
+            <div class="garantia-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Garantía Extendida</h3>
+                <p>Todos nuestros proyectos con garantía de fabricante y servicio</p>
+            </div>
+            <div class="garantia-card">
+                <i class="fas fa-thumbs-up"></i>
+                <h3>100% Satisfacción</h3>
+                <p>No cobramos hasta que estés completamente satisfecho</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Final - Acción Clara -->
+    <div class="container section-cta" data-aos="zoom-in">
+        <div class="cta-card">
+            <h2>¿Listo para dar el paso?</h2>
+            <p>Solicita una consultoría técnica gratuita sin compromiso</p>
+            <div class="cta-buttons">
+                <button class="btn-cta-primary" (click)="contactar()">
+                    <i class="fas fa-calendar-check"></i> Solicitar Consultoría Gratuita
+                </button>
+                <button class="btn-cta-secondary" (click)="volver()">
+                    <i class="fas fa-grid"></i> Ver Más Soluciones
+                </button>
+            </div>
+            <div class="cta-trust">
+                <i class="fas fa-lock"></i> Tus datos están seguros • <i class="fas fa-phone"></i> También puedes
+                llamarnos al 624 074 920
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Error State -->
+<div class="container error-state" *ngIf="!useCase">
+    <div class="error-card">
+        <i class="fas fa-exclamation-circle"></i>
+        <h2>Solución no encontrada</h2>
+        <p>La solución que buscas no existe o ha sido actualizada.</p>
+        <button class="btn-volver" (click)="volver()">
+            <i class="fas fa-arrow-left"></i> Volver a Soluciones
+        </button>
+    </div>
+</div>
