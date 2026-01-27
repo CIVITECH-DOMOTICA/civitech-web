@@ -17,6 +17,8 @@ interface NewsItem {
 })
 export class NewsSectionComponent implements OnInit {
     news: NewsItem[] = [];
+    visible: boolean = false;
+    selectedNews: NewsItem | null = null;
 
     constructor() { }
 
@@ -33,5 +35,10 @@ export class NewsSectionComponent implements OnInit {
             // Fallback manual si falla la carga
             this.news = [];
         }
+    }
+
+    openNews(item: NewsItem): void {
+        this.selectedNews = item;
+        this.visible = true;
     }
 }

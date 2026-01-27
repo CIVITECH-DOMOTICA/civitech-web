@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Matter 2.0: La revolución de la compatibilidad total ha llegado",
-        "summary": "Olvídate de si es compatible con Apple o Google. El nuevo estándar Matter unifica todos tus dispositivos. Te explicamos cómo Civitech integra esta tecnología en tu hogar.",
+        "summary": "Olvídate de si es compatible con Apple o Google. El nuevo estándar Matter unifica todos tus dispositivos. Te explicamos cómo Civitech integra esta tecnología en tu hogar para que todo funcione como una orquesta perfecta.",
         "date": "2026-01-20",
         "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "tag": "Tecnología",
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "title": "Ahorro Energético Inteligente: Caso Real en Zaragoza",
-        "summary": "Analizamos cómo una familia de 4 miembros redujo su factura de gas un 35% instalando cabezales termostáticos inteligentes y automatizaciones de presencia.",
+        "summary": "Analizamos cómo una familia de 4 miembros redujo su factura de gas un 35% instalando cabezales termostáticos inteligentes y automatizaciones de presencia. La inversión se amortizó en solo 8 meses.",
         "date": "2026-01-15",
         "image": "https://images.pexels.com/photos/5863389/pexels-photo-5863389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "tag": "Caso de Éxito",
@@ -20,10 +20,37 @@
     {
         "id": 3,
         "title": "Seguridad Proactiva: Tu casa se defiende sola",
-        "summary": "Más allá de las alarmas. Simulación de presencia con luces, cierre automático de persianas y notificaciones instantáneas a tu móvil con vídeo en alta definición.",
+        "summary": "Más allá de las alarmas sonoras. Simulación de presencia con luces, cierre automático de persianas y notificaciones instantáneas a tu móvil con vídeo en alta definición ante cualquier movimiento sospechoso.",
         "date": "2026-01-10",
         "image": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "tag": "Seguridad",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "title": "Ayudas a la Rehabilitación Energética en Aragón 2026",
+        "summary": "El Gobierno de Aragón lanza nuevas subvenciones para la mejora de la eficiencia energética. La automatización de persianas y control de clima entran dentro de las actuaciones subvencionables hasta el 40%.",
+        "date": "2026-01-05",
+        "image": "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Subvenciones",
+        "link": "#"
+    },
+    {
+        "id": 5,
+        "title": "Iluminación Biodinámica: Salud a través de la luz",
+        "summary": "Descubre cómo las luces que cambian de temperatura de color según la hora del día pueden mejorar tu sueño y tu productividad. El concepto Human Centric Lighting llega al hogar residencial.",
+        "date": "2025-12-28",
+        "image": "https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Salud",
+        "link": "#"
+    },
+    {
+        "id": 6,
+        "title": "Riego Inteligente: Tu jardín verde con la mitad de agua",
+        "summary": "Los nuevos controladores de riego conectados a la previsión meteorológica evitan regar si va a llover mañana. Ahorra agua y mantén tus plantas perfectas sin esfuerzo.",
+        "date": "2025-12-15",
+        "image": "https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Jardín",
         "link": "#"
     }
 ]

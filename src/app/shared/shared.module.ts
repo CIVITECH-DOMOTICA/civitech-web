@@ -18,6 +18,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from 'primeng/dialog';
 import { DomoticaComponent } from './components/domotica/domotica.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { StatsCivitechComponent } from './components/stats-civitech/stats-civitech.component';
@@ -52,7 +53,8 @@ import { NewsSectionComponent } from './components/news-section/news-section.com
     ButtonModule,
     CardModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DialogModule // Añadido
   ],
   exports: [
     BannerComponent,

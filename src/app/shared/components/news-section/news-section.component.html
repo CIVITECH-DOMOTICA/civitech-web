@@ -15,8 +15,39 @@
                 <span class="date"><i class="far fa-calendar-alt"></i> {{item.date | date:'dd MMM yyyy'}}</span>
                 <h3>{{item.title}}</h3>
                 <p>{{item.summary}}</p>
-                <a [href]="item.link" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <a href="#" (click)="openNews(item); $event.preventDefault()" class="read-more">Leer más <i
+                        class="fas fa-arrow-right"></i></a>
             </div>
         </article>
     </div>
+
+    <!-- Modal Detalle Noticia -->
+    <p-dialog [(visible)]="visible" [modal]="true" [style]="{width: '90vw', maxWidth: '800px'}" [draggable]="false"
+        [resizable]="false" [dismissableMask]="true" *ngIf="selectedNews">
+        <ng-template pTemplate="header">
+            <h3>{{selectedNews.title}}</h3>
+        </ng-template>
+
+        <div class="modal-content">
+            <img [src]="selectedNews.image" [alt]="selectedNews.title"
+                style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+
+            <div class="news-meta" style="margin-bottom: 20px; color: #666; font-size: 0.9rem;">
+                <i class="far fa-calendar-alt"></i> {{selectedNews.date | date:'dd MMMM yyyy'}} |
+                <span style="color: #B30000; font-weight: bold;">{{selectedNews.tag}}</span>
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">{{selectedNews.summary}}</p>
+
+            <p style="line-height: 1.6;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="https://civitech.es/contactanos" class="btn-primary"
+                    style="background: #B30000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">¿Te
+                    interesa? Contáctanos</a>
+            </div>
+        </div>
+    </p-dialog>
 </section>
