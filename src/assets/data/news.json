@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Matter 2.0: La revolución de la compatibilidad total ha llegado",
+        "summary": "Olvídate de si es compatible con Apple o Google. El nuevo estándar Matter unifica todos tus dispositivos. Te explicamos cómo Civitech integra esta tecnología en tu hogar.",
+        "date": "2026-01-20",
+        "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Tecnología",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "title": "Ahorro Energético Inteligente: Caso Real en Zaragoza",
+        "summary": "Analizamos cómo una familia de 4 miembros redujo su factura de gas un 35% instalando cabezales termostáticos inteligentes y automatizaciones de presencia.",
+        "date": "2026-01-15",
+        "image": "https://images.pexels.com/photos/5863389/pexels-photo-5863389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Caso de Éxito",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "title": "Seguridad Proactiva: Tu casa se defiende sola",
+        "summary": "Más allá de las alarmas. Simulación de presencia con luces, cierre automático de persianas y notificaciones instantáneas a tu móvil con vídeo en alta definición.",
+        "date": "2026-01-10",
+        "image": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Seguridad",
+        "link": "#"
+    }
+]

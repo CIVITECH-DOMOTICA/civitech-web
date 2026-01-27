@@ -23,6 +23,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { StatsCivitechComponent } from './components/stats-civitech/stats-civitech.component';
 import { FaqCivitechComponent } from './components/faq-civitech/faq-civitech.component';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
+import { NewsSectionComponent } from './components/news-section/news-section.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.
     WhatsappButtonComponent,
     StatsCivitechComponent,
     FaqCivitechComponent,
-    CookieBannerComponent
+    CookieBannerComponent,
+    NewsSectionComponent
   ],
   imports: [
     CommonModule,
@@ -65,7 +67,8 @@ import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.
     WhatsappButtonComponent,
     StatsCivitechComponent,
     FaqCivitechComponent,
-    CookieBannerComponent
+    CookieBannerComponent,
+    NewsSectionComponent // Nuevo componente
   ],
 
 })

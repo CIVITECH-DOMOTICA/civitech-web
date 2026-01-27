@@ -1,0 +1,22 @@
+<section class="news-container" data-aos="fade-up">
+    <div class="section-header">
+        <span class="pill">BLOG & NOTICIAS</span>
+        <h2>Tendencias en Domótica</h2>
+        <p>Mantente al día con lo último en tecnología para el hogar.</p>
+    </div>
+
+    <div class="news-grid">
+        <article class="news-card" *ngFor="let item of news" data-aos="zoom-in" [attr.data-aos-delay]="item.id * 100">
+            <div class="card-image">
+                <img [src]="item.image" [alt]="item.title" loading="lazy">
+                <span class="tag">{{item.tag}}</span>
+            </div>
+            <div class="card-content">
+                <span class="date"><i class="far fa-calendar-alt"></i> {{item.date | date:'dd MMM yyyy'}}</span>
+                <h3>{{item.title}}</h3>
+                <p>{{item.summary}}</p>
+                <a [href]="item.link" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+    </div>
+</section>
