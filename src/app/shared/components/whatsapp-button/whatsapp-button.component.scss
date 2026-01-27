@@ -3,9 +3,10 @@
 .whatsapp-container {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    left: 2rem; // Mover a la izquierda
     z-index: $z-fixed;
     display: flex;
+    flex-direction: row-reverse; // Botón primero, luego texto
     align-items: center;
     gap: $spacing-4;
 }

@@ -747,6 +747,58 @@ export class UseCasesService {
                     respuesta: 'Sí, configuramos acceso seguro (VPN o Proxy Inverso) para que tengas tu propia nube tipo Google Photos pero privada.'
                 }
             ]
+        },
+        {
+            id: '15',
+            slug: 'seguridad-alarmas-sin-cuotas',
+            titulo: 'Seguridad Inteligente y Alarmas sin Cuotas',
+            subtitulo: 'Protección proactiva que no duerme y no cobra mensualidades',
+            descripcion: 'Tu casa sabe defenderse. Cámaras que distinguen personas de mascotas, cierre automático de persianas ante intrusión y avisos inmediatos a tu móvil sin pasar por centralitas.',
+            descripcionDetallada: 'Olvídate de las falsas alarmas y las cuotas mensuales. Instalamos sistemas de seguridad propios donde TÚ eres el dueño de los datos. Cámaras con Inteligencia Artificial que detectan humanos, sensores de apertura invisibles y sirenas disuasorias. Todo integrado: si salta la alarma, las luces parpadean en rojo y las persianas se bajan para bloquear el acceso.',
+            imagen: '/assets/images/usecase-security.png', // Necesitaremos generar esta imagen
+            icono: 'fa-shield-halved',
+            categoria: 'Seguridad',
+            ahorroEstimado: '50€/mes en cuotas de alarma',
+            tiempoImplementacion: '1-2 días',
+            roi: 'Tranquilidad total',
+            beneficios: [
+                'Sin cuotas mensuales de por vida',
+                'Detección de personas/vehículos con IA local',
+                'Simulación de presencia (luces/persianas cuando no estás)',
+                'Aviso instantáneo al móvil con vídeo clip',
+                'Privacidad: Las cámaras no graban cuando estás en casa',
+                'Integración con sensores de humo y agua'
+            ],
+            casosUso: [
+                'Segundas residencias',
+                'Chalets con jardín (detección perimetral)',
+                'Locales comerciales',
+                'Personas que valoran su privacidad'
+            ],
+            tecnologias: [
+                'Reolink / Unifi Protect',
+                'Frigate NVR (IA Local)',
+                'Sensores Zigbee de alta velocidad',
+                'Alarmo (Home Assistant)',
+                'Notificaciones Críticas en iOS/Android'
+            ],
+            ejemplos: [
+                {
+                    titulo: 'El chalet que se defiende solo',
+                    descripcion: 'Intento de intrusión en jardín detectado por cámara térmica.',
+                    resultado: 'Inmediatamente se encendieron focos exteriores, bajaron persianas de seguridad y sonó sirena. Los intrusos huyeron antes de tocar una ventana.'
+                }
+            ],
+            faqs: [
+                {
+                    pregunta: '¿Qué pasa si cortan la luz o internet?',
+                    respuesta: 'El sistema tiene batería de respaldo (SAI) y conexión 4G de emergencia para seguir protegiendo y avisando.'
+                },
+                {
+                    pregunta: '¿Es legal grabar la calle?',
+                    respuesta: 'Configuramos las máscaras de privacidad para grabar solo tu propiedad cumpliendo estrictamente la LOPD.'
+                }
+            ]
         }
     ];
 

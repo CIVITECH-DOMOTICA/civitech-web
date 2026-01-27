@@ -129,21 +129,24 @@
 <body>
   <app-root></app-root>
 
-  <!-- Start of Tawk.to Script (Chat de Atención al Cliente y Monitorización) -->
-  <script type="text/javascript">
-    // IMPORTANTE: Reemplaza 'XXXXXXXX/X' con tu ID real de Tawk.to
-    // Instrucciones en .agent/COMO_ACTIVAR_CHAT.md
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/65b3f7f80ff6374032c5f1c9/1hl3m6f5a'; // ID de demostración temporal o placeholder
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
+  <!-- Start of Typebot (Chat Automatizado) -->
+  <script type="module">
+    import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
+
+    Typebot.initBubble({
+      typebot: "civitech-web-demo", // TODO: CAMBIAR ESTO POR TU ID REAL DE TYPEBOT.IO
+      theme: {
+        button: {
+          backgroundColor: "#0f172a", // Dark Slate (Negro Premium Moderno)
+          // customIconSrc: Eliminado para usar la burbuja por defecto que es más limpia
+        },
+        chatWindow: {
+          backgroundColor: "#ffffff",
+        },
+      },
+    });
   </script>
-  <!-- End of Tawk.to Script -->
+  <!-- End of Typebot -->
 </body>
 
 </html>
