@@ -1,4 +1,7 @@
-<div class="banner-container" [ngStyle]="!videoUrl ? {'background-image': 'url(' + imageUrl + ')'} : {}">
+<div class="banner-container">
+  <!-- Optimized Image Background (Priority HTML Load) -->
+  <img *ngIf="!videoUrl" [src]="imageUrl" alt="Banner Civitech" class="banner-img" fetchpriority="high" loading="eager">
+
   <!-- Video Background -->
   <video *ngIf="videoUrl" [src]="videoUrl" autoplay [muted]="true" loop playsinline class="banner-video"
     oncanplay="this.play()" onloadedmetadata="this.muted = true"></video>

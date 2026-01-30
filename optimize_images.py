@@ -1,74 +1,66 @@
 import os
 from PIL import Image
-import sys
 
 # Configuración
-TARGET_DIR = r"src/assets/images"
+TARGET_DIR = r"c:\Users\User\OneDrive\Documentos\Civitec\pagina web\civitech-web\src\assets\images"
 MAX_WIDTH = 1920
-QUALITY = 85
+QUALITY = 80 # WebP quality
 
 def optimize_images():
-    print(f"🚀 Iniciando optimización de imágenes en: {TARGET_DIR}")
-    
-    if not os.path.exists(TARGET_DIR):
-        print(f"❌ Error: No se encuentra el directorio {TARGET_DIR}")
-        return
-
     total_saved = 0
     count = 0
+    
+    print(f"Iniciando optimización y conversión a WebP en: {TARGET_DIR}")
+
+    if not os.path.exists(TARGET_DIR):
+        print("Error: El directorio no existe.")
+        return
 
     for filename in os.listdir(TARGET_DIR):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
             filepath = os.path.join(TARGET_DIR, filename)
             
             try:
-                # Obtener tamaño original
-                original_size = os.path.getsize(filepath)
-                
+                # Abrir imagen
                 with Image.open(filepath) as img:
-                    # Convertir a RGB si es necesario (para JPGs)
-                    if img.mode in ('RGBA', 'P') and filename.lower().endswith(('.jpg', '.jpeg')):
-                        img = img.convert('RGB')
+                    original_size = os.path.getsize(filepath)
                     
-                    # Calcular nuevas dimensiones manteniendo aspecto
-                    width, height = img.size
-                    if width > MAX_WIDTH:
-                        ratio = MAX_WIDTH / width
-                        new_height = int(height * ratio)
+                    # Convertir a RGB si es necesario (para guardar como WebP/JPG)
+                    if img.mode in ('RGBA', 'P') and not filename.lower().endswith('.png'):
+                         img = img.convert('RGB')
+                    
+                    # Resize si es muy grande
+                    if img.width > MAX_WIDTH:
+                        ratio = MAX_WIDTH / img.width
+                        new_height = int(img.height * ratio)
                         img = img.resize((MAX_WIDTH, new_height), Image.Resampling.LANCZOS)
-                        print(f"   📏 Redimensionando {filename}: {width}x{height} -> {MAX_WIDTH}x{new_height}")
-                    
-                    # Guardar optimizada (sobreescribiendo)
-                    # Para PNGs mantenemos formato, para JPGs usamos calidad
-                    if filename.lower().endswith('.png'):
-                        # PNG optimizado (compress_level=9 es máximo)
-                        img.save(filepath, optimize=True, compress_level=9)
-                    else:
-                        # JPG/JPEG
-                        img.save(filepath, optimize=True, quality=QUALITY)
-                
-                # Calcular ahorro
-                new_size = os.path.getsize(filepath)
-                saved = original_size - new_size
-                total_saved += saved
-                count += 1
-                
-                # Mostrar progreso solo si hubo ahorro significativo (>10KB)
-                if saved > 10240:
-                    print(f"   ✅ Optimizado {filename}: {original_size/1024:.1f}KB -> {new_size/1024:.1f}KB (Ahorro: {saved/1024:.1f}KB)")
-                
-            except Exception as e:
-                print(f"   ⚠️ Error con {filename}: {str(e)}")
+                        print(f"Redimensionada: {filename}")
 
-    print(f"\n✨ Optimización completada!")
-    print(f"   🖼️ Imágenes procesadas: {count}")
-    print(f"   💾 Espacio ahorrado total: {total_saved / (1024*1024):.2f} MB")
+                    # Generar nombre WebP
+                    webp_filename = os.path.splitext(filename)[0] + '.webp'
+                    webp_filepath = os.path.join(TARGET_DIR, webp_filename)
+
+                    # Guardar como WebP
+                    img.save(webp_filepath, 'webp', quality=QUALITY, optimize=True)
+                    
+                    # Calcular ahorro (comparado con el original)
+                    if os.path.exists(webp_filepath):
+                        new_size = os.path.getsize(webp_filepath)
+                        saved = original_size - new_size
+                        
+                        if saved > 0:
+                            total_saved += saved
+                            print(f"✅ Generado WebP: {filename} -> {webp_filename} (Ahorro: {saved/1024:.2f} KB)")
+                        else:
+                            print(f"⚠️ WebP generado ({webp_filename}) pero es mayor que original.")
+                        
+                        count += 1
+                    
+            except Exception as e:
+                print(f"Error procesando {filename}: {e}")
+
+    print(f"\nResumen: {count} imágenes procesadas.")
+    print(f"Espacio total ahorrado (vs original): {total_saved / (1024*1024):.2f} MB")
 
 if __name__ == "__main__":
-    # Verificar si Pillow está instalado
-    try:
-        import PIL
-        optimize_images()
-    except ImportError:
-        print("❌ Error: La librería Pillow no está instalada.")
-        print("   Ejecuta: pip install Pillow")
+    optimize_images()
