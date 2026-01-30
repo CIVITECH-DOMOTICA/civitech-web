@@ -12,7 +12,7 @@ export interface UseCase {
     // Beneficios y características
     beneficios?: string[];
     casosUso?: string[];
-    tecnologias?: string[];
+    tecnologias?: Array<{ nombre: string; logo?: string; url?: string }>;
 
     // ROI y ahorro
     ahorroEstimado?: string;

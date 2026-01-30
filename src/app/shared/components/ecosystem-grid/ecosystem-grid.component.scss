@@ -1,0 +1,121 @@
+.ecosystem-container {
+    background-color: #f8f9fa; // Fondo muy suave para diferenciarde la sección blanca anterior
+    padding: 5rem 0;
+}
+
+.section-header {
+    margin-bottom: 4rem;
+
+    h2 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid #f1f1f1;
+        padding-bottom: 1rem;
+
+        i {
+            font-size: 1.5rem;
+            color: #0d6efd; // Primary color
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+            color: #333;
+        }
+    }
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2 columnas por categoría
+    gap: 1.5rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.brand-item {
+    width: 100%;
+    height: 60px; // Altura fija para contenedor
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    // filter: grayscale(100%); // ELIMINADO: Queremos color siempre
+    opacity: 0.9; // Casi totalmente opaco, muy vibrante
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; // Asegura que el logo se vea entero
+        transition: transform 0.3s;
+    }
+
+    &:hover {
+        // filter: grayscale(0%); // Ya no hace falta
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr); // Mantener 2 en móvil si caben
+    }
+
+    .category-card {
+        padding: 1.5rem;
+    }
+}
+
+// Estilos para la Grid de Protocolos
+// Estilos para la Grid de Protocolos
+.protocol-icon {
+    height: 35px;
+    width: auto;
+    max-width: 100px;
+    opacity: 0.9; // Más opaco por defecto
+    transition: all 0.3s ease;
+    // filter: grayscale(100%); // ELIMINADO: Color siempre
+
+    &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+        // filter: grayscale(0%);
+    }
+}
+
+// .protocol-badge styles eliminados (ya no se usan)

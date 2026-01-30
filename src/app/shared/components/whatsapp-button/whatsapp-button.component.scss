@@ -3,12 +3,18 @@
 .whatsapp-container {
     position: fixed;
     bottom: 2rem;
-    left: 2rem; // Mover a la izquierda
-    z-index: $z-fixed;
+    left: 2rem;
+    z-index: 9000;
     display: flex;
-    flex-direction: row-reverse; // Botón primero, luego texto
+    flex-direction: row-reverse; // Label a la derecha del botón (o izquierda si cambiamos orden)
     align-items: center;
     gap: $spacing-4;
+
+    // En móvil, ajustamos tamaño y posición
+    @include responsive($breakpoint-md) {
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
 }
 
 .whatsapp-btn {
@@ -16,47 +22,57 @@
     height: 65px;
     background: #25d366;
     color: white;
-    border-radius: $radius-full;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
     box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
     cursor: pointer;
-    @include tr-smooth;
-    position: relative;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative; // Para el pulse effect
 
     &:hover {
-        transform: scale(1.1) rotate(10deg);
+        transform: scale(1.1);
         box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
     }
 
-    // Pulse effect
+    // Pulse animation
     &::after {
         content: '';
         position: absolute;
         width: 100%;
         height: 100%;
         background: #25d366;
-        border-radius: $radius-full;
+        border-radius: 50%;
         z-index: -1;
         animation: pulse-whatsapp 2s infinite;
+    }
+
+    @include responsive($breakpoint-md) {
+        width: 55px;
+        height: 55px;
+        font-size: 2rem;
     }
 }
 
 .whatsapp-label {
     background: white;
-    padding: $spacing-2 $spacing-4;
-    border-radius: $radius-lg;
-    font-family: $font-primary;
-    font-weight: $font-bold;
-    color: $dark-bg;
-    box-shadow: $shadow-lg;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
     opacity: 0;
     transform: translateX(20px);
-    @include tr-smooth;
+    transition: all 0.3s ease;
     pointer-events: none;
+
+    @include responsive($breakpoint-md) {
+        display: none; // En móvil ocultamos el texto para no estorbar
+    }
 }
 
 .whatsapp-container:hover .whatsapp-label {
@@ -73,17 +89,5 @@
     100% {
         transform: scale(1.6);
         opacity: 0;
-    }
-}
-
-@include responsive($breakpoint-md) {
-    .whatsapp-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 2rem;
-    }
-
-    .whatsapp-label {
-        display: none;
     }
 }

@@ -35,17 +35,19 @@ export class UseCasesService {
                 'Instalaciones con baterías de almacenamiento'
             ],
             tecnologias: [
-                'Home Assistant',
-                'Shelly EM',
-                'Victron Energy',
-                'MQTT',
-                'Node-RED'
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' },
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
+                { nombre: 'Victron Energy', logo: 'assets/logos/victron.svg', url: 'https://www.victronenergy.com.es/' },
+                { nombre: 'Huawei', logo: 'assets/logos/huawei.svg', url: 'https://solar.huawei.com/' },
+                { nombre: 'Tesla', logo: 'assets/logos/tesla.png', url: 'https://www.tesla.com/es_es/energy' },
+                { nombre: 'MQTT', logo: 'assets/logos/mqtt.svg', url: 'https://mqtt.org/' },
+                { nombre: 'Fronius', logo: 'assets/logos/fronius_real.png', url: 'https://www.fronius.com/es-es/spain' }
             ],
             ejemplos: [
                 {
                     titulo: 'Chalet en Zaragoza con 8kW fotovoltaicos',
                     descripcion: 'Cliente con excedentes de hasta 5kW en verano que iban a la red sin aprovechar.',
-                    resultado: 'Tras la instalación, el termo eléctrico se calienta automáticamente con el excedente, ahorrando 120€/mes de media.'
+                    resultado: 'Tras la instalación, el termo eléctrico se calienta automáticamente con el excedente, ahorrando 35€/mes de media.'
                 },
                 {
                     titulo: 'Piso con coche eléctrico',
@@ -96,11 +98,10 @@ export class UseCasesService {
                 'Chalets con múltiples zonas'
             ],
             tecnologias: [
-                'Nest Thermostat',
-                'Tado',
-                'Sensores de ventana Zigbee',
-                'Home Assistant',
-                'Integración API meteorológica'
+                { nombre: 'Google Nest', logo: 'assets/logos/google_home_official.png', url: 'https://store.google.com/product/nest_learning_thermostat_4th_gen' },
+                { nombre: 'Netatmo', logo: 'assets/logos/netatmo_vector.svg', url: 'https://www.netatmo.com/es-es' },
+                { nombre: 'Aqara', logo: 'assets/logos/aqara_official.png', url: 'https://www.aqara.com/' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -148,11 +149,11 @@ export class UseCasesService {
                 'Locales comerciales con escaparates'
             ],
             tecnologias: [
-                'Motores Somfy RTS/IO',
-                'Control Zigbee/Z-Wave',
-                'Sensores de viento y luminosidad',
-                'Home Assistant',
-                'Cálculo astronómico de posición solar'
+                { nombre: 'Somfy', logo: 'assets/logos/somfy_real.png', url: 'https://www.somfy.es/' },
+                { nombre: 'Alexa', logo: 'assets/logos/alexa_official.png', url: 'https://www.amazon.es/' },
+                { nombre: 'Zigbee', logo: 'assets/logos/zigbee.svg', url: 'https://csa-iot.org/all-solutions/zigbee/' },
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -200,11 +201,11 @@ export class UseCasesService {
                 'Familias con niños pequeños'
             ],
             tecnologias: [
-                'Cámaras Reolink/Hikvision',
-                'Sensores Zigbee',
-                'Frigate NVR',
-                'Notificaciones móviles',
-                'Detección IA de personas'
+                { nombre: 'Reolink', logo: 'assets/logos/reolink.png', url: 'https://reolink.com/' },
+                { nombre: 'Aqara', logo: 'assets/logos/aqara_official.png', url: 'https://www.aqara.com/' },
+                { nombre: 'Frigate NVR', logo: 'assets/logos/frigate_text.png', url: 'https://frigate.video/' },
+                { nombre: 'Telegram', logo: 'assets/logos/telegram_clean.png?v=new', url: 'https://telegram.org/' },
+                { nombre: 'Ajax Systems', logo: 'assets/logos/ajax_real.png', url: 'https://ajax.systems/es/' }
             ],
             ejemplos: [
                 {
@@ -252,11 +253,9 @@ export class UseCasesService {
                 'Locales comerciales'
             ],
             tecnologias: [
-                'Sensores de agua Zigbee',
-                'Electroválvulas',
-                'Medidores de caudal',
-                'Shelly EM',
-                'Home Assistant'
+                { nombre: 'Aqara', logo: 'assets/logos/aqara.png', url: 'https://www.aqara.com/' },
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -286,7 +285,7 @@ export class UseCasesService {
             imagen: '/assets/images/usecase-lighting.png',
             icono: 'fa-lightbulb',
             categoria: 'Confort + Eficiencia',
-            ahorroEstimado: '40-60% en iluminación',
+            ahorroEstimado: '20-35% en iluminación',
             tiempoImplementacion: '0.5-1 día',
             roi: '12-24 meses',
             beneficios: [
@@ -304,11 +303,12 @@ export class UseCasesService {
                 'Terrazas y exteriores'
             ],
             tecnologias: [
-                'Philips Hue',
-                'IKEA Trådfri',
-                'Zigbee',
-                'Interruptores inteligentes Shelly',
-                'Home Assistant'
+                { nombre: 'Philips Hue', logo: 'assets/logos/philips_hue.png', url: 'https://www.philips-hue.com/es-es' },
+                { nombre: 'Alexa', logo: 'assets/logos/alexa_official.png', url: 'https://www.amazon.es/' },
+                { nombre: 'IKEA Smart', logo: 'assets/logos/ikea.svg', url: 'https://www.ikea.com/es/es/' },
+                { nombre: 'Zigbee', logo: 'assets/logos/zigbee.svg', url: 'https://csa-iot.org/all-solutions/zigbee/' },
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -356,11 +356,11 @@ export class UseCasesService {
                 'Instalaciones complejas'
             ],
             tecnologias: [
-                'Home Assistant',
-                'MQTT',
-                'Zigbee2MQTT',
-                'Node-RED',
-                'Lovelace UI'
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' },
+                { nombre: 'MQTT', logo: 'assets/logos/mqtt.svg', url: 'https://mqtt.org/' },
+                { nombre: 'Zigbee', logo: 'assets/logos/zigbee.svg', url: 'https://csa-iot.org/all-solutions/zigbee/' },
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
+                { nombre: 'Tasmota', logo: 'assets/logos/tasmota.png', url: 'https://tasmota.github.io/docs/' }
             ],
             ejemplos: [
                 {
@@ -390,7 +390,7 @@ export class UseCasesService {
             titulo: 'Carga de Vehículo Eléctrico Inteligente',
             subtitulo: 'Tu coche listo por la mañana, tu factura bajo control',
             descripcion: 'Olvídate de "enchufar y rezar". El sistema carga tu coche solo en las horas más baratas o exclusivamente con el excedente de tus placas solares. Integración total con tu cargador.',
-            descripcionDetallada: 'Gestión inteligente del punto de carga de tu vehículo eléctrico (EV). El sistema modula la potencia de carga dinámicamente para no sobrepasar tu potencia contratada (evitando que salten los plomos) y prioriza la carga con energía solar excedente o tarifas valle super reducidas.',
+            descripcionDetallada: 'Gestión inteligente del punto de carga de tu vehículo eléctrico (EV) con control total. El sistema modula la potencia de carga dinámicamente para no sobrepasar tu potencia contratada (evitando que salten los plomos) y prioriza la carga con energía solar excedente o tarifas valle super reducidas. Además, detecta cuando te acercas al coche con tu móvil y desbloquea el latiguillo automáticamente para tu comodidad.',
             imagen: '/assets/images/usecase-ev-charging.png',
             icono: 'fa-charging-station',
             categoria: 'Sostenibilidad',
@@ -403,7 +403,8 @@ export class UseCasesService {
                 'Protección contra sobrecarga de la casa',
                 'Integración con cualquier inversor solar',
                 'Histórico de costes de carga',
-                'Aviso si te olvidas de enchufarlo'
+                'Aviso si te olvidas de enchufarlo',
+                'Desbloqueo automático del latiguillo al acercarte (Geolocalización)'
             ],
             casosUso: [
                 'Propietarios de Tesla/EV',
@@ -412,11 +413,10 @@ export class UseCasesService {
                 'Flotas de empresa'
             ],
             tecnologias: [
-                'Wallbox / V2C / Tesla Gen3',
-                'OCPP Protocol',
-                'Home Assistant Energy',
-                'Shelly EM (medición)',
-                'Modbus TCP'
+                { nombre: 'V2C', logo: 'assets/logos/v2c_real.png', url: 'https://v2charge.com/es/' },
+                { nombre: 'Tesla', logo: 'assets/logos/tesla.svg', url: 'https://www.tesla.com/es_es/' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' },
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' }
             ],
             ejemplos: [
                 {
@@ -442,11 +442,11 @@ export class UseCasesService {
             titulo: 'Gestión Inteligente de Electrodomésticos',
             subtitulo: 'Tus aparatos trabajan cuando la luz es gratis',
             descripcion: 'La lavadora se pone sola cuando hay sol. El lavavajillas termina justo cuando llegas. Recibe notificaciones si te dejas la puerta del frigo abierta.',
-            descripcionDetallada: 'Automatización de electrodomésticos de gran consumo. No necesitas comprar aparatos "Smart" carísimos; nosotros los hacemos inteligentes. Monitorización de consumo ciclo a ciclo y avisos de mantenimiento preventivo.',
+            descripcionDetallada: 'Automatizamos tus electrodomésticos convencionales usando enchufes con medición de consumo. El sistema detecta cuando la lavadora termina analizando la caída de potencia eléctrica y te avisa al móvil o por los altavoces. Además, cuenta los ciclos de uso para recordarte el mantenimiento (limpieza de filtros, descalcificación) automáticamente.',
             imagen: '/assets/images/usecase-appliances.png',
             icono: 'fa-blender',
             categoria: 'Ahorro',
-            ahorroEstimado: '150-200€ anuales',
+            ahorroEstimado: '80-120€ anuales',
             tiempoImplementacion: '2-3 horas',
             roi: 'Inmediato',
             beneficios: [
@@ -464,11 +464,11 @@ export class UseCasesService {
                 'Apartamentos de alquiler (control uso)'
             ],
             tecnologias: [
-                'Enchufes con medición de consumo',
-                'Sensor de vibración (para saber si terminó)',
-                'Sensor de contacto (puertas)',
-                'Home Assistant Automation',
-                'Notificaciones Alexa/Google'
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
+                { nombre: 'LG webOS', logo: 'assets/logos/lg_webos_real.png', url: 'https://www.lg.com/es/tvs/webos-smart-tv' },
+                { nombre: 'Android', logo: 'assets/logos/android_real.png', url: 'https://www.android.com/' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' },
+                { nombre: 'Zigbee', logo: 'assets/logos/zigbee.svg', url: 'https://csa-iot.org/all-solutions/zigbee/' }
             ],
             ejemplos: [
                 {
@@ -516,11 +516,8 @@ export class UseCasesService {
                 'Huertos domésticos'
             ],
             tecnologias: [
-                'Controladores de electroválvulas',
-                'Sensores Mi Flora / humedad suelo',
-                'Integración AEMET/OpenWeather',
-                'Zigbee de largo alcance',
-                'Home Assistant Garden'
+                { nombre: 'Zigbee', logo: 'assets/logos/zigbee.svg', url: 'https://csa-iot.org/all-solutions/zigbee/' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -568,11 +565,11 @@ export class UseCasesService {
                 'Amantes de la música'
             ],
             tecnologias: [
-                'Logitech Harmony / Broadlink',
-                'Philips Hue Sync',
-                'Sonos / Denon / Yamaha',
-                'Android TV / Apple TV / WebOS',
-                'Home Assistant Media'
+                { nombre: 'Philips Hue', logo: 'assets/logos/philips_hue.png', url: 'https://www.philips-hue.com/es-es' },
+                { nombre: 'Sonos', logo: 'assets/logos/sonos.png', url: 'https://www.sonos.com/es-es/home' },
+                { nombre: 'Android TV', logo: 'assets/logos/android_real.png', url: 'https://www.android.com/tv/' },
+                { nombre: 'LG webOS', logo: 'assets/logos/lg_webos_real.png', url: 'https://www.lg.com/es' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -620,11 +617,9 @@ export class UseCasesService {
                 'Animales mayores o enfermos'
             ],
             tecnologias: [
-                'Cámaras con Audio Bidireccional',
-                'Comederos WiFi (Tuya/Xiaomi)',
-                'Sensores de temperatura',
-                'Home Assistant',
-                'Detección de sonido IA'
+                { nombre: 'Reolink', logo: 'assets/logos/reolink.png', url: 'https://reolink.com/' },
+                { nombre: 'Aqara', logo: 'assets/logos/aqara_official.png', url: 'https://www.aqara.com/' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -648,35 +643,33 @@ export class UseCasesService {
             id: '13',
             slug: 'cuidado-mayores',
             titulo: 'Asistencia Activa para Mayores (AAM)',
-            subtitulo: 'Independencia para ellos, paz mental para ti',
-            descripcion: 'Sistema no intrusivo que aprende sus rutinas. Si no hay movimiento en la cocina a la hora del desayuno habitual, te avisa. Detección de caídas y botón SOS.',
-            descripcionDetallada: 'Solución de teleasistencia avanzada sin cuotas mensuales. Basada en sensores de movimiento y apertura (no cámaras, para preservar privacidad). Detecta anomalías en patrones de vida: falta de movimiento, puerta de calle abierta a deshoras, baño demasiado largo (posible caída), etc.',
+            subtitulo: 'Independencia, detección de caídas y paz mental para ti',
+            descripcion: 'Sistema de teleasistencia avanzada sin cuotas. Detecta caídas y anomalías (falta de movimiento, baño largo) mediante sensores privados (sin cámaras).',
+            descripcionDetallada: 'Solución de teleasistencia avanzada sin cuotas mensuales. Basada en sensores de movimiento, apertura y sensores de caída dedicados (no cámaras, para preservar privacidad). Detecta anomalías en patrones de vida: falta de movimiento, puerta de calle abierta a deshoras, estancia en baño demasiado larga (posible caída), etc.',
             imagen: '/assets/images/usecase-seniors.png',
             icono: 'fa-user-shield',
             categoria: 'Asistencia',
-            ahorroEstimado: 'Alternativa a residencia',
+            ahorroEstimado: 'Sin cuotas mensuales',
             tiempoImplementacion: '1 día',
-            roi: 'Seguridad familiar',
+            roi: 'Seguridad y Tranquilidad',
             beneficios: [
-                'Privacidad total (sin cámaras)',
-                'Detección de caídas (radar mmWave)',
-                'Alertas de inactividad anómala',
-                'Monitorización de medicación (cajón)',
+                'Privacidad total (100% sin cámaras)',
+                'Detección de caídas automática (Radares mmWave)',
+                'Alertas inmediatas al móvil de familiares',
+                'Supervisión de rutinas (sin invadir intimidad)',
                 'Botones de pánico inalámbricos',
-                'Iluminación automática nocturna (evita caídas)'
+                'Iluminación nocturna automática anti-caídas'
             ],
             casosUso: [
                 'Personas mayores viviendo solas',
                 'Usuarios con movilidad reducida',
                 'Recuperaciones post-operatorias',
-                'Familias preocupadas'
+                'Tranquilidad para los hijos'
             ],
             tecnologias: [
-                'Radares presencia mmWave (Aqara FP2)',
-                'Sensores puerta/movimiento',
-                'Botones Zigbee SOS',
-                'Notificaciones Telegram/WhatsApp',
-                'Home Assistant Health'
+                { nombre: 'Aqara', logo: 'assets/logos/aqara_official.png', url: 'https://www.aqara.com/' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' },
+                { nombre: 'Telegram', logo: 'assets/logos/telegram_clean.png?v=new', url: 'https://telegram.org/' }
             ],
             ejemplos: [
                 {
@@ -706,7 +699,7 @@ export class UseCasesService {
             imagen: '/assets/images/usecase-wifi.png',
             icono: 'fa-wifi',
             categoria: 'Infraestructura',
-            ahorroEstimado: 'Suscripciones Cloud y Productividad',
+            ahorroEstimado: 'Productividad y Eficiencia',
             tiempoImplementacion: '1-3 días',
             roi: 'Seguridad y Privacidad',
             beneficios: [
@@ -724,11 +717,8 @@ export class UseCasesService {
                 'Eliminar publicidad en Smart TVs y móviles'
             ],
             tecnologias: [
-                'Unifi Ubiquiti / Mikrotik',
-                'Synology / TrueNAS',
-                'AdGuard Home',
-                'WiFi 6 / 6E Mesh',
-                'VLANs de seguridad'
+                { nombre: 'Unifi', logo: 'assets/logos/unifi.svg', url: 'https://ui.com/' },
+                { nombre: 'AdGuard', logo: 'assets/logos/adguard.svg', url: 'https://adguard.com/' }
             ],
             ejemplos: [
                 {
@@ -776,11 +766,10 @@ export class UseCasesService {
                 'Personas que valoran su privacidad'
             ],
             tecnologias: [
-                'Reolink / Unifi Protect',
-                'Frigate NVR (IA Local)',
-                'Sensores Zigbee de alta velocidad',
-                'Alarmo (Home Assistant)',
-                'Notificaciones Críticas en iOS/Android'
+                { nombre: 'Reolink', logo: 'assets/logos/reolink.png', url: 'https://reolink.com/' },
+                { nombre: 'Frigate NVR', logo: 'assets/logos/frigate_text.png', url: 'https://frigate.video/' },
+                { nombre: 'Ajax Systems', logo: 'assets/logos/ajax_real.png', url: 'https://ajax.systems/es/' },
+                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
             ],
             ejemplos: [
                 {
@@ -828,10 +817,10 @@ export class UseCasesService {
                 'Tiendas retail (iluminación de acento)'
             ],
             tecnologias: [
-                'Shelly Pro (Carril DIN)',
-                'Cámaras IP Empresariales',
-                'Control de Accesos Smart',
-                'Monitorización de Consumo Trifásico'
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
+                { nombre: 'Daikin', logo: 'assets/logos/daikin.png', url: 'https://www.daikin.es/' },
+                { nombre: 'Reolink', logo: 'assets/logos/reolink.png', url: 'https://reolink.com/' },
+                { nombre: 'Yale', logo: 'assets/logos/yale.svg', url: 'https://yalehome.co.uk/' }
             ],
             ejemplos: [
                 {

@@ -7,6 +7,11 @@ import { ProyectosComponent } from './features/proyectos/proyectos.component';
 import { ProyectoDetalleComponent } from './features/proyecto-detalle/proyecto-detalle.component';
 import { UseCaseDetalleComponent } from './features/use-case-detalle/use-case-detalle.component';
 import { GraciasComponent } from './features/gracias/gracias.component';
+import { InstalladoresComponent } from './features/instaladores/instaladores.component';
+
+import { PoliticaPrivacidadComponent } from './features/legal/politica-privacidad.component';
+import { AvisoLegalComponent } from './features/legal/aviso-legal.component';
+import { PoliticaCookiesComponent } from './features/legal/politica-cookies.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/acerca-de-nosotros', pathMatch: 'full' },
@@ -15,8 +20,12 @@ const routes: Routes = [
   { path: 'domotica/:slug', component: UseCaseDetalleComponent },
   { path: 'proyectos', component: ProyectosComponent },
   { path: 'proyectos/:slug', component: ProyectoDetalleComponent },
+  { path: 'instaladores', component: InstalladoresComponent },
   { path: 'contactanos', component: ContactanosComponent },
-  { path: 'gracias', component: GraciasComponent }
+  { path: 'gracias', component: GraciasComponent },
+  { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
+  { path: 'aviso-legal', component: AvisoLegalComponent },
+  { path: 'politica-cookies', component: PoliticaCookiesComponent }
 ];
 
 @NgModule({

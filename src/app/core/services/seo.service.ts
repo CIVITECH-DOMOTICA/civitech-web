@@ -148,10 +148,10 @@ export class SeoService {
             email: 'civitecreformas@gmail.com',
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Virgen del Val 10',
-                addressLocality: 'Madrid',
-                addressRegion: 'Madrid',
-                postalCode: '28027',
+                streetAddress: 'Zaragoza, España',
+                addressLocality: 'Zaragoza',
+                addressRegion: 'Aragón',
+                postalCode: '50001',
                 addressCountry: 'ES'
             },
             geo: {

@@ -49,7 +49,7 @@ export class UseCaseDetalleComponent implements OnInit {
     // Keywords
     this.metaService.updateTag({
       name: 'keywords',
-      content: `${this.useCase.titulo}, domótica ${this.useCase.categoria}, ${this.useCase.tecnologias?.join(', ')}, Zaragoza, Aragón`
+      content: `${this.useCase.titulo}, domótica ${this.useCase.categoria}, ${this.useCase.tecnologias?.map(t => t.nombre).join(', ')}, Zaragoza, Aragón`
     });
 
     // Open Graph

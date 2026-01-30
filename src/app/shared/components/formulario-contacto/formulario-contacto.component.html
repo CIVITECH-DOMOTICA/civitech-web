@@ -30,13 +30,14 @@
         <div class="col-12 mb-2 d-flex align-items-center item-contact-terminos justify-content-start"
           data-aos="fade-up" data-aos-delay="800">
           <input type="checkbox" name="privacidad" value="sí" required />
-          <label class="ms-2">Tengo más de 14 años, he leído y acepto la Política de Privacidad*</label>
+          <label class="ms-2">Tengo más de 14 años, he leído y acepto la <a routerLink="/politica-privacidad"
+              target="_blank" class="text-decoration-underline text-dark fw-bold">Política de Privacidad</a>*</label>
         </div>
         <div class="col-12 mb-3 d-flex align-items-center item-contact-politica justify-content-start"
           data-aos="fade-up" data-aos-delay="900">
           <input type="checkbox" name="terminos" value="sí" required />
-          <label class="ms-2">He leído y acepto los <strong>términos de servicio y políticas de
-              privacidad*</strong></label>
+          <label class="ms-2">He leído y acepto los <a routerLink="/aviso-legal" target="_blank"
+              class="text-decoration-underline text-dark fw-bold">Términos de Servicio</a>*</label>
         </div>
         <div class="col-12" data-aos="zoom-in" data-aos-delay="1000">
           <button id="btnEnviar" type="submit" class="btn-enviar">Enviar</button>

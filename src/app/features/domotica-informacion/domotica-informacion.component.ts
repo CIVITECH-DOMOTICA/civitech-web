@@ -7,22 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./domotica-informacion.component.scss']
 })
 export class DomoticaInformacionComponent {
-   constructor(private router: Router) {}
-   urlBoton: string ='/acerca-de-nosotros'
+  constructor(private router: Router) {
+    // Force Recompile
+  }
+  urlBoton: string = '/acerca-de-nosotros'
   opiniones = [
 
     {
-      src:'../../../../assets/images/cliente1.jpg',
+      src: '../../../../assets/images/cliente1.jpg',
       nombre: 'Domotizacion Casa Rural en Asturias',
       resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
     },
     {
-      src:'../../../../assets/images/cliente3.jpg',
+      src: '../../../../assets/images/cliente3.jpg',
       nombre: 'Monitorizacion de Consumo Energetico Chalet en Barcelona',
       resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
     },
     {
-      src:'../../../../assets/images/cliente2.jpg',
+      src: '../../../../assets/images/cliente2.jpg',
       nombre: 'Domotizacion Piso en Castellon de la Plana',
       resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
     }

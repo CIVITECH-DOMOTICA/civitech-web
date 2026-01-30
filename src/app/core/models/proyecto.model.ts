@@ -21,7 +21,7 @@ export interface Proyecto {
     superficieM2?: number;
     habitaciones?: number;
     dispositivosInstalados?: DispositivoInstalado[];
-    tecnologiasUtilizadas?: string[];
+    tecnologiasUtilizadas?: (string | Tecnologia)[];
 
     // Métricas de impacto
     ahorroEnergetico?: string;
@@ -45,6 +45,12 @@ export interface Proyecto {
 
     // Retos y soluciones
     retos?: RetoSolucion[];
+}
+
+export interface Tecnologia {
+    nombre: string;
+    url?: string;
+    logo?: string;
 }
 
 export interface DispositivoInstalado {

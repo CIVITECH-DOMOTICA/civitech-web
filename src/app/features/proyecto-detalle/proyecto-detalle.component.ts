@@ -172,6 +172,49 @@ export class ProyectoDetalleComponent implements OnInit {
     this.router.navigate(['/contactanos']);
   }
 
+  getTechName(tech: string | { nombre: string, url?: string }): string {
+    return typeof tech === 'string' ? tech : tech.nombre;
+  }
+
+  getTechUrl(tech: string | { nombre: string, url?: string, logo?: string }): string | undefined {
+    return typeof tech === 'string' ? undefined : tech.url;
+  }
+
+  hasTechUrl(tech: string | { nombre: string, url?: string, logo?: string }): boolean {
+    return typeof tech !== 'string' && !!tech.url;
+  }
+
+  getTechLogo(tech: string | { nombre: string, url?: string, logo?: string }): string | undefined {
+    if (typeof tech === 'string') return undefined;
+    return tech.logo;
+  }
+
+  hasTechLogo(tech: string | { nombre: string, url?: string, logo?: string }): boolean {
+    return typeof tech !== 'string' && !!tech.logo;
+  }
+
+  getIconoTecnologia(tech: string | { nombre: string, url?: string, logo?: string }): string {
+    const name = this.getTechName(tech).toLowerCase();
+
+    if (name.includes('wifi') || name.includes('wireless') || name.includes('mesh')) return 'fa-wifi';
+    if (name.includes('reolink') || name.includes('cámara') || name.includes('nvr') || name.includes('frigate') || name.includes('tapo')) return 'fa-video';
+    if (name.includes('home assistant') || name.includes('ha')) return 'fa-house-signal';
+    if (name.includes('shelly') || name.includes('nube') || name.includes('cloud')) return 'fa-cloud';
+    if (name.includes('zigbee') || name.includes('z-wave')) return 'fa-share-nodes';
+    if (name.includes('tesla') || name.includes('cargador') || name.includes('ev') || name.includes('batería')) return 'fa-bolt';
+    if (name.includes('daikin') || name.includes('toshiba') || name.includes('clima') || name.includes('airzone')) return 'fa-temperature-half';
+    if (name.includes('ethernet') || name.includes('cable') || name.includes('red') || name.includes('modbus')) return 'fa-network-wired';
+    if (name.includes('aqara') || name.includes('sensor')) return 'fa-eye';
+
+    return 'fa-microchip'; // Fallback por si acaso
+  }
+
+  handleImageError(tech: string | { nombre: string, url?: string, logo?: string }): void {
+    if (typeof tech !== 'string') {
+      tech.logo = undefined; // Si falla, quitamos el logo para mostrar el icono
+    }
+  }
+
   getIconoCategoria(categoria: string): string {
     const iconos: { [key: string]: string } = {
       'iluminacion': 'fa-lightbulb',

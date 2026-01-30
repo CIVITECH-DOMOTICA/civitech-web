@@ -40,14 +40,14 @@ header {
 .header-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: $spacing-3 $spacing-8;
+  padding: $spacing-4 $spacing-8; // Más padding para que el logo respire
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo img {
-  height: 85px; // Logo aumentado significativamente
+  height: 95px; // Logo aumentado a 95px (Presencia máxima)
   width: auto;
   filter: brightness(0) invert(1);
   @include tr-smooth;

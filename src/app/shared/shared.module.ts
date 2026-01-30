@@ -25,6 +25,7 @@ import { StatsCivitechComponent } from './components/stats-civitech/stats-civite
 import { FaqCivitechComponent } from './components/faq-civitech/faq-civitech.component';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 import { NewsSectionComponent } from './components/news-section/news-section.component';
+import { EcosystemGridComponent } from './components/ecosystem-grid/ecosystem-grid.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { NewsSectionComponent } from './components/news-section/news-section.com
     StatsCivitechComponent,
     FaqCivitechComponent,
     CookieBannerComponent,
-    NewsSectionComponent
+    NewsSectionComponent,
+    EcosystemGridComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,7 @@ import { NewsSectionComponent } from './components/news-section/news-section.com
     CardModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    DialogModule // Añadido
+    DialogModule
   ],
   exports: [
     BannerComponent,
@@ -70,8 +72,8 @@ import { NewsSectionComponent } from './components/news-section/news-section.com
     StatsCivitechComponent,
     FaqCivitechComponent,
     CookieBannerComponent,
-    NewsSectionComponent // Nuevo componente
-  ],
-
+    NewsSectionComponent,
+    EcosystemGridComponent
+  ]
 })
 export class SharedModule { }

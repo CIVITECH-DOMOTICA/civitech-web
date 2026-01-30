@@ -1,0 +1,69 @@
+[
+    {
+        "id": "lavanderia-24h",
+        "titulo": "Gestión Integral Lavandería Autoservicio 24h",
+        "descripcion": "Automatización total de local desatendido. Cámaras POE con detección de personas, apertura remota de persiana, iluminación astronómica y sensores de vibración antivandálicos en vending. Todo controlado desde una única App.",
+        "imagen": "https://images.pexels.com/photos/3201920/pexels-photo-3201920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoria": "Locales Comerciales",
+        "servicios": [
+            "CCTV IA",
+            "Acceso Remoto",
+            "Vending Safe",
+            "Iluminación"
+        ],
+        "verDetalle": true
+    },
+    {
+        "id": "chalet-tesla-airzone",
+        "titulo": "Gestión Excedentes y Clima Industrial",
+        "descripcion": "Chalet con máquinas de conductos Toshiba integradas vía Airzone Aidoo Pro (WiFi). Algoritmo en HA que decide destino de energía solar sobrante: Cargar Tesla (Ethernet) o pre-enfriar vivienda. Prioridad dinámica.",
+        "imagen": "https://images.pexels.com/photos/9800009/pexels-photo-9800009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoria": "Residencial Avanzado",
+        "servicios": [
+            "Tesla Wall Connector",
+            "Airzone",
+            "Gestión Excedentes",
+            "Ethernet"
+        ],
+        "verDetalle": true
+    },
+    {
+        "id": "chalet-barcelona",
+        "titulo": "Gestión Sol y Excedentes",
+        "descripcion": "Integración de inversor Huawei existente con Home Assistant. Automatización de cargas (termo y depuradora) basada en la curva de producción solar en tiempo real.",
+        "imagen": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoria": "Eficiencia",
+        "servicios": [
+            "Integración Huawei",
+            "Gestión Cargas",
+            "Dashboard Energía"
+        ],
+        "verDetalle": true
+    },
+    {
+        "id": "piso-madrid",
+        "titulo": "Control Unificado Iluminación",
+        "descripcion": "Programación avanzada de pasarela DALI para control de 40 luminarias. Creación de escenas 'Cine' y 'Relax' integrando estores motorizados Somfy RTS preexistentes.",
+        "imagen": "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoria": "Iluminación",
+        "servicios": [
+            "Gateway DALI",
+            "Integración Somfy",
+            "Escenas"
+        ],
+        "verDetalle": true
+    },
+    {
+        "id": "atico-sevilla",
+        "titulo": "Cerebro de Seguridad NVR",
+        "descripcion": "Centralización de cámaras IP de distintos fabricantes (Hikvision + Reolink) en un único NVR local con Frigate. Detección de personas y coches sin enviar vídeo a la nube.",
+        "imagen": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoria": "Seguridad",
+        "servicios": [
+            "Frigate NVR",
+            "Detección IA",
+            "Notificaciones"
+        ],
+        "verDetalle": true
+    }
+]

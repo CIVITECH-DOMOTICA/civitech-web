@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150">
+  <defs>
+    <style>
+      .cls-1 { fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 13px; }
+      .cls-2 { fill: #000; stroke-width: 0; }
+    </style>
+  </defs>
+  
+  <!-- A (Logo Isotipo) -->
+  <path class="cls-1" d="M70 120 L110 30 L150 120"/>
+  <circle class="cls-2" cx="110" cy="90" r="14"/>
+
+  <!-- q -->
+  <circle class="cls-1" cx="215" cy="90" r="28"/>
+  <line class="cls-1" x1="243" y1="62" x2="243" y2="150"/> <!-- Palo largo abajo -->
+
+  <!-- a -->
+  <circle class="cls-1" cx="305" cy="90" r="28"/>
+  <line class="cls-1" x1="333" y1="62" x2="333" y2="120"/>
+
+  <!-- r -->
+  <line class="cls-1" x1="380" y1="62" x2="380" y2="120"/>
+  <path class="cls-1" d="M380 90 Q 405 62 430 75"/>
+
+  <!-- a -->
+  <circle class="cls-1" cx="475" cy="90" r="28"/>
+  <line class="cls-1" x1="503" y1="62" x2="503" y2="120"/>
+</svg>

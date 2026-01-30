@@ -434,6 +434,32 @@ section {
                 }
             }
 
+            .tech-icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100px; // Altura fija para alinear verticalmente todos los logos
+                margin-bottom: $spacing-4;
+            }
+
+            .tech-logo-img {
+                display: block;
+                // margin: 0 auto $spacing-4; // Ya no hace falta margin auto por flex
+                max-height: 80px;
+                width: auto;
+                max-width: 100%;
+                object-fit: contain;
+                // filter: grayscale(100%); // ELIMINADO: Color siempre
+                opacity: 0.9;
+                transition: all 0.3s ease;
+            }
+
+            &:hover .tech-logo-img {
+                filter: grayscale(0%);
+                opacity: 1;
+                transform: scale(1.1);
+            }
+
             h4 {
                 font-size: $text-lg;
                 font-weight: $font-semibold;

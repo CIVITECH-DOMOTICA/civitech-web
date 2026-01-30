@@ -35,10 +35,65 @@
     }
 }
 
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: $spacing-8;
+// Carrusel adjustments
+::ng-deep .p-carousel-items-content {
+    padding: 20px 0; // Space for shadow
+}
+
+// FIX: Paginación Carrusel limpia (Reset Total)
+::ng-deep .p-carousel .p-carousel-indicators {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+    list-style: none;
+
+    .p-carousel-indicator {
+        margin: 0;
+        padding: 0;
+        background: transparent !important;
+        border: none !important;
+        width: auto !important;
+        height: auto !important;
+
+        // Eliminar posibles pseudo-elementos heredados que causan "puntos extra"
+        &::before,
+        &::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        button {
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            background-color: #e2e8f0 !important; // Gris claro
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none !important;
+            box-shadow: none !important;
+
+            // Ocultar texto/iconos internos
+            color: transparent !important;
+            font-size: 0 !important;
+            overflow: hidden;
+
+            &:hover {
+                background-color: $p-300 !important;
+                transform: scale(1.1);
+            }
+        }
+
+        &.p-highlight button {
+            background-color: $p-500 !important;
+            width: 32px !important; // Pill shape ancho
+            border-radius: 6px !important;
+        }
+    }
 }
 
 .news-card {
@@ -48,6 +103,9 @@
     box-shadow: $shadow-lg;
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%; // Fill height in carousel
+    display: flex;
+    flex-direction: column;
 
     &:hover {
         transform: translateY(-8px);
@@ -62,6 +120,7 @@
         position: relative;
         height: 220px;
         overflow: hidden;
+        flex-shrink: 0;
 
         img {
             width: 100%;
@@ -86,6 +145,9 @@
 
     .card-content {
         padding: $spacing-6;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
 
         .date {
             display: block;
@@ -119,6 +181,7 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            flex-grow: 1;
         }
 
         .read-more {
@@ -129,11 +192,190 @@
             text-decoration: none;
             gap: 8px;
             transition: gap 0.2s;
+            margin-top: auto;
 
             &:hover {
                 gap: 12px;
                 color: $p-700;
             }
         }
+    }
+}
+
+// DIALOG STYLES - FIXED
+:host ::ng-deep {
+    .p-dialog {
+        background: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        border-radius: 16px !important;
+        max-height: 90vh;
+    }
+
+    .p-dialog .p-dialog-header {
+        background: #ffffff !important;
+        border-bottom: 1px solid #f3f4f6;
+        padding: 1.5rem 2rem !important;
+        border-top-right-radius: 16px !important;
+        border-top-left-radius: 16px !important;
+        color: $dark-bg;
+    }
+
+    .p-dialog .p-dialog-content {
+        background: #ffffff !important;
+        padding: 0 !important;
+        border-bottom-right-radius: 16px !important;
+        border-bottom-left-radius: 16px !important;
+    }
+
+    // Botón de cerrar más elegante
+    .p-dialog-header-close {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        border-radius: 50% !important;
+        background: #f3f4f6 !important;
+        color: #666 !important;
+        transition: all 0.2s;
+
+        &:hover {
+            background: $p-500 !important;
+            color: white !important;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.dialog-header-content {
+    .category-badge {
+        background: rgba($p-500, 0.1);
+        color: $p-500;
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: $dark-bg;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .meta-date {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: #888;
+    }
+}
+
+.article-body {
+    padding-bottom: 2rem;
+
+    .hero-image-container {
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .text-content {
+        padding: 2rem;
+        max-width: 700px;
+        margin: 0 auto;
+
+        .lead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 2rem 0;
+        }
+
+        .dummy-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+
+            p {
+                margin-bottom: 1.5rem;
+            }
+
+            h4 {
+                color: $dark-bg;
+                font-weight: 700;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                padding-left: 1.5rem;
+                margin-bottom: 1.5rem;
+
+                li {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+
+        .cta-box {
+            background: #f8f9fa;
+            border-left: 4px solid $p-500;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-radius: 4px;
+            text-align: center;
+
+            p {
+                font-weight: 600;
+                margin-bottom: 1rem;
+                color: $dark-bg;
+            }
+
+            .btn-cta {
+                display: inline-block;
+                background: $p-500;
+                color: white;
+                text-decoration: none;
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-weight: 600;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: darken($p-500, 10%);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dialog-header-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-image-container {
+        height: 200px;
+    }
+
+    .text-content {
+        padding: 1.5rem;
     }
 }

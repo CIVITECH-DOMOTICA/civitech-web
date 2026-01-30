@@ -1,0 +1,108 @@
+<section class="ecosystem-container section-padding">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header text-center">
+            <h2 class="display-4 fw-bold">Ecosistema de Compatibilidad</h2>
+            <p class="lead text-muted">
+                Tú eliges la marca, nosotros la conectamos. Integramos los principales estándares del mercado.
+            </p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card" *ngFor="let cat of categorias" data-aos="fade-up" data-aos-delay="100">
+                <div class="category-header">
+                    <i class="fas" [ngClass]="cat.icono"></i>
+                    <h3>{{cat.titulo}}</h3>
+                </div>
+
+                <div class="brands-grid">
+                    <a *ngFor="let marca of cat.marcas" [href]="marca.url" target="_blank" class="brand-item"
+                        [title]="marca.nombre">
+                        <img [src]="marca.logo" [alt]="marca.nombre" (error)="handleImageError($event)">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Final Potente -->
+        <div class="ecosystem-cta text-center mt-5 p-4 rounded-3 shadow-sm bg-white" data-aos="zoom-in">
+            <h3 class="h4 fw-bold mb-3">
+                <i class="fas fa-layer-group text-primary me-2"></i>
+                ¡Y muchas más!
+            </h3>
+            <p class="text-muted mb-4 lead" style="font-size: 1.1rem;">
+                Trabajamos con <strong>cientos de marcas</strong>. Si no ves la tuya, no te preocupes.
+                <br>
+                <span class="d-block mt-2 text-dark font-weight-bold">
+                    Pregúntanos para saber si tu marca se integra.
+                </span>
+            </p>
+            <a routerLink="/contactanos" class="btn btn-primary btn-lg rounded-pill px-5 shadow-transition">
+                <i class="fas fa-comments me-2"></i> Consultar Compatibilidad
+            </a>
+
+            <div class="mt-5 pt-4 border-top w-100 mx-auto">
+                <small class="text-uppercase text-muted fw-bold d-block mb-3" style="letter-spacing: 1px;">Tecnologías
+                    soportadas:</small>
+
+                <div class="protocol-grid d-flex flex-wrap justify-content-center align-items-center gap-4">
+                    <!-- Conectividad -->
+                    <div class="protocol-item" title="Wi-Fi">
+                        <img src="assets/logos/wifi.png" alt="Wi-Fi" class="protocol-icon" style="height: 30px;">
+                    </div>
+                    <div class="protocol-item" title="Zigbee">
+                        <img src="assets/logos/zigbee.svg" alt="Zigbee" class="protocol-icon" style="height: 35px;">
+                    </div>
+                    <div class="protocol-item" title="Z-Wave">
+                        <img src="assets/logos/zwave.svg" alt="Z-Wave" class="protocol-icon" style="height: 35px;">
+                    </div>
+                    <div class="protocol-item" title="Bluetooth">
+                        <img src="assets/logos/bluetooth.svg" alt="Bluetooth" class="protocol-icon"
+                            style="height: 35px;">
+                    </div>
+                    <div class="protocol-item" title="Thread">
+                        <img src="assets/logos/thread.svg" alt="Thread" class="protocol-icon" style="height: 35px;">
+                    </div>
+
+
+                    <!-- Estándares -->
+                    <div class="protocol-item" title="Matter">
+                        <img src="assets/logos/matter_real.png" alt="Matter" class="protocol-icon"
+                            style="height: 45px;">
+                    </div>
+                    <div class="protocol-item" title="HomeKit">
+                        <img src="assets/logos/apple_home_official.png" alt="HomeKit" class="protocol-icon"
+                            style="height: 30px;">
+                    </div>
+                    <div class="protocol-item" title="Android">
+                        <img src="assets/logos/android_real.png" alt="Android" class="protocol-icon"
+                            style="height: 35px;">
+                    </div>
+
+                    <!-- Industrial -->
+                    <div class="protocol-item" title="KNX">
+                        <img src="assets/logos/knx_real.png" alt="KNX" class="protocol-icon" style="height: 35px;">
+                    </div>
+                    <div class="protocol-item" title="Modbus">
+                        <img src="assets/logos/modbus.svg" alt="Modbus" class="protocol-icon" style="height: 35px;">
+                    </div>
+                    <div class="protocol-item" title="OPC UA">
+                        <img src="assets/logos/opcua.svg" alt="OPC UA" class="protocol-icon" style="height: 35px;">
+                    </div>
+
+                    <!-- IoT -->
+                    <div class="protocol-item" title="MQTT">
+                        <img src="assets/logos/mqtt.svg" alt="MQTT" class="protocol-icon" style="height: 35px;">
+                    </div>
+                    <div class="protocol-item" title="ESPHome">
+                        <img src="assets/logos/esphome.svg" alt="ESPHome" class="protocol-icon" style="height: 30px;">
+                    </div>
+                    <div class="protocol-item" title="ONVIF">
+                        <img src="assets/logos/onvif.svg" alt="ONVIF" class="protocol-icon" style="height: 35px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -51,20 +51,20 @@
 
             <!-- Imagen Explicativa según el caso -->
             <div class="descripcion-imagen" *ngIf="useCase.slug === 'optimizacion-solar'">
-                <img src="/assets/images/solar-dashboard.png" alt="Dashboard de gestión solar" />
+                <img src="/assets/images/solar-dashboard.png" alt="Dashboard de gestión solar" loading="lazy" />
                 <p class="imagen-caption">Dashboard en tiempo real de producción y consumo solar</p>
             </div>
             <div class="descripcion-imagen" *ngIf="useCase.slug === 'climatizacion-inteligente'">
-                <img src="/assets/images/clima-zones.png" alt="Zonas climáticas inteligentes" />
+                <img src="/assets/images/clima-zones.png" alt="Zonas climáticas inteligentes" loading="lazy" />
                 <p class="imagen-caption">Control independiente por zonas para máxima eficiencia</p>
             </div>
             <div class="descripcion-imagen" *ngIf="useCase.slug === 'persianas-automaticas'">
-                <img src="/assets/images/persianas-control.png" alt="Control de persianas automáticas" />
+                <img src="/assets/images/persianas-control.png" alt="Control de persianas automáticas" loading="lazy" />
                 <p class="imagen-caption">Automatización según posición solar y meteorología</p>
             </div>
             <div class="descripcion-imagen"
                 *ngIf="useCase.slug !== 'optimizacion-solar' && useCase.slug !== 'climatizacion-inteligente' && useCase.slug !== 'persianas-automaticas'">
-                <img [src]="useCase.imagen" [alt]="useCase.titulo" />
+                <img [src]="useCase.imagen" [alt]="useCase.titulo" loading="lazy" />
                 <p class="imagen-caption">Sistema {{ useCase.categoria }} profesional</p>
             </div>
         </div>
@@ -97,8 +97,24 @@
         <h2 class="section-title">Tecnologías que Utilizamos</h2>
         <p class="section-subtitle">Trabajamos solo con marcas líderes y tecnología probada</p>
         <div class="tecnologias-grid">
-            <div class="tech-badge" *ngFor="let tech of useCase.tecnologias">
-                <i class="fas fa-microchip"></i> {{ tech }}
+            <div class="tech-badge" *ngFor="let tech of useCase.tecnologias" [title]="tech.nombre"
+                [class.has-logo]="tech.logo">
+
+                <!-- Si tiene URL, es un enlace -->
+                <a *ngIf="tech.url" [href]="tech.url" target="_blank" rel="noopener noreferrer" class="tech-link">
+                    <img *ngIf="tech.logo" [src]="tech.logo" [alt]="tech.nombre" class="tech-logo-only">
+                    <span *ngIf="!tech.logo"><i class="fas fa-microchip"></i> {{ tech.nombre }}</span>
+                </a>
+
+                <!-- Si NO tiene URL, es solo visual -->
+                <ng-container *ngIf="!tech.url">
+                    <img *ngIf="tech.logo" [src]="tech.logo" [alt]="tech.nombre" class="tech-logo-only">
+                    <ng-container *ngIf="!tech.logo">
+                        <i class="fas fa-microchip"></i>
+                        <span>{{ tech.nombre }}</span>
+                    </ng-container>
+                </ng-container>
+
             </div>
         </div>
     </div>

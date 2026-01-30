@@ -1,56 +1,62 @@
 [
     {
         "id": 1,
-        "title": "Matter 2.0: La revolución de la compatibilidad total ha llegado",
-        "summary": "Olvídate de si es compatible con Apple o Google. El nuevo estándar Matter unifica todos tus dispositivos. Te explicamos cómo Civitech integra esta tecnología en tu hogar para que todo funcione como una orquesta perfecta.",
-        "date": "2026-01-20",
-        "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "tag": "Tecnología",
-        "link": "#"
+        "title": "Ayudas Rehabilitación Aragón 2026: Plazo hasta el 3 de febrero",
+        "summary": "Abierto el plazo del 'Programa 4' de fondos Next Generation EU en Aragón. Subvencionan hasta el 40% de intervenciones que reduzcan un 30% el consumo no renovable.",
+        "date": "2026-01-26",
+        "image": "https://images.pexels.com/photos/1036657/pexels-photo-1036657.jpeg",
+        "tag": "Subvenciones DGA",
+        "link": "https://www.aragon.es",
+        "fullContent": "<h4>¿En qué consisten las ayudas?</h4><p>El Gobierno de Aragón ha activado el Programa 4 de las ayudas Next Generation, enfocado a la mejora de la eficiencia energética en viviendas. El objetivo es claro: reducir al menos un 30% el consumo de energía primaria no renovable.</p><h4>¿Qué cubren exactamente?</h4><ul><li>Sustitución de ventanas por otras de alto aislamiento.</li><li>Automatización de persianas para control solar (aquí entra Civitech).</li><li>Sistemas de gestión inteligente de climatización (termostatos zonificados).</li></ul><h4>¿Cómo te ayuda Civitech?</h4><p>Nosotros emitimos el informe técnico de la instalación domótica que justifica el ahorro energético. Al automatizar la subida/bajada de persianas en función del sol y zonificar la calefacción, logramos fácilmente ese 30% de ahorro exigido para liberar la subvención.</p>"
     },
     {
         "id": 2,
-        "title": "Ahorro Energético Inteligente: Caso Real en Zaragoza",
-        "summary": "Analizamos cómo una familia de 4 miembros redujo su factura de gas un 35% instalando cabezales termostáticos inteligentes y automatizaciones de presencia. La inversión se amortizó en solo 8 meses.",
-        "date": "2026-01-15",
-        "image": "https://images.pexels.com/photos/5863389/pexels-photo-5863389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "tag": "Caso de Éxito",
-        "link": "#"
+        "title": "Precio de la luz 2026: Se prevé una bajada del 16%",
+        "summary": "Los futuros apuntan a un precio medio de 55€/MWh para este año. Te ayudamos a programar tus electrodomésticos para aprovechar la caída.",
+        "date": "2026-01-24",
+        "image": "https://images.pexels.com/photos/7937357/pexels-photo-7937357.jpeg",
+        "tag": "Mercado Eléctrico",
+        "link": "#",
+        "fullContent": "<h4>Tendencia bajista confirmada</h4><p>Los analistas energéticos coinciden: 2026 será un año de alivio para el bolsillo. La entrada masiva de renovables (eólica y solar) está empujando los precios del mercado mayorista hacia los 55€/MWh de media.</p><h4>El truco: Los peajes fijos</h4><p>Aunque la energía baja, los costes fijos del sistema suben un 4%. Esto significa que 'cuando' consumes es más importante que nunca. Las horas solares (12:00 a 16:00) serán baratísimas, a veces cercanas a 0€.</p><h4>Automatiza para ahorrar</h4><p>Nuestra propuesta es simple: programamos tu lavadora, termo y cargador de coche para que se activen solos cuando la luz está barata. Sin que tú tengas que mirar el precio hora a hora.</p>"
     },
     {
         "id": 3,
-        "title": "Seguridad Proactiva: Tu casa se defiende sola",
-        "summary": "Más allá de las alarmas sonoras. Simulación de presencia con luces, cierre automático de persianas y notificaciones instantáneas a tu móvil con vídeo en alta definición ante cualquier movimiento sospechoso.",
-        "date": "2026-01-10",
-        "image": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "tag": "Seguridad",
-        "link": "#"
+        "title": "Home Assistant 2026: Certificación Oficial Matter",
+        "summary": "Home Assistant obtiene la certificación oficial Matter. La nueva actualización permite añadir dispositivos escaneando un QR.",
+        "date": "2026-01-15",
+        "image": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Tecnología",
+        "link": "https://www.home-assistant.io/blog/",
+        "fullContent": "<h4>Un estándar para gobernarlos a todos</h4><p>Matter ha dejado de ser una promesa. Home Assistant 2026.1 ya permite añadir dispositivos Matter directamente dede la APP, escaneando el código QR, sin necesidad de hubs de terceros ni nubes chinas.</p><h4>¿Por qué es vital para tu privacidad?</h4><p>Matter funciona 100% en local. Si se corta internet, tus luces siguen funcionando. Si el fabricante del dispositivo cierra, tu dispositivo sigue funcionando. Es la soberanía tecnológica real.</p><h4>Novedades destacadas</h4><ul><li>Soporte nativo para aspiradores y sensores de calidad de aire.</li><li>Red Thread más estable y rápida.</li><li>Interoperabilidad total entre iOS y Android en la misma casa.</li></ul>"
     },
     {
         "id": 4,
-        "title": "Ayudas a la Rehabilitación Energética en Aragón 2026",
-        "summary": "El Gobierno de Aragón lanza nuevas subvenciones para la mejora de la eficiencia energética. La automatización de persianas y control de clima entran dentro de las actuaciones subvencionables hasta el 40%.",
-        "date": "2026-01-05",
-        "image": "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "tag": "Subvenciones",
-        "link": "#"
+        "title": "CES 2026: La Robótica Doméstica y la IA",
+        "summary": "LG y Roborock presentan robots capaces de subir escaleras. La IA conversacional llega a los electrodomésticos.",
+        "date": "2026-01-10",
+        "image": "https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "tag": "Tendencias CES",
+        "link": "#",
+        "fullContent": "<h4>Asistentes que entienden, no solo obedecen</h4><p>La gran tendencia del CES 2026 ha sido la IA Generativa en el borde (Edge AI). Ya no tienes que decir comandos robóticos como 'Encender luz salón'. Ahora puedes decir 'Voy a leer un rato' y la casa ajusta la luz, baja la música y cierra las cortinas.</p><h4>Robots que cuidan la casa</h4><p>Vimos al nuevo LG CLOiD patrullando el hogar y a los nuevos Roborock subiendo escalones. En Civitech estamos evaluando estos dispositivos para integrarlos en nuestros proyectos premium a finales de año.</p>"
     },
     {
         "id": 5,
-        "title": "Iluminación Biodinámica: Salud a través de la luz",
-        "summary": "Descubre cómo las luces que cambian de temperatura de color según la hora del día pueden mejorar tu sueño y tu productividad. El concepto Human Centric Lighting llega al hogar residencial.",
+        "title": "Seguridad: Cámaras con IA local",
+        "summary": "Las nuevas cámaras homologadas filtran mascotas y sombras. Alertas reales sin falsos positivos.",
         "date": "2025-12-28",
-        "image": "https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "tag": "Salud",
-        "link": "#"
+        "image": "https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg",
+        "tag": "Seguridad",
+        "link": "#",
+        "fullContent": "<h4>El fin de las falsas alarmas</h4><p>¿Harto de que te llegue un aviso cada vez que pasa una nube o se mueve una rama? Las nuevas cámaras que instalamos incluyen procesadores NPU (Neural Processing Unit) que distinguen perfectamente entre un humano, un vehículo y una mascota.</p><h4>Grabación 24/7 en tu propio disco</h4><p>A diferencia de las alarmas comerciales que graban clips de 10 segundos en su nube (y te cobran por verlos), nuestros sistemas graban en continuo en tu propio grabador NVR. Tú eres el dueño de tus imágenes.</p>"
     },
     {
         "id": 6,
-        "title": "Riego Inteligente: Tu jardín verde con la mitad de agua",
-        "summary": "Los nuevos controladores de riego conectados a la previsión meteorológica evitan regar si va a llover mañana. Ahorra agua y mantén tus plantas perfectas sin esfuerzo.",
+        "title": "Riego Eficiente con AEMET",
+        "summary": "Integramos tu riego con la predicción. Si va a llover, no riega. Ahorra agua y dinero.",
         "date": "2025-12-15",
-        "image": "https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "tag": "Jardín",
-        "link": "#"
+        "image": "https://images.pexels.com/photos/5847590/pexels-photo-5847590.jpeg",
+        "tag": "Sostenibilidad",
+        "link": "#",
+        "fullContent": "<h4>La lluvia es el mejor riego</h4><p>Parece obvio, pero el 90% de los programadores de riego siguen saltando aunque esté diluviando. Nuestro sistema consulta la API de AEMET cada hora.</p><h4>Lógica inteligente</h4><p>Si la probabilidad de precipitación en las próximas 24h es superior al 60% y se esperan más de 5mm de agua, el sistema pospone el riego. Si finalmente no llueve, recupera el ciclo. Así de sencillo, así de eficiente.</p><ul><li>Ahorro de agua: ~45% anual.</li><li>Plantas más sanas (evita encharcamientos).</li><li>Control total desde el móvil.</li></ul>"
     }
 ]

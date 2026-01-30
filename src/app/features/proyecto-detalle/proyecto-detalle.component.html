@@ -57,25 +57,7 @@
     </div>
 </section>
 
-<!-- GALERÍA DE IMÁGENES -->
-<section class="galeria-section" *ngIf="proyecto && proyecto.imagenes.length > 0">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Galería del Proyecto</h2>
 
-        <!-- Imagen principal grande -->
-        <div class="galeria-main-image" data-aos="zoom-in">
-            <img [src]="imagenActual" [alt]="proyecto.nombre" (click)="abrirLightbox(imagenActual)">
-        </div>
-
-        <!-- Thumbnails -->
-        <div class="galeria-thumbnails" data-aos="fade-up">
-            <div *ngFor="let imagen of proyecto.imagenes; let i = index" class="thumbnail-item"
-                [class.active]="imagenActual === imagen" (click)="cambiarImagen(i)">
-                <img [src]="imagen" [alt]="proyecto.nombre + ' - ' + (i + 1)">
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- TIMELINE DEL PROYECTO -->
 <section class="timeline-section" *ngIf="proyecto && proyecto.fases && proyecto.fases.length > 0">
@@ -101,15 +83,30 @@
 <!-- TECNOLOGÍAS Y SISTEMAS -->
 <section class="tecnologias-section" *ngIf="proyecto">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Tecnologías Implementadas</h2>
+        <h2 class="section-title" data-aos="fade-up">Tecnologías y Marcas</h2>
 
         <div class="tecnologias-grid">
-            <div *ngFor="let categoria of proyecto.categorias" class="tecnologia-card" data-aos="flip-left">
-                <div class="tech-icon">
-                    <i class="fas" [ngClass]="getIconoCategoria(categoria)"></i>
+            <a *ngFor="let tech of proyecto.tecnologiasUtilizadas" [href]="getTechUrl(tech) || null"
+                [target]="hasTechUrl(tech) ? '_blank' : '_self'" [class.disabled-link]="!hasTechUrl(tech)"
+                class="tecnologia-card" data-aos="flip-left">
+
+                <div class="tech-icon-container">
+                    <!-- Si hay LOGO -->
+                    <img *ngIf="hasTechLogo(tech)" [src]="getTechLogo(tech)" (error)="handleImageError(tech)"
+                        [alt]="getTechName(tech)" class="tech-logo-img">
+
+                    <!-- Si NO hay LOGO (Fallback) -->
+                    <div *ngIf="!hasTechLogo(tech)" class="tech-icon">
+                        <i class="fas" [ngClass]="getIconoTecnologia(tech)"></i>
+                    </div>
                 </div>
-                <h4>{{categoria | titlecase}}</h4>
-            </div>
+
+                <h4>
+                    {{getTechName(tech)}}
+                    <i *ngIf="hasTechUrl(tech)" class="fas fa-external-link-alt ms-1"
+                        style="font-size: 0.7em; opacity: 0.7;"></i>
+                </h4>
+            </a>
         </div>
     </div>
 </section>

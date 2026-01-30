@@ -5,48 +5,63 @@
         <p>Mantente al día con lo último en tecnología para el hogar.</p>
     </div>
 
-    <div class="news-grid">
-        <article class="news-card" *ngFor="let item of news" data-aos="zoom-in" [attr.data-aos-delay]="item.id * 100">
-            <div class="card-image">
-                <img [src]="item.image" [alt]="item.title" loading="lazy">
-                <span class="tag">{{item.tag}}</span>
-            </div>
-            <div class="card-content">
-                <span class="date"><i class="far fa-calendar-alt"></i> {{item.date | date:'dd MMM yyyy'}}</span>
-                <h3>{{item.title}}</h3>
-                <p>{{item.summary}}</p>
-                <a href="#" (click)="openNews(item); $event.preventDefault()" class="read-more">Leer más <i
-                        class="fas fa-arrow-right"></i></a>
-            </div>
-        </article>
-    </div>
+    <p-carousel [value]="news" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="5000"
+        [responsiveOptions]="[
+        {breakpoint: '1024px', numVisible: 3, numScroll: 1},
+        {breakpoint: '768px', numVisible: 2, numScroll: 1},
+        {breakpoint: '560px', numVisible: 1, numScroll: 1}
+    ]">
+        <ng-template let-item pTemplate="item">
+            <article class="news-card mx-2" style="margin: 0 10px;">
+                <div class="card-image">
+                    <img [src]="item.image" [alt]="item.title" loading="lazy">
+                    <span class="tag">{{item.tag}}</span>
+                </div>
+                <div class="card-content">
+                    <span class="date"><i class="far fa-calendar-alt"></i> {{item.date | date:'dd MMM yyyy'}}</span>
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.summary}}</p>
+                    <a href="#" (click)="openNews(item); $event.preventDefault()" class="read-more">Leer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </ng-template>
+    </p-carousel>
 
-    <!-- Modal Detalle Noticia -->
-    <p-dialog [(visible)]="visible" [modal]="true" [style]="{width: '90vw', maxWidth: '800px'}" [draggable]="false"
-        [resizable]="false" [dismissableMask]="true" *ngIf="selectedNews">
+    <!-- Modal Detalle Noticia Estilo Blog -->
+    <p-dialog [(visible)]="visible" [modal]="true" [style]="{width: '95vw', maxWidth: '800px'}" [draggable]="false"
+        [resizable]="false" [dismissableMask]="true" styleClass="news-dialog" *ngIf="selectedNews">
         <ng-template pTemplate="header">
-            <h3>{{selectedNews.title}}</h3>
+            <div class="dialog-header-content">
+                <span class="category-badge">{{selectedNews.tag}}</span>
+                <h2>{{selectedNews.title}}</h2>
+                <span class="meta-date"><i class="far fa-calendar-alt"></i> {{selectedNews.date | date:'dd MMMM
+                    yyyy'}}</span>
+            </div>
         </ng-template>
 
-        <div class="modal-content">
-            <img [src]="selectedNews.image" [alt]="selectedNews.title"
-                style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
-
-            <div class="news-meta" style="margin-bottom: 20px; color: #666; font-size: 0.9rem;">
-                <i class="far fa-calendar-alt"></i> {{selectedNews.date | date:'dd MMMM yyyy'}} |
-                <span style="color: #B30000; font-weight: bold;">{{selectedNews.tag}}</span>
+        <div class="article-body">
+            <div class="hero-image-container">
+                <img [src]="selectedNews.image" [alt]="selectedNews.title">
             </div>
 
-            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">{{selectedNews.summary}}</p>
+            <div class="text-content">
+                <p class="lead">{{selectedNews.summary}}</p>
+                <hr>
 
-            <p style="line-height: 1.6;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <!-- Contenido Dinámico Real -->
+                <div class="dynamic-content" [innerHTML]="selectedNews.fullContent" *ngIf="selectedNews.fullContent">
+                </div>
 
-            <div style="margin-top: 30px; text-align: center;">
-                <a href="https://civitech.es/contactanos" class="btn-primary"
-                    style="background: #B30000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">¿Te
-                    interesa? Contáctanos</a>
+                <!-- Fallback por seguridad -->
+                <div class="dummy-text" *ngIf="!selectedNews.fullContent">
+                    <p>Contenido detallado no disponible en este momento.</p>
+                </div>
+
+                <div class="cta-box">
+                    <p>¿Te gustaría aplicar esto en tu casa?</p>
+                    <a href="https://civitech.es/contactanos" class="btn-cta">Solicitar Auditoría Gratis</a>
+                </div>
             </div>
         </div>
     </p-dialog>

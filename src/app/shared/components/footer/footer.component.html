@@ -4,7 +4,7 @@
       <div class="col-md-7">
         <div class="row">
           <div class="col-md-4 text-start">
-            <img class="img_footer_logo" src="/../../../assets/images/logo_blanco.png" alt="">
+            <img class="img_footer_logo" src="/../../../assets/images/logo_blanco.png" alt="Logo Civitech Blanco">
             <div class="siguenos">
               <p><b class="color-white titulo">Siguenos</b></p>
               <p class="redes">
@@ -19,22 +19,18 @@
               </p>
             </div>
           </div>
-          <div class="col-md-1">
-            <hr class="vertical-hr">
-          </div>
-          <div class="col-md-7 text-start contacto">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-xs-3">
-                <p><i class="fa-solid fa-location-dot"></i></p>
-                <p><i class="fa-solid fa-envelope"></i></p>
-                <p><i class="fa-solid fa-phone"></i></p>
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-9 datos">
-                <p><span class="color-gris">Calle Nuestra Señora de Covadonga 39, Zaragoza</span></p>
-                <p><span class="text-decoration-underline"><a class="color-gris"
-                      href="mailto:info@civitech.es">info&#64;civitech.es</a></span></p>
-                <p><span class="color-gris">624074920</span></p>
-              </div>
+          <div class="col-md-7 text-start contacto ps-md-5">
+            <div class="contact-item d-flex align-items-start mb-3">
+              <i class="fa-solid fa-location-dot me-3 mt-1 contact-icon"></i>
+              <span class="color-gris">Calle Nuestra Señora de Covadonga 39, Zaragoza</span>
+            </div>
+            <div class="contact-item d-flex align-items-center mb-3">
+              <i class="fa-solid fa-envelope me-3 contact-icon"></i>
+              <a class="color-gris text-decoration-none" href="mailto:info@civitech.es">info&#64;civitech.es</a>
+            </div>
+            <div class="contact-item d-flex align-items-center">
+              <i class="fa-solid fa-phone me-3 contact-icon"></i>
+              <span class="color-gris">624074920</span>
             </div>
           </div>
         </div>
@@ -81,9 +77,13 @@
           <div class="col-md-4">
             <p><b class="color-white titulo">Ayuda</b></p>
             <ul class="list-unstyled contact-list">
-              <li><a href="" class="text-decoration-none color-gris">Aviso Legal</a></li>
-              <li><a href="" class="text-decoration-none color-gris">Política de cookies</a></li>
-              <li><a href="" class="text-decoration-none color-gris">Política de privacidad</a></li>
+              <li><a href="#" (click)="navigateTo('/aviso-legal'); $event.preventDefault();" routerLink="/aviso-legal"
+                  class="text-decoration-none color-gris">Aviso Legal</a></li>
+              <li><a href="#" (click)="navigateTo('/politica-cookies'); $event.preventDefault();"
+                  routerLink="/politica-cookies" class="text-decoration-none color-gris">Política de cookies</a></li>
+              <li><a href="#" (click)="navigateTo('/politica-privacidad'); $event.preventDefault();"
+                  routerLink="/politica-privacidad" class="text-decoration-none color-gris">Política de privacidad</a>
+              </li>
             </ul>
           </div>
         </div>

@@ -2,81 +2,108 @@
 
 .cookie-banner {
     position: fixed;
-    bottom: $spacing-6;
-    left: $spacing-6;
-    right: $spacing-6;
-    max-width: 600px;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    max-width: 700px;
     margin: 0 auto;
-    background: white;
+    background: rgba(20, 20, 20, 0.95); // Dark premium bg
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: $spacing-6;
-    border-radius: $radius-2xl;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    border: 1px solid $border-color;
-    z-index: 9999;
+    border-radius: $radius-xl;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 99999;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
     @include responsive($breakpoint-md) {
         bottom: 0;
         left: 0;
         right: 0;
         max-width: 100%;
-        border-radius: $radius-2xl $radius-2xl 0 0;
+        border-radius: $radius-xl $radius-xl 0 0;
+        padding: $spacing-4;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
 .cookie-content {
     display: flex;
     align-items: center;
-    gap: $spacing-6;
+    gap: $spacing-5;
 
     @include responsive($breakpoint-sm) {
         flex-direction: column;
         text-align: center;
+        gap: $spacing-3;
     }
 }
 
 .cookie-icon {
-    font-size: 2.5rem;
-    color: #8b4513; // Cookie brown
-    background: #fff8f0;
-    width: 70px;
-    height: 70px;
-    @include flex-center;
-    border-radius: $radius-full;
+    font-size: 2rem;
+    color: #fff;
+    background: linear-gradient(135deg, #B30000, #800000);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(179, 0, 0, 0.3);
 }
 
 .cookie-text {
     flex-grow: 1;
 
     h4 {
-        margin-bottom: $spacing-1;
-        font-size: $text-xl;
-        color: $dark-bg;
+        margin-bottom: 4px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.01em;
     }
 
     p {
-        font-size: $text-sm;
-        color: $text-secondary;
+        font-size: 0.9rem;
+        color: #b0b0b0;
         margin: 0;
-        line-height: $leading-normal;
+        line-height: 1.5;
 
         a {
-            color: $p-500;
-            font-weight: $font-bold;
+            color: #fff;
             text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: color 0.2s;
+
+            &:hover {
+                color: #ffcccc;
+            }
         }
     }
 }
 
 .cookie-actions {
     display: flex;
-    flex-direction: column;
     gap: $spacing-3;
-    min-width: 180px;
+    min-width: 260px;
 
     @include responsive($breakpoint-sm) {
-        flex-direction: row;
         width: 100%;
+        gap: $spacing-2;
 
         button {
             flex: 1;
@@ -86,29 +113,40 @@
 
 .btn-accept {
     @extend %btn-modern;
-    background: $dark-bg !important;
-    color: white !important;
-    padding: $spacing-2 $spacing-4;
-    font-size: $text-sm;
-    border-radius: $radius-md;
+    background: #fff !important;
+    color: #000 !important;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 
     &:hover {
-        background: #000 !important;
-        transform: translateY(-2px);
+        background: #f0f0f0 !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     }
 }
 
 .btn-decline {
     @extend %btn-modern;
     background: transparent !important;
-    border: 1px solid $border-color !important;
-    color: $text-secondary !important;
-    padding: $spacing-2 $spacing-4;
-    font-size: $text-sm;
-    border-radius: $radius-md;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 
     &:hover {
-        background: $bg-light !important;
-        color: $dark-bg !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
+        color: #fff !important;
     }
 }

@@ -123,8 +123,16 @@
 :host ::ng-deep {
   .p-carousel-indicators {
     padding: $spacing-8 0 0;
+    list-style: none !important; // FIX: Quitar puntos de lista dobles
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; // Espaciado flex en vez de margin en hijos
 
     .p-carousel-indicator {
+      list-style: none !important; // FIX: Seguridad extra
+      margin: 0; // Controlado por gap del padre
+
       &.p-highlight button {
         background-color: $p-500;
         width: 25px;
@@ -135,6 +143,9 @@
         width: 8px;
         height: 8px;
         border-radius: $radius-full;
+        border: none; // FIX: Quitar borde por defecto si lo hay
+        padding: 0; // FIX: Quitar padding interno
+        display: block; // Asegurar comportamiento de bloque
         @include tr-smooth(all);
 
         &:hover {

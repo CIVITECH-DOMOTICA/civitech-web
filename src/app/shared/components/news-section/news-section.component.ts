@@ -8,6 +8,7 @@ interface NewsItem {
     image: string;
     tag: string;
     link: string;
+    fullContent?: string;
 }
 
 @Component({

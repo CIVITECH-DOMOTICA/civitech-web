@@ -377,14 +377,52 @@
     border: 1px solid $p-200;
     @include tr-smooth;
 
+    display: inline-flex;
+    align-items: center;
+
+    // Estilo cuando TIENE logo (limpio sin borde)
+    &.has-logo {
+        background: transparent;
+        border: none;
+        padding: $spacing-2;
+
+        &:hover {
+            background: transparent;
+            transform: scale(1.1);
+        }
+    }
+
     i {
         margin-right: $spacing-2;
         color: $p-500;
+        font-size: 1.1em;
     }
 
-    &:hover {
-        background: $p-100;
-        border-color: $p-300;
+    .tech-logo-only {
+        height: 40px; // Tamaño final: 40px
+        width: auto;
+        object-fit: contain;
+        max-width: 110px;
+        filter: grayscale(0%);
+        transition: transform 0.3s ease;
+    }
+
+    .tech-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    // Estilo cuando NO tiene logo (badge clásico)
+    &:not(.has-logo) {
+        &:hover {
+            background: $p-100;
+            border-color: $p-300;
+        }
     }
 }
 

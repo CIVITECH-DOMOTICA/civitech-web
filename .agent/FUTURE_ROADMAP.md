@@ -1,46 +1,53 @@
 # 🚀 Roadmap Futuro: Civitech 2026
 
-Este documento detalla los pasos sugeridos para escalar la plataforma web y el negocio digital de Civitech.
+Este documento detalla el plan estratégico técnico y de negocio para escalar Civitech al siguiente nivel.
 
-## 1. Automatización de Portfolio (n8n + Git)
-**Objetivo**: Publicar nuevos proyectos realizados sin tocar una línea de código.
+## 🟢 Prioridad 1: Multimedia & UX Premium (Q1 2026)
+**Estado Actual**: Solución robusta pero con assets genéricos/locales.
+**Objetivo**: Profesionalizar la imagen de marca.
 
-**Arquitectura Propuesta**:
-1.  **Input**: Google Forms o Airtable.
-    *   Campos: Título, Cliente, Descripción, Fotos, Categoría (Iluminación, Clima...), Testimonio.
-2.  **Procesamiento (n8n)**:
-    *   Webhook recibe los datos.
-    *   Optimización de imágenes (TinyPNG API).
-    *   **Git Node**: Hace un commit al archivo `src/assets/data/proyectos.json`.
-3.  **Frontend**:
-    *   Modificar Angular para leer de `proyectos.json` en lugar de tenerlos hardcoded.
-4.  **Despliegue**:
-    *   GitHub Actions / Vercel detecta el commit y despliega la nueva versión automáticamente.
+*   **Producción de Video Propio**:
+    *   Sustituir los vídeos de stock (Pexels) por grabaciones reales de instalaciones Civitech (calidad 4K, drones, testimonios).
+    *   *Acción*: Contratar videógrafo por días para rodar 3 casos de éxito (Huesca, Lavandería, Zaragoza).
+*   **CDN de Video**:
+    *   Migrar los archivos `.mp4` locales de `src/assets` a un hosting de video especializado (Cloudinary, Vimeo Pro o AWS S3 + Cloudfront).
+    *   *Motivo*: Evitar saturar el servidor web y mejorar la velocidad de carga en móviles.
+*   **Fotografía Real**:
+    *   Sustituir renders de IA por fotografías profesionales de los proyectos entregados.
+    *   *Impacto*: Aumenta la tasa de conversión y confianza del cliente final.
 
-## 2. Estrategia SEO & Contenidos (Tráfico Orgánico)
-**Objetivo**: Aparecer primero en Google para "Domótica Zaragoza".
+## 🟡 Prioridad 2: Mejoras Técnicas & SEO (Q2 2026)
+**Estado Actual**: Angular SPA (Single Page Application). Rápida pero mejorable en Google.
+**Objetivo**: Dominar keywords locales ("Domótica Huesca", "Instaladores Zaragoza").
 
-*   **Blog / Casos de Estudio**: Crear una sección `/blog`.
-    *   *Idea 1*: "Ahorra un 30% en calefacción: Caso real en Montecanal".
-    *   *Idea 2*: "Instalación de Home Assistant en piso antiguo sin obras".
-*   **Landing Pages Locales**:
-    *   Crear páginas específicas: `civitech.es/domotica-huesca`, `civitech.es/domotica-teruel`.
+*   **SSR (Server Side Rendering) / Angular Universal**:
+    *   Implementar SSR para que Google indexe todo el texto de los proyectos dinámicos.
+    *   Generar sitemaps dinámicos automáticos.
+*   **Lazy Loading Real**:
+    *   Refactorizar módulos para carga diferida estricta (que el vídeo "Domótica" no descargue ni un byte hasta que entres en la sección).
+*   **Cumplimiento Legal (RGPD)**:
+    *   Crear páginas reales de `/politica-privacidad`, `/aviso-legal` y `/cookies`.
+    *   Implementar Banner de Cookies funcional (bloqueo real de scripts hasta aceptar).
 
-## 3. Área Privada de Cliente (Fidelización)
-**Objetivo**: Ofrecer un valor añadido post-venta Premium.
+## 🔵 Prioridad 3: Automatización de Negocio (Q3 2026)
+**Objetivo**: Escalar sin aumentar carga administrativa.
 
-*   Login simple con el email del cliente.
-*   **Dashboard**:
-    *   Descarga de facturas.
-    *   Manuales PDF de sus dispositivos.
-    *   Botón directo de "Soporte Prioritario" (Ticket system).
+1.  **Automatización de Portfolio (n8n + Git)**:
+    *   *Input*: Formulario Google para técnicos -> *Proceso*: n8n sube fotos y crea JSON -> *Output*: Web actualizada autom.
+2.  **Área Privada de Cliente**:
+    *   Acceso a manuales, facturas y tickets de soporte.
+    *   Integración con Stripe para pagos de mantenimiento.
+3.  **CRM Integrado**:
+    *   Conectar Web3Forms con un CRM (HubSpot free o Airtable) para seguimiento de leads.
 
-## 4. Analítica Avanzada
-*   **Mapas de Calor (Hotjar)**: Ver dónde hacen clic los usuarios y si ven el vídeo entero.
-*   **Embudos de Conversión**: Medir cuántos que abren el Chatbot terminan pidiendo presupuesto.
+## 🧪 Analítica & Conversión
+*   **Mapas de Calor (Hotjar)**: Analizar si los usuarios ven los nuevos vídeos completos.
+*   **A/B Testing**: Probar si el botón "Contáctanos" convierte mejor en rojo (#D32F2F) o en el gradiente corporativo.
 
 ---
-**Recursos Técnicos**:
-*   Repo actual: Angular 16+
-*   Estilos: SCSS + Bootstrap (Custom Premium)
-*   Chatbot: Typebot.io (V4)
+**Stack Tecnológico Actual**:
+*   **Core**: Angular 16+
+*   **Estilos**: SCSS (Diseño Glassmorphism Premium)
+*   **Video**: HTML5 Nativo (Local Assets)
+*   **Contacto**: Web3Forms (Serverless)
+*   **Deploy**: Verificable en Netlify/Vercel/Firebase.
