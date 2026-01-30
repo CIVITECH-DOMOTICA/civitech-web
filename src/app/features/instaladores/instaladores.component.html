@@ -5,7 +5,7 @@
         <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
             <div class="hero-logo">
                 <div class="logo-circle">
-                    <img src="assets/logos/logo_brand_white.svg" alt="Civitech Icon"
+                    <img src="assets/logos/logo_brand_white.svg" alt="Civitech Icon" width="40" height="40"
                         style="width: 40px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
                 </div>
                 <h1 class="brand-name">Civitech</h1>
@@ -19,17 +19,17 @@
                 complicaciones técnicas para ti.
             </p>
 
-            <a href="mailto:civitecreformas@gmail.com?subject=Solicitud%20Colaboración%20Instalador" class="cta-button"
-                data-aos="zoom-in" data-aos-delay="200">
+            <!-- CTA Principal: Typebot Trigger -->
+            <button onclick="window.Typebot?.open()" class="cta-button" data-aos="zoom-in" data-aos-delay="200">
                 Quiero ser Partner
-            </a>
+            </button>
 
             <div class="hero-contact" data-aos="fade-up" data-aos-delay="400">
                 <p><i class="fas fa-phone-alt me-2"></i> Habla con un especialista: <strong>624 074 920</strong></p>
             </div>
         </div>
 
-        <!-- Hero Image (Dashboard) -->
+        <!-- Hero Image (Dashboard) - Eager Loading (Critical) -->
         <div class="hero-image" data-aos="fade-left" data-aos-duration="1200">
             <div class="dashboard-mockup">
                 <!-- Background image set via CSS to force load -->
@@ -139,50 +139,57 @@
             </div>
         </div>
 
-        <!-- Timeline 7 Steps -->
+        <!-- Timeline 7 Steps - Lazy Loading Images -->
         <div class="collaboration-timeline">
             <!-- Row 1: Steps 1-4 -->
             <div class="timeline-step step-1" data-aos="zoom-in-up" data-aos-delay="100">
                 <div class="step-number">1</div>
-                <img src="assets/images/step_1_client.png" alt="Cliente" class="step-icon">
+                <img src="assets/images/step_1_client.png" alt="Cliente detecta oportunidad" class="step-icon"
+                    loading="lazy" width="80" height="80">
                 <p><strong>Detectas la oportunidad</strong><br><small>El cliente quiere "algo moderno".</small></p>
             </div>
 
             <div class="timeline-step step-2" data-aos="zoom-in-up" data-aos-delay="200">
                 <div class="step-number">2</div>
-                <img src="assets/images/step_4_proposal.png" alt="Material" class="step-icon">
+                <img src="assets/images/step_4_proposal.png" alt="Contacto con Civitech" class="step-icon"
+                    loading="lazy" width="80" height="80">
                 <p><strong>Nos contactas</strong><br><small>Estudiamos el plano y necesidades.</small></p>
             </div>
 
             <div class="timeline-step step-3" data-aos="zoom-in-up" data-aos-delay="300">
                 <div class="step-number">3</div>
-                <img src="assets/images/step_3_shopping.png" alt="Compra" class="step-icon">
+                <img src="assets/images/step_3_shopping.png" alt="Propuesta de diseño" class="step-icon" loading="lazy"
+                    width="80" height="80">
                 <p><strong>Diseñamos la Propuesta</strong><br><small>Te enviamos listado de materiales y costes.</small>
                 </p>
             </div>
 
             <div class="timeline-step step-4" data-aos="zoom-in-up" data-aos-delay="400">
                 <div class="step-number">4</div>
-                <img src="assets/images/step_7_delivery.png" alt="Presupuesto" class="step-icon">
+                <img src="assets/images/step_7_delivery.png" alt="Presentación presupuesto" class="step-icon"
+                    loading="lazy" width="80" height="80">
                 <p><strong>Presentas presupuesto</strong><br><small>Tú lo vendes al cliente con tu margen.</small></p>
             </div>
 
             <!-- Row 2: Steps 5-7 -->
             <div class="timeline-step step-5" data-aos="zoom-in-up" data-aos-delay="500">
                 <div class="step-number">5</div>
-                <img src="assets/images/step_2_materials.png" alt="Instalación" class="step-icon">
+                <img src="assets/images/step_2_materials.png" alt="Ejecución de obra" class="step-icon" loading="lazy"
+                    width="80" height="80">
                 <p><strong>Ejecución (Opcional)</strong><br><small>Tú o nosotros cableamos e instalamos.</small></p>
             </div>
 
             <div class="timeline-step step-6" data-aos="zoom-in-up" data-aos-delay="600">
                 <div class="step-number">6</div>
-                <img src="assets/images/step_6_configuration.png" alt="Configuración" class="step-icon">
+                <img src="assets/images/step_6_configuration.png" alt="Configuración domótica" class="step-icon"
+                    loading="lazy" width="80" height="80">
                 <p><strong>Puesta en Marcha</strong><br><small>Civitech programa y configura todo.</small></p>
             </div>
 
             <div class="timeline-step step-7" data-aos="zoom-in-up" data-aos-delay="700">
                 <div class="step-number">7</div>
-                <img src="assets/images/professional_handshake.png" alt="Entrega" class="step-icon">
+                <img src="assets/images/professional_handshake.png" alt="Entrega final" class="step-icon" loading="lazy"
+                    width="80" height="80">
                 <p><strong>Entrega y Cobro</strong><br><small>Cliente feliz, proyecto finalizado.</small></p>
             </div>
         </div>
@@ -244,13 +251,15 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- Final CTA Section -->
     <section class="cta-final-section">
         <div class="cta-container" data-aos="zoom-in">
             <h2>¿Listo para Revolucionar tu Negocio?</h2>
             <p>Empieza hoy mismo a ofrecer soluciones domóticas y destaca frente a tu competencia.</p>
-            <a href="mailto:civitecreformas@gmail.com?subject=Nueva%20Oportunidad%20Partner" class="cta-button-large"
-                data-aos="pulse" data-aos-infinite="true">EMPECEMOS A TRABAJAR</a>
+            <!-- CTA Final: Typebot Trigger -->
+            <button onclick="window.Typebot?.open()" class="cta-button-large" data-aos="pulse" data-aos-infinite="true">
+                EMPECEMOS A TRABAJAR
+            </button>
         </div>
     </section>
 
