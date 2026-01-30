@@ -52,4 +52,8 @@ export interface Proyecto {
     ahorroEnergetico: string;
     tiempoRespuesta: string;
     satisfaccionCliente: string;
+
+    // Optional legacy or future props
+    especificaciones?: any[];
+    testimonios?: any[];
 }
