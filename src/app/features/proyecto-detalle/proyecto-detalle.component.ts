@@ -17,6 +17,9 @@ export class ProyectoDetalleComponent implements OnInit {
 
   // Para animaciones de contadores
   ahorroNumerico: number = 0;
+  esAhorroNumerico: boolean = false;
+  textoAhorro: string = '';
+
   satisfaccionNumerica: number = 0;
   totalDispositivos: number = 0;
 
@@ -27,6 +30,7 @@ export class ProyectoDetalleComponent implements OnInit {
     private titleService: Title,
     private metaService: Meta
   ) { }
+
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
@@ -116,8 +120,18 @@ export class ProyectoDetalleComponent implements OnInit {
 
     // Animar ahorro energético
     if (this.proyecto.ahorroEnergetico) {
-      const ahorro = parseInt(this.proyecto.ahorroEnergetico);
-      this.animarNumero(0, ahorro, 2000, (val) => this.ahorroNumerico = val);
+      const valorStr = this.proyecto.ahorroEnergetico;
+      const numero = parseInt(valorStr);
+
+      // Si empieza por número y tiene %, asumimos que es ahorro numérico animable
+      if (!isNaN(numero) && valorStr.includes('%')) {
+        this.esAhorroNumerico = true;
+        this.animarNumero(0, numero, 2000, (val) => this.ahorroNumerico = val);
+      } else {
+        // Si no (ej: "Seguridad 24/7"), mostramos texto estático
+        this.esAhorroNumerico = false;
+        this.textoAhorro = valorStr;
+      }
     }
 
     // Calcular y animar total de dispositivos

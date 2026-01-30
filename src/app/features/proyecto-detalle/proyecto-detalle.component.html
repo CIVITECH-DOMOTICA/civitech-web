@@ -34,7 +34,9 @@
                 <div class="stat-icon">
                     <i class="fas fa-bolt"></i>
                 </div>
-                <div class="stat-number">{{ahorroNumerico}}%</div>
+                <div class="stat-number" *ngIf="esAhorroNumerico">{{ahorroNumerico}}%</div>
+                <div class="stat-number text-md" *ngIf="!esAhorroNumerico" style="font-size: 1.5rem;">{{textoAhorro}}
+                </div>
                 <div class="stat-label">Ahorro Energético</div>
             </div>
 
