@@ -122,7 +122,7 @@ export class ProyectoDetalleComponent implements OnInit {
 
     // Calcular y animar total de dispositivos
     if (this.proyecto.dispositivosInstalados) {
-      const total = this.proyecto.dispositivosInstalados.reduce((acc, curr) => acc + curr.cantidad, 0);
+      const total = this.proyecto.dispositivosInstalados.reduce((acc: number, curr: any) => acc + curr.cantidad, 0);
       this.animarNumero(0, total, 2000, (val) => this.totalDispositivos = Math.floor(val));
     }
 
