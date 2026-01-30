@@ -2,52 +2,63 @@
 
 Este documento detalla el plan estratégico técnico y de negocio para escalar Civitech al siguiente nivel.
 
-## 🟢 Prioridad 1: Multimedia & UX Premium (Q1 2026)
-**Estado Actual**: Solución robusta pero con assets genéricos/locales.
-**Objetivo**: Profesionalizar la imagen de marca.
+## ✅ Hitos Recientes Completados (Q1 2026 - Enero)
+*   **Rediseño Total Página Partners**:
+    *   Implementación de Timeline visual de 7 pasos (2 filas).
+    *   Sección CTA estratégica con botón positivo ("Empecemos").
+    *   Dashboard "Mi Hogar" localizado al español.
+    *   Mejora de jerarquía visual (Círculos Venn, Layout 2 columnas).
+*   **Identidad Visual**:
+    *   Unificación de estilos de capitalización ("Civitech").
+    *   Generación de assets gráficos profesionales con IA.
+
+---
+
+## 🟢 Prioridad 1: UX & Conversión Avanzada (Q1 2026 - Febrero/Marzo)
+**Objetivo**: Convertir visitantes en leads cualificados mediante interactividad.
+
+*   **Calculadora de ROI para Partners**:
+    *   Añadir un widget interactivo en la sección de Instaladores donde puedan introducir "Número de instalaciones al año" y calcular cuánto ganarían extra colaborando con Civitech.
+    *   *Valor*: Tangibiliza la promesa de "1.000€ - 10.000€ extra".
+*   **Formulario de Cualificación Interactivo**:
+    *   Sustituir el `mailto` por un formulario paso a paso (Typeform style).
+    *   Preguntas clave: "¿Eres autónomo o empresa?", "¿Cuántas obras realizas al mes?".
+*   **Micro-interacciones y Animaciones**:
+    *   Añadir animaciones `aos` (Animate On Scroll) al Timeline de Partners (que los pasos aparezcan secuencialmente).
+    *   Animar la intersección de los círculos del diagrama de Venn al hacer scroll.
+
+## 🟡 Prioridad 2: Multimedia & Activos Reales (Q2 2026)
+**Objetivo**: Profesionalizar la imagen de marca con activos propios.
 
 *   **Producción de Video Propio**:
-    *   Sustituir los vídeos de stock (Pexels) por grabaciones reales de instalaciones Civitech (calidad 4K, drones, testimonios).
-    *   *Acción*: Contratar videógrafo por días para rodar 3 casos de éxito (Huesca, Lavandería, Zaragoza).
-*   **CDN de Video**:
-    *   Migrar los archivos `.mp4` locales de `src/assets` a un hosting de video especializado (Cloudinary, Vimeo Pro o AWS S3 + Cloudfront).
-    *   *Motivo*: Evitar saturar el servidor web y mejorar la velocidad de carga en móviles.
+    *   Sustituir clips de stock por grabaciones reales de instalaciones Civitech.
+    *   Testimonios en video de **Partners actuales** validando el modelo de negocio.
 *   **Fotografía Real**:
-    *   Sustituir renders de IA por fotografías profesionales de los proyectos entregados.
-    *   *Impacto*: Aumenta la tasa de conversión y confianza del cliente final.
+    *   Sustituir paulatinamente las imágenes generadas por IA por fotos reales de alta calidad cuando estén disponibles, manteniendo la estética pulida actual.
 
-## 🟡 Prioridad 2: Mejoras Técnicas & SEO (Q2 2026)
-**Estado Actual**: Angular SPA (Single Page Application). Rápida pero mejorable en Google.
-**Objetivo**: Dominar keywords locales ("Domótica Huesca", "Instaladores Zaragoza").
+## 🔵 Prioridad 3: Mejoras Técnicas & SEO (Q2-Q3 2026)
+**Objetivo**: Dominar keywords locales y mejorar rendimiento.
 
 *   **SSR (Server Side Rendering) / Angular Universal**:
-    *   Implementar SSR para que Google indexe todo el texto de los proyectos dinámicos.
-    *   Generar sitemaps dinámicos automáticos.
-*   **Lazy Loading Real**:
-    *   Refactorizar módulos para carga diferida estricta (que el vídeo "Domótica" no descargue ni un byte hasta que entres en la sección).
+    *   Crítico para SEO local ("Domótica Huesca", "Instaladores Zaragoza").
+*   **Optimización de Carga (Core Web Vitals)**:
+    *   Implementar `lazy-loading` agresivo para las imágenes nuevas de alta resolución.
+    *   Uso de formatos AVIF/WebP de nueva generación para todos los assets.
 *   **Cumplimiento Legal (RGPD)**:
-    *   Crear páginas reales de `/politica-privacidad`, `/aviso-legal` y `/cookies`.
-    *   Implementar Banner de Cookies funcional (bloqueo real de scripts hasta aceptar).
+    *   Banner de cookies funcional y páginas legales completas.
 
-## 🔵 Prioridad 3: Automatización de Negocio (Q3 2026)
-**Objetivo**: Escalar sin aumentar carga administrativa.
+## 🟣 Prioridad 4: Automatización de Negocio (Q3-Q4 2026)
+**Objetivo**: Escalar operaciones sin fricción.
 
-1.  **Automatización de Portfolio (n8n + Git)**:
-    *   *Input*: Formulario Google para técnicos -> *Proceso*: n8n sube fotos y crea JSON -> *Output*: Web actualizada autom.
-2.  **Área Privada de Cliente**:
-    *   Acceso a manuales, facturas y tickets de soporte.
-    *   Integración con Stripe para pagos de mantenimiento.
-3.  **CRM Integrado**:
-    *   Conectar Web3Forms con un CRM (HubSpot free o Airtable) para seguimiento de leads.
-
-## 🧪 Analítica & Conversión
-*   **Mapas de Calor (Hotjar)**: Analizar si los usuarios ven los nuevos vídeos completos.
-*   **A/B Testing**: Probar si el botón "Contáctanos" convierte mejor en rojo (#D32F2F) o en el gradiente corporativo.
+*   **Portal de Instaladores (Partner Portal)**:
+    *   Login privado para instaladores.
+    *   Acceso a documentación técnica, esquemas y precios mayoristas.
+*   **Automatización de Leads**:
+    *   Conexión Formulario Web -> CRM (HubSpot/Airtable) -> Email Automático de Bienvenida con Dossier PDF.
 
 ---
 **Stack Tecnológico Actual**:
 *   **Core**: Angular 16+
-*   **Estilos**: SCSS (Diseño Glassmorphism Premium)
-*   **Video**: HTML5 Nativo (Local Assets)
-*   **Contacto**: Web3Forms (Serverless)
-*   **Deploy**: Verificable en Netlify/Vercel/Firebase.
+*   **Estilos**: SCSS (Diseño Glassmorphism & Corporate Premium)
+*   **Assets**: IA Generativa + Stock Premium
+*   **Contacto**: Web3Forms / Mailto
