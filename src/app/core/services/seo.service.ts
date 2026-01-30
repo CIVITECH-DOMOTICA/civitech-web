@@ -123,16 +123,24 @@ export class SeoService {
         link.setAttribute('href', url);
     }
 
-    addStructuredData(data: any): void {
-        let script: HTMLScriptElement | null = document.querySelector('script[type="application/ld+json"]');
-
-        if (!script) {
-            script = document.createElement('script');
-            script.type = 'application/ld+json';
-            document.head.appendChild(script);
+    addStructuredData(data: any, id: string = 'schema-main'): void {
+        const existingScript = document.getElementById(id);
+        if (existingScript) {
+            existingScript.remove();
         }
 
-        script.textContent = JSON.stringify(data);
+        const script = document.createElement('script');
+        script.id = id;
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(data);
+        document.head.appendChild(script);
+    }
+
+    removeStructuredData(id: string): void {
+        const script = document.getElementById(id);
+        if (script) {
+            script.remove();
+        }
     }
 
     addLocalBusinessSchema(): void {
