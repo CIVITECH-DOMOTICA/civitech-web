@@ -227,6 +227,18 @@ section {
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 margin: $spacing-4 0;
+
+                // Alignment fixes
+                min-height: 4.5rem; // Height of the big numbers
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.text-md {
+                    font-size: 1.8rem; // Slightly larger than 1.5rem
+                    line-height: 1.2;
+                    word-break: break-word; // Prevent overflow
+                }
             }
 
             .stat-label {

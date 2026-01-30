@@ -253,6 +253,7 @@ export class ProyectosService {
                 { nombre: 'Ethernet POE', url: '', logo: '' }
             ],
             ahorroEnergetico: 'Control de costes',
+            labelAhorro: 'SEGURIDAD',
             tiempoRespuesta: 'Realtime',
             satisfaccionCliente: '100%',
             fases: [

@@ -40,6 +40,16 @@ export class ProyectoDetalleComponent implements OnInit {
       if (this.proyecto) {
         this.imagenActual = this.proyecto.imagenPrincipal;
         this.animarContadores();
+
+        // Mapear testimonio simple a array de testimonios si no existen
+        if ((!this.proyecto.testimonios || this.proyecto.testimonios.length === 0) && this.proyecto.testimonioCliente) {
+          this.proyecto.testimonios = [{
+            texto: this.proyecto.testimonioCliente,
+            autor: this.proyecto.clienteNombre || 'Cliente Satisfecho',
+            cargo: 'Propietario'
+          }];
+        }
+
         this.updateSEO();
       } else {
         // Redirigir si el proyecto no existe

@@ -52,6 +52,7 @@ export interface Proyecto {
     ahorroEnergetico: string;
     tiempoRespuesta: string;
     satisfaccionCliente: string;
+    labelAhorro?: string; // Optional custom label (e.g., 'SEGURIDAD')
 
     // Optional legacy or future props
     especificaciones?: any[];

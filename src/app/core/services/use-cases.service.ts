@@ -414,7 +414,7 @@ export class UseCasesService {
             ],
             tecnologias: [
                 { nombre: 'V2C', logo: 'assets/logos/v2c_real.png', url: 'https://v2charge.com/es/' },
-                { nombre: 'Tesla', logo: 'assets/logos/tesla.svg', url: 'https://www.tesla.com/es_es/' },
+                { nombre: 'Tesla', logo: 'assets/logos/tesla.png', url: 'https://www.tesla.com/es_es/' },
                 { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' },
                 { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' }
             ],

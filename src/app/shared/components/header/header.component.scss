@@ -126,48 +126,53 @@ header {
 }
 
 @include responsive($breakpoint-md) {
+  nav {
+    display: none; // Hide nav container by default to fix space-between alignment
+
+    &.active {
+      display: flex; // Show when active (fixed overlay)
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      padding: $spacing-16 $spacing-10;
+      z-index: 1001;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+
+      .menu {
+        display: flex; // Show items inside mobile menu
+        flex-direction: column;
+        gap: $spacing-6;
+
+        li a {
+          color: $dark-bg;
+          font-size: $text-lg;
+        }
+      }
+
+      .close-btn {
+        display: block; // Show close button only when menu is active on mobile
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: $dark-bg;
+        background: none;
+        border: none;
+        font-size: 2rem;
+      }
+    }
+  }
+
   .menu {
-    display: none; // Hide desktop menu on mobile
+    display: none; // Hide desktop menu on mobile (redundant but safe)
   }
 
   .hamburger {
     display: block; // Show hamburger on mobile
   }
 
-  // Active state for mobile nav
-  nav.active {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    padding: $spacing-16 $spacing-10;
-    z-index: 1001;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
 
-    .menu {
-      display: flex; // Show items inside mobile menu
-      flex-direction: column;
-      gap: $spacing-6;
-
-      li a {
-        color: $dark-bg;
-        font-size: $text-lg;
-      }
-    }
-
-    .close-btn {
-      display: block; // Show close button only when menu is active on mobile
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: $dark-bg;
-      background: none;
-      border: none;
-      font-size: 2rem;
-    }
-  }
 }
