@@ -7,6 +7,7 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './instaladores.component.html',
   styleUrls: ['./instaladores.component.scss']
 })
+// Trigger fix
 export class InstalladoresComponent implements OnInit, OnDestroy {
   private jsonLdScript: HTMLScriptElement | null = null;
 
