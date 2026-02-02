@@ -65,6 +65,12 @@ export class SeoService {
                 description: 'Solicita tu presupuesto gratuito de domótica en Zaragoza. Respuesta en 24 horas. Llámanos al 624074920 o escríbenos. Instalación profesional sin obras.',
                 keywords: 'presupuesto domótica zaragoza, contacto civitech, instalación domótica precio, consulta gratis',
                 url: `${this.baseUrl}/contactanos`
+            },
+            '/instaladores': {
+                title: 'Programa Partners Civitech | Domótica para Instaladores y Reformistas',
+                description: 'Únete a la red de partners de Civitech. Ofrece domótica en tus reformas sin complicaciones técnicas. Aumenta tu ticket medio y diferénciate.',
+                keywords: 'partners domótica, instaladores domótica zaragoza, colaboración reformas zaragoza, civitech partners',
+                url: `${this.baseUrl}/instaladores`
             }
         };
 
@@ -72,7 +78,8 @@ export class SeoService {
             title: 'Civitech | Domótica Profesional en Zaragoza | Instalación Sin Obras',
             description: 'Empresa especializada en domótica e IoT en Zaragoza. Instalación sin obras con Home Assistant. Ahorra energía, mejora tu seguridad. Presupuesto gratis en 24h.',
             keywords: 'domótica zaragoza, home assistant, automatización, smart home, civitech',
-            url: this.baseUrl
+            // Default to the current full URL using window.location to strictly self-canonicalize unknown pages
+            url: window.location.href.split('?')[0]
         };
     }
 
