@@ -21,7 +21,15 @@ export class AnalyticsService {
             return;
         }
 
-        // Add Google Analytics script
+        // Check if gtag is already loaded via index.html
+        if (typeof (window as any).gtag !== 'undefined') {
+            console.log('Google Analytics already initialized via index.html');
+            this.initialized = true;
+            this.listenForRouteChanges();
+            return;
+        }
+
+        // Add Google Analytics script dynamically if not present
         const script = document.createElement('script');
         script.async = true;
         script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;

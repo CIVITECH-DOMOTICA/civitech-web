@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
     // Initialize SEO with local business schema
     this.seoService.addLocalBusinessSchema();
 
-    // Initialize Google Analytics (Replace with your GA4 ID)
-    this.analyticsService.init('G-XXXXXXXXXX');
+    // Initialize Google Analytics
+    this.analyticsService.init('G-45C2R9F4RE');
 
     // Initialize Animate on Scroll
     AOS.init({
