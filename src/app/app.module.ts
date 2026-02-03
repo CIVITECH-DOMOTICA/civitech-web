@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServicioDetalleComponent } from './features/servicio-detalle/servicio-detalle.component';
+import { ChatbotComponent } from './features/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ServicioDetalleComponent } from './features/servicio-detalle/servicio-d
     AppRoutingModule,
     SharedModule,
     FeaturesModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChatbotComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
