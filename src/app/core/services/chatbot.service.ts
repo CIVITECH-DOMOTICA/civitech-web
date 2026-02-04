@@ -16,23 +16,23 @@ export class ChatbotService {
     private knowledgeBase = [
         {
             keywords: ['hola', 'buenos', 'buenas', 'hi', 'hello'],
-            response: '¡Hola! Soy el asistente virtual de Civitech. 👋 ¿En qué puedo ayudarte hoy? Puedo informarte sobre domótica, reformas sin obras, Home Assistant o darte un presupuesto aproximado.'
+            response: '¡Hola! Soy el asistente virtual de Civitech. 👋 ¿En qué puedo ayudarte hoy? Puedo informarte sobre cómo transformamos tu casa en un hogar inteligente, ahorro energético o darte un presupuesto aproximado.'
         },
         {
             keywords: ['precio', 'coste', 'cuando cuesta', 'presupuesto', 'honora', 'tarifa'],
-            response: 'Nuestras instalaciones de domótica suelen oscilar entre 1.000€ y 3.000€ para un piso estándar, dependiendo de lo que quieras controlar (luces, clima, persianas...). \n\nLo mejor es que es **sin obras** y totalmente modular. ¿Te gustaría que te contactemos para un presupuesto exacto?'
+            response: 'Nuestras transformaciones inteligentes suelen oscilar entre 1.000€ y 3.000€ para un piso estándar, dependiendo de lo que quieras controlar (luces, clima, persianas...). \n\nLo mejor es que es **sin obras** y totalmente modular. ¿Te gustaría que te contactemos para un presupuesto exacto?'
         },
         {
             keywords: ['reform', 'obra', 'albañil'],
-            response: '¡Exacto! Nuestra especialidad es la **domótica sin obras**. Utilizamos tecnología inalámbrica profesional (Zigbee/Matter) que se instala en las cajas de registro existentes. No rompemos paredes ni ensuciamos. 🧹✨'
+            response: 'En Civitech **no hacemos reformas convencionales**, nosotros **transformamos viviendas en hogares inteligentes** mediante domótica avanzada. Lo mejor es que nuestra tecnología es inalámbrica, por lo que no necesitamos picar paredes ni ensuciar. 🧹✨'
         },
         {
-            keywords: ['home assistant', 'homeassistant', 'sistema', 'app'],
-            response: 'Trabajamos con **Home Assistant**, el sistema más potente y privado del mercado. A diferencia de Alexa o Google Home, tus datos se quedan en tu casa (local) y no dependes de la nube. Además, integramos todos tus dispositivos en una sola App personalizada para ti. 📱'
+            keywords: ['sistema', 'app', 'tecnologia', 'home assistant'],
+            response: 'Utilizamos tecnología de estándar abierto y procesado local. Esto significa que **tus datos se quedan en tu casa** (privacidad total) y no dependes de nubes externas. Todo se controla desde una única App diseñada a medida para ti. 📱'
         },
         {
             keywords: ['contacto', 'telefono', 'llamar', 'correo', 'email'],
-            response: 'Claro, puedes contactarnos directamente al 📞 **624 074 920** o escribirnos a **civitecreformas@gmail.com**. También puedes dejarme aquí tu teléfono y te llamamos nosotros.'
+            response: 'Claro, puedes contactarnos directamente al 📞 **624 074 920** o escribirnos a **civitecreformas@gmail.com**. O si prefieres, déjame aquí tu teléfono y te llamamos gratis.'
         },
         {
             keywords: ['zaragoza', 'huesca', 'aragon', 'donde'],
@@ -64,7 +64,8 @@ export class ChatbotService {
 
         // Check contact data (phone/email detection could act here)
         if (/\b\d{9}\b/.test(lowerMsg) || /@/.test(lowerMsg)) {
-            return '¡Gracias! He anotado tus datos. Un compañero del equipo técnico te contactará lo antes posible (normalmente en menos de 24h) para asesorarte sin compromiso. 🚀';
+            console.log('CAPTURED LEAD DATA:', message); // Integration point for backend
+            return '¡Gracias! He anotado tus datos correctamente. 📝\n\nUn compañero del equipo técnico revisará tu caso y te contactará en breve (normalmente en menos de 24h) para asesorarte sin compromiso. 🚀';
         }
 
         const match = this.knowledgeBase.find(kb =>

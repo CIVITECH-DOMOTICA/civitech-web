@@ -7,21 +7,21 @@ import { ChatbotService, ChatMessage } from '../../core/services/chatbot.service
 // Simple pipe for line breaks
 @Pipe({ name: 'nl2br', standalone: true })
 export class Nl2brPipe implements PipeTransform {
-    transform(value: string): string {
-        return value.replace(/\n/g, '<br/>');
-    }
+  transform(value: string): string {
+    return value.replace(/\n/g, '<br/>');
+  }
 }
 
 @Component({
-    selector: 'app-chatbot',
-    standalone: true,
-    imports: [CommonModule, FormsModule, Nl2brPipe],
-    template: `
+  selector: 'app-chatbot',
+  standalone: true,
+  imports: [CommonModule, FormsModule, Nl2brPipe],
+  template: `
     <!-- Floating Button with Animated Ping -->
     <div class="chatbot-trigger" (click)="toggleChat()" *ngIf="!isOpen">
       <div class="notification-badge" *ngIf="hasUnread">1</div>
       <div class="ping-animation"></div>
-      <span class="icon">💬</span>
+      <img src="assets/images/logo_blanco.png" alt="Chat" class="trigger-logo">
     </div>
 
     <!-- Chat Window -->
@@ -76,7 +76,7 @@ export class Nl2brPipe implements PipeTransform {
       </div>
     </div>
   `,
-    styles: [`
+  styles: [`
     /* Variables */
     :host {
       --primary: #B30000;
@@ -104,7 +104,7 @@ export class Nl2brPipe implements PipeTransform {
       justify-content: center;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(179, 0, 0, 0.4);
-      z-index: 9999;
+      z-index: 999999;
       transition: transform 0.2s;
     }
 
@@ -112,8 +112,10 @@ export class Nl2brPipe implements PipeTransform {
       transform: scale(1.05);
     }
 
-    .chatbot-trigger .icon {
-      font-size: 28px;
+    .trigger-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
       filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
     }
 
@@ -167,7 +169,7 @@ export class Nl2brPipe implements PipeTransform {
       box-shadow: var(--shadow-lg);
       display: flex;
       flex-direction: column;
-      z-index: 9999;
+      z-index: 999999;
       overflow: hidden;
       font-family: 'Inter', system-ui, sans-serif;
       border: 1px solid rgba(0,0,0,0.05);
@@ -376,92 +378,92 @@ export class Nl2brPipe implements PipeTransform {
       background: white;
     }
   `],
-    animations: [
-        trigger('slideUpdate', [
-            state('open', style({ transform: 'translateY(0)', opacity: 1, visibility: 'visible' })),
-            state('closed', style({ transform: 'translateY(20px)', opacity: 0, visibility: 'hidden' })),
-            transition('closed => open', animate('300ms cubic-bezier(0.4, 0, 0.2, 1)')),
-            transition('open => closed', animate('200ms ease-out'))
-        ])
-    ]
+  animations: [
+    trigger('slideUpdate', [
+      state('open', style({ transform: 'translateY(0)', opacity: 1, visibility: 'visible' })),
+      state('closed', style({ transform: 'translateY(20px)', opacity: 0, visibility: 'hidden' })),
+      transition('closed => open', animate('300ms cubic-bezier(0.4, 0, 0.2, 1)')),
+      transition('open => closed', animate('200ms ease-out'))
+    ])
+  ]
 })
 export class ChatbotComponent implements OnInit, AfterViewChecked {
-    isOpen = false;
-    isTyping = false;
-    hasUnread = true;
-    userInput = '';
-    messages: ChatMessage[] = [];
+  isOpen = false;
+  isTyping = false;
+  hasUnread = true;
+  userInput = '';
+  messages: ChatMessage[] = [];
 
-    @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
+  @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
 
-    constructor(private chatbotService: ChatbotService) { }
+  constructor(private chatbotService: ChatbotService) { }
 
-    ngOnInit() {
-        // Initial greeting
-        setTimeout(() => {
-            if (this.messages.length === 0) {
-                this.addBotMessage('¡Hola! 👋 Soy la IA de Civitech. ¿Te ayudo a configurar tu presupuesto o tienes alguna duda sobre domótica?');
-            }
-        }, 1500);
+  ngOnInit() {
+    // Initial greeting
+    setTimeout(() => {
+      if (this.messages.length === 0) {
+        this.addBotMessage('¡Hola! 👋 Soy la IA de Civitech. ¿Te ayudo a configurar tu presupuesto o tienes alguna duda sobre domótica?');
+      }
+    }, 1500);
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  toggleChat() {
+    this.isOpen = !this.isOpen;
+    if (this.isOpen) {
+      this.hasUnread = false;
+      setTimeout(() => this.scrollToBottom(), 100);
     }
+  }
 
-    ngAfterViewChecked() {
-        this.scrollToBottom();
-    }
+  sendMessage(event?: Event) {
+    if (event) event.preventDefault();
 
-    toggleChat() {
-        this.isOpen = !this.isOpen;
-        if (this.isOpen) {
-            this.hasUnread = false;
-            setTimeout(() => this.scrollToBottom(), 100);
-        }
-    }
+    if (!this.userInput.trim() || this.isTyping) return;
 
-    sendMessage(event?: Event) {
-        if (event) event.preventDefault();
+    const text = this.userInput;
+    this.userInput = '';
 
-        if (!this.userInput.trim() || this.isTyping) return;
+    // Add user message
+    this.messages.push({
+      text: text,
+      isUser: true,
+      timestamp: new Date()
+    });
 
-        const text = this.userInput;
-        this.userInput = '';
+    this.isTyping = true;
+    this.scrollToBottom();
 
-        // Add user message
-        this.messages.push({
-            text: text,
-            isUser: true,
-            timestamp: new Date()
-        });
+    // Call service (OpenAI integration handled there)
+    this.chatbotService.sendMessage(text).subscribe({
+      next: (response) => {
+        this.isTyping = false;
+        this.addBotMessage(response);
+      },
+      error: () => {
+        this.isTyping = false;
+        this.addBotMessage('Lo siento, he tenido un problema de conexión. ¿Podrías repetirlo?');
+      }
+    });
+  }
 
-        this.isTyping = true;
-        this.scrollToBottom();
+  private addBotMessage(text: string) {
+    this.messages.push({
+      text: text,
+      isUser: false,
+      timestamp: new Date()
+    });
+    this.scrollToBottom();
+  }
 
-        // Call service (OpenAI integration handled there)
-        this.chatbotService.sendMessage(text).subscribe({
-            next: (response) => {
-                this.isTyping = false;
-                this.addBotMessage(response);
-            },
-            error: () => {
-                this.isTyping = false;
-                this.addBotMessage('Lo siento, he tenido un problema de conexión. ¿Podrías repetirlo?');
-            }
-        });
-    }
-
-    private addBotMessage(text: string) {
-        this.messages.push({
-            text: text,
-            isUser: false,
-            timestamp: new Date()
-        });
-        this.scrollToBottom();
-    }
-
-    private scrollToBottom(): void {
-        try {
-            this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
-        } catch (err) { }
-    }
+  private scrollToBottom(): void {
+    try {
+      this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
+  }
 }
 
 
