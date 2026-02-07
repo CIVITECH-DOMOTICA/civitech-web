@@ -402,7 +402,7 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
     // Initial greeting
     setTimeout(() => {
       if (this.messages.length === 0) {
-        this.addBotMessage('¡Hola! 👋 Soy la IA de Civitech. ¿Te ayudo a configurar tu presupuesto o tienes alguna duda sobre domótica?');
+        this.addBotMessage('¡Hola! 👋 Soy la IA de Civitech. ¿Quieres que tu casa trabaje para ti o prefieres seguir usando interruptores? 😉\n\nPregúntame cómo transformamos tu hogar.');
       }
     }, 1500);
   }
