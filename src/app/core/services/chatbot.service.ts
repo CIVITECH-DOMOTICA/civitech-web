@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import emailjs from '@emailjs/browser';
 
 export interface ChatMessage {
     text: string;
@@ -62,7 +63,10 @@ export class ChatbotService {
 
     private defaultResponse = 'Entiendo. Para darte una respuesta más precisa sobre tu caso concreto, lo ideal sería que un técnico lo revise. ¿Te gustaría dejarnos tu contacto o que te llamemos?';
 
-    constructor() { }
+    constructor() {
+        // Initialize EmailJS with Public Key
+        emailjs.init("toWAFkM86-kDoWQa-");
+    }
 
     sendMessage(userMessage: string): Observable<string> {
         const response = this.findResponse(userMessage);
@@ -74,10 +78,11 @@ export class ChatbotService {
     private findResponse(message: string): string {
         const lowerMsg = message.toLowerCase();
 
-        // Check contact data (phone/email detection could act here)
+        // Check contact data (phone/email detection)
         if (/\b\d{9}\b/.test(lowerMsg) || /@/.test(lowerMsg)) {
-            console.log('CAPTURED LEAD DATA:', message); // Integration point for backend
-            return '¡Gracias! He anotado tus datos correctamente. 📝\n\nUn compañero del equipo técnico revisará tu caso y te contactará en breve (normalmente en menos de 24h) para asesorarte sin compromiso. 🚀';
+            console.log('Sending lead data to EmailJS...');
+            this.sendEmailNotification(message);
+            return '¡Gracias! He anotado tus datos correctamente y he avisado a nuestro equipo. 📝\n\nUn técnico revisará tu caso y te contactará en breve (normalmente en menos de 24h) para asesorarte sin compromiso. 🚀';
         }
 
         const match = this.knowledgeBase.find(kb =>
@@ -85,5 +90,20 @@ export class ChatbotService {
         );
 
         return match ? match.response : this.defaultResponse;
+    }
+
+    private sendEmailNotification(message: string) {
+        const templateParams = {
+            message: message, // Corresponds to {{message}} in the template
+            to_name: 'Civitech Team',
+            from_name: 'Civitech Chatbot'
+        };
+
+        emailjs.send('service_cvyech4', 'template_8uy4o9g', templateParams)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+                console.log('FAILED...', err);
+            });
     }
 }
