@@ -21,47 +21,47 @@ export class ChatbotService {
         },
         {
             keywords: ['dificil', 'complejo', 'mayor', 'abuela', 'padres', 'niños', 'facil'],
-            response: '¡Para nada! Nuestra prioridad es simplificar tu vida. Diseñamos sistemas **totalmente flexibles y fáciles de usar**, pensados tanto para niños como para personas mayores. Tú nos dices qué necesitas y nosotros lo hacemos sencillo. 👵👶'
+            response: '¡Para nada! Nuestra prioridad es simplificar tu vida. Diseñamos sistemas **totalmente flexibles y fáciles de usar**, pensados tanto para niños como para personas mayores. Tú nos dices qué necesitas y nosotros lo hacemos sencillo. 👵👶\n\n¿Quieres que te llamemos y te contemos cómo funciona?'
         },
         {
             keywords: ['marca', 'shelly', 'sonoff', 'aqara', 'fabricante', 'dispositivo'],
-            response: 'Trabajamos con un gran abanico de marcas principales para asegurar que el sistema funcione perfectamente. 🛡️\n\nSi tienes dispositivos de marcas menos conocidas o específicas, podemos **estudiar tu caso** para integrarlas, pero siempre priorizamos la calidad y estabilidad del servicio para ti.'
+            response: 'Trabajamos con un gran abanico de marcas principales para asegurar que el sistema funcione perfectamente. 🛡️\n\nSi tienes dispositivos específicos, podemos estudiar tu caso. **Déjame tu teléfono** y un técnico te confirmará si son compatibles.'
         },
         {
             keywords: ['ahorro', 'factura', 'luz', 'energia', 'ahorrar'],
-            response: 'Con una gestión inteligente del clima y la iluminación, nuestros clientes suelen conseguir un **ahorro de entre un 20% y un 30%** en su factura energética. 📉💸 La domótica se acaba pagando sola.'
+            response: 'Con una gestión inteligente del clima y la iluminación, nuestros clientes suelen conseguir un **ahorro de entre un 20% y un 30%** en su factura energética. 📉💸 La domótica se acaba pagando sola.\n\n¿Te gustaría un estudio de ahorro gratuito? Déjanos tu contacto.'
         },
         {
             keywords: ['garantia', 'soporte', 'mantenimiento', 'rompe', 'problema'],
-            response: 'Total tranquilidad: ofrecemos **2 años de garantía** en nuestras instalaciones. Además, disponemos de planes de **mantenimiento por suscripción** para que tu sistema esté siempre actualizado y funcionando al 100% sin que te preocupes de nada. 🛠️'
+            response: 'Total tranquilidad: ofrecemos **2 años de garantía** en nuestras instalaciones y planes de **mantenimiento por suscripción**. 🛠️\n\nSi quieres saber precios de los planes, déjame tu número y te informamos.'
         },
         {
             keywords: ['madrid', 'barcelona', 'bilbao', 'pais vasco', 'fuera', 'lejos'],
-            response: 'Nuestra base está en Zaragoza (Aragón), pero realizamos proyectos en **Madrid, Barcelona y Bilbao**. 🚗 Para otras zonas, contáctanos y estudiaremos tu proyecto con detalle.'
+            response: 'Nuestra base está en Zaragoza (Aragón), pero realizamos proyectos en **Madrid, Barcelona y Bilbao**. 🚗 Para otras zonas, déjanos tu teléfono y ciudad, y estudiaremos si podemos desplazarnos.'
         },
         {
             keywords: ['precio', 'coste', 'cuanto cuesta', 'presupuesto', 'honora', 'tarifa'],
-            response: 'Nuestras transformaciones inteligentes suelen oscilar entre 1.000€ y 3.000€ para un piso estándar, dependiendo de lo que quieras controlar (luces, clima, persianas...). \n\nLo mejor es que es **sin obras** y totalmente modular. ¿Te gustaría que te contactemos para un presupuesto exacto?'
+            response: 'Nuestras transformaciones inteligentes suelen oscilar entre 1.000€ y 3.000€ para un piso estándar. \n\nPero cada casa es un mundo. **¿Me dejas tu teléfono?** Te llamamos nosotros y te damos un presupuesto exacto en 5 minutos. 📞'
         },
         {
             keywords: ['reform', 'obra', 'albañil'],
-            response: 'En Civitech **no hacemos reformas convencionales**, nosotros **transformamos viviendas en hogares inteligentes** mediante domótica avanzada. Lo mejor es que nuestra tecnología es inalámbrica, por lo que no necesitamos picar paredes ni ensuciar. 🧹✨'
+            response: 'En Civitech **no hacemos reformas convencionales**, nosotros **transformamos viviendas en hogares inteligentes** mediante domótica inalámbrica sin obras. 🧹✨\n\n¿Te interesa saber más? Déjanos tu número y te explicamos el proceso.'
         },
         {
             keywords: ['sistema', 'app', 'tecnologia', 'home assistant', 'alexa', 'google'],
-            response: 'Utilizamos tecnología de estándar abierto y procesado local. Esto significa que **tus datos se quedan en tu casa** (privacidad total) y no dependes de nubes externas. Todo se controla desde una única App diseñada a medida para ti, compatible con Alexa, Google y Siri.'
+            response: 'Utilizamos tecnología de estándar abierto y procesado local (privacidad total). Todo se controla desde una única App diseñada a medida para ti. 📱\n\nSi quieres ver una demo, déjanos tu contacto y te enseñamos cómo funciona.'
         },
         {
             keywords: ['contacto', 'telefono', 'llamar', 'correo', 'email'],
-            response: 'Claro, puedes contactarnos directamente al 📞 **624 074 920** o escribirnos a **civitecreformas@gmail.com**. O si prefieres, déjame aquí tu teléfono y te llamamos gratis.'
+            response: 'Claro, puedes contactarnos al 📞 **624 074 920** o a **civitecreformas@gmail.com**. O mejor aún: **escribe aquí tu número** y te llamamos nosotros gratis ahora mismo.'
         },
         {
             keywords: ['calefaccion', 'clima', 'frio', 'calor', 'aerotermia'],
-            response: 'Automatizar el clima es una de las mejores inversiones. Podemos zonificar tu calefacción, integrar tu aire acondicionado o aerotermia para que se activen solo cuando sea necesario, ahorrando hasta un **30% en tu factura**. 💸'
+            response: 'Automatizar el clima ahorra hasta un **30% en tu factura**. 💸 Podemos zonificar tu calefacción o integrar tu aire acondicionado.\n\n¿Quieres saber cuánto ahorrarías tú? Déjanos tu teléfono y te hacemos el cálculo.'
         }
     ];
 
-    private defaultResponse = 'Entiendo. Para darte una respuesta más precisa sobre tu caso concreto, lo ideal sería que un técnico lo revise. ¿Te gustaría dejarnos tu contacto o que te llamemos?';
+    private defaultResponse = 'Entiendo. Para darte la mejor respuesta a tu caso concreto, lo ideal es que lo vea un técnico. 👨‍🔧\n\n**¿Me dejas tu teléfono?** Te llamamos en un momento y te lo aclaramos todo sin compromiso.';
 
     constructor() {
         // Initialize EmailJS with Public Key
