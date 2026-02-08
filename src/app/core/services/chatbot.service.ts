@@ -29,23 +29,23 @@ export class ChatbotService {
         },
         {
             keywords: ['ejemplo', 'ver', 'demo', 'caso', 'enseña', 'muestra', 'proyecto'],
-            response: '¡Claro! Aquí tienes dos casos de éxito reales de Civitech:\n\n1️⃣ **Ático en Zaragoza (Sur)**: Automatizamos sus toldos. Antes se asaban a 35°C, ahora **la casa baja 8°C sola** antes de que lleguen. Inversión mínima, confort total.\n\n2️⃣ **Casa Rural en Teruel**: El dueño vivía intranquilo. Instalamos **simulación de presencia** (luces/ruido). Resultado: 0 robos en 2 años.\n\n¿Tu caso se parece a alguno? **Déjame tu teléfono** y te explico cómo lo haríamos contigo.'
+            response: '¡Claro! Aquí tienes dos casos reales de nuestros proyectos:\n\n1️⃣ **Casa en Huesca (4 plantas)**: La casa detecta por GPS cuando la familia sale de Madrid y **enciende la calefacción sola**. Llegan siempre a 21°C sin tocar nada.\n\n2️⃣ **Chalet en Miralbueno**: Prioridad Solar. El sistema usa los excedentes para enfriar la casa gratis y, lo que sobra, **carga el Tesla a coste cero**.\n\n¿Cuál te encaja más? Déjame tu teléfono y lo vemos.'
         },
         {
             keywords: ['seguridad', 'camara', 'alarma', 'ladron', 'vigilancia', 'proteger', 'robo'],
-            response: '¡Genial! Podemos blindar tu casa. 🛡️ Mira nuestro caso en **Teruel**: instalamos un sistema que cierra persianas y enciende luces si detecta intrusos en el jardín.\n\nEl sistema "se defiende solo". Si te interesa esta tranquilidad, **déjame tu teléfono** y te hacemos un estudio de seguridad gratuito.'
+            response: 'Seguridad Inteligente real. 🛡️ En una **Lavandería 24h** de Zaragoza instalamos cámaras con IA que distinguen personas de sombras.\n\nResultado: **0 falsas alarmas** y aviso inmediato al móvil con vídeo si entra alguien fuera de horario. ¿Te interesa esta tranquilidad? Déjanos tu contacto.'
         },
         {
             keywords: ['riego', 'jardin', 'exterior', 'piscina', 'terraza'],
-            response: 'El exterior es clave. 🌿 En un jardín ventoso de Zaragoza, logramos **ahorrar un 60% de agua** instalando un sensor de viento que para los aspersores si hace aire.\n\nTambién controlamos luces y depuradoras. ¿Tienes jardín o terraza? Cuéntame y te damos ideas.'
+            response: 'Automatizamos tu exterior al completo. 🌿 Riego inteligente que se corta si va a llover, iluminación de paisaje y control de bombas de piscina.\n\n¿Tienes jardín? Cuéntanos qué necesitas y te damos una solución a medida.'
         },
         {
             keywords: ['ahorro', 'factura', 'luz', 'energia', 'ahorrar'],
-            response: 'El ahorro es real. 📉 En un chalet con placas solares, logramos que el cliente **ahorrara 35€/mes extra** haciendo que el termo se caliente solo con la energía que le sobraba, sin gastar de la red.\n\n¿Quieres un estudio de ahorro? Déjanos tu contacto.'
+            response: 'Nuestros clientes logran la máxima eficiencia. 📉 En nuestro proyecto de **Miralbueno**, el sistema decide: primero usa el sol para el aire acondicionado y luego para cargar el coche eléctrico.\n\nResultado: **Autosuficiencia casi total**. ¿Quieres un estudio de ahorro? Déjanos tu teléfono.'
         },
         {
             keywords: ['persiana', 'toldo', 'cortina', 'store'],
-            response: 'Las persianas inteligentes son clave para el ahorro. ☀️ Se bajan solas en verano para que no entre calor (ahorrando aire acondicionado) y se suben en invierno para calentar la casa gratis con el sol. \n\n¿Cuántas persianas tienes? Podemos motorizarlas todas.'
+            response: 'En nuestros proyectos (como en la **Lavandería 24h**), las persianas se gestionan solas por seguridad y clima. ☀️ Se bajan en verano para que no entre calor y se cierran si salta la alarma.\n\n¿Cuántas persianas tienes? Podemos motorizarlas todas.'
         },
         {
             keywords: ['luz', 'luces', 'iluminacion', 'led', 'bombilla'],
