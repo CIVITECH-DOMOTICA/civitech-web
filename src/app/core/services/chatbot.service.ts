@@ -28,44 +28,20 @@ export class ChatbotService {
             response: 'Trabajamos con un gran abanico de marcas principales para asegurar que el sistema funcione perfectamente. 🛡️\n\nSi tienes dispositivos específicos, podemos estudiar tu caso. **Déjame tu teléfono** y un técnico te confirmará si son compatibles.'
         },
         {
-            keywords: ['ahorro', 'factura', 'luz', 'energia', 'ahorrar'],
-            response: 'Con una gestión inteligente del clima y la iluminación, nuestros clientes suelen conseguir un **ahorro de entre un 20% y un 30%** en su factura energética. 📉💸 La domótica se acaba pagando sola.\n\n¿Te gustaría un estudio de ahorro gratuito? Déjanos tu contacto.'
-        },
-        {
-            keywords: ['garantia', 'soporte', 'mantenimiento', 'rompe', 'problema'],
-            response: 'Total tranquilidad: ofrecemos **2 años de garantía** en nuestras instalaciones y planes de **mantenimiento por suscripción**. 🛠️\n\nSi quieres saber precios de los planes, déjame tu número y te informamos.'
-        },
-        {
-            keywords: ['madrid', 'barcelona', 'bilbao', 'pais vasco', 'fuera', 'lejos'],
-            response: 'Nuestra base está en Zaragoza (Aragón), pero realizamos proyectos en **Madrid, Barcelona y Bilbao**. 🚗 Para otras zonas, déjanos tu teléfono y ciudad, y estudiaremos si podemos desplazarnos.'
-        },
-        {
-            keywords: ['precio', 'coste', 'cuanto cuesta', 'presupuesto', 'honora', 'tarifa'],
-            response: 'Nuestras transformaciones inteligentes suelen oscilar entre 1.000€ y 3.000€ para un piso estándar. \n\nPero cada casa es un mundo. **¿Me dejas tu teléfono?** Te llamamos nosotros y te damos un presupuesto exacto en 5 minutos. 📞'
-        },
-        {
-            keywords: ['reform', 'obra', 'albañil'],
-            response: 'En Civitech **no hacemos reformas convencionales**, nosotros **transformamos viviendas en hogares inteligentes** mediante domótica inalámbrica sin obras. 🧹✨\n\n¿Te interesa saber más? Déjanos tu número y te explicamos el proceso.'
-        },
-        {
-            keywords: ['sistema', 'app', 'tecnologia', 'home assistant', 'alexa', 'google'],
-            response: 'Utilizamos tecnología de estándar abierto y procesado local (privacidad total). Todo se controla desde una única App diseñada a medida para ti. 📱\n\nSi quieres ver una demo, déjanos tu contacto y te enseñamos cómo funciona.'
-        },
-        {
-            keywords: ['contacto', 'telefono', 'llamar', 'correo', 'email'],
-            response: 'Claro, puedes contactarnos al 📞 **624 074 920** o a **civitecreformas@gmail.com**. O mejor aún: **escribe aquí tu número** y te llamamos nosotros gratis ahora mismo.'
-        },
-        {
             keywords: ['ejemplo', 'ver', 'demo', 'caso', 'enseña', 'muestra', 'proyecto'],
-            response: '¡Claro! Aquí tienes dos ejemplos reales:\n\n1️⃣ **Piso en Zaragoza**: Automatizamos luces y calefacción. Inversión ajustada (pago único) y gran ahorro mensual.\n\n2️⃣ **Chalet con Jardín**: Control de RIEGO inteligente y luces exteriores automáticas. Seguridad total.\n\n¿Cuál se parece más a tu caso? **Déjame tu teléfono** y te explico qué podemos hacer por ti.'
+            response: '¡Claro! Aquí tienes dos casos de éxito reales de Civitech:\n\n1️⃣ **Ático en Zaragoza (Sur)**: Automatizamos sus toldos. Antes se asaban a 35°C, ahora **la casa baja 8°C sola** antes de que lleguen. Inversión mínima, confort total.\n\n2️⃣ **Casa Rural en Teruel**: El dueño vivía intranquilo. Instalamos **simulación de presencia** (luces/ruido). Resultado: 0 robos en 2 años.\n\n¿Tu caso se parece a alguno? **Déjame tu teléfono** y te explico cómo lo haríamos contigo.'
         },
         {
             keywords: ['seguridad', 'camara', 'alarma', 'ladron', 'vigilancia', 'proteger', 'robo'],
-            response: '¡Genial! Podemos blindar la seguridad de tu casa 🛡️. Instalamos cámaras, sensores y simulación de presencia.\n\nSi te parece, **déjame tu teléfono o email** aquí mismo y te contactaremos para hacer un estudio de seguridad y presupuesto a medida.'
+            response: '¡Genial! Podemos blindar tu casa. 🛡️ Mira nuestro caso en **Teruel**: instalamos un sistema que cierra persianas y enciende luces si detecta intrusos en el jardín.\n\nEl sistema "se defiende solo". Si te interesa esta tranquilidad, **déjame tu teléfono** y te hacemos un estudio de seguridad gratuito.'
         },
         {
             keywords: ['riego', 'jardin', 'exterior', 'piscina', 'terraza'],
-            response: '¡El exterior también cuenta! 🌿 Automatizamos tu **riego** para que se ajuste al clima (no riega si va a llover, ahorrando agua). También controlamos luces de jardín y depuradoras de piscina. \n\n¿Tienes jardín o terraza? Cuéntame y te damos ideas.'
+            response: 'El exterior es clave. 🌿 En un jardín ventoso de Zaragoza, logramos **ahorrar un 60% de agua** instalando un sensor de viento que para los aspersores si hace aire.\n\nTambién controlamos luces y depuradoras. ¿Tienes jardín o terraza? Cuéntame y te damos ideas.'
+        },
+        {
+            keywords: ['ahorro', 'factura', 'luz', 'energia', 'ahorrar'],
+            response: 'El ahorro es real. 📉 En un chalet con placas solares, logramos que el cliente **ahorrara 35€/mes extra** haciendo que el termo se caliente solo con la energía que le sobraba, sin gastar de la red.\n\n¿Quieres un estudio de ahorro? Déjanos tu contacto.'
         },
         {
             keywords: ['persiana', 'toldo', 'cortina', 'store'],

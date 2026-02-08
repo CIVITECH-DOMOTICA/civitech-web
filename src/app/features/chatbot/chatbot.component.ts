@@ -100,13 +100,13 @@ export class Nl2brPipe implements PipeTransform {
       right: 25px;
       width: 60px;
       height: 60px;
-      background: var(--primary);
+      background: #0f172a;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(179, 0, 0, 0.4);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.4);
       z-index: 999999;
       transition: transform 0.2s;
     }
@@ -145,7 +145,7 @@ export class Nl2brPipe implements PipeTransform {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: var(--primary);
+      background: #0f172a;
       opacity: 0.6;
       z-index: -1;
       animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
@@ -180,7 +180,7 @@ export class Nl2brPipe implements PipeTransform {
 
     /* Header */
     .chat-header {
-      background: var(--primary);
+      background: #0f172a;
       color: white;
       padding: 16px;
       display: flex;
@@ -198,7 +198,7 @@ export class Nl2brPipe implements PipeTransform {
       position: relative;
       width: 40px;
       height: 40px;
-      background: white;
+      background: rgba(255,255,255,0.15);
       border-radius: 50%;
       padding: 4px;
       display: flex;
