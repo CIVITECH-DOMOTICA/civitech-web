@@ -76,8 +76,8 @@ export class ChatbotService {
             response: 'Automatizar el clima ahorra hasta un **30% en tu factura**. 💸 Podemos zonificar tu calefacción o integrar tu aire acondicionado.\n\n¿Quieres saber cuánto ahorrarías tú? Déjanos tu teléfono y te hacemos el cálculo.'
         },
         {
-            keywords: ['que se puede hacer', 'que haces', 'resumen', 'servicios', 'posibilidades', 'todo'],
-            response: '¡Prácticamente todo! 🚀 Aquí tienes un resumen de lo que podemos automatizar:\n\n🌡️ **Clima:** Calefacción y A/C eficiente.\n💡 **Luces:** Ambientes y apagado general.\n🛡️ **Seguridad:** Alarmas y cámaras.\n☀️ **Persianas:** Suben/bajan solas según el sol.\n💦 **Exterior:** Riego y piscina.\n\n¿Qué te llama más la atención? Escríbeme tu duda o déjame tu teléfono.'
+            keywords: ['que se puede hacer', 'que haces', 'resumen', 'servicios', 'posibilidades', 'todo', 'mas', 'otra', 'otro', 'saber'],
+            response: '¡Uf, muchísimas cosas! 🤯 El límite es tu imaginación. Además de luces y clima, hacemos cosas muy chulas:\n\n☀️ **Solar:** Gestión de excedentes y carga de coche gratis.\n👵 **Mayores:** Detectamos caídas sin usar cámaras.\n🐾 **Mascotas:** Comida y vigilancia automática.\n🍿 **Cine:** Escenas de película con un click.\n\nPuedes ver todos nuestros casos detallados en la sección de **Domótica** de esta web. ¿Te da curiosidad alguno de estos temas?'
         },
         {
             keywords: ['domotica', 'inteligente', 'smart', 'automatizar', 'controlar', 'casa', 'hogar'],
