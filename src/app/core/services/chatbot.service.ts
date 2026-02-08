@@ -68,8 +68,28 @@ export class ChatbotService {
             response: 'En nuestros proyectos (como en la **Lavandería 24h**), las persianas se gestionan solas por seguridad y clima. ☀️ Se bajan en verano para que no entre calor y se cierran si salta la alarma.\n\n¿Cuántas persianas tienes? Podemos motorizarlas todas.'
         },
         {
-            keywords: ['luz', 'luces', 'iluminacion', 'led', 'bombilla'],
-            response: 'Olvídate de interruptores. 💡 Crea "escenas" (ej: "Modo Cine" o "Modo Relax") y asegúrate de que todo se apaga al salir de casa con un solo comando. Ahorro y diseño van de la mano.'
+            keywords: ['notificacion', 'aviso', 'alerta', 'mensaje', 'movil', 'telegram', 'whatsapp'],
+            response: '¡Por supuesto! 📲 Configuranos notificaciones a medida: "La lavadora ha terminado", "Fuga de agua detectada" o "Alguien ha entrado en el jardín". \n\nTe llegan al instante (Telegram o App) con fotos o vídeo si es necesario.'
+        },
+        {
+            keywords: ['internet', 'wifi', 'offline', 'cae', 'corte', 'router'],
+            response: 'Aquí está la magia de Home Assistant: **Tu casa sigue funcionando SIN internet**. 🔌\n\nLas luces, persianas y sensores son locales. Solo necesitas internet para recibir avisos fuera de casa. Privacidad y velocidad máxima.'
+        },
+        {
+            keywords: ['marca', 'xiaomi', 'philips', 'sonoff', 'apple', 'android', 'mezclar', 'compatible'],
+            response: 'Lo integramos TODO. 🤝 No te cases con una marca. Hacemos que la bombilla de IKEA hable con el sensor de Xiaomi y la caldera Vaillant. \n\nUnificamos todas tus apps en una sola.'
+        },
+        {
+            keywords: ['obra', 'cable', 'romper', 'pared', 'albañil', 'polvo'],
+            response: 'Cero obras. 🧹 Usamos tecnología inalámbrica profesional (Zigbee/WiFi) y módulos que se esconden detrás de tus interruptores actuales. \n\nTu casa se vuelve inteligente invisiblemente.'
+        },
+        {
+            keywords: ['interruptor', 'manual', 'abuela', 'padres', 'visita'],
+            response: '¡Tranquilidad! Tus interruptores de siempre seguirán funcionando. 👴👵\n\nLa domótica suma, no resta. Si se cae el sistema (que no pasa), puedes encender la luz con la mano como toda la vida.'
+        },
+        {
+            keywords: ['viejo', 'antiguo', 'caldera', 'lavadora', 'aire'],
+            response: 'No hace falta comprar electrodomésticos nuevos. 🔌 Ponemos "cerebro" a tu caldera vieja, tu aire acondicionado de hace 10 años o tu lavadora clásica. \n\n¿Qué aparato te gustaría controlar?'
         },
         {
             keywords: ['calefaccion', 'clima', 'frio', 'calor', 'aerotermia'],
