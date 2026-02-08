@@ -64,8 +64,28 @@ export class ChatbotService {
             response: '¡Esa es nuestra especialidad! 🏠 Transformamos tu vivienda actual en una **Smart Home completa sin hacer obras**. \n\nPodrás controlar luces, persianas y clima desde el móvil. ¿Te gustaría ver un ejemplo o prefieres que te llamemos para explicarte tu caso?'
         },
         {
-            keywords: ['ejemplo', 'ver', 'demo', 'caso', 'enseña', 'muestra'],
-            response: '¡Claro! Mira este caso reciente: \n\n🏢 **Piso de 90m² en Zaragoza**: Automatizamos luces, calefacción y persianas. \n💰 **Inversión**: 1.500€ (pago único). \n✨ **Beneficio**: Ahorran 30€/mes, pero lo mejor es que **encienden la calefacción desde el móvil antes de llegar** y apagan todas las luces desde la cama con la voz. Confort total. 🛋️\n\n¿Te gustaría tener este control en tu casa? **Déjame tu teléfono** y te explico cómo hacerlo.'
+            keywords: ['ejemplo', 'ver', 'demo', 'caso', 'enseña', 'muestra', 'proyecto'],
+            response: '¡Claro! Aquí tienes dos ejemplos reales:\n\n1️⃣ **Piso en Zaragoza**: Automatizamos luces y calefacción. Inversión 1.500€. Ahorran 30€/mes y ganan confort.\n\n2️⃣ **Chalet con Jardín**: Control de RIEGO inteligente (se apaga si llueve) y luces exteriores automáticas. Seguridad total.\n\n¿Cuál se parece más a tu caso? **Déjame tu teléfono** y te explico qué podemos hacer por ti.'
+        },
+        {
+            keywords: ['seguridad', 'camara', 'alarma', 'ladron', 'vigilancia', 'proteger'],
+            response: 'Tu seguridad es prioritaria. 🛡️ Instalamos **cámaras inteligentes, sensores de puerta/ventana y detectores de humo/agua**. \n\nLo mejor: la casa **simula presencia** cuando estás de viaje (enciende luces aleatoriamente) para ahuyentar ladrones. ¿Te interesa proteger tu hogar? Déjanos tu contacto.'
+        },
+        {
+            keywords: ['riego', 'jardin', 'exterior', 'piscina', 'terraza'],
+            response: '¡El exterior también cuenta! 🌿 Automatizamos tu **riego** para que se ajuste al clima (no riega si va a llover, ahorrando agua). También controlamos luces de jardín y depuradoras de piscina. \n\n¿Tienes jardín o terraza? Cuéntame y te damos ideas.'
+        },
+        {
+            keywords: ['que se puede hacer', 'que haces', 'resumen', 'servicios', 'posibilidades', 'todo'],
+            response: '¡Prácticamente todo! 🚀 Aquí tienes un resumen de lo que podemos automatizar:\n\n🌡️ **Clima:** Calefacción y A/C eficiente.\n💡 **Luces:** Ambientes y apagado general.\n🛡️ **Seguridad:** Alarmas y cámaras.\n☀️ **Persianas:** Suben/bajan solas según el sol.\n💦 **Exterior:** Riego y piscina.\n\n¿Qué te llama más la atención? Escríbeme tu duda o déjame tu teléfono.'
+        },
+        {
+            keywords: ['persiana', 'toldo', 'cortina', 'store'],
+            response: 'Las persianas inteligentes son clave para el ahorro. ☀️ Se bajan solas en verano para que no entre calor (ahorrando aire acondicionado) y se suben en invierno para calentar la casa gratis con el sol. \n\n¿Cuántas persianas tienes? Podemos motorizarlas todas.'
+        },
+        {
+            keywords: ['luz', 'luces', 'iluminacion', 'led', 'bombilla'],
+            response: 'Olvídate de interruptores. 💡 Crea "escenas" (ej: "Modo Cine" o "Modo Relax") y asegúrate de que todo se apaga al salir de casa con un solo comando. Ahorro y diseño van de la mano.'
         }
     ];
 
