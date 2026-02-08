@@ -4,11 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ChatbotService, ChatMessage } from '../../core/services/chatbot.service';
 
-// Simple pipe for line breaks
+// Simple pipe for line breaks and bold text
 @Pipe({ name: 'nl2br', standalone: true })
 export class Nl2brPipe implements PipeTransform {
   transform(value: string): string {
-    return value.replace(/\n/g, '<br/>');
+    let formatted = value.replace(/\n/g, '<br/>');
+    // Replace **text** with <strong>text</strong>
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    return formatted;
   }
 }
 

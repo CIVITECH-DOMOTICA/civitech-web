@@ -65,7 +65,7 @@ export class ChatbotService {
         },
         {
             keywords: ['ejemplo', 'ver', 'demo', 'caso', 'enseña', 'muestra'],
-            response: '¡Claro! Mira este caso reciente: \n\n🏢 **Piso de 90m² en Zaragoza**: Automatizamos luces, calefacción y persianas. \n💰 **Inversión**: 1.500€ (pago único SIN cuotas). \n📉 **Resultado**: Ahorran 30€/mes en luz y gas. \n\n¿Te gustaría que hiciéramos un estudio parecido para tu casa? **Déjame tu teléfono** y te lo preparamos gratis.'
+            response: '¡Claro! Mira este caso reciente: \n\n🏢 **Piso de 90m² en Zaragoza**: Automatizamos luces, calefacción y persianas. \n💰 **Inversión**: 1.500€ (pago único). \n✨ **Beneficio**: Ahorran 30€/mes, pero lo mejor es que **encienden la calefacción desde el móvil antes de llegar** y apagan todas las luces desde la cama con la voz. Confort total. 🛋️\n\n¿Te gustaría tener este control en tu casa? **Déjame tu teléfono** y te explico cómo hacerlo.'
         }
     ];
 
