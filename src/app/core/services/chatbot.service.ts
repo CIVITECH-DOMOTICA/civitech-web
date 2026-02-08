@@ -36,8 +36,28 @@ export class ChatbotService {
             response: 'Seguridad Inteligente real. 🛡️ En una **Lavandería 24h** de Zaragoza instalamos cámaras con IA que distinguen personas de sombras.\n\nResultado: **0 falsas alarmas** y aviso inmediato al móvil con vídeo si entra alguien fuera de horario. ¿Te interesa esta tranquilidad? Déjanos tu contacto.'
         },
         {
-            keywords: ['riego', 'jardin', 'exterior', 'piscina', 'terraza'],
-            response: 'Automatizamos tu exterior al completo. 🌿 Riego inteligente que se corta si va a llover, iluminación de paisaje y control de bombas de piscina.\n\n¿Tienes jardín? Cuéntanos qué necesitas y te damos una solución a medida.'
+            keywords: ['solar', 'placa', 'fotovoltaica', 'bateria', 'excedente', 'vertido'],
+            response: '¡No regales tu energía! ☀️ Con nuestro sistema de **Vertido Cero**, el excedente solar calienta tu agua, carga el coche o climatiza la casa automáticamente. \n\nAhorros del 30-50%. ¿Tienes placas o piensas ponerlas?'
+        },
+        {
+            keywords: ['mascota', 'perro', 'gato', 'animal', 'comida'],
+            response: 'Amamos a los animales. 🐾 Podemos instalar cámaras para verles, **dispensadores de comida automáticos** y control de clima para que no pasen calor en verano.\n\n¿Qué mascota tienes?'
+        },
+        {
+            keywords: ['mayor', 'abuelo', 'padres', 'asistencia', 'caida', 'seguridad', 'teleasistencia', 'dependiente'],
+            response: 'Tranquilidad para ti y para ellos. 👵 Nuestro sistema de **Cuidado Activo** detecta caídas o inactividad sin usar cámaras (privacidad total) y te avisa al móvil.\n\nEs mejor que una alarma. ¿Te gustaría saber más?'
+        },
+        {
+            keywords: ['cine', 'peli', 'serie', 'netflix', 'tv', 'television'],
+            response: 'Montamos tu **Cine en Casa**. 🍿 Al pulsar un botón: bajan las persianas, se atenúan las luces y el sonido se ajusta al modo película.\n\nSolo te faltan las palomitas. ¿Te imaginas tener esto en tu salón?'
+        },
+        {
+            keywords: ['wifi', 'internet', 'lento', 'conexion', 'cobertura', 'red'],
+            response: '¿Problemas con el WiFi? 📶 Instalamos redes profesionales (Mesh) que cubren toda la casa, jardín incluido. Sin cortes y con **bloqueo de publicidad** para todos tus dispositivos.\n\nDi adiós al lag. ¿Quieres que revisemos tu red?'
+        },
+        {
+            keywords: ['riego', 'jardin', 'exterior', 'piscina', 'terraza', 'cesped', 'planta'],
+            response: 'Tu jardín, inteligente. 🌿 Nuestro sistema **predice el tiempo**: no riega si va a llover y para aspersores si hace viento (ahorrando hasta 50% de agua). \n\nTambién detectamos fugas o tuberías rotas. ¿Quieres que cuidemos de tu jardín?'
         },
         {
             keywords: ['ahorro', 'factura', 'luz', 'energia', 'ahorrar'],
