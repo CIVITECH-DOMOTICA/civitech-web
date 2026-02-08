@@ -62,6 +62,10 @@ export class ChatbotService {
         {
             keywords: ['domotica', 'inteligente', 'smart', 'automatizar', 'controlar', 'casa', 'hogar'],
             response: '¡Esa es nuestra especialidad! 🏠 Transformamos tu vivienda actual en una **Smart Home completa sin hacer obras**. \n\nPodrás controlar luces, persianas y clima desde el móvil. ¿Te gustaría ver un ejemplo o prefieres que te llamemos para explicarte tu caso?'
+        },
+        {
+            keywords: ['ejemplo', 'ver', 'demo', 'caso', 'enseña', 'muestra'],
+            response: '¡Claro! Mira este caso reciente: \n\n🏢 **Piso de 90m² en Zaragoza**: Automatizamos luces, calefacción y persianas. \n💰 **Inversión**: 1.500€ (pago único SIN cuotas). \n📉 **Resultado**: Ahorran 30€/mes en luz y gas. \n\n¿Te gustaría que hiciéramos un estudio parecido para tu casa? **Déjame tu teléfono** y te lo preparamos gratis.'
         }
     ];
 
