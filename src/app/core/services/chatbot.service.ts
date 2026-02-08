@@ -58,6 +58,10 @@ export class ChatbotService {
         {
             keywords: ['calefaccion', 'clima', 'frio', 'calor', 'aerotermia'],
             response: 'Automatizar el clima ahorra hasta un **30% en tu factura**. 💸 Podemos zonificar tu calefacción o integrar tu aire acondicionado.\n\n¿Quieres saber cuánto ahorrarías tú? Déjanos tu teléfono y te hacemos el cálculo.'
+        },
+        {
+            keywords: ['domotica', 'inteligente', 'smart', 'automatizar', 'controlar', 'casa', 'hogar'],
+            response: '¡Esa es nuestra especialidad! 🏠 Transformamos tu vivienda actual en una **Smart Home completa sin hacer obras**. \n\nPodrás controlar luces, persianas y clima desde el móvil. ¿Te gustaría ver un ejemplo o prefieres que te llamemos para explicarte tu caso?'
         }
     ];
 
@@ -78,18 +82,42 @@ export class ChatbotService {
     private findResponse(message: string): string {
         const lowerMsg = message.toLowerCase();
 
-        // Check contact data (phone/email detection)
+        // 1. Check contact data (phone/email detection) - Top Priority
         if (/\b\d{9}\b/.test(lowerMsg) || /@/.test(lowerMsg)) {
             console.log('Sending lead data to EmailJS...');
             this.sendEmailNotification(message);
             return '¡Gracias! He anotado tus datos correctamente y he avisado a nuestro equipo. 📝\n\nUn técnico revisará tu caso y te contactará en breve (normalmente en menos de 24h) para asesorarte sin compromiso. 🚀';
         }
 
-        const match = this.knowledgeBase.find(kb =>
+        // 2. Filter out generic greetings if there's more content
+        // Define greeting keywords
+        const greetingKeywords = ['hola', 'buenos', 'buenas', 'hi', 'hello', 'empezar'];
+
+        // Find all matches
+        const matches = this.knowledgeBase.filter(kb =>
             kb.keywords.some(keyword => lowerMsg.includes(keyword))
         );
 
-        return match ? match.response : this.defaultResponse;
+        // If we have matches, look for non-greeting ones first
+        const specificMatch = matches.find(m =>
+            !m.keywords.some(k => greetingKeywords.includes(k))
+        );
+
+        if (specificMatch) {
+            return specificMatch.response;
+        }
+
+        // If no specific match, returns greeting if present
+        const greetingMatch = matches.find(m =>
+            m.keywords.some(k => greetingKeywords.includes(k))
+        );
+
+        if (greetingMatch) {
+            return greetingMatch.response;
+        }
+
+        // 3. Default fallback
+        return this.defaultResponse;
     }
 
     private sendEmailNotification(message: string) {
