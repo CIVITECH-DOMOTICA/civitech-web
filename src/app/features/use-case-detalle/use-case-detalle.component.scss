@@ -755,6 +755,7 @@
         display: block; // Elimina espacio blanco inferior
         width: 100%;
         height: auto;
+        background: #000; // Fondo negro durante carga
 
         // Estilo del control (depende del navegador, pero ayuda)
         &:focus {

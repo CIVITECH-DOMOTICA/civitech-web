@@ -74,7 +74,7 @@
     <div class="container section-video" data-aos="fade-up" *ngIf="useCase.video">
         <h2 class="section-title">Mira cómo funciona</h2>
         <div class="video-wrapper">
-            <video controls preload="metadata" width="100%" poster="{{useCase.imagen}}">
+            <video controls preload="metadata" width="100%">
                 <source [src]="useCase.video" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
