@@ -736,6 +736,34 @@
 }
 
 // ==========================================
+// VIDEO DEMO SECTION
+// ==========================================
+.section-video {
+    padding: $spacing-6 $spacing-6 $spacing-12; // Menos padding arriba
+    text-align: center;
+}
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: $radius-xl;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); // Sombra elegante
+    background: #000;
+
+    video {
+        display: block; // Elimina espacio blanco inferior
+        width: 100%;
+        height: auto;
+
+        // Estilo del control (depende del navegador, pero ayuda)
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+// ==========================================
 // RESPONSIVE
 // ==========================================
 @media (max-width: 768px) {

@@ -70,6 +70,17 @@
         </div>
     </div>
 
+    <!-- Video Demo Section -->
+    <div class="container section-video" data-aos="fade-up" *ngIf="useCase.video">
+        <h2 class="section-title">Mira cómo funciona</h2>
+        <div class="video-wrapper">
+            <video controls preload="metadata" width="100%" poster="{{useCase.imagen}}">
+                <source [src]="useCase.video" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </div>
+
     <!-- Beneficios -->
     <div class="container section-beneficios" data-aos="fade-up" *ngIf="useCase.beneficios">
         <h2 class="section-title">Beneficios Clave</h2>

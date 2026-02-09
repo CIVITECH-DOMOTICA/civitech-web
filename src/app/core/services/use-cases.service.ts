@@ -73,11 +73,12 @@ export class UseCasesService {
         {
             id: '2',
             slug: 'climatizacion-inteligente',
-            titulo: 'Climatización Inteligente y Predictiva',
+            titulo: 'Climatización Inteligente',
             subtitulo: 'Tu casa preparada antes de llegar',
             descripcion: 'El sistema aprende de tus hábitos y apaga la calefacción si se abre una ventana o si no hay nadie en casa, evitando derroches innecesarios en tu factura.',
             descripcionDetallada: 'Control inteligente de climatización con aprendizaje automático. El sistema aprende cuándo llegas a casa y precalienta/enfría el hogar. Detecta ventanas abiertas y reduce o apaga el sistema automáticamente. Gestiona zonas independientes y se integra con la previsión meteorológica.',
             imagen: '/assets/images/usecase-climate.png',
+            video: 'assets/videos/climatizacion.mp4',
             icono: 'fa-house-chimney',
             categoria: 'Confort',
             ahorroEstimado: '25-40% en climatización',
