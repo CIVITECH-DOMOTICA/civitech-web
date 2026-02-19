@@ -101,15 +101,7 @@
       opacity: 1;
     }
 
-    .container-icon-domotica {
-      background: $p-500;
-      color: white;
-      transform: rotate(5deg) scale(1.1);
-
-      i {
-        color: white;
-      }
-    }
+    // .container-icon-domotica handled above
 
     .titulo {
       color: $p-500;
@@ -126,20 +118,31 @@
 }
 
 .container-icon-domotica {
-  width: 80px; // Larger container
-  height: 80px;
+  width: 100%; // Full width of the container
+  height: 200px; // Fixed height for consistency
   display: flex;
   align-items: center;
   justify-content: center;
   background: $p-50;
-  border-radius: $radius-lg; // Softer corners
+  border-radius: $radius-lg;
   margin-bottom: $spacing-8;
+  overflow: hidden; // Clip image
   @include tr-smooth;
 
-  i {
-    font-size: 2.8rem; // Larger icon
-    color: $p-500;
-    @include tr-smooth;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensure image covers the area
+    transition: transform 0.5s ease;
+  }
+}
+
+// Update hover effect to scale image instead of icon
+.card-domotica:hover {
+  .container-icon-domotica {
+    img {
+      transform: scale(1.1); // Gentle zoom on hover
+    }
   }
 }
 

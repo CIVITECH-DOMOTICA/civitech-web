@@ -50,20 +50,8 @@
             </div>
 
             <!-- Imagen Explicativa según el caso -->
-            <div class="descripcion-imagen" *ngIf="useCase.slug === 'optimizacion-solar'">
-                <img src="/assets/images/solar-dashboard.png" alt="Dashboard de gestión solar" loading="lazy" />
-                <p class="imagen-caption">Dashboard en tiempo real de producción y consumo solar</p>
-            </div>
-            <div class="descripcion-imagen" *ngIf="useCase.slug === 'climatizacion-inteligente'">
-                <img src="/assets/images/clima-zones.png" alt="Zonas climáticas inteligentes" loading="lazy" />
-                <p class="imagen-caption">Control independiente por zonas para máxima eficiencia</p>
-            </div>
-            <div class="descripcion-imagen" *ngIf="useCase.slug === 'persianas-automaticas'">
-                <img src="/assets/images/persianas-control.png" alt="Control de persianas automáticas" loading="lazy" />
-                <p class="imagen-caption">Automatización según posición solar y meteorología</p>
-            </div>
-            <div class="descripcion-imagen"
-                *ngIf="useCase.slug !== 'optimizacion-solar' && useCase.slug !== 'climatizacion-inteligente' && useCase.slug !== 'persianas-automaticas'">
+            <!-- Imagen Explicativa -->
+            <div class="descripcion-imagen">
                 <img [src]="useCase.imagen" [alt]="useCase.titulo" loading="lazy" />
                 <p class="imagen-caption">Sistema {{ useCase.categoria }} profesional</p>
             </div>

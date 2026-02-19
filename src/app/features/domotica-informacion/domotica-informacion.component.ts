@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { SeoService } from 'src/app/core/services/seo.service';
+
 @Component({
   selector: 'domotica-informacion',
   templateUrl: './domotica-informacion.component.html',
   styleUrls: ['./domotica-informacion.component.scss']
 })
 export class DomoticaInformacionComponent {
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private seoService: SeoService
+  ) {
     // Force Recompile
   }
   urlBoton: string = '/acerca-de-nosotros'
@@ -15,17 +20,17 @@ export class DomoticaInformacionComponent {
 
     {
       src: '../../../../assets/images/cliente1.jpg',
-      nombre: 'Domotizacion Casa Rural en Asturias',
+      nombre: 'Domotización Casa Rural en Monzalbarba (Zaragoza)',
       resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
     },
     {
       src: '../../../../assets/images/cliente3.jpg',
-      nombre: 'Monitorizacion de Consumo Energetico Chalet en Barcelona',
+      nombre: 'Monitorización de Consumo Chalet en Montecanal (Zaragoza)',
       resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
     },
     {
       src: '../../../../assets/images/cliente2.jpg',
-      nombre: 'Domotizacion Piso en Castellon de la Plana',
+      nombre: 'Domotización Ático en Centro Zaragoza',
       resenia: 'Nos especializamos en Domotica con enfoque en estilo, funcionalidad y soluciones tecnológicas. '
     }
   ];

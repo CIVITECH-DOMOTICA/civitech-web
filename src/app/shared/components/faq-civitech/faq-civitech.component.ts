@@ -33,6 +33,10 @@ export class FaqCivitechComponent {
     {
       question: '¿Tenéis soporte post-venta?',
       answer: 'Por supuesto. Ofrecemos mantenimiento y soporte para asegurar que tu sistema esté siempre actualizado y funcionando perfectamente.'
+    },
+    {
+      question: '¿Prestáis servicio fuera de Zaragoza?',
+      answer: 'Nuestra sede está en Zaragoza y operamos presencialmente en todo Aragón. Para proyectos grandes, consultad disponibilidad nacional.'
     }
   ];
 

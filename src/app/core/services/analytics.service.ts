@@ -29,26 +29,13 @@ export class AnalyticsService {
             return;
         }
 
-        // Add Google Analytics script dynamically if not present
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
-        document.head.appendChild(script);
-
-        // Initialize gtag
-        const gtagScript = document.createElement('script');
-        gtagScript.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${trackingId}', {
-        'send_page_view': false
-      });
-    `;
-        document.head.appendChild(gtagScript);
-
-        this.initialized = true;
-        this.listenForRouteChanges();
+        // Check if gtag is available from index.html
+        if (typeof (window as any).gtag !== 'undefined') {
+            this.initialized = true;
+            this.listenForRouteChanges();
+        } else {
+            console.warn('Google Analytics not loaded');
+        }
     }
 
     /**

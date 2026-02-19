@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { Proyecto } from '../../core/models/proyecto.model';
 import { ProyectosService } from '../../core/services/proyectos.service';
+import { SeoService } from 'src/app/core/services/seo.service';
 
 @Component({
   selector: 'app-proyecto-detalle',
@@ -27,8 +28,7 @@ export class ProyectoDetalleComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private proyectosService: ProyectosService,
-    private titleService: Title,
-    private metaService: Meta
+    private seoService: SeoService
   ) { }
 
 
@@ -61,22 +61,13 @@ export class ProyectoDetalleComponent implements OnInit {
   updateSEO(): void {
     if (!this.proyecto) return;
 
-    // SEO: Title
-    this.titleService.setTitle(`${this.proyecto.nombre} | Caso de Éxito | Civitech`);
-
-    // SEO: Meta Description
-    this.metaService.updateTag({
-      name: 'description',
-      content: `${this.proyecto.resumen} Proyecto de ${this.proyecto.tipo} en ${this.proyecto.ubicacion}. ${this.proyecto.ahorroEnergetico ? 'Ahorro energético del ' + this.proyecto.ahorroEnergetico : ''}`
+    this.seoService.updateSeo({
+      title: `${this.proyecto.nombre} | Caso de Éxito | Civitech`,
+      description: `${this.proyecto.resumen} Proyecto de ${this.proyecto.tipo} en ${this.proyecto.ubicacion}. ${this.proyecto.ahorroEnergetico ? 'Ahorro energético del ' + this.proyecto.ahorroEnergetico : ''}`,
+      image: this.proyecto.imagenPrincipal,
+      url: window.location.href
     });
 
-    // SEO: Open Graph
-    this.metaService.updateTag({ property: 'og:title', content: this.proyecto.nombre });
-    this.metaService.updateTag({ property: 'og:description', content: this.proyecto.resumen });
-    this.metaService.updateTag({ property: 'og:image', content: this.proyecto.imagenPrincipal });
-    this.metaService.updateTag({ property: 'og:type', content: 'article' });
-
-    // SEO: Schema.org Article
     const schema = {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -103,11 +94,7 @@ export class ProyectoDetalleComponent implements OnInit {
       }
     };
 
-    let script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'schema-proyecto';
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
+    this.seoService.addStructuredData(schema, 'schema-proyecto');
   }
 
   convertirFecha(fecha: string): string {

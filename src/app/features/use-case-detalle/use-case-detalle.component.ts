@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
 import { UseCase } from '../../core/models/use-case.model';
 import { UseCasesService } from '../../core/services/use-cases.service';
+import { SeoService } from 'src/app/core/services/seo.service';
 
 @Component({
   selector: 'app-use-case-detalle',
@@ -17,8 +17,7 @@ export class UseCaseDetalleComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private useCasesService: UseCasesService,
-    private titleService: Title,
-    private metaService: Meta
+    private seoService: SeoService
   ) { }
 
   ngOnInit(): void {
@@ -34,35 +33,17 @@ export class UseCaseDetalleComponent implements OnInit {
     }
   }
 
+  // Update SEO using the centralized service
   updateMetaTags(): void {
     if (!this.useCase) return;
 
-    // Title
-    this.titleService.setTitle(`${this.useCase.titulo} | Domótica Zaragoza | Civitech`);
-
-    // Description
-    this.metaService.updateTag({
-      name: 'description',
-      content: `${this.useCase.descripcion} ${this.useCase.ahorroEstimado ? 'Ahorra hasta ' + this.useCase.ahorroEstimado : ''}. Instalación profesional en Zaragoza.`
+    this.seoService.updateSeo({
+      title: `${this.useCase.titulo} | Domótica Zaragoza | Civitech`,
+      description: `${this.useCase.descripcion} ${this.useCase.ahorroEstimado ? 'Ahorra hasta ' + this.useCase.ahorroEstimado : ''}. Instalación profesional en Zaragoza.`,
+      keywords: `${this.useCase.titulo}, domótica ${this.useCase.categoria}, ${this.useCase.tecnologias?.map(t => t.nombre).join(', ')}, Zaragoza, Aragón`,
+      image: this.useCase.imagen,
+      url: window.location.href
     });
-
-    // Keywords
-    this.metaService.updateTag({
-      name: 'keywords',
-      content: `${this.useCase.titulo}, domótica ${this.useCase.categoria}, ${this.useCase.tecnologias?.map(t => t.nombre).join(', ')}, Zaragoza, Aragón`
-    });
-
-    // Open Graph
-    this.metaService.updateTag({ property: 'og:title', content: this.useCase.titulo });
-    this.metaService.updateTag({ property: 'og:description', content: this.useCase.descripcion });
-    this.metaService.updateTag({ property: 'og:image', content: this.useCase.imagen });
-    this.metaService.updateTag({ property: 'og:type', content: 'website' });
-
-    // Twitter Card
-    this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.metaService.updateTag({ name: 'twitter:title', content: this.useCase.titulo });
-    this.metaService.updateTag({ name: 'twitter:description', content: this.useCase.descripcion });
-    this.metaService.updateTag({ name: 'twitter:image', content: this.useCase.imagen });
   }
 
   addSchemaMarkup(): void {
@@ -94,10 +75,7 @@ export class UseCaseDetalleComponent implements OnInit {
       }
     };
 
-    let script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
+    this.seoService.addStructuredData(schema, 'schema-service-detail');
   }
 
   volver(): void {

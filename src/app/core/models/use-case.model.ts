@@ -6,6 +6,7 @@ export interface UseCase {
     descripcion: string;
     descripcionDetallada: string;
     imagen: string;
+    imagenCard?: string; // Optional: Image for the card, if different from detail
     video?: string; // Path to local video or URL
     icono: string; // Font Awesome class
     categoria: string;

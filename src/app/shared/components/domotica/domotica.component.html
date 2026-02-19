@@ -10,8 +10,8 @@
       <!-- CARDS DINÁMICAS DESDE EL SERVICIO -->
       <div class="card-domotica clickable" *ngFor="let useCase of useCases; let i = index" [attr.data-aos]="'fade-up'"
         [attr.data-aos-delay]="(i + 1) * 100" (click)="verUseCase(useCase.slug)">
-        <div class="container-icon-domotica">
-          <i class="fas {{ useCase.icono }}"></i>
+        <div class="container-icon-domotica image-mode">
+          <img [src]="useCase.imagenCard || useCase.imagen" [alt]="useCase.titulo" loading="lazy" />
         </div>
         <p class="titulo">{{ useCase.titulo }}</p>
         <p>{{ useCase.descripcion }}</p>
