@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, from, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import emailjs from '@emailjs/browser';
-import OpenAI from 'openai';
 import { environment } from '../../../environments/environment';
 
 export interface ChatMessage {
@@ -54,7 +53,7 @@ NO intentes ser demasiado comercial desde el principio. Primero da valor, luego 
 })
 export class ChatbotService {
 
-    private openai: OpenAI | null = null;
+    private apiKey: string | null = null;
     private conversationHistory: { role: 'user' | 'assistant'; content: string }[] = [];
     private contactCaptured = false;
 
@@ -62,32 +61,24 @@ export class ChatbotService {
         emailjs.init(environment.emailJsPublicKey || 'toWAFkM86-kDoWQa-');
 
         const key = environment.openAiApiKey;
-        console.log('[Chatbot] API key present:', !!key, '| starts with:', key?.substring(0, 10));
-
         if (key && key !== 'sk-PLACEHOLDER') {
-            this.openai = new OpenAI({
-                apiKey: key,
-                dangerouslyAllowBrowser: true
-            });
-            console.log('[Chatbot] OpenAI client initialized ✅');
+            this.apiKey = key;
+            console.log('[Chatbot] Ready ✅ (key:', key.substring(0, 10) + '...)');
         } else {
-            console.warn('[Chatbot] OpenAI key missing or placeholder — will use local fallback ⚠️');
+            console.warn('[Chatbot] No valid API key — using local fallback ⚠️');
         }
     }
 
     /** Main entry point — every message goes through here */
     sendMessage(userMessage: string): Observable<ChatMessage> {
-        // Detect contact info and handle it specially
         if (!this.contactCaptured && this.looksLikeContact(userMessage)) {
             return from(this.handleContactDetected(userMessage));
         }
 
-        if (!this.openai) {
-            console.warn('[Chatbot] No OpenAI client — using local fallback');
+        if (!this.apiKey) {
             return of(this.localFallback(userMessage));
         }
 
-        // Everything else goes to OpenAI
         return from(this.askOpenAI(userMessage)).pipe(
             catchError((err) => {
                 console.error('[Chatbot] OpenAI call failed:', err?.message || err);
@@ -114,70 +105,81 @@ export class ChatbotService {
         };
     }
 
+    /** Uses raw fetch() to call OpenAI — avoids SDK incompatibility with Angular SSG */
     private async askOpenAI(userMessage: string): Promise<ChatMessage> {
-        // Add to history
         this.conversationHistory.push({ role: 'user', content: userMessage });
-
-        // Keep last 12 messages for context
         const recentHistory = this.conversationHistory.slice(-12);
 
-        let completion: any;
-        try {
-            completion = await this.openai!.chat.completions.create({
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${this.apiKey}`
+            },
+            body: JSON.stringify({
                 model: 'gpt-4o-mini',
                 messages: [
                     { role: 'system', content: SYSTEM_PROMPT },
                     ...recentHistory
                 ],
                 max_tokens: 300,
-                temperature: 0.75,
-            });
-            console.log('[Chatbot] Raw completion:', completion);
-        } catch (apiErr: any) {
-            console.error('[Chatbot] API request error:', apiErr?.status, apiErr?.message, apiErr?.error);
-            throw apiErr;
+                temperature: 0.75
+            })
+        });
+
+        if (!response.ok) {
+            const errBody = await response.text();
+            console.error('[Chatbot] HTTP error:', response.status, errBody);
+            throw new Error(`OpenAI HTTP ${response.status}`);
         }
 
-        if (!completion || !completion.choices || completion.choices.length === 0) {
-            console.error('[Chatbot] Unexpected completion shape:', completion);
-            throw new Error('Invalid completion response');
+        const data = await response.json();
+        if (data.error) {
+            console.error('[Chatbot] API error:', data.error);
+            throw new Error(data.error.message);
         }
 
-        const aiText = completion.choices[0].message.content || '¿Puedes repetirlo?';
+        const aiText = data.choices?.[0]?.message?.content || '¿Puedes repetirlo?';
         this.conversationHistory.push({ role: 'assistant', content: aiText });
 
-        return {
-            text: aiText,
-            isUser: false,
-            timestamp: new Date(),
-            type: 'text'
-        };
+        return { text: aiText, isUser: false, timestamp: new Date(), type: 'text' };
     }
 
     private async handleContactDetected(contact: string): Promise<ChatMessage> {
         this.contactCaptured = true;
-
-        // Notify via email
         this.sendEmailNotification(contact);
 
-        // Generate WhatsApp link
         const waMsg = `Hola Civitech! He hablado con vuestro asistente y me gustaría más información sobre domótica.`;
         const waLink = `https://wa.me/34624074920?text=${encodeURIComponent(waMsg)}`;
 
-        // Also let OpenAI generate a warm response
         this.conversationHistory.push({ role: 'user', content: contact });
-        const completion = await this.openai!.chat.completions.create({
-            model: 'gpt-4o-mini',
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                ...this.conversationHistory
-            ],
-            max_tokens: 150,
-            temperature: 0.7,
-        });
 
-        const aiText = completion.choices[0].message.content ||
-            `¡Perfecto! 🚀 He apuntado tus datos. Un técnico de Civitech te contactará pronto. ¿Hay algún horario que te venga mejor?`;
+        let aiText = `¡Perfecto! 🚀 He apuntado tus datos. Un técnico de Civitech te contactará pronto. ¿Hay algún horario que te venga mejor?`;
+
+        if (this.apiKey) {
+            try {
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${this.apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-4o-mini',
+                        messages: [
+                            { role: 'system', content: SYSTEM_PROMPT },
+                            ...this.conversationHistory
+                        ],
+                        max_tokens: 150,
+                        temperature: 0.7
+                    })
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    aiText = data.choices?.[0]?.message?.content || aiText;
+                }
+            } catch { /* keep default aiText */ }
+        }
 
         this.conversationHistory.push({ role: 'assistant', content: aiText });
 
@@ -204,7 +206,7 @@ export class ChatbotService {
             return { text: 'Sin cuotas y sin nube externa. 🛡️ Usamos Frigate (IA local) para distinguir personas, coches o animales. Notificaciones instantáneas al móvil con vídeo clip. ¿Es para una vivienda principal o segunda residencia?', isUser: false, timestamp: new Date(), type: 'text' };
         }
 
-        return { text: 'Interesante. Aunque ahora mismo tengo un problema de conexión, puedo decirte que somos especialistas en esto. Lo mejor es que hablemos directamente: +34 624 074 920. ¿O prefieres que te llamemos nosotros?', isUser: false, timestamp: new Date(), type: 'text' };
+        return { text: '¿En qué te puedo ayudar exactamente? Cuéntame tu situación y te oriento. Somos especialistas en domótica en Zaragoza — sin cuotas, sin complicaciones. ☎️ +34 624 074 920', isUser: false, timestamp: new Date(), type: 'text' };
     }
 
     private looksLikeContact(text: string): boolean {
