@@ -121,15 +121,27 @@ export class ChatbotService {
         // Keep last 12 messages for context
         const recentHistory = this.conversationHistory.slice(-12);
 
-        const completion = await this.openai!.chat.completions.create({
-            model: 'gpt-4o-mini',
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                ...recentHistory
-            ],
-            max_tokens: 300,
-            temperature: 0.75,
-        });
+        let completion: any;
+        try {
+            completion = await this.openai!.chat.completions.create({
+                model: 'gpt-4o-mini',
+                messages: [
+                    { role: 'system', content: SYSTEM_PROMPT },
+                    ...recentHistory
+                ],
+                max_tokens: 300,
+                temperature: 0.75,
+            });
+            console.log('[Chatbot] Raw completion:', completion);
+        } catch (apiErr: any) {
+            console.error('[Chatbot] API request error:', apiErr?.status, apiErr?.message, apiErr?.error);
+            throw apiErr;
+        }
+
+        if (!completion || !completion.choices || completion.choices.length === 0) {
+            console.error('[Chatbot] Unexpected completion shape:', completion);
+            throw new Error('Invalid completion response');
+        }
 
         const aiText = completion.choices[0].message.content || '¿Puedes repetirlo?';
         this.conversationHistory.push({ role: 'assistant', content: aiText });
