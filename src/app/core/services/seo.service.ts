@@ -195,7 +195,6 @@ export class SeoService {
                 '@type': 'City',
                 name: 'Zaragoza'
             },
-            priceRange: '€€',
             openingHoursSpecification: [
                 {
                     '@type': 'OpeningHoursSpecification',
@@ -204,11 +203,6 @@ export class SeoService {
                     closes: '18:00'
                 }
             ],
-            aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.9',
-                reviewCount: '47'
-            },
             sameAs: [
                 'https://www.facebook.com/share/1A3PRQzJHb/',
                 'https://www.instagram.com/civitech.es',
