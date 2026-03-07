@@ -4,11 +4,14 @@
 </main>
 <footer-civitech></footer-civitech>
 
-<!-- WhatsApp Floating Button -->
-<whatsapp-button></whatsapp-button>
+<!-- Browser-only interactive widgets (not needed for SSR) -->
+<ng-container *ngIf="isBrowser">
+  <!-- WhatsApp Floating Button -->
+  <whatsapp-button></whatsapp-button>
 
-<!-- Transparency/GDPR -->
-<app-cookie-banner></app-cookie-banner>
+  <!-- Transparency/GDPR -->
+  <app-cookie-banner></app-cookie-banner>
 
-<!-- AI Chatbot -->
-<app-chatbot></app-chatbot>
+  <!-- AI Chatbot -->
+  <app-chatbot></app-chatbot>
+</ng-container>

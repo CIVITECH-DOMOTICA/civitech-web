@@ -42,7 +42,7 @@ export class UseCaseDetalleComponent implements OnInit {
       description: `${this.useCase.descripcion} ${this.useCase.ahorroEstimado ? 'Ahorra hasta ' + this.useCase.ahorroEstimado : ''}. Instalación profesional en Zaragoza.`,
       keywords: `${this.useCase.titulo}, domótica ${this.useCase.categoria}, ${this.useCase.tecnologias?.map(t => t.nombre).join(', ')}, Zaragoza, Aragón`,
       image: this.useCase.imagen,
-      url: window.location.href
+      url: `https://civitech.es${this.router.url}`
     });
   }
 

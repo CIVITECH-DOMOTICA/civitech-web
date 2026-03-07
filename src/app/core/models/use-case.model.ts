@@ -11,9 +11,8 @@ export interface UseCase {
     icono: string; // Font Awesome class
     categoria: string;
 
-    // Beneficios y características
-    beneficios?: string[];
-    casosUso?: string[];
+    beneficios?: { texto: string; icono: string }[];
+    casosUso?: { texto: string; icono: string }[];
     tecnologias?: Array<{ nombre: string; logo?: string; url?: string }>;
 
     // ROI y ahorro

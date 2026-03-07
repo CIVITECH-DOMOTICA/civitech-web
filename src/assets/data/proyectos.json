@@ -16,7 +16,7 @@
     {
         "id": "chalet-tesla-airzone",
         "titulo": "Gestión Excedentes y Clima Industrial",
-        "descripcion": "Chalet con máquinas de conductos Toshiba integradas vía Airzone Aidoo Pro (WiFi). Algoritmo en HA que decide destino de energía solar sobrante: Cargar Tesla (Ethernet) o pre-enfriar vivienda. Prioridad dinámica.",
+        "descripcion": "Chalet con máquinas de conductos Toshiba integradas vía Airzone Aidoo Pro (WiFi). Algoritmo inteligente que decide destino de energía solar sobrante: Cargar Tesla (Ethernet) o pre-enfriar vivienda. Prioridad dinámica.",
         "imagen": "https://images.pexels.com/photos/9800009/pexels-photo-9800009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "categoria": "Residencial Avanzado",
         "servicios": [
@@ -30,7 +30,7 @@
     {
         "id": "chalet-barcelona",
         "titulo": "Gestión Sol y Excedentes",
-        "descripcion": "Integración de inversor Huawei existente con Home Assistant. Automatización de cargas (termo y depuradora) basada en la curva de producción solar en tiempo real.",
+        "descripcion": "Integración de inversor Huawei existente con nuestro sistema de automatización. Automatización de cargas (termo y depuradora) basada en la curva de producción solar en tiempo real.",
         "imagen": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "categoria": "Eficiencia",
         "servicios": [

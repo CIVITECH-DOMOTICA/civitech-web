@@ -24,7 +24,6 @@ export class EcosystemGridComponent implements OnInit {
       titulo: 'Cerebro & Voz / Redes',
       icono: 'fa-brain',
       marcas: [
-        { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io' },
         { nombre: 'Google Home', logo: 'assets/logos/google_home_official.png', url: 'https://home.google.com' },
         { nombre: 'Amazon Alexa', logo: 'assets/logos/alexa_official.png', url: 'https://alexa.amazon.com' },
         { nombre: 'Apple HomeKit', logo: 'assets/logos/apple_home_official.png', url: 'https://www.apple.com/ios/home/' }

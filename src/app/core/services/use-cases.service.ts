@@ -22,20 +22,19 @@ export class UseCasesService {
             tiempoImplementacion: '2-3 días',
             roi: '12-18 meses',
             beneficios: [
-                'Persianas Térmicas que bloquean el sol en verano para no gastar en aire',
-                'Tu coche cargándose gratis automáticamente con la energía solar sobrante',
-                'Agua caliente lista sin encender la caldera',
-                'Un sistema que consulta la previsión meteorológica para tomar decisiones de ahorro antes de que tú lo pienses',
-                'Todo automático, todo sin cuotas'
+                { texto: 'Persianas Térmicas que bloquean el sol en verano para no gastar en aire', icono: 'fa-temperature-arrow-down' },
+                { texto: 'Tu coche cargándose gratis automáticamente con la energía solar sobrante', icono: 'fa-charging-station' },
+                { texto: 'Agua caliente lista sin encender la caldera', icono: 'fa-shower' },
+                { texto: 'Un sistema que consulta la previsión meteorológica para tomar decisiones de ahorro antes de que tú lo pienses', icono: 'fa-cloud-sun' },
+                { texto: 'Todo automático, todo sin cuotas', icono: 'fa-robot' }
             ],
             casosUso: [
-                'Viviendas con fotovoltaica',
-                'Chalets con piscina y termo',
-                'Hogares con alta factura de clima',
-                'Usuarios concienciados con eficiencia'
+                { texto: 'Viviendas con fotovoltaica', icono: 'fa-solar-panel' },
+                { texto: 'Chalets con piscina y termo', icono: 'fa-water' },
+                { texto: 'Hogares con alta factura de clima', icono: 'fa-temperature-arrow-up' },
+                { texto: 'Usuarios concienciados con eficiencia', icono: 'fa-leaf' }
             ],
             tecnologias: [
-                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' },
                 { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
                 { nombre: 'Victron Energy', logo: 'assets/logos/victron.svg', url: 'https://www.victronenergy.com.es/' },
                 { nombre: 'Netatmo', logo: 'assets/logos/netatmo_vector.svg', url: 'https://www.netatmo.com/es-es' },
@@ -74,24 +73,23 @@ export class UseCasesService {
             tiempoImplementacion: '2-3 días',
             roi: 'Inmediato (Tranquilidad)',
             beneficios: [
-                'Sin cuotas mensuales de por vida',
-                'Defensa Activa: Persianas abajo, luces rojas y sirena',
-                'Simulación de presencia cuando viajas',
-                'Cerraduras Inteligentes: Acceso con huella o móvil',
-                'Notificaciones inmediatas con captura de imagen ante eventos'
+                { texto: 'Sin cuotas mensuales de por vida', icono: 'fa-piggy-bank' },
+                { texto: 'Defensa Activa: Persianas abajo, luces rojas y sirena', icono: 'fa-shield-dog' },
+                { texto: 'Simulación de presencia cuando viajas', icono: 'fa-user-clock' },
+                { texto: 'Cerraduras Inteligentes: Acceso con huella o móvil', icono: 'fa-fingerprint' },
+                { texto: 'Notificaciones inmediatas con captura de imagen ante eventos', icono: 'fa-mobile-screen' }
             ],
             casosUso: [
-                'Chalets unifamiliares',
-                'Segundas residencias vacías',
-                'Negocios y oficinas',
-                'Comunidades de vecinos'
+                { texto: 'Chalets unifamiliares', icono: 'fa-house' },
+                { texto: 'Segundas residencias vacías', icono: 'fa-house-lock' },
+                { texto: 'Negocios y oficinas', icono: 'fa-building' },
+                { texto: 'Comunidades de vecinos', icono: 'fa-people-roof' }
             ],
             tecnologias: [
                 { nombre: 'Reolink', logo: 'assets/logos/reolink.png', url: 'https://reolink.com/' },
                 { nombre: 'Frigate NVR', logo: 'assets/logos/frigate_text.png', url: 'https://frigate.video/' },
                 { nombre: 'Ajax Systems', logo: 'assets/logos/ajax_real.png', url: 'https://ajax.systems/es/' },
-                { nombre: 'Aqara', logo: 'assets/logos/aqara_official.png', url: 'https://www.aqara.com/' },
-                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
+                { nombre: 'Aqara', logo: 'assets/logos/aqara_official.png', url: 'https://www.aqara.com/' }
             ],
             ejemplos: [
                 {
@@ -125,25 +123,24 @@ export class UseCasesService {
             tiempoImplementacion: '1-2 días',
             roi: 'Diario (Bienestar)',
             beneficios: [
-                'Máxima Comodidad y Confort',
-                'Control por Voz y App unificado',
-                'Persianas automáticas según sol/viento',
-                'Escenas de Cine (Luces, TV, Sonido)',
-                'Iluminación circadiana (salud visual)',
-                'Diseño minimalista (menos interruptores)'
+                { texto: 'Máxima Comodidad y Confort', icono: 'fa-couch' },
+                { texto: 'Control por Voz y App unificado', icono: 'fa-microphone' },
+                { texto: 'Persianas automáticas según sol/viento', icono: 'fa-sun' },
+                { texto: 'Escenas de Cine (Luces, TV, Sonido)', icono: 'fa-film' },
+                { texto: 'Iluminación circadiana (salud visual)', icono: 'fa-lightbulb' },
+                { texto: 'Diseño minimalista (menos interruptores)', icono: 'fa-border-none' }
             ],
             casosUso: [
-                'Salones de diseño',
-                'Salas de Home Cinema',
-                'Dormitorios principales',
-                'Terrazas y exteriores'
+                { texto: 'Salones de diseño', icono: 'fa-couch' },
+                { texto: 'Salas de Home Cinema', icono: 'fa-film' },
+                { texto: 'Dormitorios principales', icono: 'fa-bed' },
+                { texto: 'Terrazas y exteriores', icono: 'fa-umbrella-beach' }
             ],
             tecnologias: [
                 { nombre: 'Philips Hue', logo: 'assets/logos/philips_hue.png', url: 'https://www.philips-hue.com/es-es' },
                 { nombre: 'Somfy', logo: 'assets/logos/somfy_real.png', url: 'https://www.somfy.es/' },
                 { nombre: 'Sonos', logo: 'assets/logos/sonos.png', url: 'https://www.sonos.com/es-es/home' },
-                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
-                { nombre: 'Home Assistant', logo: 'assets/logos/home-assistant.svg', url: 'https://www.home-assistant.io/' }
+                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' }
             ],
             ejemplos: [
                 {

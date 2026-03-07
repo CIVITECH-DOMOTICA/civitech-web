@@ -14,8 +14,8 @@ import { AvisoLegalComponent } from './features/legal/aviso-legal.component';
 import { PoliticaCookiesComponent } from './features/legal/politica-cookies.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/acerca-de-nosotros', pathMatch: 'full' },
-  { path: 'acerca-de-nosotros', component: AcercaDeNosotrosComponent },
+  { path: '', component: AcercaDeNosotrosComponent, pathMatch: 'full' },
+  { path: 'acerca-de-nosotros', redirectTo: '', pathMatch: 'full' },
   { path: 'domotica-informacion', component: DomoticaInformacionComponent },
   { path: 'domotica/:slug', component: UseCaseDetalleComponent },
   { path: 'proyectos', component: ProyectosComponent },

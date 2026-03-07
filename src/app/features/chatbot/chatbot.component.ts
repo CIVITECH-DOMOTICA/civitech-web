@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ChatbotService, ChatMessage } from '../../core/services/chatbot.service';
+import { Observable } from 'rxjs';
 
-// Simple pipe for line breaks and bold text
 @Pipe({ name: 'nl2br', standalone: true })
 export class Nl2brPipe implements PipeTransform {
   transform(value: string): string {
+    if (!value) return '';
     let formatted = value.replace(/\n/g, '<br/>');
-    // Replace **text** with <strong>text</strong>
     formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     return formatted;
   }
@@ -20,7 +20,7 @@ export class Nl2brPipe implements PipeTransform {
   standalone: true,
   imports: [CommonModule, FormsModule, Nl2brPipe],
   template: `
-    <!-- Floating Button with Animated Ping -->
+    <!-- Floating Button -->
     <div class="chatbot-trigger" (click)="toggleChat()" *ngIf="!isOpen">
       <div class="notification-badge" *ngIf="hasUnread">1</div>
       <div class="ping-animation"></div>
@@ -28,7 +28,7 @@ export class Nl2brPipe implements PipeTransform {
     </div>
 
     <!-- Chat Window -->
-    <div class="chat-window" [@slideUpdate]="isOpen ? 'open' : 'closed'">
+    <div class="chat-window" [@slideUp]="isOpen ? 'open' : 'closed'">
       <!-- Header -->
       <div class="chat-header">
         <div class="header-info">
@@ -47,13 +47,23 @@ export class Nl2brPipe implements PipeTransform {
       <!-- Messages Area -->
       <div class="chat-messages" #scrollContainer>
         <div class="message-group" *ngFor="let msg of messages">
-          <div class="message-bubble" 
-               [ngClass]="{'user-msg': msg.isUser, 'bot-msg': !msg.isUser}">
+          <div class="message-bubble" [ngClass]="{'user-msg': msg.isUser, 'bot-msg': !msg.isUser}">
             <div class="msg-content" [innerHTML]="msg.text | nl2br"></div>
+
+            <!-- Chips / Options -->
+            <div class="chips-container" *ngIf="msg.options && msg.options.length > 0">
+              <button class="chip-btn"
+                      *ngFor="let opt of msg.options"
+                      (click)="handleOptionClick(opt)"
+                      [class.whatsapp-btn]="opt.action === 'link'">
+                {{ opt.label }}
+              </button>
+            </div>
+
             <span class="msg-time">{{ msg.timestamp | date:'HH:mm' }}</span>
           </div>
         </div>
-        
+
         <!-- Typing Indicator -->
         <div class="typing-indicator" *ngIf="isTyping">
           <span></span><span></span><span></span>
@@ -62,331 +72,282 @@ export class Nl2brPipe implements PipeTransform {
 
       <!-- Input Area -->
       <div class="chat-input-area">
-        <textarea 
-          [(ngModel)]="userInput" 
+        <textarea
+          [(ngModel)]="userInput"
           (keydown.enter)="sendMessage($event)"
           placeholder="Escribe tu consulta..."
           rows="1"></textarea>
         <button class="send-btn" [disabled]="!userInput.trim() || isTyping" (click)="sendMessage()">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
         </button>
       </div>
-      
-      <div class="chat-footer">
-        Powered by OpenAI & Civitech
-      </div>
+
+      <div class="chat-footer">Powered by OpenAI & Civitech</div>
     </div>
   `,
   styles: [`
-    /* Variables */
     :host {
-      --primary: #B30000;
-      --primary-dark: #8a0000;
-      --bg-chat: #ffffff;
-      --bg-msg-user: #B30000;
-      --bg-msg-bot: #f3f4f6;
-      --text-user: #ffffff;
-      --text-bot: #1f2937;
-      --radius: 16px;
-      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
     }
 
-    /* Trigger Button */
+    /* ---- Trigger Button ---- */
     .chatbot-trigger {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
+      position: relative;
       width: 60px;
       height: 60px;
-      background: #0f172a;
+      background: var(--primary, #B30000);
       border-radius: 50%;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.4);
-      z-index: 999999;
-      transition: transform 0.2s;
+      box-shadow: 0 4px 20px rgba(179,0,0,0.4);
+      transition: transform 0.2s ease;
     }
-
-    .chatbot-trigger:hover {
-      transform: scale(1.05);
-    }
+    .chatbot-trigger:hover { transform: scale(1.08); }
 
     .trigger-logo {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       object-fit: contain;
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+      filter: brightness(10);
     }
 
     .notification-badge {
       position: absolute;
-      top: -2px;
-      right: -2px;
-      background: #ef4444;
+      top: -4px;
+      right: -4px;
+      background: #ff4444;
       color: white;
-      font-size: 11px;
-      font-weight: bold;
+      border-radius: 50%;
       width: 20px;
       height: 20px;
-      border-radius: 50%;
+      font-size: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid white;
+      font-weight: bold;
     }
 
-    /* Ping Animation */
     .ping-animation {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: #0f172a;
+      border: 3px solid var(--primary, #B30000);
+      animation: ping 1.5s ease-out infinite;
       opacity: 0.6;
-      z-index: -1;
-      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
-
     @keyframes ping {
-      75%, 100% {
-        transform: scale(1.6);
-        opacity: 0;
-      }
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.6); opacity: 0; }
     }
 
-    /* Chat Window */
+    /* ---- Chat Window ---- */
     .chat-window {
       position: fixed;
-      bottom: 100px;
-      right: 25px;
-      width: 380px;
-      max-width: calc(100vw - 40px);
-      height: 550px;
-      max-height: calc(100vh - 120px);
-      background: var(--bg-chat);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
+      bottom: 90px;
+      right: 24px;
+      width: 360px;
+      max-height: 520px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
       display: flex;
       flex-direction: column;
-      z-index: 999999;
       overflow: hidden;
-      font-family: 'Inter', system-ui, sans-serif;
-      border: 1px solid rgba(0,0,0,0.05);
     }
 
-    /* Header */
+    /* ---- Header ---- */
     .chat-header {
-      background: #0f172a;
-      color: white;
-      padding: 16px;
+      background: var(--primary, #B30000);
+      padding: 14px 16px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
+      color: white;
     }
-
-    .header-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
+    .header-info { display: flex; align-items: center; gap: 12px; }
     .avatar {
       position: relative;
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.15);
+      width: 42px;
+      height: 42px;
+      background: rgba(255,255,255,0.2);
       border-radius: 50%;
-      padding: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
-    .avatar img {
-      width: 24px;
-      height: 24px;
-    }
-
+    .avatar img { width: 28px; height: 28px; object-fit: contain; filter: brightness(10); }
     .status-dot {
       position: absolute;
       bottom: 2px;
       right: 2px;
       width: 10px;
       height: 10px;
-      background: #10b981;
-      border: 2px solid white;
+      background: #4ade80;
       border-radius: 50%;
+      border: 2px solid white;
     }
-
-    .title-col h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .status-text {
-      font-size: 12px;
-      opacity: 0.9;
-    }
-
+    .title-col h3 { margin: 0; font-size: 14px; font-weight: 700; }
+    .status-text { font-size: 11px; opacity: 0.85; }
     .close-btn {
       background: none;
       border: none;
       color: white;
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
       opacity: 0.8;
       transition: opacity 0.2s;
     }
-
     .close-btn:hover { opacity: 1; }
 
-    /* Messages Area */
+    /* ---- Messages ---- */
     .chat-messages {
       flex: 1;
-      padding: 20px;
       overflow-y: auto;
-      background: #f9fafb;
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
+      background: #f8f9fa;
     }
-
     .message-bubble {
-      max-width: 85%;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-size: 14px;
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 13px;
       line-height: 1.5;
       position: relative;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
-
     .bot-msg {
-      background: var(--bg-msg-bot);
-      color: var(--text-bot);
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-bottom-left-radius: 4px;
       align-self: flex-start;
-      border-bottom-left-radius: 2px;
+      color: #1f2937;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
-
     .user-msg {
-      background: var(--primary);
-      color: var(--text-user);
+      background: var(--primary, #B30000);
+      color: white;
+      border-bottom-right-radius: 4px;
       align-self: flex-end;
-      border-bottom-right-radius: 2px;
-      margin-left: auto; /* Push to right */
     }
-
     .msg-time {
       display: block;
       font-size: 10px;
+      opacity: 0.5;
       margin-top: 4px;
-      opacity: 0.7;
       text-align: right;
     }
 
-    /* Typing Indicator */
-    .typing-indicator {
-      align-self: flex-start;
-      background: var(--bg-msg-bot);
-      padding: 12px 16px;
-      border-radius: 12px;
-      border-bottom-left-radius: 2px;
+    /* ---- Chips ---- */
+    .chips-container {
       display: flex;
-      gap: 4px;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
     }
-
-    .typing-indicator span {
-      width: 6px;
-      height: 6px;
-      background: #9ca3af;
-      border-radius: 50%;
-      animation: bounce 1.4s infinite ease-in-out both;
-    }
-
-    .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-    .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-
-    @keyframes bounce {
-      0%, 80%, 100% { transform: scale(0); }
-      40% { transform: scale(1); }
-    }
-
-    /* Input Area */
-    .chat-input-area {
-      padding: 16px;
+    .chip-btn {
       background: white;
-      border-top: 1px solid #e5e7eb;
+      border: 1.5px solid var(--primary, #B30000);
+      color: var(--primary, #B30000);
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .chip-btn:hover { background: var(--primary, #B30000); color: white; }
+    .whatsapp-btn { background: #25D366; border-color: #25D366; color: white; font-weight: bold; }
+    .whatsapp-btn:hover { background: #128C7E; border-color: #128C7E; }
+
+    /* ---- Typing Indicator ---- */
+    .typing-indicator {
       display: flex;
-      gap: 10px;
-      align-items: flex-end;
+      gap: 5px;
+      padding: 12px 16px;
+      background: white;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      width: fit-content;
+      border: 1px solid #e5e7eb;
+    }
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      background: #cbd5e1;
+      border-radius: 50%;
+      animation: bounce 1.2s ease-in-out infinite;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-6px); }
     }
 
-    textarea {
+    /* ---- Input ---- */
+    .chat-input-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border-top: 1px solid #e5e7eb;
+      background: white;
+    }
+    .chat-input-area textarea {
       flex: 1;
       border: 1px solid #e5e7eb;
-      border-radius: 24px;
-      padding: 12px 16px;
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 13px;
       resize: none;
-      font-family: inherit;
-      font-size: 14px;
       outline: none;
-      max-height: 100px;
+      font-family: inherit;
+      background: #f8f9fa;
       transition: border-color 0.2s;
     }
-
-    textarea:focus {
-      border-color: var(--primary);
-    }
-
+    .chat-input-area textarea:focus { border-color: var(--primary, #B30000); background: white; }
     .send-btn {
-      background: var(--primary);
-      color: white;
+      background: var(--primary, #B30000);
       border: none;
-      width: 44px;
-      height: 44px;
       border-radius: 50%;
+      width: 38px;
+      height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: all 0.2s;
       flex-shrink: 0;
     }
+    .send-btn:hover { transform: scale(1.08); opacity: 0.9; }
+    .send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+    .send-btn svg { width: 18px; height: 18px; fill: white; }
 
-    .send-btn:disabled {
-      background: #e5e7eb;
-      cursor: not-allowed;
-    }
-
-    .send-btn:hover:not(:disabled) {
-      background: var(--primary-dark);
-    }
-
-    .send-btn svg {
-      width: 20px;
-      height: 20px;
-      margin-left: 2px; /* Visual centering adjustment */
-    }
-
+    /* ---- Footer ---- */
     .chat-footer {
       text-align: center;
       font-size: 10px;
       color: #9ca3af;
-      padding-bottom: 8px;
+      padding: 6px;
       background: white;
+      border-top: 1px solid #f3f4f6;
     }
   `],
   animations: [
-    trigger('slideUpdate', [
-      state('open', style({ transform: 'translateY(0)', opacity: 1, visibility: 'visible' })),
-      state('closed', style({ transform: 'translateY(20px)', opacity: 0, visibility: 'hidden' })),
-      transition('closed => open', animate('300ms cubic-bezier(0.4, 0, 0.2, 1)')),
-      transition('open => closed', animate('200ms ease-out'))
+    trigger('slideUp', [
+      state('closed', style({ opacity: 0, transform: 'translateY(20px) scale(0.97)', pointerEvents: 'none' })),
+      state('open', style({ opacity: 1, transform: 'translateY(0) scale(1)', pointerEvents: 'all' })),
+      transition('closed => open', animate('220ms cubic-bezier(0.4, 0, 0.2, 1)')),
+      transition('open => closed', animate('180ms cubic-bezier(0.4, 0, 0.2, 1)'))
     ])
   ]
 })
@@ -402,12 +363,11 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   constructor(private chatbotService: ChatbotService) { }
 
   ngOnInit() {
-    // Initial greeting
     setTimeout(() => {
       if (this.messages.length === 0) {
-        this.addBotMessage('¡Hola! 👋 Soy la IA de Civitech. ¿Quieres que tu casa trabaje para ti o prefieres seguir usando interruptores? 😉\n\nPregúntame cómo transformamos tu hogar.');
+        this.messages.push(this.chatbotService.getWelcomeMessage());
       }
-    }, 1500);
+    }, 800);
   }
 
   ngAfterViewChecked() {
@@ -424,49 +384,48 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
 
   sendMessage(event?: Event) {
     if (event) event.preventDefault();
-
     if (!this.userInput.trim() || this.isTyping) return;
 
     const text = this.userInput;
     this.userInput = '';
-
-    // Add user message
-    this.messages.push({
-      text: text,
-      isUser: true,
-      timestamp: new Date()
-    });
-
+    this.messages.push({ text, isUser: true, timestamp: new Date() });
     this.isTyping = true;
     this.scrollToBottom();
+    this.triggerBotResponse(this.chatbotService.sendMessage(text));
+  }
 
-    // Call service (OpenAI integration handled there)
-    this.chatbotService.sendMessage(text).subscribe({
-      next: (response) => {
+  handleOptionClick(option: { label: string; value: string; action?: string }) {
+    if (option.action === 'link') {
+      window.open(option.value, '_blank');
+      return;
+    }
+    this.messages.push({ text: option.label, isUser: true, timestamp: new Date() });
+    this.isTyping = true;
+    this.scrollToBottom();
+    this.triggerBotResponse(this.chatbotService.sendMessage(option.value));
+  }
+
+  private triggerBotResponse(obs: Observable<ChatMessage>) {
+    obs.subscribe({
+      next: (response: ChatMessage) => {
         this.isTyping = false;
-        this.addBotMessage(response);
+        this.messages.push(response);
+        this.scrollToBottom();
       },
       error: () => {
         this.isTyping = false;
-        this.addBotMessage('Lo siento, he tenido un problema de conexión. ¿Podrías repetirlo?');
+        this.messages.push({
+          text: 'Lo siento, hubo un problema de conexión. Prueba a refrescar. 🙏',
+          isUser: false,
+          timestamp: new Date()
+        });
       }
     });
-  }
-
-  private addBotMessage(text: string) {
-    this.messages.push({
-      text: text,
-      isUser: false,
-      timestamp: new Date()
-    });
-    this.scrollToBottom();
   }
 
   private scrollToBottom(): void {
     try {
       this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
-    } catch (err) { }
+    } catch { }
   }
 }
-
-

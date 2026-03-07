@@ -74,8 +74,8 @@
         <h2 class="section-title">Beneficios Clave</h2>
         <div class="beneficios-grid">
             <div class="beneficio-item" *ngFor="let beneficio of useCase.beneficios" data-aos="zoom-in">
-                <div class="beneficio-icon"><i class="fas fa-check"></i></div>
-                <span>{{ beneficio }}</span>
+                <div class="beneficio-icon"><i [class]="'fas ' + beneficio.icono"></i></div>
+                <span>{{ beneficio.texto }}</span>
             </div>
         </div>
     </div>
@@ -85,8 +85,8 @@
         <h2 class="section-title">Ideal Para</h2>
         <div class="casos-uso-grid">
             <div class="caso-uso-card" *ngFor="let caso of useCase.casosUso">
-                <div class="caso-icono"><i class="fas fa-home"></i></div>
-                <p>{{ caso }}</p>
+                <div class="caso-icono"><i [class]="'fas ' + caso.icono"></i></div>
+                <p>{{ caso.texto }}</p>
             </div>
         </div>
     </div>

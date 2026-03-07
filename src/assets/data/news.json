@@ -21,13 +21,13 @@
     },
     {
         "id": 3,
-        "title": "Home Assistant 2026: Certificación Oficial Matter",
-        "summary": "Home Assistant obtiene la certificación oficial Matter. La nueva actualización permite añadir dispositivos escaneando un QR.",
+        "title": "Matter 2026: El Estándar que Unifica la Domótica",
+        "summary": "El protocolo Matter alcanza la madurez. Ahora puedes añadir dispositivos escaneando un QR, sin hubs ni nubes externas.",
         "date": "2026-01-15",
         "image": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "tag": "Tecnología",
-        "link": "https://www.home-assistant.io/blog/",
-        "fullContent": "<h4>Un estándar para gobernarlos a todos</h4><p>Matter ha dejado de ser una promesa. Home Assistant 2026.1 ya permite añadir dispositivos Matter directamente dede la APP, escaneando el código QR, sin necesidad de hubs de terceros ni nubes chinas.</p><h4>¿Por qué es vital para tu privacidad?</h4><p>Matter funciona 100% en local. Si se corta internet, tus luces siguen funcionando. Si el fabricante del dispositivo cierra, tu dispositivo sigue funcionando. Es la soberanía tecnológica real.</p><h4>Novedades destacadas</h4><ul><li>Soporte nativo para aspiradores y sensores de calidad de aire.</li><li>Red Thread más estable y rápida.</li><li>Interoperabilidad total entre iOS y Android en la misma casa.</li></ul>"
+        "link": "https://csa-iot.org/all-solutions/matter/",
+        "fullContent": "<h4>Un estándar para gobernarlos a todos</h4><p>Matter ha dejado de ser una promesa. Las últimas actualizaciones ya permiten añadir dispositivos Matter directamente desde la APP, escaneando el código QR, sin necesidad de hubs de terceros ni nubes externas.</p><h4>¿Por qué es vital para tu privacidad?</h4><p>Matter funciona 100% en local. Si se corta internet, tus luces siguen funcionando. Si el fabricante del dispositivo cierra, tu dispositivo sigue funcionando. Es la soberanía tecnológica real.</p><h4>Novedades destacadas</h4><ul><li>Soporte nativo para aspiradores y sensores de calidad de aire.</li><li>Red Thread más estable y rápida.</li><li>Interoperabilidad total entre iOS y Android en la misma casa.</li></ul>"
     },
     {
         "id": 4,

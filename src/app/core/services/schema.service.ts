@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 export interface SchemaOrgService {
     '@context': string;
@@ -11,7 +12,7 @@ export interface SchemaOrgService {
 })
 export class SchemaService {
 
-    constructor() { }
+    constructor(@Inject(DOCUMENT) private document: Document) { }
 
     /**
      * Schema de la organización Civitech
@@ -21,8 +22,9 @@ export class SchemaService {
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
             'name': 'Civitech',
-            'description': 'Especialistas en domótica profesional en Zaragoza. Instalación de Home Assistant, automatización del hogar, optimización solar y control inteligente.',
+            'description': 'Especialistas en domótica profesional en Zaragoza. Automatización del hogar, optimización solar y control inteligente.',
             'url': 'https://civitech.es',
+            'telephone': '+34624074920',
             'telephone': '+34624074920',
             'email': 'info@civitech.es',
             'address': {
@@ -51,10 +53,13 @@ export class SchemaService {
                 '@type': 'OpeningHoursSpecification',
                 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
                 'opens': '09:00',
-                'closes': '19:00'
+                'closes': '18:00'
             },
             'sameAs': [
-                // Añadir redes sociales si las tienen
+                'https://www.facebook.com/share/1A3PRQzJHb/',
+                'https://www.instagram.com/civitech.es',
+                'https://www.tiktok.com/@civitech.es',
+                'https://www.linkedin.com/company/civitech-es'
             ]
         };
     }
@@ -175,24 +180,24 @@ export class SchemaService {
         const scriptId = id || `schema-${schema['@type']}`;
 
         // Remover script previo si existe
-        const existing = document.getElementById(scriptId);
+        const existing = this.document.getElementById(scriptId);
         if (existing) {
             existing.remove();
         }
 
         // Crear nuevo script
-        const script = document.createElement('script');
+        const script = this.document.createElement('script');
         script.type = 'application/ld+json';
         script.id = scriptId;
         script.text = JSON.stringify(schema);
-        document.head.appendChild(script);
+        this.document.head.appendChild(script);
     }
 
     /**
      * Remover schema del head
      */
     removeSchema(id: string): void {
-        const existing = document.getElementById(id);
+        const existing = this.document.getElementById(id);
         if (existing) {
             existing.remove();
         }

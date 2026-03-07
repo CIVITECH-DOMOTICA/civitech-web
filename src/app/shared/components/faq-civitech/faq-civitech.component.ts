@@ -24,7 +24,7 @@ export class FaqCivitechComponent {
     },
     {
       question: '¿Es compatible con Alexa, Google Home o Apple HomeKit?',
-      answer: 'Sí. Utilizamos Home Assistant como cerebro central, lo que nos permite ofrecer una compatibilidad total con los principales ecosistemas del mercado.'
+      answer: 'Sí. Utilizamos una plataforma de control centralizada open-source, lo que nos permite ofrecer una compatibilidad total con los principales ecosistemas del mercado.'
     },
     {
       question: '¿Cuánto tiempo tarda la instalación?',

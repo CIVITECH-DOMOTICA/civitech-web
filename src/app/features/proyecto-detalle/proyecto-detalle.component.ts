@@ -65,7 +65,7 @@ export class ProyectoDetalleComponent implements OnInit {
       title: `${this.proyecto.nombre} | Caso de Éxito | Civitech`,
       description: `${this.proyecto.resumen} Proyecto de ${this.proyecto.tipo} en ${this.proyecto.ubicacion}. ${this.proyecto.ahorroEnergetico ? 'Ahorro energético del ' + this.proyecto.ahorroEnergetico : ''}`,
       image: this.proyecto.imagenPrincipal,
-      url: window.location.href
+      url: `https://civitech.es${this.router.url}`
     });
 
     const schema = {
@@ -209,7 +209,7 @@ export class ProyectoDetalleComponent implements OnInit {
 
     if (name.includes('wifi') || name.includes('wireless') || name.includes('mesh')) return 'fa-wifi';
     if (name.includes('reolink') || name.includes('cámara') || name.includes('nvr') || name.includes('frigate') || name.includes('tapo')) return 'fa-video';
-    if (name.includes('home assistant') || name.includes('ha')) return 'fa-house-signal';
+    if (name.includes('control') || name.includes('cerebro') || name.includes('automatización')) return 'fa-house-signal';
     if (name.includes('shelly') || name.includes('nube') || name.includes('cloud')) return 'fa-cloud';
     if (name.includes('zigbee') || name.includes('z-wave')) return 'fa-share-nodes';
     if (name.includes('tesla') || name.includes('cargador') || name.includes('ev') || name.includes('batería')) return 'fa-bolt';

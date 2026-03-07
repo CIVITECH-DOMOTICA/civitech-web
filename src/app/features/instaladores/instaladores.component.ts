@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Inject, Renderer2 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, OnDestroy, Inject, Renderer2, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -7,16 +7,19 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './instaladores.component.html',
   styleUrls: ['./instaladores.component.scss']
 })
-// Trigger fix
 export class InstalladoresComponent implements OnInit, OnDestroy {
   private jsonLdScript: HTMLScriptElement | null = null;
+  private isBrowser: boolean;
 
   constructor(
     private meta: Meta,
     private title: Title,
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-  ) { }
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
     // 1. Configurar Metadatos SEO
@@ -30,12 +33,13 @@ export class InstalladoresComponent implements OnInit, OnDestroy {
     // 2. Insertar Schema.org JSON-LD (ProfessionalService)
     this.addStructuredData();
 
-    // 3. Scroll suave
-    this.setupSmoothScroll();
+    // 3. Scroll suave (browser only)
+    if (this.isBrowser) {
+      this.setupSmoothScroll();
+    }
   }
 
   ngOnDestroy(): void {
-    // Limpiar JSON-LD al salir para no duplicar
     if (this.jsonLdScript) {
       this.renderer.removeChild(this.document.head, this.jsonLdScript);
     }
@@ -70,13 +74,13 @@ export class InstalladoresComponent implements OnInit, OnDestroy {
 
   private setupSmoothScroll(): void {
     setTimeout(() => {
-      const links = document.querySelectorAll('a[href^="#"]');
+      const links = this.document.querySelectorAll('a[href^="#"]');
       links.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
           const href = (link as HTMLAnchorElement).getAttribute('href');
           if (href) {
-            const target = document.querySelector(href);
+            const target = this.document.querySelector(href);
             if (target) {
               target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }

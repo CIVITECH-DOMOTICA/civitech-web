@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/civitech.web",
+            "outputPath": "dist/civitech.web/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -85,6 +85,71 @@
           "options": {
             "browserTarget": "Civitech.Web:build"
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/civitech.web/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "Civitech.Web:build:development",
+              "serverTarget": "Civitech.Web:server:development"
+            },
+            "production": {
+              "browserTarget": "Civitech.Web:build:production",
+              "serverTarget": "Civitech.Web:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/",
+              "/acerca-de-nosotros",
+              "/domotica-informacion",
+              "/proyectos",
+              "/contactanos",
+              "/instaladores",
+              "/domotica/energia-inteligente",
+              "/domotica/seguridad-inteligente",
+              "/domotica/confort",
+              "/aviso-legal",
+              "/politica-privacidad",
+              "/politica-cookies"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Civitech.Web:build:production",
+              "serverTarget": "Civitech.Web:server:production"
+            },
+            "development": {
+              "browserTarget": "Civitech.Web:build:development",
+              "serverTarget": "Civitech.Web:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

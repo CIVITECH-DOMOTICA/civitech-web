@@ -37,7 +37,6 @@ export class ProyectosService {
             tecnologiasUtilizadas: [
                 { nombre: 'Shelly', url: 'https://www.shelly.com', logo: 'assets/logos/shelly.png' },
                 { nombre: 'Daikin VRV', url: 'https://www.daikin.es', logo: 'assets/logos/daikin.png' },
-                { nombre: 'Home Assistant', url: 'https://www.home-assistant.io', logo: 'assets/logos/home-assistant.svg' },
                 { nombre: 'Alexa', url: 'https://alexa.amazon.com', logo: 'assets/logos/alexa.png' },
                 { nombre: 'WiFi Mesh', url: '', logo: 'assets/logos/wifi.png' }
             ],
@@ -57,7 +56,7 @@ export class ProyectosService {
             ],
             retos: [
                 { reto: 'Cubrir 4 plantas con WiFi estable', solucion: 'Red Mesh profesional cableada entre nodos para máxima velocidad' },
-                { reto: 'Unificar 120 dispositivos', solucion: 'Home Assistant como orquestador único con interfaz simplificada en tablets' }
+                { reto: 'Unificar 120 dispositivos', solucion: 'Plataforma de control centralizada como orquestador único con interfaz simplificada en tablets' }
             ]
         },
         {
@@ -88,7 +87,6 @@ export class ProyectosService {
                 { nombre: 'Iluminación Astronomica', cantidad: 8, categoria: 'iluminacion' }
             ],
             tecnologiasUtilizadas: [
-                { nombre: 'Home Assistant', url: 'https://www.home-assistant.io', logo: 'assets/logos/home-assistant.svg' },
                 { nombre: 'Reolink AI', url: 'https://reolink.com', logo: 'assets/logos/reolink.png' },
                 { nombre: 'Shelly', url: 'https://www.shelly.com', logo: 'assets/logos/shelly.png' },
                 { nombre: 'Aqara', url: 'https://www.aqara.com', logo: 'assets/logos/aqara_official.png' },
@@ -145,7 +143,6 @@ export class ProyectosService {
                 { nombre: 'Toshiba VRF', url: 'https://www.toshiba-aircon.co.uk', logo: 'assets/logos/toshiba.svg' },
                 { nombre: 'Airzone Cloud', url: 'https://www.airzonecontrol.com', logo: 'assets/logos/airzone.svg' },
                 { nombre: 'Tesla', url: 'https://www.tesla.com/es_es/', logo: 'assets/logos/tesla.png' },
-                { nombre: 'Home Assistant', url: 'https://www.home-assistant.io', logo: 'assets/logos/home-assistant.svg' },
                 { nombre: 'Ethernet Ind', url: '', logo: '' }
             ],
             ahorroEnergetico: '40% Solar',
@@ -196,7 +193,6 @@ export class ProyectosService {
             tecnologiasUtilizadas: [
                 { nombre: 'Daikin Onecta', url: 'https://www.daikin.eu', logo: 'assets/logos/daikin.png' },
                 { nombre: 'Tapo (TP-Link)', url: 'https://www.tapo.com', logo: 'assets/logos/tapo.svg' },
-                { nombre: 'Home Assistant', url: 'https://www.home-assistant.io', logo: 'assets/logos/home-assistant.svg' },
                 { nombre: 'WiFi', url: '', logo: 'assets/logos/wifi.png' },
                 { nombre: 'Zigbee', url: 'https://csa-iot.org', logo: 'assets/logos/zigbee.svg' }
             ],
@@ -226,7 +222,7 @@ export class ProyectosService {
             ubicacion: 'Zaragoza (Delicias)',
             tipo: 'Industrial / Electricidad',
             resumen: 'Seguridad perimetral con IA facial y gestión de flota eléctrica. Frigate NVR y cargadores V2C integrados.',
-            descripcionCompleta: 'Modernización tecnológica de un taller de electricistas en el barrio de las Delicias. Se implementó un sistema de videovigilancia 4K con IA (Frigate) capaz de reconocer caras conocidas ("¿Ha estado Pepe hoy?") y buscar eventos por persona. Además, se instaló un control de acceso RFID que registra quién entra y cuándo, generando un log completo de eventos. Los cargadores V2C gestionados por Home Assistant permiten controlar costes y tiempos de carga de las furgonetas de empresa en tiempo real.',
+            descripcionCompleta: 'Modernización tecnológica de un taller de electricistas en el barrio de las Delicias. Se implementó un sistema de videovigilancia 4K con IA (Frigate) capaz de reconocer caras conocidas ("¿Ha estado Pepe hoy?") y buscar eventos por persona. Además, se instaló un control de acceso RFID que registra quién entra y cuándo, generando un log completo de eventos. Los cargadores V2C gestionados por nuestro sistema de automatización permiten controlar costes y tiempos de carga de las furgonetas de empresa en tiempo real.',
             imagenPrincipal: 'https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             imagenes: [
                 'https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -247,7 +243,6 @@ export class ProyectosService {
             ],
             tecnologiasUtilizadas: [
                 { nombre: 'Frigate NVR', url: 'https://frigate.video', logo: 'assets/logos/frigate_text.png' },
-                { nombre: 'Home Assistant', url: 'https://www.home-assistant.io', logo: 'assets/logos/home-assistant.svg' },
                 { nombre: 'V2C', url: 'https://v2charge.com/es/', logo: 'assets/logos/v2c_real.png' },
                 { nombre: 'Reolink 4K', url: 'https://reolink.com', logo: 'assets/logos/reolink.png' },
                 { nombre: 'Ethernet POE', url: '', logo: '' }
@@ -259,7 +254,7 @@ export class ProyectosService {
             fases: [
                 { titulo: 'Cableado Red POE', descripcion: 'Despliegue de red gigabit para soportar flujo de vídeo 4K continuo', duracion: '1 semana', completada: true },
                 { titulo: 'Servidor IA', descripcion: 'Configuración de Coral TPU y entrenamiento básico de caras', duracion: '3 días', completada: true },
-                { titulo: 'Integración V2C', descripcion: 'Conexión de cargadores vía Modbus/WiFi a HA para gestión de potencia', duracion: '2 días', completada: true }
+                { titulo: 'Integración V2C', descripcion: 'Conexión de cargadores vía Modbus/WiFi al sistema central para gestión de potencia', duracion: '2 días', completada: true }
             ],
             caracteristicas: [
                 'Búsqueda de vídeo por caras (Face Rec)',
@@ -301,7 +296,7 @@ export class ProyectosService {
             ],
             tecnologiasUtilizadas: [
                 { nombre: 'Schneider Wiser', url: 'https://www.se.com/es/es/', logo: 'assets/logos/schneider.svg' },
-                { nombre: 'Home Assistant Assist', url: 'https://www.home-assistant.io/voice_control/', logo: 'assets/logos/home-assistant.svg' },
+                { nombre: 'Control por Voz Local', url: '', logo: '' },
                 { nombre: 'Solarman PV', url: 'https://www.solarmanpv.com/', logo: 'assets/logos/solarman.png' },
                 { nombre: 'Tuya Smart', url: 'https://www.tuya.com/', logo: 'assets/logos/tuya.png' },
                 { nombre: 'Ariston Net', url: 'https://www.ariston.com/es-es/', logo: 'assets/logos/ariston_real.png' },
@@ -322,7 +317,7 @@ export class ProyectosService {
                 'Integración TV: "Pon Netflix" al detectar sofá'
             ],
             retos: [
-                { reto: 'Unificar marcas cerradas', solucion: 'Home Assistant como cerebro central orquestando WiFi y Zigbee en una sola app' },
+                { reto: 'Unificar marcas cerradas', solucion: 'Plataforma de control centralizada orquestando WiFi y Zigbee en una sola app' },
                 { reto: 'Maximizar batería solar', solucion: 'Algoritmo que solo gasta energía en confort térmico cuando la batería rebosa' }
             ]
         }
