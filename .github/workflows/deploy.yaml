@@ -41,5 +41,5 @@ jobs:
           server: ftp.civitech.es
           username: u824079794.hostinger
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: ./dist/civitech.web/
+          local-dir: ./dist/civitech.web/browser/
           server-dir: /
