@@ -74,10 +74,9 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-
-  &.clickable {
-    cursor: pointer;
-  }
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 
   // Subtle glow on hover
   &::before {
@@ -173,7 +172,7 @@ p {
   gap: $spacing-2;
   font-weight: $font-bold;
   font-size: $text-sm;
-  color: $text-muted;
+  color: $text-secondary;
   @include tr-smooth;
 
   i {

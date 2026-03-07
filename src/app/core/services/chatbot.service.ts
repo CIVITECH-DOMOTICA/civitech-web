@@ -61,11 +61,17 @@ export class ChatbotService {
     constructor() {
         emailjs.init(environment.emailJsPublicKey || 'toWAFkM86-kDoWQa-');
 
-        if (environment.openAiApiKey && environment.openAiApiKey !== 'sk-PLACEHOLDER') {
+        const key = environment.openAiApiKey;
+        console.log('[Chatbot] API key present:', !!key, '| starts with:', key?.substring(0, 10));
+
+        if (key && key !== 'sk-PLACEHOLDER') {
             this.openai = new OpenAI({
-                apiKey: environment.openAiApiKey,
+                apiKey: key,
                 dangerouslyAllowBrowser: true
             });
+            console.log('[Chatbot] OpenAI client initialized ✅');
+        } else {
+            console.warn('[Chatbot] OpenAI key missing or placeholder — will use local fallback ⚠️');
         }
     }
 
@@ -76,9 +82,17 @@ export class ChatbotService {
             return from(this.handleContactDetected(userMessage));
         }
 
+        if (!this.openai) {
+            console.warn('[Chatbot] No OpenAI client — using local fallback');
+            return of(this.localFallback(userMessage));
+        }
+
         // Everything else goes to OpenAI
         return from(this.askOpenAI(userMessage)).pipe(
-            catchError(() => of(this.localFallback(userMessage)))
+            catchError((err) => {
+                console.error('[Chatbot] OpenAI call failed:', err?.message || err);
+                return of(this.localFallback(userMessage));
+            })
         );
     }
 

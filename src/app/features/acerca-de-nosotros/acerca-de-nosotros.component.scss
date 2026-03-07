@@ -170,3 +170,366 @@
     padding: $spacing-10 $spacing-6;
   }
 }
+
+// ================================================================
+// SECCIÓN: NUESTROS SERVICIOS
+// ================================================================
+
+.servicios-home-section {
+  position: relative;
+  padding: $spacing-24 0;
+  background: #1e2228;
+  border-top: 3px solid $p-500;
+}
+
+.servicios-container {
+  position: relative;
+  z-index: 1;
+}
+
+.servicios-header {
+  text-align: center;
+  margin-bottom: $spacing-16;
+
+  .servicios-eyebrow {
+    display: inline-block;
+    background: rgba(179, 0, 0, 0.2);
+    color: #ff8080;
+    border: 1px solid rgba(179, 0, 0, 0.3);
+    padding: 5px 18px;
+    border-radius: $radius-full;
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: $spacing-5;
+  }
+
+  .servicios-title {
+    color: white;
+    font-size: $text-5xl;
+    font-weight: $font-extrabold;
+    margin-bottom: $spacing-5;
+    line-height: $leading-tight;
+
+    .servicios-highlight {
+      color: $p-500;
+    }
+  }
+
+  .servicios-subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: $text-lg;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: $leading-relaxed;
+  }
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-6;
+  margin-bottom: $spacing-12;
+
+  @include responsive($breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive($breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.servicio-card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+  background: #272d36;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: $radius-xl;
+  padding: $spacing-8 $spacing-6;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  @include tr-smooth(all, 300ms);
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $p-500;
+    box-shadow: 0 16px 48px rgba(179, 0, 0, 0.2);
+    text-decoration: none;
+    color: white;
+
+    .servicio-icon-wrap {
+      background: $p-500;
+      color: white;
+    }
+
+    .servicio-cta {
+      color: #ff8080;
+      gap: 10px;
+    }
+  }
+
+  .servicio-icon-wrap {
+    width: 52px;
+    height: 52px;
+    background: rgba(179, 0, 0, 0.15);
+    border-radius: $radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #ff8080;
+    @include tr-smooth(all, 300ms);
+    flex-shrink: 0;
+  }
+
+  .servicio-body {
+    flex-grow: 1;
+
+    h3 {
+      font-size: $text-lg;
+      font-weight: $font-bold;
+      color: white;
+      margin: 0 0 $spacing-2;
+      line-height: $leading-tight;
+    }
+
+    p {
+      font-size: $text-sm;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: $leading-relaxed;
+      margin: 0;
+    }
+  }
+
+  .servicio-cta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    color: rgba(255, 255, 255, 0.3);
+    @include tr-smooth(all, 250ms);
+    margin-top: $spacing-1;
+  }
+}
+
+.servicios-cta-bottom {
+  text-align: center;
+
+  .btn-ver-todos {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-3;
+    background: $p-500;
+    color: white;
+    border: 2px solid $p-500;
+    padding: $spacing-4 $spacing-10;
+    border-radius: $radius-full;
+    font-size: $text-base;
+    font-weight: $font-semibold;
+    text-decoration: none;
+    @include tr-smooth(all, 300ms);
+
+    &:hover {
+      background: #8a0000;
+      border-color: #8a0000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(179, 0, 0, 0.3);
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+@include responsive($breakpoint-md) {
+  .servicios-header {
+    .servicios-title {
+      font-size: $text-4xl;
+    }
+  }
+}
+
+
+
+.servicios-container {
+  position: relative;
+  z-index: 1;
+}
+
+.servicios-header {
+  text-align: center;
+  margin-bottom: $spacing-16;
+
+  .servicios-eyebrow {
+    display: inline-block;
+    background: rgba(179, 0, 0, 0.15);
+    color: #ff6b6b;
+    border: 1px solid rgba(179, 0, 0, 0.3);
+    padding: 6px 20px;
+    border-radius: $radius-full;
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: $spacing-6;
+  }
+
+  .servicios-title {
+    color: white;
+    font-size: $text-5xl;
+    font-weight: $font-extrabold;
+    margin-bottom: $spacing-6;
+    line-height: $leading-tight;
+
+    .servicios-highlight {
+      background: linear-gradient(135deg, #B30000, #ff4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .servicios-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: $text-lg;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: $leading-relaxed;
+  }
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-6;
+  margin-bottom: $spacing-12;
+
+  @include responsive($breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive($breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.servicio-card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-2xl;
+  padding: $spacing-10 $spacing-8;
+  text-decoration: none;
+  color: white;
+  @include tr-smooth(all, 350ms);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(179, 0, 0, 0.06), transparent);
+    opacity: 0;
+    @include tr-smooth(opacity, 350ms);
+    border-radius: $radius-2xl;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(179, 0, 0, 0.5);
+    box-shadow: 0 20px 60px rgba(179, 0, 0, 0.2);
+    text-decoration: none;
+    color: white;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .servicio-icon-wrap {
+      background: $p-500;
+      transform: scale(1.1);
+      box-shadow: 0 8px 24px rgba(179, 0, 0, 0.4);
+    }
+
+    .servicio-cta {
+      color: #ff6b6b;
+      gap: 10px;
+    }
+  }
+
+  .servicio-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: rgba(179, 0, 0, 0.15);
+    border-radius: $radius-xl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: #ff6b6b;
+    @include tr-smooth(all, 350ms);
+    margin-bottom: $spacing-2;
+  }
+
+  h3 {
+    font-size: $text-xl;
+    font-weight: $font-bold;
+    color: white;
+    margin: 0;
+    line-height: $leading-tight;
+  }
+
+  p {
+    font-size: $text-base;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: $leading-relaxed;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .servicio-cta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    color: rgba(255, 255, 255, 0.4);
+    @include tr-smooth(all, 300ms);
+    margin-top: $spacing-2;
+  }
+}
+
+.servicios-cta-bottom {
+  text-align: center;
+
+  .btn-ver-todos {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-3;
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(179, 0, 0, 0.6);
+    padding: $spacing-4 $spacing-10;
+    border-radius: $radius-full;
+    font-size: $text-base;
+    font-weight: $font-semibold;
+    text-decoration: none;
+    @include tr-smooth(all, 300ms);
+
+    &:hover {
+      background: $p-500;
+      border-color: $p-500;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(179, 0, 0, 0.35);
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

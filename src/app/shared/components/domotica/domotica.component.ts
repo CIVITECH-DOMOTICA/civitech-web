@@ -17,7 +17,7 @@ export class DomoticaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.useCases = this.useCasesService.getUseCases();
+    this.useCases = this.useCasesService.getUseCases().slice(0, 3);
   }
 
   verUseCase(slug: string): void {

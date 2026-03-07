@@ -8,15 +8,15 @@
     <div class="container-card">
 
       <!-- CARDS DINÁMICAS DESDE EL SERVICIO -->
-      <div class="card-domotica clickable" *ngFor="let useCase of useCases; let i = index" [attr.data-aos]="'fade-up'"
-        [attr.data-aos-delay]="(i + 1) * 100" (click)="verUseCase(useCase.slug)">
+      <a class="card-domotica" *ngFor="let useCase of useCases; let i = index" [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="(i + 1) * 100" [routerLink]="['/domotica', useCase.slug]">
         <div class="container-icon-domotica image-mode">
           <img [src]="useCase.imagenCard || useCase.imagen" [alt]="useCase.titulo" loading="lazy" />
         </div>
         <p class="titulo">{{ useCase.titulo }}</p>
         <p>{{ useCase.descripcion }}</p>
         <div class="card-footer-info">Saber más <i class="fas fa-arrow-right"></i></div>
-      </div>
+      </a>
 
     </div>
   </div>
