@@ -27,6 +27,7 @@
     "@angular/platform-server": "^16.2.12",
     "@angular/router": "^16.2.0",
     "@emailjs/browser": "^4.4.1",
+    "@nguniversal/builders": "^16.2.0",
     "@nguniversal/express-engine": "^16.2.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
