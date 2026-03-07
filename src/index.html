@@ -5,13 +5,58 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Base Title (será sobrescrito dinámicamente) -->
+  <!-- Base Title (será sobrescrito dinámicamente por SeoService) -->
   <title>Domótica Zaragoza | Civitech - Instalación de Casa Inteligente</title>
 
-  <!-- Meta Description -->
+  <!-- Meta Description (será sobrescrito dinámicamente por SeoService) -->
   <meta name="description"
     content="Civitech: Empresa líder en domótica en Zaragoza. Instalación profesional sin obras, sistemas abiertos y control centralizado. Ahorra hasta 30% en tu factura. Presupuesto gratis en 24h.">
 
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-45C2R9F4RE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-45C2R9F4RE', { 'send_page_view': false });
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PTG7SW83');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Mobile & PWA -->
+  <meta name="theme-color" content="#B30000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Civitech">
+
+  <!-- Base URL -->
+  <base href="/">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon.png">
+
+  <!-- Preconnect to improve performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Stylesheets (Bootstrap loaded via angular.json, not duplicated here) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- NOTE: All SEO meta tags (OG, Twitter, canonical, geo, robots, keywords) -->
+  <!-- are generated dynamically by SeoService during prerendering. -->
+  <!-- No static JSON-LD schema here — SeoService handles it to avoid duplication. -->
 </head>
 
 <body>
