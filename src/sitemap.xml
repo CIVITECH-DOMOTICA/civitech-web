@@ -58,6 +58,44 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Proyectos (detail pages) -->
+  <url>
+    <loc>https://civitech.es/proyectos/casa-huesca-integral</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civitech.es/proyectos/lavanderia-autowash</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civitech.es/proyectos/chalet-tesla-airzone</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civitech.es/proyectos/casa-rural-control-total</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civitech.es/proyectos/taller-ia-carga-zaragoza</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civitech.es/proyectos/vivienda-autosuficiente-ia</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Casos de Uso (Only URLs that actually exist in use-cases.service.ts) -->
   <url>
     <loc>https://civitech.es/domotica/energia-inteligente</loc>

@@ -61,9 +61,18 @@ export class ProyectoDetalleComponent implements OnInit {
   updateSEO(): void {
     if (!this.proyecto) return;
 
+    // Clean resumen to avoid double dots
+    const cleanResumen = this.proyecto.resumen.trim().endsWith('.')
+      ? this.proyecto.resumen.trim().slice(0, -1)
+      : this.proyecto.resumen.trim();
+
+    const savingSuffix = this.proyecto.ahorroEnergetico
+      ? `. Ahorro energético del ${this.proyecto.ahorroEnergetico}`
+      : '';
+
     this.seoService.updateSeo({
       title: `${this.proyecto.nombre} | Caso de Éxito | Civitech`,
-      description: `${this.proyecto.resumen} Proyecto de ${this.proyecto.tipo} en ${this.proyecto.ubicacion}. ${this.proyecto.ahorroEnergetico ? 'Ahorro energético del ' + this.proyecto.ahorroEnergetico : ''}`,
+      description: `${cleanResumen}. Proyecto de ${this.proyecto.tipo} en ${this.proyecto.ubicacion}${savingSuffix}.`,
       image: this.proyecto.imagenPrincipal,
       url: `https://civitech.es${this.router.url}`
     });
