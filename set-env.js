@@ -14,6 +14,14 @@ const envConfigFile = `export const environment = {
 };
 `;
 
-console.log('Generating environment.ts file from .env...');
+const dirPath = './src/environments';
+
+console.log(`Generating environment.ts file from .env in ${dirPath}...`);
+
+// Ensure directory exists
+if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+}
+
 fs.writeFileSync(targetPath, envConfigFile);
 console.log(`Environment variables successfully injected into ${targetPath}`);
