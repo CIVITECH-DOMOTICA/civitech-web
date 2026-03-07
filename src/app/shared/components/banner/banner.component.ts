@@ -12,6 +12,7 @@ export class BannerComponent {
   @Input() mensaje: string = '';
   @Input() textoBoton: string = '';
   @Input() urlBoton: string = '';
+  @Input() isH1: boolean = false;
 
   constructor(private router: Router) { }
 

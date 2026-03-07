@@ -25,7 +25,6 @@ export class SchemaService {
             'description': 'Especialistas en domótica profesional en Zaragoza. Automatización del hogar, optimización solar y control inteligente.',
             'url': 'https://civitech.es',
             'telephone': '+34624074920',
-            'telephone': '+34624074920',
             'email': 'info@civitech.es',
             'address': {
                 '@type': 'PostalAddress',

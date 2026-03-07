@@ -52,37 +52,43 @@ export class SeoService {
                 title: 'Domótica Zaragoza | Civitech - Expertos en Casa Inteligente',
                 description: 'Civitech: Somos tu empresa líder en domótica en Zaragoza. Instalación sin obras, sistemas abiertos y control centralizado. Ahorra hasta 30% en tu factura. Presupuesto gratis en 24h.',
                 keywords: 'domotica zaragoza, empresa domotica zaragoza, instalador domotica zaragoza, casa inteligente zaragoza, civitech',
-                url: this.baseUrl
+                url: this.baseUrl,
+                image: `${this.baseUrl}/assets/images/home.jpg`
             },
             '/acerca-de-nosotros': {
                 title: 'Domótica Zaragoza | Civitech - Expertos en Casa Inteligente',
                 description: 'Civitech: Somos tu empresa líder en domótica en Zaragoza. Instalación sin obras, sistemas abiertos y control centralizado. Ahorra hasta 30% en tu factura. Presupuesto gratis en 24h.',
                 keywords: 'domotica zaragoza, empresa domotica zaragoza, instalador domotica zaragoza, casa inteligente zaragoza, civitech',
-                url: this.baseUrl
+                url: this.baseUrl,
+                image: `${this.baseUrl}/assets/images/home.jpg`
             },
             '/domotica-informacion': {
                 title: 'Domótica Zaragoza : Soluciones y Control Total del Hogar | Civitech',
                 description: 'Descubre cómo la domótica puede transformar tu hogar en Zaragoza: ahorro energético, seguridad y confort. Instaladores de domótica sin obras. Pide presupuesto.',
                 keywords: 'domotica zaragoza, instalaciones domotica zaragoza, smart home zaragoza, automatizacion vivienda zaragoza',
-                url: `${this.baseUrl}/domotica-informacion`
+                url: `${this.baseUrl}/domotica-informacion`,
+                image: `${this.baseUrl}/assets/images/smart_home_control.png`
             },
             '/proyectos': {
                 title: 'Proyectos de Domótica Realizados en Zaragoza | Casos de Éxito | Civitech',
                 description: 'Explora nuestros proyectos de domótica en Zaragoza: pisos, chalets y oficinas automatizadas. Testimonios reales de clientes satisfechos. Más de 500 instalaciones.',
                 keywords: 'proyectos domótica zaragoza, instalaciones domótica, casos éxito domótica, testimonios clientes',
-                url: `${this.baseUrl}/proyectos`
+                url: `${this.baseUrl}/proyectos`,
+                image: `${this.baseUrl}/assets/images/proyecto1.png`
             },
             '/contactanos': {
                 title: 'Contacta con Civitech | Presupuesto Gratis Domótica Zaragoza en 24h',
                 description: 'Solicita tu presupuesto gratuito de domótica en Zaragoza. Respuesta en 24 horas. Llámanos al 624074920 o escríbenos. Instalación profesional sin obras.',
                 keywords: 'presupuesto domótica zaragoza, contacto civitech, instalación domótica precio, consulta gratis',
-                url: `${this.baseUrl}/contactanos`
+                url: `${this.baseUrl}/contactanos`,
+                image: `${this.baseUrl}/assets/images/contacto.jpg`
             },
             '/instaladores': {
                 title: 'Programa Partners Civitech | Domótica para Instaladores y Reformistas',
                 description: 'Únete a la red de partners de Civitech. Ofrece domótica en tus reformas sin complicaciones técnicas. Aumenta tu ticket medio y diferénciate.',
                 keywords: 'partners domótica, instaladores domótica zaragoza, colaboración reformas zaragoza, civitech partners',
-                url: `${this.baseUrl}/instaladores`
+                url: `${this.baseUrl}/instaladores`,
+                image: `${this.baseUrl}/assets/images/partnership_collaboration.png`
             }
         };
 

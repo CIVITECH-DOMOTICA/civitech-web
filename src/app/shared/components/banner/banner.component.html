@@ -10,7 +10,8 @@
   <div class="banner-content" data-aos="fade-right" data-aos-duration="1200">
     <div class="mensaje-container">
       <div class="mensaje-items">
-        <h2 class="banner-heading" data-aos="fade-up" data-aos-delay="200">{{mensaje}}</h2>
+        <h1 *ngIf="isH1" class="banner-heading" data-aos="fade-up" data-aos-delay="200">{{mensaje}}</h1>
+        <h2 *ngIf="!isH1" class="banner-heading" data-aos="fade-up" data-aos-delay="200">{{mensaje}}</h2>
         <button class="boton-proyectos" (click)="navigate()" data-aos="fade-up"
           data-aos-delay="400">{{textoBoton}}</button>
       </div>
