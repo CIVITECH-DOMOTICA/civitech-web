@@ -9,12 +9,12 @@ export class UseCasesService {
     private useCases: UseCase[] = [
         {
             id: '1',
-            slug: 'energia-inteligente', // URL friendly
+            slug: 'energia-inteligente',
             titulo: 'Energía Inteligente',
             subtitulo: 'Solar, Clima y Carga Inteligente',
-            descripcion: 'Tu hogar, eficiente por naturaleza. El sistema orquesta persianas, excedentes solares y cargador de coche para reducir tu factura al mínimo. Empieza con lo que necesitas, ahorra desde el primer día.',
+            descripcion: 'Tu hogar, eficiente por naturaleza. El sistema orquesta persianas, excedentes solares y cargador de coche para reducir tu factura al mínimo.',
             descripcionDetallada: 'Transforma tu casa en un ecosistema activo que reduce tu factura cada día. Energía Inteligente no es solo poner placas solares: es integrar Climatización, Persianas y Cargadores para que trabajen juntos. El sistema aprovecha automáticamente las horas de luz más barata para cargar baterías y tu coche eléctrico, y desvía cada vatio de excedente solar para calentar agua o climatizar gratis, garantizando que no regalas energía a la red.',
-            imagen: '/assets/images/usecase-solar.png', // Reutilizamos imagen solar
+            imagen: '/assets/images/usecase-solar.png',
             video: 'assets/videos/excedente-solar.mp4',
             icono: 'fa-solar-panel',
             categoria: 'Ahorro',
@@ -22,141 +22,156 @@ export class UseCasesService {
             tiempoImplementacion: '2-3 días',
             roi: '12-18 meses',
             beneficios: [
-                { texto: 'Persianas Térmicas que bloquean el sol en verano para no gastar en aire', icono: 'fa-temperature-arrow-down' },
-                { texto: 'Tu coche cargándose gratis automáticamente con la energía solar sobrante', icono: 'fa-charging-station' },
-                { texto: 'Agua caliente lista sin encender la caldera', icono: 'fa-shower' },
-                { texto: 'Un sistema que consulta la previsión meteorológica para tomar decisiones de ahorro antes de que tú lo pienses', icono: 'fa-cloud-sun' },
-                { texto: 'Todo automático, todo sin cuotas', icono: 'fa-robot' }
-            ],
-            casosUso: [
-                { texto: 'Viviendas con fotovoltaica', icono: 'fa-solar-panel' },
-                { texto: 'Chalets con piscina y termo', icono: 'fa-water' },
-                { texto: 'Hogares con alta factura de clima', icono: 'fa-temperature-arrow-up' },
-                { texto: 'Usuarios concienciados con eficiencia', icono: 'fa-leaf' }
+                { texto: 'Persianas Térmicas que bloquean el sol en verano', icono: 'fa-temperature-arrow-down' },
+                { texto: 'Coche cargándose gratis con excedentes', icono: 'fa-charging-station' },
+                { texto: 'Agua caliente sin encender la caldera', icono: 'fa-shower' },
+                { texto: 'Decisión basada en previsión meteorológica', icono: 'fa-cloud-sun' }
             ],
             tecnologias: [
                 { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' },
-                { nombre: 'Victron Energy', logo: 'assets/logos/victron.svg', url: 'https://www.victronenergy.com.es/' },
-                { nombre: 'Netatmo', logo: 'assets/logos/netatmo_vector.svg', url: 'https://www.netatmo.com/es-es' },
-                { nombre: 'Huawei Solar', logo: 'assets/logos/huawei.svg', url: 'https://solar.huawei.com/' }
-            ],
-            ejemplos: [
-                {
-                    titulo: 'Chalet Autosuficiente en Zaragoza',
-                    descripcion: 'Cliente con 8kW en placas que regalaba el 40% a la red.',
-                    resultado: 'Ahora el sistema calienta la piscina y el agua sanitaria solo con el sol sobrante. Factura de gas reducida un 70%.'
-                }
+                { nombre: 'Victron Energy', logo: 'assets/logos/victron.svg', url: 'https://www.victronenergy.com.es/' }
             ],
             faqs: [
-                {
-                    pregunta: '¿Funciona con mi inversor solar actual?',
-                    respuesta: 'Sí, integramos casi todas las marcas (Huawei, Fronius, SMA, Solax...) para leer la producción en tiempo real.'
-                },
-                {
-                    pregunta: '¿Y si no tengo placas solares?',
-                    respuesta: 'El sistema priorizará las horas más baratas de tu tarifa de luz para los consumos fuertes (lavadora, termo).'
-                }
+                { pregunta: '¿Funciona con mi inversor actual?', respuesta: 'Sí, integramos casi todas las marcas (Huawei, Fronius, SMA...).' }
             ]
         },
         {
             id: '2',
             slug: 'seguridad-inteligente',
             titulo: 'Seguridad Inteligente',
-            subtitulo: 'Alarmas sin cuotas, Cámaras IA y Accesos',
-            descripcion: 'Protección total que no descansa. Videovigilancia que distingue amenazas reales, sirenas que disuaden y control total desde tu móvil. Sin cuotas mensuales, para siempre.',
-            descripcionDetallada: 'Seguridad profesional sin letras pequeñas. Olvídate de cuotas mensuales. Tu casa se defiende sola: si detecta una intrusión real, baja persianas, enciende luces rojas y suena la alarma. Cuando viajas, simula que estás dentro. Y gracias a las Cerraduras Inteligentes, olvídate de las llaves: abre con tu huella o el móvil. Además, recibe notificaciones inmediatas con captura de imagen si se detecta algo inusual.',
-            imagen: '/assets/images/home_assistant_dashboard.png', // Detalle: Dashboard con cámaras
-            imagenCard: '/assets/images/usecase_security_chalet.png', // Card: Chalet con seguridad
+            subtitulo: 'Alarmas sin cuotas y Cámaras IA',
+            descripcion: 'Protección total sin letras pequeñas. Videovigilancia que distingue amenazas reales y disuasión activa automática.',
+            descripcionDetallada: 'Seguridad profesional sin cuotas mensuales. Tu casa se defiende sola: si detecta una intrusión real, baja persianas, enciende luces rojas y suena la alarma. Cuando viajas, simula presencia. Gracias a las Cerraduras Inteligentes, abre con tu huella o el móvil. Notificaciones inmediatas con captura de imagen ante cualquier movimiento sospechoso.',
+            imagen: '/assets/images/usecase_security_chalet.png',
             icono: 'fa-shield-halved',
             categoria: 'Seguridad',
-            ahorroEstimado: '50€/mes (Cuota Alarma)',
+            ahorroEstimado: '50€/mes (Cuotas)',
             tiempoImplementacion: '2-3 días',
-            roi: 'Inmediato (Tranquilidad)',
             beneficios: [
                 { texto: 'Sin cuotas mensuales de por vida', icono: 'fa-piggy-bank' },
-                { texto: 'Defensa Activa: Persianas abajo, luces rojas y sirena', icono: 'fa-shield-dog' },
-                { texto: 'Simulación de presencia cuando viajas', icono: 'fa-user-clock' },
-                { texto: 'Cerraduras Inteligentes: Acceso con huella o móvil', icono: 'fa-fingerprint' },
-                { texto: 'Notificaciones inmediatas con captura de imagen ante eventos', icono: 'fa-mobile-screen' }
-            ],
-            casosUso: [
-                { texto: 'Chalets unifamiliares', icono: 'fa-house' },
-                { texto: 'Segundas residencias vacías', icono: 'fa-house-lock' },
-                { texto: 'Negocios y oficinas', icono: 'fa-building' },
-                { texto: 'Comunidades de vecinos', icono: 'fa-people-roof' }
+                { texto: 'Defensa Activa: Persianas y Luces', icono: 'fa-shield-dog' },
+                { texto: 'Simulación de presencia real', icono: 'fa-user-clock' }
             ],
             tecnologias: [
-                { nombre: 'Reolink', logo: 'assets/logos/reolink.png', url: 'https://reolink.com/' },
-                { nombre: 'Frigate NVR', logo: 'assets/logos/frigate_text.png', url: 'https://frigate.video/' },
-                { nombre: 'Ajax Systems', logo: 'assets/logos/ajax_real.png', url: 'https://ajax.systems/es/' },
-                { nombre: 'Aqara', logo: 'assets/logos/aqara_official.png', url: 'https://www.aqara.com/' }
-            ],
-            ejemplos: [
-                {
-                    titulo: 'Intrusión Frustrada',
-                    descripcion: 'Cámara térmica detectó salto de valla en jardín trasero.',
-                    resultado: 'Al instante: focos encendidos, persianas bajadas y sirena a toda potencia. Los intrusos huyeron sin intentar forzar puertas.'
-                }
-            ],
-            faqs: [
-                {
-                    pregunta: '¿Qué pasa si cortan la luz o internet?',
-                    respuesta: 'El sistema incluye SAI (Batería) y conexión 4G de respaldo. Sigue grabando y protegiendo.'
-                },
-                {
-                    pregunta: '¿Es legal grabar?',
-                    respuesta: 'Sí, configuramos máscaras de privacidad para grabar solo tu propiedad, cumpliendo la LOPD estrictamente.'
-                }
+                { nombre: 'Ajax systems', logo: 'assets/logos/ajax_real.png', url: 'https://ajax.systems/es/' },
+                { nombre: 'Reolink', logo: 'assets/logos/reolink.png', url: 'https://reolink.com/' }
             ]
         },
         {
             id: '3',
             slug: 'confort',
-            titulo: 'Confort',
-            subtitulo: 'Iluminación, Cine y Ambiente Perfecto',
-            descripcion: 'El lujo de no tener que hacer nada. Luces que se ajustan a tu estado de ánimo, cine en casa con un toque y persianas que siguen al sol. Tu hogar, a tus órdenes.',
-            descripcionDetallada: 'Vive tu hogar como nunca. ¿Noche de cine? Di "Alexa, cine" y la magia ocurre: luces tenues, persianas abajo, sonido envolvente. Despierta con luz natural suave, nunca con alarma estridente. Controla cada rincón con tu voz o desde una app preciosa. Empieza por el salón, y querrás toda la casa.',
-            imagen: '/assets/images/usecase-lighting.png', // Reutilizamos iluminación
+            titulo: 'Confort y Estilo de Vida',
+            subtitulo: 'Iluminación y Ambiente Perfecto',
+            descripcion: 'El lujo de no tener que hacer nada. Luces que se ajustan a tu ánimo y escenas de cine con un toque.',
+            descripcionDetallada: 'Vive tu hogar como nunca. ¿Noche de cine? Di "Alexa, cine" y las persianas bajan, las luces se atenúan y el sonido envuelve la sala. Despierta con luz natural gradual. Controla cada rincón con tu voz o una app intuitiva diseñada para tu comodidad diaria.',
+            imagen: '/assets/images/usecase-lighting.png',
             icono: 'fa-couch',
-            categoria: 'Estilo de Vida',
-            ahorroEstimado: 'Confort Invaluable',
-            tiempoImplementacion: '1-2 días',
-            roi: 'Diario (Bienestar)',
+            categoria: 'Bienestar',
             beneficios: [
-                { texto: 'Máxima Comodidad y Confort', icono: 'fa-couch' },
                 { texto: 'Control por Voz y App unificado', icono: 'fa-microphone' },
-                { texto: 'Persianas automáticas según sol/viento', icono: 'fa-sun' },
-                { texto: 'Escenas de Cine (Luces, TV, Sonido)', icono: 'fa-film' },
-                { texto: 'Iluminación circadiana (salud visual)', icono: 'fa-lightbulb' },
-                { texto: 'Diseño minimalista (menos interruptores)', icono: 'fa-border-none' }
-            ],
-            casosUso: [
-                { texto: 'Salones de diseño', icono: 'fa-couch' },
-                { texto: 'Salas de Home Cinema', icono: 'fa-film' },
-                { texto: 'Dormitorios principales', icono: 'fa-bed' },
-                { texto: 'Terrazas y exteriores', icono: 'fa-umbrella-beach' }
-            ],
-            tecnologias: [
-                { nombre: 'Philips Hue', logo: 'assets/logos/philips_hue.png', url: 'https://www.philips-hue.com/es-es' },
-                { nombre: 'Somfy', logo: 'assets/logos/somfy_real.png', url: 'https://www.somfy.es/' },
-                { nombre: 'Sonos', logo: 'assets/logos/sonos.png', url: 'https://www.sonos.com/es-es/home' },
-                { nombre: 'Shelly', logo: 'assets/logos/shelly.png', url: 'https://www.shelly.com/es' }
-            ],
-            ejemplos: [
-                {
-                    titulo: 'Escena "Noche de Cine"',
-                    descripcion: 'Cliente cansado de usar 4 mandos y levantarse a apagar luces.',
-                    resultado: 'Ahora dice "Alexa, pon una peli": TV enciende, persianas bajan, luces se atenúan y sonido pasa a modo envolvente.'
-                }
-            ],
-            faqs: [
-                {
-                    pregunta: '¿Tengo que cambiar todas las bombillas?',
-                    respuesta: 'No. Podemos hacer inteligentes tus lámparas actuales instalando módulos invisibles detrás de los interruptores.'
-                }
+                { texto: 'Escenas personalizadas (Cine, Relax)', icono: 'fa-film' },
+                { texto: 'Iluminación circadiana saludable', icono: 'fa-lightbulb' }
             ]
         },
-
+        {
+            id: '4',
+            slug: 'optimizacion-solar',
+            titulo: 'Optimización Solar',
+            subtitulo: 'Exprime cada vatio de tus placas',
+            descripcion: 'Maximiza el autoconsumo desviando excedentes a termos, depuradoras y calefacción. No regales energía.',
+            descripcionDetallada: 'Si tienes placas solares, ya sabes que regalar excedentes a la red es un mal negocio. Nuestro sistema lee la producción en tiempo real y activa consumos inteligentes justo cuando te sobra energía. Calienta el agua, filtra la piscina o enciende el lavavajillas gratis.',
+            imagen: '/assets/images/solar-dashboard.png',
+            icono: 'fa-solar-panel',
+            categoria: 'Ahorro'
+        },
+        {
+            id: '5',
+            slug: 'climatizacion-inteligente',
+            titulo: 'Clima Inteligente',
+            subtitulo: 'Temperatura ideal habitación por habitación',
+            descripcion: 'Zonifica tu calefacción y aire acondicionado. Ahorra hasta un 30% calentando solo donde estás.',
+            descripcionDetallada: '¿Por qué calentar el salón si estás durmiendo? La domótica permite controlar válvulas termostáticas y splits de forma individual. El sistema aprende tus horarios y ajusta la temperatura para que siempre estés a gusto con el mínimo gasto.',
+            imagen: '/assets/images/usecase-climate.png',
+            icono: 'fa-temperature-high',
+            categoria: 'Ahorro'
+        },
+        {
+            id: '6',
+            slug: 'persianas-automaticas',
+            titulo: 'Persianas Automáticas',
+            subtitulo: 'Control solar y privacidad total',
+            descripcion: 'Persianas que se mueven solas con el sol para mantener el fresco en verano y el calor en invierno.',
+            descripcionDetallada: 'No son simples motores. Son persianas inteligentes que consultan la posición del sol y la temperatura exterior. En invierno se abren para calentar la casa con el sol; en verano se cierran para mantener la sombra y ahorrar en aire acondicionado.',
+            imagen: '/assets/images/usecase-blinds.png',
+            icono: 'fa-window-maximize',
+            categoria: 'Confort'
+        },
+        {
+            id: '7',
+            slug: 'control-fugas',
+            titulo: 'Protección contra Inundaciones',
+            subtitulo: 'Cierra el agua antes de que sea un desastre',
+            descripcion: 'Sensores de humedad que cortan el suministro general si detectan una fuga. Tranquilidad absoluta.',
+            descripcionDetallada: 'Una fuga de agua puede destrozar tu casa mientras estás fuera. Instalamos sensores en zonas críticas (cocina, baños, lavadero) que, al detectar humedad, envían orden a una electroválvula para cortar el agua e inmediatamente te avisan al móvil.',
+            imagen: '/assets/images/usecase-leak.png',
+            icono: 'fa-droplet-slash',
+            categoria: 'Seguridad'
+        },
+        {
+            id: '8',
+            slug: 'carga-vehiculo-electrico',
+            titulo: 'Carga de Coche Eléctrico',
+            subtitulo: 'Carga inteligente y balanceo de carga',
+            descripcion: 'Carga tu coche sin que salte el automático. Prioriza la energía solar y ajusta la potencia según el consumo de la casa.',
+            descripcionDetallada: 'Cargar el coche eléctrico no tiene por qué ser un problema de potencia contratada. El cargador inteligente "habla" con la casa y le da al coche solo la energía que sobra, protegiendo tus electrodomésticos y cargando al máximo en horas valle.',
+            imagen: '/assets/images/usecase-ev-charging.png',
+            icono: 'fa-charging-station',
+            categoria: 'Ahorro'
+        },
+        {
+            id: '9',
+            slug: 'riego-inteligente',
+            titulo: 'Riego Inteligente',
+            subtitulo: 'Riega solo si hace falta',
+            descripcion: 'Integramos tu riego con el clima de AEMET. Si va a llover, el sistema ahorra agua y no riega.',
+            descripcionDetallada: 'Deja de regar cuando llueve. Nuestra central de riego consulta la previsión meteorológica y mide la humedad del suelo. Si ha llovido o hay previsión de lluvia inminente, el ciclo se cancela automáticamente, ahorrando miles de litros al año.',
+            imagen: '/assets/images/usecase-garden.png',
+            icono: 'fa-faucet-drip',
+            categoria: 'Sostenibilidad'
+        },
+        {
+            id: '10',
+            slug: 'negocios-locales-inteligentes',
+            titulo: 'Domótica para Negocios',
+            subtitulo: 'Eficiencia y Seguridad para tu local',
+            descripcion: 'Control de luces, clima y persianas para bares, tiendas y oficinas. Todo desde una única app.',
+            descripcionDetallada: 'Optimiza los costes de tu negocio. Asegúrate de que todo se apaga al cerrar, monitoriza el consumo eléctrico y recibe alertas de seguridad. Ideal para locales con alto gasto energético como restaurantes o centros de estética en Zaragoza.',
+            imagen: '/assets/images/usecase-business.png',
+            icono: 'fa-shop',
+            categoria: 'B2B'
+        },
+        {
+            id: '11',
+            slug: 'gestion-red-wifi',
+            titulo: 'Redes WiFi Profesionales',
+            subtitulo: 'WiFi total en cada rincón',
+            descripcion: 'Se acabaron las zonas sin cobertura. Instalamos redes malladas (Mesh) profesionales para que nunca pierdas la conexión.',
+            descripcionDetallada: 'Una casa inteligente necesita una red inteligente. Olvida los repetidores de mala calidad. Instalamos puntos de acceso profesionales que crean una red única y robusta, capaz de soportar decenas de dispositivos domóticos sin cortes.',
+            imagen: '/assets/images/usecase-wifi.png',
+            icono: 'fa-wifi',
+            categoria: 'Infraestructura'
+        },
+        {
+            id: '12',
+            slug: 'cuidado-mayores',
+            titulo: 'Cuidado de Mayores',
+            subtitulo: 'Tranquilidad para toda la familia',
+            descripcion: 'Sensores de actividad no intrusivos que te avisan si hay alguna anomalía en la rutina de tus seres queridos.',
+            descripcionDetallada: 'Domótica asistencial que no invade la privacidad. Si el sistema no detecta movimiento durante el desayuno o si se deja la puerta abierta demasiado tiempo, envía una notificación suave a los familiares. Seguridad y autonomía para ellos.',
+            imagen: '/assets/images/usecase-seniors.png',
+            icono: 'fa-heart-pulse',
+            categoria: 'Seguridad'
+        }
     ];
 
 

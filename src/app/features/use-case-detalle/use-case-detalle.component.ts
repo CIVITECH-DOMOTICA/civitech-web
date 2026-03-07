@@ -37,10 +37,24 @@ export class UseCaseDetalleComponent implements OnInit {
   updateMetaTags(): void {
     if (!this.useCase) return;
 
+    // Clean description to avoid double dots
+    const cleanDesc = this.useCase.descripcion.trim().endsWith('.')
+      ? this.useCase.descripcion.trim().slice(0, -1)
+      : this.useCase.descripcion.trim();
+
+    const savingSuffix = this.useCase.ahorroEstimado
+      ? `. Ahorra hasta ${this.useCase.ahorroEstimado}`
+      : '';
+
+    // Handle technologies and categories for keywords
+    const techWords = this.useCase.tecnologias?.length
+      ? `, ${this.useCase.tecnologias.map(t => t.nombre).join(', ')}`
+      : '';
+
     this.seoService.updateSeo({
       title: `${this.useCase.titulo} | Domótica Zaragoza | Civitech`,
-      description: `${this.useCase.descripcion} ${this.useCase.ahorroEstimado ? 'Ahorra hasta ' + this.useCase.ahorroEstimado : ''}. Instalación profesional en Zaragoza.`,
-      keywords: `${this.useCase.titulo}, domótica ${this.useCase.categoria}, ${this.useCase.tecnologias?.map(t => t.nombre).join(', ')}, Zaragoza, Aragón`,
+      description: `${cleanDesc}${savingSuffix}. Instalación profesional en Zaragoza.`,
+      keywords: `${this.useCase.titulo}, domótica ${this.useCase.categoria}${techWords}, Zaragoza, Aragón`,
       image: this.useCase.imagen,
       url: `https://civitech.es${this.router.url}`
     });
