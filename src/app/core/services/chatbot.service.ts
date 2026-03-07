@@ -59,7 +59,7 @@ export class ChatbotService {
     private contactCaptured = false;
 
     constructor() {
-        emailjs.init('toWAFkM86-kDoWQa-');
+        emailjs.init(environment.emailJsPublicKey || 'toWAFkM86-kDoWQa-');
 
         if (environment.openAiApiKey && environment.openAiApiKey !== 'sk-PLACEHOLDER') {
             this.openai = new OpenAI({
@@ -188,7 +188,9 @@ export class ChatbotService {
     }
 
     private sendEmailNotification(contact: string) {
-        emailjs.send('service_cvyech4', 'template_8uy4o9g', {
+        emailjs.send(
+            environment.emailJsServiceId || 'service_cvyech4',
+            environment.emailJsTemplateId || 'template_8uy4o9g', {
             message: `Nuevo Lead desde Chatbot: ${contact}`,
             to_name: 'Civitech Team',
             from_name: 'Chatbot v2'
