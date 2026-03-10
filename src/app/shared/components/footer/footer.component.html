@@ -103,10 +103,35 @@
           <span class="tech-badge"><i class="fas fa-server"></i> Local Control</span>
         </div>
 
-        <!-- Habitissimo Widget -->
-        <div id="habitissimo-habitissimo_profile">
-          <a href="https://www.habitissimo.es/pro/civitech" target="_blank"
-            class="text-decoration-none color-gris">Civitech en Habitissimo</a>
+        <!-- Habitissimo Widgets Section -->
+        <div class="habitissimo-container mt-5 p-4 mx-auto rounded-4 text-center"
+          style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); max-width: 900px;">
+          <p class="color-white mb-4 fw-bold"
+            style="letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem;">Perfiles y Casos de Éxito
+            Validados</p>
+
+          <div class="d-flex flex-column justify-content-center align-items-center gap-4">
+
+            <!-- Sello -->
+            <div class="habitissimo-profile-wrapper">
+              <div id="habitissimo-habitissimo_profile">
+                <!-- Se oculta el texto con font-size para que el iframe inyectado siga siendo visible en el flujo del DOM -->
+                <a href="https://www.habitissimo.es/pro/civitech" target="_blank"
+                  style="font-size: 0; color: transparent; text-decoration: none; display: block;">Civitech en
+                  Habitissimo</a>
+              </div>
+            </div>
+
+            <!-- Proyectos -->
+            <div class="habitissimo-photos-wrapper">
+              <div id="habitissimo-habitissimo_photos">
+                <a href="https://www.habitissimo.es/pro/civitech" target="_blank"
+                  style="font-size: 0; color: transparent; text-decoration: none; display: block;">Proyectos de
+                  Civitech</a>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

@@ -20,6 +20,7 @@ export class FooterComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.loadHabitissimoWidget();
+      this.loadHabitissimoPhotosWidget();
     }
   }
 
@@ -35,6 +36,21 @@ export class FooterComponent implements AfterViewInit {
 
     // Append to the habitissimo div
     const container = this.document.getElementById('habitissimo-habitissimo_profile');
+    if (container) {
+      this.renderer.appendChild(container, script);
+    }
+  }
+
+  private loadHabitissimoPhotosWidget(): void {
+    if (this.document.getElementById('habitissimo-photos-script')) return;
+
+    const script = this.renderer.createElement('script');
+    script.id = 'habitissimo-photos-script';
+    script.src = 'https://api.habitissimo.es/widget/habitissimo_photos/civitech.js';
+    script.async = true;
+    script.defer = true;
+
+    const container = this.document.getElementById('habitissimo-habitissimo_photos');
     if (container) {
       this.renderer.appendChild(container, script);
     }
