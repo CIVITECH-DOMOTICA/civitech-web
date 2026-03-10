@@ -38,11 +38,8 @@ jobs:
       - name: List dist directory
         run: ls -l ./dist/civitech.web
 
-      - name: Configure lftp
-        run: echo "set ssl:verify-certificate no" > ~/.lftp.rc
-
       - name: Deploy to Hostinger via lftp
         env:
           FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
         run: |
-          lftp -e "mirror -R -v --parallel=10 ./dist/civitech.web/browser/ /; quit" -u u824079794.hostinger,"$FTP_PASSWORD" ftp.civitech.es
+          lftp -e "set ssl:verify-certificate no; mirror -R -v --parallel=10 ./dist/civitech.web/browser/ /; quit" -u u824079794.hostinger,"$FTP_PASSWORD" ftp.civitech.es
