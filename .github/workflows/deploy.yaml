@@ -41,11 +41,8 @@ jobs:
       - name: Configure lftp
         run: echo "set ssl:verify-certificate no" > ~/.lftp.rc
 
-      - name: Deploy to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ftp.civitech.es
-          username: u824079794.hostinger
-          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: ./dist/civitech.web/browser/
-          server-dir: /
+      - name: Deploy to Hostinger via lftp
+        env:
+          FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+        run: |
+          lftp -e "mirror -R -v --parallel=10 ./dist/civitech.web/browser/ /; quit" -u u824079794.hostinger,"$FTP_PASSWORD" ftp.civitech.es
