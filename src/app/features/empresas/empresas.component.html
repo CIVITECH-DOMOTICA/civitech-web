@@ -1,0 +1,141 @@
+<!-- ===== HERO ===== -->
+<section class="empresas-hero">
+    <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-eyebrow"><i class="fas fa-building"></i> Para Empresas</span>
+            <h1>Domótica para Negocios.<br><span class="highlight">Sin Cuotas. Sin Complicaciones.</span></h1>
+            <p class="hero-sub">Reduce costes, mejora la seguridad y controla tu negocio desde el móvil. Instalación en
+                1-2 días. Amortización típica en menos de 2 años.</p>
+            <div class="hero-ctas">
+                <a routerLink="/contactanos" class="btn-primary">Pide presupuesto gratis <i
+                        class="fas fa-arrow-right"></i></a>
+                <a href="tel:+34624074920" class="btn-secondary"><i class="fas fa-phone"></i> +34 624 074 920</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="stats-bar" data-aos="fade-up" data-aos-delay="100">
+        <div class="container stats-inner">
+            <div class="stat">
+                <span class="stat-num">40%</span>
+                <span class="stat-label">Ahorro en factura eléctrica</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">0 €</span>
+                <span class="stat-label">Cuotas mensuales</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">1-2</span>
+                <span class="stat-label">Días de instalación</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">3 años</span>
+                <span class="stat-label">De garantía</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SEGMENTOS ===== -->
+<section class="segmentos-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="eyebrow">Tu sector, tu solución</span>
+            <h2>¿En qué tipo de negocio trabajas?</h2>
+            <p>Adaptamos cada instalación a las necesidades reales de tu sector.</p>
+        </div>
+
+        <div class="segmentos-grid">
+            <a class="segmento-card" *ngFor="let s of segmentos; let i = index" [routerLink]="['/empresas', s.slug]"
+                [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 80">
+                <div class="segmento-icon"><i class="fas" [ngClass]="s.icon"></i></div>
+                <h3>{{ s.nombre }}</h3>
+                <p>{{ s.heroSubtitulo }}</p>
+                <span class="segmento-link">Ver solución completa <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PACKS ===== -->
+<section class="packs-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="eyebrow">Nuestros packs</span>
+            <h2>Elige el pack que mejor encaja</h2>
+            <p>Precios cerrados. Sin letra pequeña. Si necesitas algo a medida, lo presupuestamos gratis en 24h.</p>
+        </div>
+
+        <div class="packs-grid">
+            <div class="pack-card" *ngFor="let p of packs; let i = index" [class.popular]="p.popular"
+                [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100">
+                <div class="pack-tag" *ngIf="p.popular">{{ p.tag }}</div>
+                <div class="pack-icon"><i class="fas" [ngClass]="p.icon"></i></div>
+                <h3>{{ p.nombre }}</h3>
+                <p class="pack-desc">{{ p.descripcion }}</p>
+                <ul class="pack-features">
+                    <li *ngFor="let feat of p.incluye"><i class="fas fa-check-circle"></i> {{ feat }}</li>
+                </ul>
+                <div class="pack-precio">{{ p.precio }}</div>
+                <a routerLink="/contactanos" class="pack-cta">Pedir presupuesto <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <p class="packs-nota" data-aos="fade-up">
+            <i class="fas fa-info-circle"></i>
+            Los precios son orientativos. El presupuesto final depende de la superficie y equipamiento existente.
+            <strong>Presupuesto siempre gratuito.</strong>
+        </p>
+    </div>
+</section>
+
+<!-- ===== POR QUÉ CIVITECH ===== -->
+<section class="porqué-section">
+    <div class="container">
+        <div class="porqué-grid">
+            <div class="porqué-text" data-aos="fade-right">
+                <span class="eyebrow">¿Por qué Civitech?</span>
+                <h2>Instaladores locales con experiencia real en negocios</h2>
+                <p>No somos una app de EE.UU. ni te vendemos cámaras de China con cuotas mensuales. Somos técnicos de
+                    Zaragoza con instalaciones en lavanderías, talleres, oficinas y comercios de la zona.</p>
+                <ul class="porqué-lista">
+                    <li><i class="fas fa-map-marker-alt"></i> Servicio en Zaragoza y Aragón</li>
+                    <li><i class="fas fa-tools"></i> Equipo propio, sin subcontratas</li>
+                    <li><i class="fas fa-lock"></i> Sistema local — tus datos no salen de tu local</li>
+                    <li><i class="fas fa-headset"></i> Soporte directo con el instalador</li>
+                </ul>
+                <a routerLink="/contactanos" class="btn-primary" style="margin-top: 2rem; display: inline-flex;">
+                    Hablar con un técnico <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="porqué-visual" data-aos="fade-left">
+                <div class="visual-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"Instalamos domótica en lavanderías, talleres, oficinas y locales de hostelería en Zaragoza. Cada
+                        proyecto es distinto, pero el resultado siempre es el mismo: más control, menos costes."</p>
+                    <div class="quote-author">
+                        <strong>Equipo Civitech</strong>
+                        <span>Zaragoza · Instaladores certificados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="empresas-cta-final">
+    <div class="container" data-aos="fade-up">
+        <h2>Cuéntanos tu negocio.<br>Te hacemos una propuesta en <span class="highlight">24 horas.</span></h2>
+        <p>Sin compromiso. Sin visita previa necesaria. Solo cuéntanos qué tienes y qué necesitas.</p>
+        <div class="cta-final-btns">
+            <a routerLink="/contactanos" class="btn-primary-lg">Solicitar presupuesto gratis <i
+                    class="fas fa-arrow-right"></i></a>
+            <a href="tel:+34624074920" class="btn-outline-lg"><i class="fas fa-phone"></i> Llamar ahora</a>
+        </div>
+    </div>
+</section>

@@ -13,6 +13,8 @@ import { PoliticaPrivacidadComponent } from './legal/politica-privacidad.compone
 import { AvisoLegalComponent } from './legal/aviso-legal.component';
 import { PoliticaCookiesComponent } from './legal/politica-cookies.component';
 import { InstalladoresComponent } from './instaladores/instaladores.component';
+import { EmpresasComponent } from './empresas/empresas.component';
+import { EmpresaDetalleComponent } from './empresa-detalle/empresa-detalle.component';
 
 
 
@@ -28,7 +30,9 @@ import { InstalladoresComponent } from './instaladores/instaladores.component';
     PoliticaPrivacidadComponent,
     AvisoLegalComponent,
     PoliticaCookiesComponent,
-    InstalladoresComponent
+    InstalladoresComponent,
+    EmpresasComponent,
+    EmpresaDetalleComponent
   ],
   imports: [
     CommonModule,

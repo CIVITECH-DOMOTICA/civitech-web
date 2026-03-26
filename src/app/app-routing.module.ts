@@ -8,6 +8,8 @@ import { ProyectoDetalleComponent } from './features/proyecto-detalle/proyecto-d
 import { UseCaseDetalleComponent } from './features/use-case-detalle/use-case-detalle.component';
 import { GraciasComponent } from './features/gracias/gracias.component';
 import { InstalladoresComponent } from './features/instaladores/instaladores.component';
+import { EmpresasComponent } from './features/empresas/empresas.component';
+import { EmpresaDetalleComponent } from './features/empresa-detalle/empresa-detalle.component';
 
 import { PoliticaPrivacidadComponent } from './features/legal/politica-privacidad.component';
 import { AvisoLegalComponent } from './features/legal/aviso-legal.component';
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'proyectos', component: ProyectosComponent },
   { path: 'proyectos/:slug', component: ProyectoDetalleComponent },
   { path: 'instaladores', component: InstalladoresComponent },
+  { path: 'empresas', component: EmpresasComponent },
+  { path: 'empresas/:slug', component: EmpresaDetalleComponent },
   { path: 'contactanos', component: ContactanosComponent },
   { path: 'gracias', component: GraciasComponent },
   { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },

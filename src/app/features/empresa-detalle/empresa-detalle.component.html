@@ -1,0 +1,150 @@
+<div *ngIf="segmento">
+
+    <!-- ===== HERO ===== -->
+    <section class="detalle-hero" [ngStyle]="heroStyle">
+        <div class="hero-glow"></div>
+        <div class="container">
+
+            <div class="hero-breadcrumb" data-aos="fade-down">
+                <a routerLink="/empresas"><i class="fas fa-arrow-left"></i> Empresas</a>
+                <i class="fas fa-chevron-right sep"></i>
+                <span>{{ segmento.nombre }}</span>
+            </div>
+
+            <div class="hero-body">
+                <div class="hero-icon-wrap" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas" [ngClass]="segmento.icon"></i>
+                </div>
+                <div class="hero-text" data-aos="fade-up" data-aos-delay="150">
+                    <h1>{{ segmento.seoTitle }}</h1>
+                    <p class="hero-sub">{{ segmento.heroSubtitulo }}</p>
+                    <div class="hero-ctas">
+                        <a routerLink="/contactanos" class="btn-hero-primary">
+                            <i class="fas fa-file-invoice"></i> Pedir presupuesto gratis
+                        </a>
+                        <a href="tel:+34624074920" class="btn-hero-secondary">
+                            <i class="fas fa-phone"></i> +34 624 074 920
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== INTRO STRIP ===== -->
+    <div class="intro-strip">
+        <div class="container">
+            <p><i class="fas fa-quote-left"></i> {{ segmento.introParrafo }}</p>
+        </div>
+    </div>
+
+    <!-- ===== PAIN POINTS ===== -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-label" data-aos="fade-up">
+                <span class="label-chip problem"><i class="fas fa-triangle-exclamation"></i> El problema</span>
+                <h2>¿Te suena esto?</h2>
+                <p class="section-lead">Estos son los problemas más frecuentes que tienen los negocios como el tuyo
+                    antes de instalar domótica.</p>
+            </div>
+
+            <div class="pain-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="pain-card" *ngFor="let p of segmento.painPoints">
+                    <div class="pain-num"></div>
+                    <div class="pain-icon-wrap">
+                        <i class="fas" [ngClass]="p.icon"></i>
+                    </div>
+                    <div class="pain-body">
+                        <h3>{{ p.titulo }}</h3>
+                        <p>{{ p.desc }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOLUCIÓN ===== -->
+    <section class="section-dark-alt">
+        <div class="container">
+            <div class="section-label" data-aos="fade-up">
+                <span class="label-chip solution"><i class="fas fa-check-circle"></i> Nuestra solución</span>
+                <h2>Qué instalamos exactamente</h2>
+                <p class="section-lead">{{ segmento.solucionIntro }}</p>
+            </div>
+
+            <div class="dispositivos-grid">
+                <div class="dispositivo-card" *ngFor="let d of segmento.dispositivos; let i = index" data-aos="fade-up"
+                    [attr.data-aos-delay]="i * 80">
+                    <div class="disp-badge"><i class="fas" [ngClass]="d.icon"></i></div>
+                    <div class="disp-content">
+                        <h3>{{ d.nombre }}</h3>
+                        <p>{{ d.desc }}</p>
+                    </div>
+                    <div class="disp-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CÓMO FUNCIONA ===== -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-label" data-aos="fade-up">
+                <span class="label-chip process"><i class="fas fa-list-ol"></i> El proceso</span>
+                <h2>Cómo funciona, paso a paso</h2>
+            </div>
+
+            <div class="pasos-grid">
+                <div class="paso-card" *ngFor="let paso of segmento.comoFunciona" data-aos="fade-up"
+                    [attr.data-aos-delay]="paso.paso * 80">
+                    <div class="paso-num-badge">{{ paso.paso }}</div>
+                    <h3>{{ paso.titulo }}</h3>
+                    <p>{{ paso.desc }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFICIOS ===== -->
+    <section class="section-stats">
+        <div class="container">
+            <div class="section-label light" data-aos="fade-up">
+                <span class="label-chip benefit"><i class="fas fa-chart-line"></i> Resultados</span>
+                <h2>Lo que consigues</h2>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-item" *ngFor="let b of segmento.beneficios; let i = index" data-aos="zoom-in"
+                    [attr.data-aos-delay]="i * 80">
+                    <div class="stat-value">{{ b.numero }}</div>
+                    <div class="stat-label">{{ b.label }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="section-cta">
+        <div class="container" data-aos="fade-up">
+            <div class="cta-inner">
+                <div class="cta-icon"><i class="fas fa-comments"></i></div>
+                <h2>¿Tu negocio es diferente?<br><span>Te adaptamos la solución.</span></h2>
+                <p>Presupuesto gratuito en 24 horas. Sin compromiso ni visita previa.</p>
+                <div class="cta-actions">
+                    <a routerLink="/contactanos" class="cta-btn-main">
+                        <i class="fas fa-file-invoice"></i> Solicitar presupuesto gratis
+                    </a>
+                    <a href="https://wa.me/34624074920" target="_blank" class="cta-btn-wa">
+                        <i class="fab fa-whatsapp"></i> WhatsApp ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<div *ngIf="!segmento" class="loading-placeholder">
+    <div class="spinner"></div>
+</div>

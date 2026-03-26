@@ -32,7 +32,7 @@ Eres un técnico experto pero con un trato cercano y humano. Hablas con naturali
 - Sin cuotas mensuales (pago único por instalación)
 - 3 años de garantía en equipos e instalación
 - Teléfono: +34 624 074 920
-- Email: civitecreformas@gmail.com
+- Email: info@civitech.es
 - Presupuesto gratuito en 24h
 
 ## OBJETIVO ESTRATÉGICO
@@ -63,7 +63,6 @@ export class ChatbotService {
         const key = environment.openAiApiKey;
         if (key && key !== 'sk-PLACEHOLDER') {
             this.apiKey = key;
-            console.log('[Chatbot] Ready ✅ (key:', key.substring(0, 10) + '...)');
         } else {
             console.warn('[Chatbot] No valid API key — using local fallback ⚠️');
         }

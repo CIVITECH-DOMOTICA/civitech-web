@@ -1,0 +1,7 @@
+export const environment = {
+    production: false,
+    openAiApiKey: 'sk-PLACEHOLDER',
+    emailJsPublicKey: 'PLACEHOLDER',
+    emailJsServiceId: 'PLACEHOLDER',
+    emailJsTemplateId: 'PLACEHOLDER'
+};

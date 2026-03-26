@@ -84,6 +84,14 @@
         </li>
 
         <li>
+          <a href="#" (click)="navigateTo('/empresas'); $event.preventDefault();" routerLink="/empresas"
+            routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+            class="text-decoration-none text-shadow">
+            Empresas
+          </a>
+        </li>
+
+        <li>
           <a href="#" (click)="navigateTo('/proyectos'); $event.preventDefault();" routerLink="/proyectos"
             routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
             class="text-decoration-none text-shadow">
