@@ -1,6 +1,7 @@
 <div class="banner-container">
   <!-- Optimized Image Background (Priority HTML Load) -->
-  <img *ngIf="!videoUrl" [src]="imageUrl" alt="Banner Civitech" class="banner-img" fetchpriority="high" loading="eager">
+  <img *ngIf="!videoUrl" [src]="imageUrl" alt="Instalación de domótica en Zaragoza - Civitech" class="banner-img"
+    fetchpriority="high" loading="eager">
 
   <!-- Video Background -->
   <video *ngIf="videoUrl" [src]="videoUrl" autoplay [muted]="true" loop playsinline class="banner-video"

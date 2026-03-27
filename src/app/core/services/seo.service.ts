@@ -96,62 +96,6 @@ export class SeoService {
                 keywords: 'domótica empresas zaragoza, automatización negocios zaragoza, control acceso empresas, cámaras vigilancia sin cuotas, ahorro energético negocios, domótica hostelería, domótica lavanderías, domótica oficinas, domótica zaragoza b2b, civitech empresas',
                 url: `${this.baseUrl}/empresas`,
                 image: `${this.baseUrl}/assets/images/usecase-business.png`
-            },
-            '/empresas/lavanderias': {
-                title: 'Domótica para Lavanderías en Zaragoza | Apertura Remota Sin Cuotas | Civitech',
-                description: 'Gestiona tu lavandería en Zaragoza desde el móvil: apertura remota, cámaras IA sin cuotas mensuales y control de consumo por circuito. Instalación en 1 día. Presupuesto gratis.',
-                keywords: 'domótica lavanderías zaragoza, control remoto lavandería zaragoza, apertura remota negocio, cámaras vigilancia lavandería sin cuotas, ahorro energético lavandería, automatización lavandería, shelly lavandería',
-                url: `${this.baseUrl}/empresas/lavanderias`,
-                image: `${this.baseUrl}/assets/images/usecase-appliances.png`
-            },
-            '/empresas/hosteleria': {
-                title: 'Domótica para Bares y Restaurantes en Zaragoza | Civitech',
-                description: 'Automatiza la iluminación, climatización y seguridad de tu bar o restaurante en Zaragoza. Escenas de luz automáticas, termostato inteligente y cámaras sin cuotas mensuales.',
-                keywords: 'domótica hostelería zaragoza, automatización restaurantes zaragoza, iluminación inteligente bar, climatización automática restaurante, cámaras sin cuotas hostelería, domótica bar zaragoza',
-                url: `${this.baseUrl}/empresas/hosteleria`,
-                image: `${this.baseUrl}/assets/images/usecase-lighting.png`
-            },
-            '/empresas/apartamentos': {
-                title: 'Domótica Apartamentos Turísticos Zaragoza | Check-in Sin Llaves | Civitech',
-                description: 'Gestiona tus apartamentos turísticos en Zaragoza de forma autónoma: cerraduras inteligentes, códigos temporales por huésped, control de consumo entre estancias. Sin cuotas.',
-                keywords: 'domótica apartamentos turísticos zaragoza, check-in sin llaves zaragoza, cerradura inteligente apartamento, gestión remota apartamento, Nuki zaragoza, apartamentos turísticos automatizados',
-                url: `${this.baseUrl}/empresas/apartamentos`,
-                image: `${this.baseUrl}/assets/images/smart_home_phone_es.png`
-            },
-            '/empresas/gimnasios': {
-                title: 'Domótica para Gimnasios en Zaragoza | Control de Acceso sin Cuotas | Civitech',
-                description: 'Automatiza el acceso de abonados, climatización por zonas y seguridad en tu gimnasio en Zaragoza. Lectores RFID, cámaras IA y termostatos inteligentes. Sin cuotas.',
-                keywords: 'domótica gimnasios zaragoza, control acceso gimnasio zaragoza, lector RFID gimnasio, climatización inteligente gimnasio, seguridad gimnasio sin cuotas, automatización gimnasio zaragoza',
-                url: `${this.baseUrl}/empresas/gimnasios`,
-                image: `${this.baseUrl}/assets/images/usecase-business.png`
-            },
-            '/empresas/clinicas': {
-                title: 'Domótica para Clínicas y Consultas en Zaragoza | Control Acceso NFC | Civitech',
-                description: 'Seguridad y control para clínicas en Zaragoza: acceso por zonas con NFC, cámaras de grabación local sin cuotas de cloud y climatización por sala. Instalación sin obras.',
-                keywords: 'domótica clínicas zaragoza, control acceso consulta médica zaragoza, cámaras sin cloud clínica, seguridad clínica zaragoza, termostato por sala consulta, automatización clínica',
-                url: `${this.baseUrl}/empresas/clinicas`,
-                image: `${this.baseUrl}/assets/images/usecase-security.png`
-            },
-            '/empresas/oficinas': {
-                title: 'Domótica para Oficinas y Talleres en Zaragoza | Ahorro Energético | Civitech',
-                description: 'Automatiza tu oficina o taller en Zaragoza: apagado automático al cierre, control de acceso con tarjeta y climatización programada por horario laboral. Sin cuotas. Presupuesto gratis.',
-                keywords: 'domótica oficinas zaragoza, control acceso empresas zaragoza, apagado automático oficina, ahorro energético taller, domótica pymes zaragoza, automatización oficina zaragoza',
-                url: `${this.baseUrl}/empresas/oficinas`,
-                image: `${this.baseUrl}/assets/images/smart_home_control.png`
-            },
-            '/empresas/comercio': {
-                title: 'Domótica Comercios y Tiendas Zaragoza | Alarma Sin Cuotas Mensuales | Civitech',
-                description: 'Protege tu comercio en Zaragoza con alarma IA sin cuotas mensuales, apagado automático nocturno y control total desde el móvil. Cámaras Frigate. Presupuesto gratis en 24h.',
-                keywords: 'alarma sin cuotas comercio zaragoza, domótica tiendas zaragoza, seguridad retail sin mensualidad, cámaras IA comercio zaragoza, ahorro energético tienda zaragoza, automatización comercio',
-                url: `${this.baseUrl}/empresas/comercio`,
-                image: `${this.baseUrl}/assets/images/usecase-security.png`
-            },
-            '/empresas/hoteles': {
-                title: 'Domótica para Hoteles Zaragoza | Control por Habitación | Civitech',
-                description: 'Climatización inteligente por habitación para hoteles en Zaragoza. Ahorro de hasta 8.500€/año. Monitorización de consumo real, cero cuotas de mantenimiento.',
-                keywords: 'domótica hoteles zaragoza, control temperatura habitación hotel, monitorización consumo hotel, ahorro energético hotel, gestión hotel inteligente zaragoza, válvula termostata hotel',
-                url: `${this.baseUrl}/empresas/hoteles`,
-                image: `${this.baseUrl}/assets/images/smart_home_control.png`
             }
         };
 
