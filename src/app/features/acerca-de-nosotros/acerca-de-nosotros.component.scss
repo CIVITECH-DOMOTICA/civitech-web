@@ -127,7 +127,8 @@
   position: relative;
   box-shadow: $shadow-primary;
 
-  h1 {
+  h1,
+  h2 {
     color: white;
     font-size: $text-4xl;
     font-weight: $font-extrabold;
@@ -349,6 +350,76 @@
   .servicios-header {
     .servicios-title {
       font-size: $text-4xl;
+    }
+  }
+}
+
+// Variant: Empresas section (white background)
+.empresas-home-section {
+  background: white;
+  border-top: none;
+  border-bottom: 3px solid $p-500;
+
+  .servicios-title {
+    color: $dark-bg !important;
+
+    .servicios-highlight {
+      background: linear-gradient(135deg, #B30000, #ff4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .servicios-subtitle {
+    color: $text-secondary !important;
+  }
+
+  .servicio-card {
+    background: #f8f9fb;
+    border: 1px solid $border-color;
+    color: $dark-bg;
+
+    h3 {
+      color: $dark-bg;
+    }
+
+    p {
+      color: $text-secondary;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      color: $dark-bg;
+      border-color: $p-500;
+      box-shadow: 0 16px 48px rgba(179, 0, 0, 0.12);
+
+      h3,
+      p {
+        color: $dark-bg;
+      }
+
+      .servicio-cta {
+        color: $p-500;
+      }
+    }
+
+    .servicio-cta {
+      color: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  .btn-ver-todos {
+    border-color: $p-500 !important;
+    color: $p-500 !important;
+    background: transparent !important;
+
+    &:hover {
+      background: $p-500 !important;
+      color: white !important;
     }
   }
 }
