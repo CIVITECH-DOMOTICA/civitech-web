@@ -145,6 +145,13 @@ export class SeoService {
                 keywords: 'alarma sin cuotas comercio zaragoza, domótica tiendas zaragoza, seguridad retail sin mensualidad, cámaras IA comercio zaragoza, ahorro energético tienda zaragoza, automatización comercio',
                 url: `${this.baseUrl}/empresas/comercio`,
                 image: `${this.baseUrl}/assets/images/usecase-security.png`
+            },
+            '/empresas/hoteles': {
+                title: 'Domótica para Hoteles Zaragoza | TRV por Habitación Delta Dore | Civitech',
+                description: 'Control de temperatura por habitación para hoteles en Zaragoza con TRV Delta Dore. Ahorro de hasta 8.500€/año en un hotel de 30 habitaciones. Cero cuotas de mantenimiento.',
+                keywords: 'domótica hoteles zaragoza, TRV hotel zaragoza, Delta Dore hoteles, control temperatura habitación hotel, monitorización consumo hotel, ahorro energético hotelero, gestión hotel inteligente',
+                url: `${this.baseUrl}/empresas/hoteles`,
+                image: `${this.baseUrl}/assets/images/smart_home_control.png`
             }
         };
 

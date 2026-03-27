@@ -539,6 +539,130 @@ a.segmento-card {
     }
 }
 
+// ===== PARTNER DELTA DORE =====
+.partner-section {
+    padding: $spacing-24 0;
+    background: #f8f9fb;
+}
+
+.partner-inner {
+    background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 100%);
+    border-radius: $radius-2xl;
+    padding: $spacing-16;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: $spacing-12;
+    align-items: start;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    @include responsive($breakpoint-lg) {
+        grid-template-columns: 1fr;
+        gap: $spacing-8;
+    }
+}
+
+.partner-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-3;
+    padding: $spacing-6 $spacing-8;
+    background: rgba($p-500, 0.12);
+    border: 1px solid rgba($p-500, 0.3);
+    border-radius: $radius-xl;
+    text-align: center;
+    min-width: 120px;
+
+    i {
+        font-size: 2rem;
+        color: $p-500;
+    }
+
+    span {
+        font-size: $text-xs;
+        font-weight: $font-bold;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    @include responsive($breakpoint-lg) {
+        flex-direction: row;
+        min-width: unset;
+        width: fit-content;
+        padding: $spacing-3 $spacing-6;
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.partner-content {
+    h2 {
+        color: white;
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        font-weight: $font-extrabold;
+        line-height: $leading-tight;
+        margin-bottom: $spacing-4;
+
+        .highlight {
+            color: $p-500;
+        }
+    }
+
+    >p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: $text-base;
+        line-height: $leading-relaxed;
+        margin-bottom: $spacing-8;
+        max-width: 580px;
+    }
+}
+
+.partner-products {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-5;
+}
+
+.partner-product {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-4;
+
+    >i {
+        width: 40px;
+        height: 40px;
+        background: rgba($p-500, 0.15);
+        border-radius: $radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: $p-500;
+        flex-shrink: 0;
+    }
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        strong {
+            color: white;
+            font-size: $text-base;
+            font-weight: $font-semibold;
+        }
+
+        span {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: $text-sm;
+            line-height: $leading-relaxed;
+        }
+    }
+}
+
 // ===== CTA FINAL =====
 .empresas-cta-final {
     padding: $spacing-24 0;
