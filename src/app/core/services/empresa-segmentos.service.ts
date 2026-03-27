@@ -312,26 +312,26 @@ export class EmpresaSegmentosService {
         {
             slug: 'hoteles',
             nombre: 'Hoteles',
-            seoTitle: 'Domótica para Hoteles en Zaragoza — Control por Habitación con Delta Dore',
+            seoTitle: 'Domótica para Hoteles en Zaragoza — Control por Habitación y Eficiencia Energética',
             icon: 'fa-bed',
             colorClass: 'morado',
-            heroSubtitulo: 'Control de temperatura por habitación, monitorización de consumo real y cero cuotas mensuales. Tecnología Delta Dore.',
-            introParrafo: 'Un hotel de 30 habitaciones puede desperdiciar hasta 8.500€ al año en climatización: huéspedes que dejan la ventana abierta con el AC al máximo, habitaciones vacías climatizando, sin visibilidad del consumo real por zona. Con Delta Dore instalado por Civitech, cada habitación tiene control independiente y el gestor ve en tiempo real dónde se va la energía.',
+            heroSubtitulo: 'Control de temperatura por habitación, monitorización de consumo real y cero cuotas mensuales.',
+            introParrafo: 'Un hotel de 30 habitaciones puede desperdiciar hasta 8.500€ al año en climatización: huéspedes que dejan la ventana abierta con el AC al máximo, habitaciones vacías climatizando, sin visibilidad del consumo real por zona. Con nuestros sistemas instalados por Civitech, cada habitación tiene control independiente y el gestor ve en tiempo real dónde se va la energía.',
             painPoints: [
                 { icon: 'fa-temperature-arrow-up', titulo: 'Consumo incontrolado por habitación', desc: 'Sin TRV individual, el sistema climatiza igual una habitación ocupada que una vacía, o una con la ventana abierta. No hay manera de detectarlo ni corregirlo.' },
                 { icon: 'fa-eye-slash', titulo: 'Sin visibilidad de eficiencia', desc: 'El gestor del hotel recibe una factura eléctrica global. No sabe qué planta, qué zona o qué habitación consume más. Imposible tomar decisiones de mejora.' },
                 { icon: 'fa-wrench', titulo: 'Mantenimiento reactivo y caro', desc: 'Los sistemas de hotel tradicionales (Honeywell, Siemens) requieren contratos de mantenimiento anuales de 5.000-15.000€. Y cuando fallan, dependes de su técnico.' }
             ],
-            solucionIntro: 'Instalamos TRV Delta Dore por habitación, monitorización TYWATT 5600 por zonas y un panel de gestión centralizado que no requiere plataforma open source. El gestor del hotel tiene control real sin necesitar un técnico de IT.',
+            solucionIntro: 'Instalamos válvulas termostáticas inteligentes por habitación, monitorización de consumo eléctrico por zonas y un panel de gestión centralizado que no requiere plataforma open source. El gestor del hotel tiene control real sin necesitar un técnico de IT.',
             dispositivos: [
-                { icon: 'fa-temperature-half', nombre: 'TRV Delta Dore por habitación', desc: 'Válvula termostática radiante inteligente. Cada habitación tiene su propia temperatura programada. Detecta ventana abierta y para la calefacción automáticamente. Ahorro inmediato.' },
-                { icon: 'fa-gauge-high', nombre: 'TYWATT 5600 — Monitorización de consumo', desc: 'Mide consumo eléctrico y de agua por zonas en tiempo real. El gestor ve en el dashboard qué planta o ala del hotel consume más y actúa antes de recibir la factura.' },
+                { icon: 'fa-temperature-half', nombre: 'Válvula termostática inteligente por habitación', desc: 'Control individual de temperatura en cada habitación. Detecta ventana abierta y para la calefacción automáticamente. Ahorro inmediato sin obras.' },
+                { icon: 'fa-gauge-high', nombre: 'Medidor de consumo por zonas', desc: 'Mide consumo eléctrico y de agua por planta o ala del hotel en tiempo real. El gestor ve en el dashboard dónde se va la energía y actúa antes de recibir la factura.' },
                 { icon: 'fa-tablet-screen-button', nombre: 'Panel de gestión centralizado', desc: 'Interfaz simple y profesional. Sin Home Assistant ni configuración técnica. El recepcionista puede cambiar la temperatura de cualquier habitación, ver el estado de todas y detectar anomalías.' },
                 { icon: 'fa-mobile-screen', nombre: 'Control remoto para el director', desc: 'El gerente puede ver el consumo en tiempo real, programar temperaturas por tipo de habitación y recibir alertas si una zona supera el umbral de consumo.' }
             ],
             comoFunciona: [
-                { paso: 1, titulo: 'Auditoría inicial del hotel', desc: 'Analizamos la instalación existente, el número de habitaciones, el sistema de climatización actual (fancoil, radiadores, splits) y diseñamos la solución Delta Dore específica.' },
-                { paso: 2, titulo: 'Instalación por fases, sin cerrar el hotel', desc: 'Instalamos habitación a habitación o planta a planta. El hotel no interrumpe su actividad. Un TRV Delta Dore se instala en 15-20 minutos por habitación.' },
+                { paso: 1, titulo: 'Auditoría inicial del hotel', desc: 'Analizamos la instalación existente, el número de habitaciones, el sistema de climatización actual (fancoil, radiadores, splits) y diseñamos la solución óptima para el hotel.' },
+                { paso: 2, titulo: 'Instalación por fases, sin cerrar el hotel', desc: 'Instalamos habitación a habitación o planta a planta. El hotel no interrumpe su actividad. Cada válvula inteligente se instala en 15-20 minutos por habitación.' },
                 { paso: 3, titulo: 'Configuración del panel centralizado', desc: 'Programamos las temperaturas por tipo de habitación, horarios de limpieza, gestión de check-in/check-out y alertas de consumo anómalo.' },
                 { paso: 4, titulo: 'Ahorro desde el primer mes', desc: 'Con presencia detectada y ventanas monitorizadas, el consumo HVAC cae entre un 35-45%. En un hotel de 30 habitaciones, el retorno de inversión típico es en 18-24 meses.' }
             ],
@@ -342,9 +342,9 @@ export class EmpresaSegmentosService {
                 { numero: '18-24m', label: 'Retorno típico de inversión' }
             ],
             seo: {
-                title: 'Domótica para Hoteles Zaragoza | Control por Habitación Delta Dore | Civitech',
-                description: 'Climatización inteligente por habitación para hoteles en Zaragoza con TRV Delta Dore. Monitorización de consumo real, cero cuotas de mantenimiento. Ahorro de hasta 8.500€/año en un hotel de 30 habitaciones.',
-                keywords: 'domótica hoteles zaragoza, TRV hotel zaragoza, control temperatura habitación hotel, Delta Dore hotel, monitorización consumo hotel, ahorro energético hotel, gestión hotel inteligente zaragoza, Civitech hoteles'
+                title: 'Domótica para Hoteles Zaragoza | Control por Habitación | Civitech',
+                description: 'Climatización inteligente por habitación para hoteles en Zaragoza. Monitorización de consumo real, cero cuotas de mantenimiento. Ahorro de hasta 8.500€/año en un hotel de 30 habitaciones.',
+                keywords: 'domótica hoteles zaragoza, control temperatura habitación hotel, monitorización consumo hotel, ahorro energético hotel, gestión hotel inteligente zaragoza, válvula termostata hotel, climatización hotel por zonas'
             }
         }
     ];

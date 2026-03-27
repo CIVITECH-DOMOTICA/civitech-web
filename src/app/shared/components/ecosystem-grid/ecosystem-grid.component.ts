@@ -35,10 +35,11 @@ export class EcosystemGridComponent implements OnInit {
       marcas: [
         { nombre: 'Daikin', logo: 'assets/logos/daikin.png', url: 'https://www.daikin.eu' },
         { nombre: 'Toshiba', logo: 'assets/logos/toshiba.svg', url: 'https://www.toshiba-aircon.co.uk' },
-        { nombre: 'Airzone', logo: 'assets/logos/airzone.svg', url: 'https://www.airzonecontrol.com' }, // Placeholder o descargado
+        { nombre: 'Airzone', logo: 'assets/logos/airzone.svg', url: 'https://www.airzonecontrol.com' },
         { nombre: 'Mitsubishi', logo: 'assets/logos/mitsubishi.png', url: 'https://es.mitsubishielectric.com' },
         { nombre: 'Netatmo', logo: 'assets/logos/netatmo_vector.svg', url: 'https://www.netatmo.com' },
-        { nombre: 'Somfy', logo: 'assets/logos/somfy_real.png', url: 'https://www.somfy.es' }
+        { nombre: 'Somfy', logo: 'assets/logos/somfy_real.png', url: 'https://www.somfy.es' },
+        { nombre: 'Delta Dore', logo: 'assets/logos/deltadore.png', url: 'https://www.deltadore.es' }
       ]
     },
     {

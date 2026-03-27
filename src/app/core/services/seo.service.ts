@@ -147,9 +147,9 @@ export class SeoService {
                 image: `${this.baseUrl}/assets/images/usecase-security.png`
             },
             '/empresas/hoteles': {
-                title: 'Domótica para Hoteles Zaragoza | TRV por Habitación Delta Dore | Civitech',
-                description: 'Control de temperatura por habitación para hoteles en Zaragoza con TRV Delta Dore. Ahorro de hasta 8.500€/año en un hotel de 30 habitaciones. Cero cuotas de mantenimiento.',
-                keywords: 'domótica hoteles zaragoza, TRV hotel zaragoza, Delta Dore hoteles, control temperatura habitación hotel, monitorización consumo hotel, ahorro energético hotelero, gestión hotel inteligente',
+                title: 'Domótica para Hoteles Zaragoza | Control por Habitación | Civitech',
+                description: 'Climatización inteligente por habitación para hoteles en Zaragoza. Ahorro de hasta 8.500€/año. Monitorización de consumo real, cero cuotas de mantenimiento.',
+                keywords: 'domótica hoteles zaragoza, control temperatura habitación hotel, monitorización consumo hotel, ahorro energético hotel, gestión hotel inteligente zaragoza, válvula termostata hotel',
                 url: `${this.baseUrl}/empresas/hoteles`,
                 image: `${this.baseUrl}/assets/images/smart_home_control.png`
             }
