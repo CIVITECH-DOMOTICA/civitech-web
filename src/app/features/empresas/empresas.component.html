@@ -7,9 +7,9 @@
             <p class="hero-sub">Reduce costes, mejora la seguridad y controla tu negocio desde el móvil. Instalación en
                 1-2 días. Amortización típica en menos de 2 años.</p>
             <div class="hero-ctas">
-                <a routerLink="/contactanos" class="btn-primary">Pide presupuesto gratis <i
+                <a routerLink="/contactanos" class="btn-primary" (click)="trackPresupuestoClick('hero')">Pide presupuesto gratis <i
                         class="fas fa-arrow-right"></i></a>
-                <a href="tel:+34624074920" class="btn-secondary"><i class="fas fa-phone"></i> +34 624 074 920</a>
+                <a href="tel:+34624074920" class="btn-secondary" (click)="trackPhoneClick()"><i class="fas fa-phone"></i> +34 624 074 920</a>
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
                     <li *ngFor="let feat of p.incluye"><i class="fas fa-check-circle"></i> {{ feat }}</li>
                 </ul>
                 <div class="pack-precio">{{ p.precio }}</div>
-                <a routerLink="/contactanos" class="pack-cta">Pedir presupuesto <i class="fas fa-arrow-right"></i></a>
+                <a routerLink="/contactanos" class="pack-cta" (click)="trackPresupuestoClick(p.nombre)">Pedir presupuesto <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
 
@@ -133,9 +133,9 @@
         <h2>Cuéntanos tu negocio.<br>Te hacemos una propuesta en <span class="highlight">24 horas.</span></h2>
         <p>Sin compromiso. Sin visita previa necesaria. Solo cuéntanos qué tienes y qué necesitas.</p>
         <div class="cta-final-btns">
-            <a routerLink="/contactanos" class="btn-primary-lg">Solicitar presupuesto gratis <i
+            <a routerLink="/contactanos" class="btn-primary-lg" (click)="trackPresupuestoClick('cta_final')">Solicitar presupuesto gratis <i
                     class="fas fa-arrow-right"></i></a>
-            <a href="tel:+34624074920" class="btn-outline-lg"><i class="fas fa-phone"></i> Llamar ahora</a>
+            <a href="tel:+34624074920" class="btn-outline-lg" (click)="trackPhoneClick()"><i class="fas fa-phone"></i> Llamar ahora</a>
         </div>
     </div>
 </section>

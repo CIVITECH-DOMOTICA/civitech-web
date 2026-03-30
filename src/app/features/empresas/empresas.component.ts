@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../core/services/seo.service';
 import { EmpresaSegmentosService, EmpresaSegmento } from '../../core/services/empresa-segmentos.service';
+import { AnalyticsService } from '../../core/services/analytics.service';
 
 @Component({
     selector: 'app-empresas',
@@ -61,8 +62,17 @@ export class EmpresasComponent implements OnInit {
 
     constructor(
         private seo: SeoService,
-        private segmentosService: EmpresaSegmentosService
+        private segmentosService: EmpresaSegmentosService,
+        private analytics: AnalyticsService
     ) { }
+
+    trackPhoneClick(): void {
+        this.analytics.trackPhoneCall();
+    }
+
+    trackPresupuestoClick(packName?: string): void {
+        this.analytics.trackButtonClick('pedir_presupuesto', packName || 'empresas');
+    }
 
     ngOnInit(): void {
         this.segmentos = this.segmentosService.getAll();

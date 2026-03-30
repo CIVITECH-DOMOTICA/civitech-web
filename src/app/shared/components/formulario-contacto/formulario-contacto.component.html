@@ -1,6 +1,6 @@
 <div class="container-fluid contacto-formulario-content d-flex justify-content-center">
   <div class="contact-form">
-    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" (submit)="onFormSubmit($event)">
       <!-- Clave de acceso de Web3Forms -->
       <input type="hidden" name="access_key" value="a825ec4b-62db-4b29-826e-6f116e7c8bb7" />
       <!-- URL de redirección personalizada -->
