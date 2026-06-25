@@ -23,11 +23,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Angular app
+      - name: Build Angular app (prerender)
         run: npm run prerender
         env:
           NODE_ENV: production
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # Chatbot proxy — la API key de OpenAI se configura en n8n, NUNCA aquí
+          CHATBOT_WEBHOOK_URL: ${{ secrets.CHATBOT_WEBHOOK_URL }}
+          # Webhook n8n para leads del formulario de contacto
+          N8N_LEAD_WEBHOOK_URL: ${{ secrets.N8N_LEAD_WEBHOOK_URL }}
+          # EmailJS
           EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
           EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
           EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}

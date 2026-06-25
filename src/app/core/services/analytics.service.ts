@@ -79,6 +79,22 @@ export class AnalyticsService {
     }
 
     /**
+     * Track conversion goal — disparar en /gracias
+     * Configura 'generate_lead' como goal en GA4 → Admin → Conversions
+     */
+    trackConversion(): void {
+        this.trackEvent('generate_lead', {
+            event_category: 'conversion',
+            event_label: 'form_submission_complete',
+            value: 1
+        });
+        // También disparar el evento estándar de GA4 para remarketing
+        this.trackEvent('conversion', {
+            send_to: 'G-45C2R9F4RE'
+        });
+    }
+
+    /**
      * Track button clicks
      */
     trackButtonClick(buttonName: string, location?: string): void {

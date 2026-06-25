@@ -14,6 +14,7 @@ import { EmpresaDetalleComponent } from './features/empresa-detalle/empresa-deta
 import { PoliticaPrivacidadComponent } from './features/legal/politica-privacidad.component';
 import { AvisoLegalComponent } from './features/legal/aviso-legal.component';
 import { PoliticaCookiesComponent } from './features/legal/politica-cookies.component';
+import { NotFoundComponent } from './features/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: AcercaDeNosotrosComponent, pathMatch: 'full' },
@@ -29,7 +30,9 @@ const routes: Routes = [
   { path: 'gracias', component: GraciasComponent },
   { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
   { path: 'aviso-legal', component: AvisoLegalComponent },
-  { path: 'politica-cookies', component: PoliticaCookiesComponent }
+  { path: 'politica-cookies', component: PoliticaCookiesComponent },
+  // Wildcard 404 — debe ser la ÚLTIMA ruta
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

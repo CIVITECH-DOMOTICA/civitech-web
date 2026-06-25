@@ -29,7 +29,13 @@ export class SeoService {
         @Inject(PLATFORM_ID) platformId: Object
     ) {
         this.isBrowser = isPlatformBrowser(platformId);
-        this.setupRouteListener();
+        // Ejecutar SEO sincrónicamente al construir — necesario para SSR/prerender
+        // (NavigationEnd no se dispara en prerender, solo en browser)
+        this.updateSeoForCurrentRoute();
+        // En browser, también escuchar cambios de ruta
+        if (this.isBrowser) {
+            this.setupRouteListener();
+        }
     }
 
     private setupRouteListener(): void {
@@ -152,6 +158,10 @@ export class SeoService {
         }
 
         link.setAttribute('href', url);
+    }
+
+    setRobotsTag(content: string): void {
+        this.metaService.updateTag({ name: 'robots', content });
     }
 
     addStructuredData(data: any, id: string = 'schema-main'): void {

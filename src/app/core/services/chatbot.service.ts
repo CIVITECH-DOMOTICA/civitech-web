@@ -12,59 +12,25 @@ export interface ChatMessage {
     options?: { label: string; value: string; action?: string }[];
 }
 
-const SYSTEM_PROMPT = `Eres el asistente virtual de Civitech, expertos en Domótica e IoT en Zaragoza, España.
-
-## TU PERSONALIDAD
-Eres un técnico experto pero con un trato cercano y humano. Hablas con naturalidad, como un amigo que sabe mucho del tema. Usas algún emoji ocasionalmente (sin pasarte). Siempre en español.
-
-## CONOCIMIENTO TÉCNICO (demuéstralo cuando sea relevante)
-- **Plataforma**: Sistema de automatización propio basado en tecnología open-source (sin nube externa, sin cuotas)
-- **Integración energie**: Gestionamos excedentes fotovoltaicos para cargar coches (Wallbox/EVSE), climatización, ACS. Normalmente logramos facturas de luz en torno a 0€ varios meses al año con una buena gestión.
-- **Seguridad**: Cámaras con IA (Frigate, detección de personas/vehículos), sensores Zigbee/Z-Wave, integración con alarmas. Detección perimetral sin cuotas de CloudCompanies.
-- **Confort**: Persianas y toldos motorizados (Somfy, Nice, tubos de espuma), iluminación circadiana (Philips Hue, IKEA Tradfri, Shelly), escenas personalizadas (Cine, Cena, Trabajo).
-- **Redes**: WiFi mesh (Ubiquiti UniFi, TP-Link Omada), VLANs, QoS para streaming/gaming.
-- **Hardware**: Shelly, Zigbee2MQTT, ZigStar, Sonoff, ESPHome, Raspberry Pi / NUC like mini-PC.
-- **Protocolo**: Zigbee, Z-Wave, WiFi, KNX (instalaciones nuevas).
-- **Sin obras**: El 90% de instalaciones no requieren obra. Actuamos sobre cajas de mecanismos existentes.
-
-## EMPRESA
-- Zona: Zaragoza y Aragón
-- Sin cuotas mensuales (pago único por instalación)
-- 3 años de garantía en equipos e instalación
-- Teléfono: +34 624 074 920
-- Email: info@civitech.es
-- Presupuesto gratuito en 24h
-
-## OBJETIVO ESTRATÉGICO
-1. Responde con conocimiento técnico real que genere confianza
-2. Haz preguntas de calificación de forma natural (¿tienes placas ya? ¿chalet o piso? ¿qué tienes ahora?)
-3. Cuando detectes interés real, propón mostrar casos reales o enviar más info via WhatsApp/correo
-4. Captura el contacto de forma natural, NO invasiva: "¿te parece si te enviamos un presupuesto orientativo a tu WhatsApp?"
-
-## CAPTURA DE CONTACTO - MUY IMPORTANTE
-Cuando el usuario dé un teléfono o email, responde con una confirmación entusiasta y que conectarás con el equipo.
-Ejemplo de respuesta cuando te den un contacto:
-"¡Perfecto [número/email]! 🚀 He anotado tus datos. Un técnico de Civitech te contactará pronto para hablar de tu proyecto sin compromiso. ¿Hay algún horario que te venga mejor para la llamada?"
-
-NO intentes ser demasiado comercial desde el principio. Primero da valor, luego pide el contacto.`;
-
 @Injectable({
     providedIn: 'root'
 })
 export class ChatbotService {
 
-    private apiKey: string | null = null;
+    /**
+     * URL del proxy n8n que actúa como intermediario hacia OpenAI.
+     * La API key de OpenAI NUNCA sale del servidor n8n — el frontend
+     * solo envía el mensaje y el historial al webhook.
+     */
+    private chatbotWebhookUrl: string = environment.chatbotWebhookUrl || '';
     private conversationHistory: { role: 'user' | 'assistant'; content: string }[] = [];
     private contactCaptured = false;
 
     constructor() {
-        emailjs.init(environment.emailJsPublicKey || 'toWAFkM86-kDoWQa-');
+        emailjs.init(environment.emailJsPublicKey || '');
 
-        const key = environment.openAiApiKey;
-        if (key && key !== 'sk-PLACEHOLDER') {
-            this.apiKey = key;
-        } else {
-            console.warn('[Chatbot] No valid API key — using local fallback ⚠️');
+        if (!this.chatbotWebhookUrl) {
+            console.warn('[Chatbot] chatbotWebhookUrl no configurado — usando fallback local');
         }
     }
 
@@ -74,13 +40,13 @@ export class ChatbotService {
             return from(this.handleContactDetected(userMessage));
         }
 
-        if (!this.apiKey) {
+        if (!this.chatbotWebhookUrl) {
             return of(this.localFallback(userMessage));
         }
 
-        return from(this.askOpenAI(userMessage)).pipe(
+        return from(this.askViaProxy(userMessage)).pipe(
             catchError((err) => {
-                console.error('[Chatbot] OpenAI call failed:', err?.message || err);
+                console.error('[Chatbot] Proxy call failed:', err?.message || err);
                 return of(this.localFallback(userMessage));
             })
         );
@@ -104,41 +70,33 @@ export class ChatbotService {
         };
     }
 
-    /** Uses raw fetch() to call OpenAI — avoids SDK incompatibility with Angular SSG */
-    private async askOpenAI(userMessage: string): Promise<ChatMessage> {
+    /**
+     * Envía el mensaje al proxy n8n.
+     * n8n recibe: { message, history } → llama a OpenAI → devuelve { reply }
+     * La API key de OpenAI se configura en n8n, NUNCA en el frontend.
+     */
+    private async askViaProxy(userMessage: string): Promise<ChatMessage> {
         this.conversationHistory.push({ role: 'user', content: userMessage });
         const recentHistory = this.conversationHistory.slice(-12);
 
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        const response = await fetch(this.chatbotWebhookUrl, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${this.apiKey}`
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                model: 'gpt-4o-mini',
-                messages: [
-                    { role: 'system', content: SYSTEM_PROMPT },
-                    ...recentHistory
-                ],
-                max_tokens: 300,
-                temperature: 0.75
+                message: userMessage,
+                history: recentHistory
             })
         });
 
         if (!response.ok) {
             const errBody = await response.text();
-            console.error('[Chatbot] HTTP error:', response.status, errBody);
-            throw new Error(`OpenAI HTTP ${response.status}`);
+            console.error('[Chatbot] Proxy HTTP error:', response.status, errBody);
+            throw new Error(`Proxy HTTP ${response.status}`);
         }
 
         const data = await response.json();
-        if (data.error) {
-            console.error('[Chatbot] API error:', data.error);
-            throw new Error(data.error.message);
-        }
-
-        const aiText = data.choices?.[0]?.message?.content || '¿Puedes repetirlo?';
+        // n8n puede devolver { reply: "..." } o { output: "..." } según el workflow
+        const aiText = data.reply || data.output || data.text || '¿Puedes repetirlo?';
         this.conversationHistory.push({ role: 'assistant', content: aiText });
 
         return { text: aiText, isUser: false, timestamp: new Date(), type: 'text' };
@@ -155,27 +113,20 @@ export class ChatbotService {
 
         let aiText = `¡Perfecto! 🚀 He apuntado tus datos. Un técnico de Civitech te contactará pronto. ¿Hay algún horario que te venga mejor?`;
 
-        if (this.apiKey) {
+        if (this.chatbotWebhookUrl) {
             try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                const response = await fetch(this.chatbotWebhookUrl, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${this.apiKey}`
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        model: 'gpt-4o-mini',
-                        messages: [
-                            { role: 'system', content: SYSTEM_PROMPT },
-                            ...this.conversationHistory
-                        ],
-                        max_tokens: 150,
-                        temperature: 0.7
+                        message: contact,
+                        history: this.conversationHistory
                     })
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    aiText = data.choices?.[0]?.message?.content || aiText;
+                    const reply = data.reply || data.output || data.text;
+                    if (reply) aiText = reply;
                 }
             } catch { /* keep default aiText */ }
         }
@@ -191,7 +142,7 @@ export class ChatbotService {
         };
     }
 
-    /** Fallback when OpenAI is unavailable */
+    /** Fallback cuando el proxy n8n no está disponible */
     private localFallback(message: string): ChatMessage {
         const lower = message.toLowerCase();
 
@@ -216,8 +167,8 @@ export class ChatbotService {
 
     private sendEmailNotification(contact: string) {
         emailjs.send(
-            environment.emailJsServiceId || 'service_cvyech4',
-            environment.emailJsTemplateId || 'template_8uy4o9g', {
+            environment.emailJsServiceId || '',
+            environment.emailJsTemplateId || '', {
             message: `Nuevo Lead desde Chatbot: ${contact}`,
             to_name: 'Civitech Team',
             from_name: 'Chatbot v2'

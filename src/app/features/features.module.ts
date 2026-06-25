@@ -15,7 +15,7 @@ import { PoliticaCookiesComponent } from './legal/politica-cookies.component';
 import { InstalladoresComponent } from './instaladores/instaladores.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { EmpresaDetalleComponent } from './empresa-detalle/empresa-detalle.component';
-
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -32,7 +32,8 @@ import { EmpresaDetalleComponent } from './empresa-detalle/empresa-detalle.compo
     PoliticaCookiesComponent,
     InstalladoresComponent,
     EmpresasComponent,
-    EmpresaDetalleComponent
+    EmpresaDetalleComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

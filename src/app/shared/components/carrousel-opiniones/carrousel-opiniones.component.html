@@ -3,7 +3,7 @@
   <ng-template pTemplate="item" let-opinion>
     <div class="resenia-container">
       <div class="datos-resenia-content clickable" (click)="onCardClick(opinion)">
-        <img class="imagen-carrousel" [src]="opinion.src || opinion.imagenPrincipal" [alt]="opinion.nombre">
+        <img class="imagen-carrousel" [src]="opinion.src || opinion.imagenPrincipal" [alt]="opinion.nombre" loading="lazy">
 
         <!-- Si es un proyecto (tiene slug) mostramos info detallada -->
         <ng-container *ngIf="opinion.slug">
