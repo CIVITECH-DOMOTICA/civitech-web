@@ -76,7 +76,7 @@ export class EmpresaSegmentosService {
                 { numero: '24/7', label: 'Acceso y monitorización' }
             ],
             seo: {
-                title: 'Domótica para Lavanderías en Zaragoza | Control Remoto | Civitech',
+                title: 'Domótica Lavanderías Zaragoza | Control Remoto | Civitech',
                 description: 'Gestiona tu lavandería desde el móvil: apertura remota, cámaras sin cuotas y control de consumo por circuito. Instalación en 1 día. Sin cuotas mensuales.',
                 keywords: 'domótica lavanderías zaragoza, control remoto lavandería, apertura remota negocio, cámaras vigilancia lavandería, ahorro energético lavandería'
             }
@@ -152,7 +152,7 @@ export class EmpresaSegmentosService {
                 { numero: '⭐⭐⭐⭐⭐', label: 'Mejor valoración huéspedes' }
             ],
             seo: {
-                title: 'Domótica Apartamentos Turísticos Zaragoza | Check-in Sin Llaves | Civitech',
+                title: 'Domótica Apartamentos Turísticos Zaragoza | Civitech',
                 description: 'Gestiona tus apartamentos turísticos en Zaragoza de forma autónoma: cerraduras inteligentes, códigos temporales, control de consumo entre estancias. Sin cuotas.',
                 keywords: 'domótica apartamentos turísticos zaragoza, check-in sin llaves, cerradura inteligente apartamento, gestión remota apartamento, Nuki zaragoza'
             }
