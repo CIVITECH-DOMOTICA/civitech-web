@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AnalyticsService } from '../../../core/services/analytics.service';
 
 @Component({
   selector: 'banner-civitech',
@@ -13,8 +14,13 @@ export class BannerComponent {
   @Input() textoBoton: string = '';
   @Input() urlBoton: string = '';
   @Input() isH1: boolean = false;
+  // Si se rellena, muestra un botón secundario de WhatsApp (canal donde más convierten los leads)
+  @Input() whatsappTexto: string = '';
 
-  constructor(private router: Router) { }
+  private whatsappNumero = '34624074920';
+  private whatsappMensaje = '¡Hola! Me interesa un presupuesto de domótica para mi hogar/negocio.';
+
+  constructor(private router: Router, private analytics: AnalyticsService) { }
 
   navigate(): void {
     if (this.urlBoton) {
@@ -22,5 +28,11 @@ export class BannerComponent {
     } else {
       console.warn('URL de destino no válida');
     }
+  }
+
+  openWhatsApp(): void {
+    this.analytics.trackWhatsAppClick();
+    const url = `https://wa.me/${this.whatsappNumero}?text=${encodeURIComponent(this.whatsappMensaje)}`;
+    window.open(url, '_blank');
   }
 }

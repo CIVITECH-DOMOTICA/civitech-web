@@ -13,8 +13,14 @@
       <div class="mensaje-items">
         <h1 *ngIf="isH1" class="banner-heading" data-aos="fade-up" data-aos-delay="200">{{mensaje}}</h1>
         <h2 *ngIf="!isH1" class="banner-heading" data-aos="fade-up" data-aos-delay="200">{{mensaje}}</h2>
-        <button class="boton-proyectos" (click)="navigate()" data-aos="fade-up"
-          data-aos-delay="400">{{textoBoton}}</button>
+        <div class="banner-cta-group">
+          <button class="boton-proyectos" (click)="navigate()" data-aos="fade-up"
+            data-aos-delay="400">{{textoBoton}}</button>
+          <button *ngIf="whatsappTexto" class="boton-whatsapp" (click)="openWhatsApp()" data-aos="fade-up"
+            data-aos-delay="500" aria-label="Pedir presupuesto por WhatsApp">
+            <i class="fab fa-whatsapp"></i> {{whatsappTexto}}
+          </button>
+        </div>
       </div>
     </div>
   </div>

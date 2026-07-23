@@ -90,3 +90,32 @@
     transform: translateY(-3px);
   }
 }
+
+.banner-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.boton-whatsapp {
+  @extend %btn-modern;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366 !important;
+  color: white !important;
+  padding: 1.2rem 2.6rem;
+  font-size: $text-lg;
+  border-radius: $radius-sm;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+
+  i {
+    font-size: 1.4em;
+  }
+
+  &:hover {
+    background: #1ebe5b !important;
+    transform: translateY(-3px);
+  }
+}
