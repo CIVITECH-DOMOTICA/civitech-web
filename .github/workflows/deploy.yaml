@@ -46,4 +46,6 @@ jobs:
         env:
           FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
         run: |
-          lftp -e "set ssl:verify-certificate no; set net:timeout 15; set net:max-retries 3; set net:reconnect-interval-base 5; set net:persist-retries 3; set ftp:use-mlsd true; set cmd:fail-exit true; mirror -R -v --parallel=3 --continue ./dist/civitech.web/browser/ /; quit" -u u824079794.hostinger,"$FTP_PASSWORD" ftp.civitech.es
+          # OJO: ftp.civitech.es está proxied por Cloudflare (naranja) y Cloudflare NO enruta FTP (puerto 21).
+          # Por eso el deploy se colgaba. Conectamos directo a la IP origen de Hostinger (bypass Cloudflare).
+          lftp -e "set ssl:verify-certificate no; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:passive-mode true; set net:timeout 20; set net:max-retries 3; set net:reconnect-interval-base 5; mirror -R -v --parallel=3 --continue ./dist/civitech.web/browser/ /; quit" -u u824079794.hostinger,"$FTP_PASSWORD" 46.202.158.245
