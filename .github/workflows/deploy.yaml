@@ -36,16 +36,22 @@ jobs:
           EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
           EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
 
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
-
       - name: List dist directory
-        run: ls -l ./dist/civitech.web
+        run: ls -l ./dist/civitech.web/browser | head
 
-      - name: Deploy to Hostinger via lftp
-        env:
-          FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-        run: |
-          # OJO: ftp.civitech.es está proxied por Cloudflare (naranja) y Cloudflare NO enruta FTP (puerto 21).
-          # Por eso el deploy se colgaba. Conectamos directo a la IP origen de Hostinger (bypass Cloudflare).
-          lftp -e "set ssl:verify-certificate no; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:passive-mode true; set net:timeout 20; set net:max-retries 3; set net:reconnect-interval-base 5; mirror -R -v --parallel=3 --continue ./dist/civitech.web/browser/ /; quit" -u u824079794.hostinger,"$FTP_PASSWORD" 46.202.158.245
+      # Deploy robusto por FTPS (2026-08-04): sustituye el lftp a pelo (fallaba con
+      # "max-retries exceeded" por la negociacion SSL/pasiva desde la red de GitHub).
+      # SamKirkland/FTP-Deploy-Action usa basic-ftp: mejor SSL/reintentos y solo sube lo que cambia.
+      # IP origen de Hostinger directa (Cloudflare no enruta FTP). Misma password (secret).
+      - name: Deploy to Hostinger via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 46.202.158.245
+          port: 21
+          protocol: ftps
+          security: loose
+          username: u824079794.hostinger
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          local-dir: ./dist/civitech.web/browser/
+          server-dir: /
+          timeout: 60000
