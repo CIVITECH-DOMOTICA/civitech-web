@@ -124,6 +124,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- NOTA: SeoService sobreescribe los meta tags anteriores por ruta durante el prerender -->
+
+  <!-- JSON-LD FAQPage — estatico para prerender/GEO (contenido real de faq-civitech) - GEO 2026-08-04 -->
+  <script type="application/ld+json" id="schema-FAQPage">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"¿Es necesario realizar obras en casa?","acceptedAnswer":{"@type":"Answer","text":"No. Nuestras soluciones se basan en dispositivos inalámbricos y modulares que se integran en tu instalación eléctrica actual sin picar paredes ni cambiar el cableado."}},
+      {"@type":"Question","name":"¿Qué pasa si se cae la conexión a internet?","acceptedAnswer":{"@type":"Answer","text":"Tus dispositivos seguirán funcionando localmente. Podrás seguir controlando las luces y otros sistemas desde los interruptores físicos y algunos controles remotos locales."}},
+      {"@type":"Question","name":"¿Es compatible con Alexa, Google Home o Apple HomeKit?","acceptedAnswer":{"@type":"Answer","text":"Sí. Utilizamos una plataforma de control centralizada open-source, lo que nos permite ofrecer una compatibilidad total con los principales ecosistemas del mercado."}},
+      {"@type":"Question","name":"¿Cuánto tiempo tarda la instalación?","acceptedAnswer":{"@type":"Answer","text":"Para un piso estándar en Zaragoza, la instalación suele completarse en un solo día. Configuramos todo y te enseñamos a usarlo antes de irnos."}},
+      {"@type":"Question","name":"¿Tenéis soporte post-venta?","acceptedAnswer":{"@type":"Answer","text":"Por supuesto. Ofrecemos mantenimiento y soporte para asegurar que tu sistema esté siempre actualizado y funcionando perfectamente."}},
+      {"@type":"Question","name":"¿Prestáis servicio fuera de Zaragoza?","acceptedAnswer":{"@type":"Answer","text":"Nuestra sede está en Zaragoza y operamos presencialmente en todo Aragón. Para proyectos grandes, consultad disponibilidad nacional."}}
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Servicios (OfferCatalog) — estatico para GEO (precios reales product-packages) - 2026-08-04 -->
+  <script type="application/ld+json" id="schema-Services">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Civitech",
+    "url": "https://civitech.es",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de domótica y optimización energética",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Persianas inteligentes","description":"Motorización y automatización de persianas con Shelly y Home Assistant. Control por app, horarios y automatizaciones."},"priceSpecification":{"@type":"PriceSpecification","price":"490","priceCurrency":"EUR"},"areaServed":{"@type":"City","name":"Zaragoza"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Iluminación inteligente","description":"Control de iluminación por app, escenas, horarios y automatizaciones."},"priceSpecification":{"@type":"PriceSpecification","price":"450","priceCurrency":"EUR"},"areaServed":{"@type":"City","name":"Zaragoza"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Calefacción inteligente (TRV)","description":"Termostatos inteligentes por estancia integrados en Home Assistant."},"priceSpecification":{"@type":"PriceSpecification","price":"490","priceCurrency":"EUR"},"areaServed":{"@type":"City","name":"Zaragoza"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Aire acondicionado inteligente","description":"Integración y control inteligente del aire acondicionado."},"priceSpecification":{"@type":"PriceSpecification","price":"400","priceCurrency":"EUR"},"areaServed":{"@type":"City","name":"Zaragoza"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Optimización energética y solar","description":"Autoconsumo solar, carga inteligente de vehículo eléctrico y automatización por precio de la luz (PVPC)."},"areaServed":{"@type":"City","name":"Zaragoza"}}
+      ]
+    }
+  }
+  </script>
 </head>
 
 <body>
