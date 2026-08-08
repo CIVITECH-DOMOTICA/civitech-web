@@ -28,8 +28,10 @@ export class SchemaService {
             'email': 'info@civitech.es',
             'address': {
                 '@type': 'PostalAddress',
+                'streetAddress': 'Calle de Nuestra Señora de Covadonga, 39',
                 'addressLocality': 'Zaragoza',
                 'addressRegion': 'Aragón',
+                'postalCode': '50017',
                 'addressCountry': 'ES'
             },
             'geo': {
