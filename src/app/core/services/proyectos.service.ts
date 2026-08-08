@@ -40,9 +40,9 @@ export class ProyectosService {
                 { nombre: 'Alexa', url: 'https://alexa.amazon.com', logo: 'assets/logos/alexa.png' },
                 { nombre: 'WiFi Mesh', url: '', logo: 'assets/logos/wifi.png' }
             ],
-            ahorroEnergetico: '40% (Clima Eficiente)',
+            ahorroEnergetico: 'hasta ~40% (clima)',
             tiempoRespuesta: 'Realtime',
-            satisfaccionCliente: '100%',
+            satisfaccionCliente: '',
             fases: [
                 { titulo: 'Despliegue Red Mesh', descripcion: 'Instalación de 4 nodos para cubrir las 4 plantas sin zonas muertas', duracion: '1 semana', completada: true },
                 { titulo: 'Integración Shelly', descripcion: 'Instalación de 70 relés en cuadros y cajas para control total de luces y persianas', duracion: '2 semanas', completada: true },
@@ -94,7 +94,7 @@ export class ProyectosService {
             ],
             ahorroEnergetico: 'Seguridad 24/7',
             tiempoRespuesta: '< 1s',
-            satisfaccionCliente: '100%',
+            satisfaccionCliente: '',
             fases: [
                 { titulo: 'Diseño de Seguridad', descripcion: 'Estudio de puntos ciegos y ubicación de sensores antisabotaje', duracion: '1 semana', completada: true },
                 { titulo: 'Cableado Estructurado', descripcion: 'Instalación de cableado Ethernet CAT6 para cámaras POE y gestión de datos', duracion: '3 días', completada: true },
@@ -145,9 +145,9 @@ export class ProyectosService {
                 { nombre: 'Tesla', url: 'https://www.tesla.com/es_es/', logo: 'assets/logos/tesla.png' },
                 { nombre: 'Ethernet Ind', url: '', logo: '' }
             ],
-            ahorroEnergetico: '40% Solar',
+            ahorroEnergetico: 'hasta ~40% (solar)',
             tiempoRespuesta: 'Realtime',
-            satisfaccionCliente: '100%',
+            satisfaccionCliente: '',
             fases: [
                 { titulo: 'Integración Clima', descripcion: 'Conexión de pasarelas WiFi en máquinas de conductos', duracion: '1 semana', completada: true },
                 { titulo: 'Gestión de Carga', descripcion: 'Cableado Ethernet a cargador y programación de script de excedentes', duracion: '1 semana', completada: true },
@@ -196,9 +196,9 @@ export class ProyectosService {
                 { nombre: 'WiFi', url: '', logo: 'assets/logos/wifi.png' },
                 { nombre: 'Zigbee', url: 'https://csa-iot.org', logo: 'assets/logos/zigbee.svg' }
             ],
-            ahorroEnergetico: '30% (Corte auto)',
+            ahorroEnergetico: 'hasta ~30%',
             tiempoRespuesta: 'Instantáneo',
-            satisfaccionCliente: '100%',
+            satisfaccionCliente: '',
             fases: [
                 { titulo: 'Instalación Sensores', descripcion: 'Colocación de magnéticos en todas las ventanas y puertas', duracion: '2 días', completada: true },
                 { titulo: 'Integración Clima', descripcion: 'Conexión de Daikin al WiFi y programación reglas de corte', duracion: '1 día', completada: true },
@@ -250,7 +250,7 @@ export class ProyectosService {
             ahorroEnergetico: 'Control de costes',
             labelAhorro: 'SEGURIDAD',
             tiempoRespuesta: 'Realtime',
-            satisfaccionCliente: '100%',
+            satisfaccionCliente: '',
             fases: [
                 { titulo: 'Cableado Red POE', descripcion: 'Despliegue de red gigabit para soportar flujo de vídeo 4K continuo', duracion: '1 semana', completada: true },
                 { titulo: 'Servidor IA', descripcion: 'Configuración de Coral TPU y entrenamiento básico de caras', duracion: '3 días', completada: true },
@@ -302,9 +302,9 @@ export class ProyectosService {
                 { nombre: 'Ariston Net', url: 'https://www.ariston.com/es-es/', logo: 'assets/logos/ariston_real.png' },
                 { nombre: 'Daikin', url: 'https://www.daikin.es/', logo: 'assets/logos/daikin.png' }
             ],
-            ahorroEnergetico: '35-40% Ahorro Energético',
+            ahorroEnergetico: '~35-40% (estimado)',
             tiempoRespuesta: 'Voz Local < 0.5s',
-            satisfaccionCliente: '100%',
+            satisfaccionCliente: '',
             fases: [
                 { titulo: 'Integración Solar', descripcion: 'Lectura de inversor Solarman para lógica de derivación de excedentes', duracion: '3 días', completada: true },
                 { titulo: 'Seguridad Técnica', descripcion: 'Despliegue de sensores de fugas de agua con corte de suministro automático', duracion: '2 días', completada: true },
