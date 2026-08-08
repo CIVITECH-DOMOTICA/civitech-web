@@ -18,7 +18,7 @@ export class UseCasesService {
             video: 'assets/videos/excedente-solar.mp4',
             icono: 'fa-solar-panel',
             categoria: 'Ahorro',
-            ahorroEstimado: '40-60% en factura',
+            ahorroEstimado: '',
             tiempoImplementacion: '2-3 días',
             roi: '12-18 meses',
             beneficios: [
@@ -45,7 +45,7 @@ export class UseCasesService {
             imagen: '/assets/images/usecase_security_chalet.png',
             icono: 'fa-shield-halved',
             categoria: 'Seguridad',
-            ahorroEstimado: '50€/mes (Cuotas)',
+            ahorroEstimado: '',
             tiempoImplementacion: '2-3 días',
             beneficios: [
                 { texto: 'Sin cuotas mensuales de por vida', icono: 'fa-piggy-bank' },
@@ -89,7 +89,7 @@ export class UseCasesService {
             slug: 'climatizacion-inteligente',
             titulo: 'Clima Inteligente',
             subtitulo: 'Temperatura ideal habitación por habitación',
-            descripcion: 'Zonifica tu calefacción y aire acondicionado. Ahorra hasta un 30% calentando solo donde estás.',
+            descripcion: 'Zonifica tu calefacción y aire acondicionado. Calienta solo la zona donde estás, cuando lo necesitas.',
             descripcionDetallada: '¿Por qué calentar el salón si estás durmiendo? La domótica permite controlar válvulas termostáticas y splits de forma individual. El sistema aprende tus horarios y ajusta la temperatura para que siempre estés a gusto con el mínimo gasto.',
             imagen: '/assets/images/usecase-climate.png',
             icono: 'fa-temperature-high',
