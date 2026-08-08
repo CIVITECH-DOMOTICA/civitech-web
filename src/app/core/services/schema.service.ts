@@ -59,7 +59,14 @@ export class SchemaService {
                 'https://www.instagram.com/civitech.es',
                 'https://www.tiktok.com/@civitech.es',
                 'https://www.linkedin.com/company/civitech-es'
-            ]
+            ],
+            'aggregateRating': {
+                '@type': 'AggregateRating',
+                'ratingValue': '5.0',
+                'reviewCount': '3',
+                'bestRating': '5',
+                'worstRating': '1'
+            }
         };
     }
 
