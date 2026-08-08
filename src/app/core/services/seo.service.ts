@@ -77,8 +77,8 @@ export class SeoService {
             },
             '/proyectos': {
                 title: 'Proyectos de Domótica Realizados en Zaragoza | Casos de Éxito | Civitech',
-                description: 'Explora nuestros proyectos de domótica en Zaragoza: pisos, chalets y oficinas automatizadas. Testimonios reales de clientes satisfechos. Más de 500 instalaciones.',
-                keywords: 'proyectos domótica zaragoza, instalaciones domótica, casos éxito domótica, testimonios clientes',
+                description: 'Explora nuestros proyectos reales de domótica en Zaragoza: pisos, chalets, locales y oficinas automatizados con Home Assistant y Shelly. Equipos y soluciones reales.',
+                keywords: 'proyectos domótica zaragoza, instalaciones domótica zaragoza, casos domótica, domótica zaragoza',
                 url: `${this.baseUrl}/proyectos`,
                 image: `${this.baseUrl}/assets/images/proyecto1.png`
             },
@@ -197,10 +197,10 @@ export class SeoService {
             email: 'info@civitech.es',
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Zaragoza, España',
+                streetAddress: 'Calle de Nuestra Señora de Covadonga, 39',
                 addressLocality: 'Zaragoza',
                 addressRegion: 'Aragón',
-                postalCode: '50001',
+                postalCode: '50017',
                 addressCountry: 'ES'
             },
             geo: {
