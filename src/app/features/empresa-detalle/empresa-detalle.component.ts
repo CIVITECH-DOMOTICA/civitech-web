@@ -62,7 +62,7 @@ export class EmpresaDetalleComponent implements OnInit, OnDestroy {
                 description: s.seo.description,
                 provider: {
                     '@type': 'LocalBusiness',
-                    name: 'Civitech',
+                    name: 'Civitec Domótica',
                     url: 'https://civitech.es',
                     telephone: '+34624074920',
                     address: {

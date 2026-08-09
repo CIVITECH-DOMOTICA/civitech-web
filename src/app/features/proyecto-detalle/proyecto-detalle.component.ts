@@ -71,7 +71,7 @@ export class ProyectoDetalleComponent implements OnInit {
       : '';
 
     this.seoService.updateSeo({
-      title: `${this.proyecto.nombre} | Caso de Éxito | Civitech`,
+      title: `${this.proyecto.nombre} | Caso de Éxito | Civitec Domótica`,
       description: `${cleanResumen}. Proyecto de ${this.proyecto.tipo} en ${this.proyecto.ubicacion}${savingSuffix}.`,
       image: this.proyecto.imagenPrincipal,
       url: `https://civitech.es${this.router.url}`
@@ -85,11 +85,11 @@ export class ProyectoDetalleComponent implements OnInit {
       "image": this.proyecto.imagenPrincipal,
       "author": {
         "@type": "Organization",
-        "name": "Civitech"
+        "name": "Civitec Domótica"
       },
       "publisher": {
         "@type": "LocalBusiness",
-        "name": "Civitech",
+        "name": "Civitec Domótica",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Zaragoza",

@@ -12,8 +12,8 @@ export class NotFoundComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateSeo({
-      title: 'Página no encontrada (404) | Civitech',
-      description: 'Esta página no existe. Encuentra todo sobre domótica en Zaragoza, automatización del hogar y soluciones inteligentes en Civitech.',
+      title: 'Página no encontrada (404) | Civitec Domótica',
+      description: 'Esta página no existe. Encuentra todo sobre domótica en Zaragoza, automatización del hogar y soluciones inteligentes en Civitec Domótica.',
       url: 'https://civitech.es/404'
     });
     this.seoService.setRobotsTag('noindex, nofollow');

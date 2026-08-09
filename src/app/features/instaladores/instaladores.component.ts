@@ -23,11 +23,11 @@ export class InstalladoresComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // 1. Configurar Metadatos SEO
-    this.title.setTitle('Hazte Partner Domótico | Gana más en tus Reformas - Civitech');
+    this.title.setTitle('Hazte Partner Domótico | Gana más en tus Reformas - Civitec Domótica');
 
     this.meta.updateTag({
       name: 'description',
-      content: 'Únete a la red de instaladores Civitech en Zaragoza. Ofrece domótica profesional en tus reformas sin complicaciones técnicas y aumenta tu ticket medio.'
+      content: 'Únete a la red de instaladores Civitec Domótica en Zaragoza. Ofrece domótica profesional en tus reformas sin complicaciones técnicas y aumenta tu ticket medio.'
     });
 
     // 2. Insertar Schema.org JSON-LD (ProfessionalService)
@@ -49,11 +49,11 @@ export class InstalladoresComponent implements OnInit, OnDestroy {
     const schema = {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Civitech - Programa de Partners",
+      "name": "Civitec Domótica - Programa de Partners",
       "description": "Servicio de instalación y consultoría domótica para reformistas e instaladores eléctricos.",
       "provider": {
         "@type": "Organization",
-        "name": "Civitech",
+        "name": "Civitec Domótica",
         "url": "https://civitech.es"
       },
       "areaServed": "Zaragoza",

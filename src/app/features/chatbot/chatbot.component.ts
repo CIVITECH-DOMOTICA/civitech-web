@@ -33,11 +33,11 @@ export class Nl2brPipe implements PipeTransform {
       <div class="chat-header">
         <div class="header-info">
           <div class="avatar">
-            <img src="assets/images/logo_blanco.png" alt="Civitech AI">
+            <img src="assets/images/logo_blanco.png" alt="Civitec Domótica AI">
             <span class="status-dot"></span>
           </div>
           <div class="title-col">
-            <h3>Civitech Assistant</h3>
+            <h3>Civitec Domótica Assistant</h3>
             <span class="status-text">En línea ahora</span>
           </div>
         </div>
@@ -82,7 +82,7 @@ export class Nl2brPipe implements PipeTransform {
         </button>
       </div>
 
-      <div class="chat-footer">Powered by OpenAI & Civitech</div>
+      <div class="chat-footer">Powered by OpenAI & Civitec Domótica</div>
     </div>
   `,
   styles: [`

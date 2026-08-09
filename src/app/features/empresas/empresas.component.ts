@@ -78,7 +78,7 @@ export class EmpresasComponent implements OnInit {
         this.segmentos = this.segmentosService.getAll();
 
         this.seo.updateSeo({
-            title: 'Domótica para Empresas en Zaragoza | Sin Cuotas | Civitech',
+            title: 'Domótica para Empresas en Zaragoza | Sin Cuotas | Civitec Domótica',
             description: 'Domótica profesional para negocios en Zaragoza: lavanderías, hostelería, oficinas, apartamentos turísticos, gimnasios, clínicas y comercios. Control total desde el móvil. Sin cuotas. Presupuesto gratis en 24h.',
             keywords: 'domótica empresas zaragoza, automatización negocios zaragoza, control acceso empresas, cámaras vigilancia sin cuotas, ahorro energético negocios, domótica hostelería, domótica lavanderías, domótica oficinas, domótica zaragoza b2b, civitech empresas',
             url: 'https://civitech.es/empresas'

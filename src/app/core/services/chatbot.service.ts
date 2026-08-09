@@ -57,7 +57,7 @@ export class ChatbotService {
         this.conversationHistory = [];
         this.contactCaptured = false;
         return {
-            text: '¡Hola! 👋 Soy el asistente de **Civitech**. Llevamos años instalando domótica en Zaragoza y Aragón. ¿En qué te puedo ayudar?',
+            text: '¡Hola! 👋 Soy el asistente de **Civitec Domótica**. Llevamos años instalando domótica en Zaragoza y Aragón. ¿En qué te puedo ayudar?',
             isUser: false,
             timestamp: new Date(),
             type: 'options',
@@ -106,12 +106,12 @@ export class ChatbotService {
         this.contactCaptured = true;
         this.sendEmailNotification(contact);
 
-        const waMsg = `Hola Civitech! He hablado con vuestro asistente y me gustaría más información sobre domótica.`;
+        const waMsg = `Hola Civitec Domótica! He hablado con vuestro asistente y me gustaría más información sobre domótica.`;
         const waLink = `https://wa.me/34624074920?text=${encodeURIComponent(waMsg)}`;
 
         this.conversationHistory.push({ role: 'user', content: contact });
 
-        let aiText = `¡Perfecto! 🚀 He apuntado tus datos. Un técnico de Civitech te contactará pronto. ¿Hay algún horario que te venga mejor?`;
+        let aiText = `¡Perfecto! 🚀 He apuntado tus datos. Un técnico de Civitec Domótica te contactará pronto. ¿Hay algún horario que te venga mejor?`;
 
         if (this.chatbotWebhookUrl) {
             try {
@@ -170,7 +170,7 @@ export class ChatbotService {
             environment.emailJsServiceId || '',
             environment.emailJsTemplateId || '', {
             message: `Nuevo Lead desde Chatbot: ${contact}`,
-            to_name: 'Civitech Team',
+            to_name: 'Civitec Domótica Team',
             from_name: 'Chatbot v2'
         }).catch(err => console.error('EmailJS error:', err));
     }

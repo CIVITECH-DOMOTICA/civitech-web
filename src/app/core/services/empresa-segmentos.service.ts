@@ -76,7 +76,7 @@ export class EmpresaSegmentosService {
                 { numero: '24/7', label: 'Acceso y monitorización' }
             ],
             seo: {
-                title: 'Domótica Lavanderías Zaragoza | Control Remoto | Civitech',
+                title: 'Domótica Lavanderías Zaragoza | Control Remoto | Civitec Domótica',
                 description: 'Gestiona tu lavandería desde el móvil: apertura remota, cámaras sin cuotas y control de consumo por circuito. Instalación en 1 día. Sin cuotas mensuales.',
                 keywords: 'domótica lavanderías zaragoza, control remoto lavandería, apertura remota negocio, cámaras vigilancia lavandería, ahorro energético lavandería'
             }
@@ -114,7 +114,7 @@ export class EmpresaSegmentosService {
                 { numero: '1 día', label: 'Instalación sin cerrar' }
             ],
             seo: {
-                title: 'Domótica para Bares y Restaurantes Zaragoza | Civitech',
+                title: 'Domótica para Bares y Restaurantes Zaragoza | Civitec Domótica',
                 description: 'Automatiza la iluminación, climatización y seguridad de tu bar o restaurante en Zaragoza. Escenas de luz automáticas, termostato inteligente y cámaras sin cuotas.',
                 keywords: 'domótica hostelería zaragoza, automatización restaurantes, iluminación inteligente bar, climatización automática restaurante, cámaras sin cuotas hostelería'
             }
@@ -152,7 +152,7 @@ export class EmpresaSegmentosService {
                 { numero: '⭐⭐⭐⭐⭐', label: 'Mejor valoración huéspedes' }
             ],
             seo: {
-                title: 'Domótica Apartamentos Turísticos Zaragoza | Civitech',
+                title: 'Domótica Apartamentos Turísticos Zaragoza | Civitec Domótica',
                 description: 'Gestiona tus apartamentos turísticos en Zaragoza de forma autónoma: cerraduras inteligentes, códigos temporales, control de consumo entre estancias. Sin cuotas.',
                 keywords: 'domótica apartamentos turísticos zaragoza, check-in sin llaves, cerradura inteligente apartamento, gestión remota apartamento, Nuki zaragoza'
             }
@@ -190,7 +190,7 @@ export class EmpresaSegmentosService {
                 { numero: '100%', label: 'Trazabilidad de accesos' }
             ],
             seo: {
-                title: 'Domótica para Gimnasios Zaragoza | Control de Acceso | Civitech',
+                title: 'Domótica para Gimnasios Zaragoza | Control de Acceso | Civitec Domótica',
                 description: 'Automatiza el acceso de abonados, climatización por zonas y seguridad en tu gimnasio en Zaragoza. Sin cuotas. Control total desde el móvil.',
                 keywords: 'domótica gimnasios zaragoza, control acceso gimnasio, lector RFID gimnasio, climatización inteligente gimnasio, seguridad gimnasio sin cuotas'
             }
@@ -228,7 +228,7 @@ export class EmpresaSegmentosService {
                 { numero: '3 años', label: 'Garantía de equipamiento' }
             ],
             seo: {
-                title: 'Domótica para Clínicas y Consultas Zaragoza | Control Acceso | Civitech',
+                title: 'Domótica para Clínicas y Consultas Zaragoza | Control Acceso | Civitec Domótica',
                 description: 'Seguridad y control para clínicas en Zaragoza: acceso por zonas con NFC, cámaras de grabación local sin cuotas y climatización por sala.',
                 keywords: 'domótica clínicas zaragoza, control acceso consulta médica, cámaras sin cloud clínica, seguridad clínica zaragoza, termostato por sala consulta'
             }
@@ -266,7 +266,7 @@ export class EmpresaSegmentosService {
                 { numero: '100%', label: 'Trazabilidad de accesos' }
             ],
             seo: {
-                title: 'Domótica para Oficinas y Talleres Zaragoza | Civitech',
+                title: 'Domótica para Oficinas y Talleres Zaragoza | Civitec Domótica',
                 description: 'Automatiza tu oficina o taller en Zaragoza: apagado automático al cierre, control de acceso con tarjeta y climatización programada. Sin cuotas. Presupuesto gratis.',
                 keywords: 'domótica oficinas zaragoza, control acceso empresas, apagado automático oficina, ahorro energético taller, domótica pymes zaragoza'
             }
@@ -304,7 +304,7 @@ export class EmpresaSegmentosService {
                 { numero: '3 años', label: 'Garantía completa' }
             ],
             seo: {
-                title: 'Domótica Comercios y Tiendas Zaragoza | Alarma Sin Cuotas | Civitech',
+                title: 'Domótica Comercios y Tiendas Zaragoza | Alarma Sin Cuotas | Civitec Domótica',
                 description: 'Protege tu comercio en Zaragoza con alarma IA sin cuotas, apagado automático nocturno y control total desde el móvil. Presupuesto gratis en 24h.',
                 keywords: 'alarma sin cuotas comercio zaragoza, domótica tiendas zaragoza, seguridad retail sin mensualidad, cámaras IA comercio, ahorro energético tienda zaragoza'
             }
@@ -316,7 +316,7 @@ export class EmpresaSegmentosService {
             icon: 'fa-bed',
             colorClass: 'morado',
             heroSubtitulo: 'Control de temperatura por habitación, monitorización de consumo real y cero cuotas mensuales.',
-            introParrafo: 'Un hotel de 30 habitaciones puede desperdiciar hasta 8.500€ al año en climatización: huéspedes que dejan la ventana abierta con el AC al máximo, habitaciones vacías climatizando, sin visibilidad del consumo real por zona. Con nuestros sistemas instalados por Civitech, cada habitación tiene control independiente y el gestor ve en tiempo real dónde se va la energía.',
+            introParrafo: 'Un hotel de 30 habitaciones puede desperdiciar hasta 8.500€ al año en climatización: huéspedes que dejan la ventana abierta con el AC al máximo, habitaciones vacías climatizando, sin visibilidad del consumo real por zona. Con nuestros sistemas instalados por Civitec Domótica, cada habitación tiene control independiente y el gestor ve en tiempo real dónde se va la energía.',
             painPoints: [
                 { icon: 'fa-temperature-arrow-up', titulo: 'Consumo incontrolado por habitación', desc: 'Sin TRV individual, el sistema climatiza igual una habitación ocupada que una vacía, o una con la ventana abierta. No hay manera de detectarlo ni corregirlo.' },
                 { icon: 'fa-eye-slash', titulo: 'Sin visibilidad de eficiencia', desc: 'El gestor del hotel recibe una factura eléctrica global. No sabe qué planta, qué zona o qué habitación consume más. Imposible tomar decisiones de mejora.' },
@@ -342,7 +342,7 @@ export class EmpresaSegmentosService {
                 { numero: '18-24m', label: 'Retorno típico de inversión' }
             ],
             seo: {
-                title: 'Domótica para Hoteles Zaragoza | Control por Habitación | Civitech',
+                title: 'Domótica para Hoteles Zaragoza | Control por Habitación | Civitec Domótica',
                 description: 'Climatización inteligente por habitación para hoteles en Zaragoza. Monitorización de consumo real, cero cuotas de mantenimiento. Ahorro de hasta 8.500€/año en un hotel de 30 habitaciones.',
                 keywords: 'domótica hoteles zaragoza, control temperatura habitación hotel, monitorización consumo hotel, ahorro energético hotel, gestión hotel inteligente zaragoza, válvula termostata hotel, climatización hotel por zonas'
             }

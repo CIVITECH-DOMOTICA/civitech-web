@@ -15,13 +15,13 @@ export class SchemaService {
     constructor(@Inject(DOCUMENT) private document: Document) { }
 
     /**
-     * Schema de la organización Civitech
+     * Schema de la organización Civitec Domótica
      */
     getOrganizationSchema(): SchemaOrgService {
         return {
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            'name': 'Civitech',
+            'name': 'Civitec Domótica',
             'description': 'Especialistas en domótica profesional en Zaragoza. Automatización del hogar, optimización solar y control inteligente.',
             'url': 'https://civitech.es',
             'telephone': '+34624074920',
@@ -83,7 +83,7 @@ export class SchemaService {
             'description': useCase.descripcionDetallada || useCase.descripcion,
             'provider': {
                 '@type': 'LocalBusiness',
-                'name': 'Civitech'
+                'name': 'Civitec Domótica'
             },
             'serviceType': `Domótica - ${useCase.categoria}`,
             'areaServed': {
@@ -122,11 +122,11 @@ export class SchemaService {
             'datePublished': this.convertFechaToISO(proyecto.fecha),
             'author': {
                 '@type': 'Organization',
-                'name': 'Civitech'
+                'name': 'Civitec Domótica'
             },
             'publisher': {
                 '@type': 'Organization',
-                'name': 'Civitech',
+                'name': 'Civitec Domótica',
                 'logo': {
                     '@type': 'ImageObject',
                     'url': 'https://civitech.es/assets/images/civitech-logo.png'

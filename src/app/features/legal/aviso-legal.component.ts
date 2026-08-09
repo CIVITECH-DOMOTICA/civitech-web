@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 
           <section>
             <h2>1. Información General</h2>
-            <p>En cumplimiento de la Ley de Servicios de la Sociedad de la Información, se informa que el titular de este sitio web es <strong>Civitech Domótica</strong>.</p>
+            <p>En cumplimiento de la Ley de Servicios de la Sociedad de la Información, se informa que el titular de este sitio web es <strong>Civitec Domótica Domótica</strong>.</p>
             <p><strong>Domicilio:</strong> Calle Nuestra Señora de Covadonga 39, Zaragoza<br>
             <strong>Email:</strong> info@civitech.es<br>
             <strong>Teléfono:</strong> 624074920</p>
@@ -19,12 +19,12 @@ import { Component } from '@angular/core';
 
           <section>
             <h2>2. Propiedad Intelectual</h2>
-            <p>Todo el contenido de este sitio web (imágenes, textos, diseños, logotipos) es propiedad intelectual de Civitech o de terceros que han autorizado su uso. Queda prohibida la reproducción total o parcial sin autorización expresa.</p>
+            <p>Todo el contenido de este sitio web (imágenes, textos, diseños, logotipos) es propiedad intelectual de Civitec Domótica o de terceros que han autorizado su uso. Queda prohibida la reproducción total o parcial sin autorización expresa.</p>
           </section>
 
           <section>
             <h2>3. Responsabilidad</h2>
-            <p>Civitech no se hace responsable de los daños derivados del uso incorrecto de este sitio web o de la interrupción del servicio por causas de fuerza mayor. El contenido sobre instalación de dispositivos es meramente informativo y no sustituye la labor de un técnico cualificado.</p>
+            <p>Civitec Domótica no se hace responsable de los daños derivados del uso incorrecto de este sitio web o de la interrupción del servicio por causas de fuerza mayor. El contenido sobre instalación de dispositivos es meramente informativo y no sustituye la labor de un técnico cualificado.</p>
           </section>
 
           <section>

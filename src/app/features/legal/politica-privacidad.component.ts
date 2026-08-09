@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 
           <section>
             <h2>1. Responsable del Tratamiento</h2>
-            <p>Civitech Domótica ("nosotros", "nuestro/a") se compromete a proteger su privacidad. Esta política describe cómo tratamos sus datos personales.</p>
+            <p>Civitec Domótica Domótica ("nosotros", "nuestro/a") se compromete a proteger su privacidad. Esta política describe cómo tratamos sus datos personales.</p>
             <p><strong>Contacto:</strong> info@civitech.es</p>
           </section>
 

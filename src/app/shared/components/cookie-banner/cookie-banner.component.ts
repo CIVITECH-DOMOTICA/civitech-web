@@ -82,7 +82,7 @@ import { Component, OnInit } from '@angular/core';
     }
 
     a {
-      color: #B30000; /* Civitech Red */
+      color: #B30000; /* Civitec Domótica Red */
       font-weight: 600;
       text-decoration: none;
     }

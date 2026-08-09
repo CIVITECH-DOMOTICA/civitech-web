@@ -52,7 +52,7 @@ export class UseCaseDetalleComponent implements OnInit {
       : '';
 
     this.seoService.updateSeo({
-      title: `${this.useCase.titulo} | Domótica Zaragoza | Civitech`,
+      title: `${this.useCase.titulo} | Domótica Zaragoza | Civitec Domótica`,
       description: `${cleanDesc}${savingSuffix}. Instalación profesional en Zaragoza.`,
       keywords: `${this.useCase.titulo}, domótica ${this.useCase.categoria}${techWords}, Zaragoza, Aragón`,
       image: this.useCase.imagen,
@@ -70,7 +70,7 @@ export class UseCaseDetalleComponent implements OnInit {
       "description": this.useCase.descripcionDetallada,
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Civitech",
+        "name": "Civitec Domótica",
         "telephone": "+34-624-074-920",
         "address": {
           "@type": "PostalAddress",
