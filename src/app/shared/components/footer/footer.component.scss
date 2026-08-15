@@ -41,7 +41,7 @@
     width: 140px;
     height: auto;
     margin-bottom: $spacing-8;
-    filter: brightness(0) invert(1);
+    /* logo a color, sin invert */
     @include tr-smooth;
 
     &:hover {

@@ -149,7 +149,7 @@ export class EmpresaSegmentosService {
                 { numero: '0', label: 'Llaves físicas' },
                 { numero: '24h', label: 'Check-in autónomo' },
                 { numero: '30%', label: 'Ahorro entre estancias' },
-                { numero: '⭐⭐⭐⭐⭐', label: 'Mejor valoración huéspedes' }
+                { numero: '0€', label: 'Cuotas mensuales' }
             ],
             seo: {
                 title: 'Domótica Apartamentos Turísticos Zaragoza | Civitec Domótica',
@@ -312,7 +312,7 @@ export class EmpresaSegmentosService {
         {
             slug: 'hoteles',
             nombre: 'Hoteles',
-            seoTitle: 'Domótica para Hoteles en Zaragoza — Control por Habitación y Eficiencia Energética',
+            seoTitle: 'Domótica para Hoteles en Zaragoza | Control por Habitación y Eficiencia Energética',
             icon: 'fa-bed',
             colorClass: 'morado',
             heroSubtitulo: 'Control de temperatura por habitación, monitorización de consumo real y cero cuotas mensuales.',

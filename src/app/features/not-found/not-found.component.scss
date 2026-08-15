@@ -14,7 +14,7 @@
       font-size: clamp(5rem, 15vw, 10rem);
       font-weight: 900;
       color: transparent;
-      background: linear-gradient(135deg, #B30000, #ff4444);
+      background: linear-gradient(135deg, #003DD6, #ff4444);
       -webkit-background-clip: text;
       background-clip: text;
       line-height: 1;
@@ -72,24 +72,24 @@
 
           i {
             font-size: 1.5rem;
-            color: #B30000;
+            color: #003DD6;
           }
 
           &:hover {
-            border-color: #B30000;
+            border-color: #003DD6;
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(179,0,0,0.12);
-            color: #B30000;
+            box-shadow: 0 8px 24px rgba(0,61,214,0.12);
+            color: #003DD6;
           }
 
           &.cta {
-            background: #B30000;
-            border-color: #B30000;
+            background: #003DD6;
+            border-color: #003DD6;
             color: #fff;
             i { color: #fff; }
             &:hover {
-              background: #900000;
-              box-shadow: 0 8px 24px rgba(179,0,0,0.3);
+              background: #0031ab;
+              box-shadow: 0 8px 24px rgba(0,61,214,0.3);
               color: #fff;
             }
           }

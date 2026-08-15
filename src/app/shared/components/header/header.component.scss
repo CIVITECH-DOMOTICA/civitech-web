@@ -47,9 +47,9 @@ header {
 }
 
 .logo img {
-  height: 95px; // Logo aumentado a 95px (Presencia máxima)
+  height: 74px; // igualado con Civitec Reformas
   width: auto;
-  filter: brightness(0) invert(1);
+  /* logo a color, sin invert */
   @include tr-smooth;
 
   &:hover {
@@ -72,6 +72,7 @@ header {
     font-size: $text-sm;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    white-space: nowrap; // que "Acerca de Nosotros" no parta en 2 lineas
     padding: $spacing-2 0;
     position: relative;
     @include tr-smooth;
@@ -125,7 +126,7 @@ header {
   cursor: pointer;
 }
 
-@include responsive($breakpoint-md) {
+@include responsive(1080px) {  // colapsa a hamburguesa antes: el nav completo solo cuando cabe holgado
   nav {
     display: none; // Hide nav container by default to fix space-between alignment
 

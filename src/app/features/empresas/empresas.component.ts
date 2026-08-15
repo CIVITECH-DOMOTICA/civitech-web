@@ -22,7 +22,7 @@ export class EmpresasComponent implements OnInit {
                 'Cámaras con IA (detección de personas)',
                 'Control de acceso digital (tarjeta / PIN / app)',
                 'Alarma perimetral integrada',
-                'Grabación local — sin cloud ni cuotas',
+                'Grabación local, sin cloud ni cuotas',
                 'Alertas al móvil en tiempo real'
             ],
             precio: 'Desde 1.500 €',
@@ -35,7 +35,7 @@ export class EmpresasComponent implements OnInit {
             descripcion: 'Para negocios con facturas altas. Amortización típica en 18-24 meses.',
             incluye: [
                 'Climatización inteligente por zonas y horarios',
-                'Presencia — el local no consume en vacío',
+                'Presencia: el local no consume en vacío',
                 'Gestión de excedentes solares (si hay placas)',
                 'Apagado total automático al cierre',
                 'Informes de consumo en tiempo real'

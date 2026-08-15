@@ -194,9 +194,9 @@
 
   .servicios-eyebrow {
     display: inline-block;
-    background: rgba(179, 0, 0, 0.2);
+    background: rgba(0, 61, 214, 0.2);
     color: #ff8080;
-    border: 1px solid rgba(179, 0, 0, 0.3);
+    border: 1px solid rgba(0, 61, 214, 0.3);
     padding: 5px 18px;
     border-radius: $radius-full;
     font-size: $text-sm;
@@ -258,7 +258,7 @@
   &:hover {
     transform: translateY(-6px);
     border-color: $p-500;
-    box-shadow: 0 16px 48px rgba(179, 0, 0, 0.2);
+    box-shadow: 0 16px 48px rgba(0, 61, 214, 0.2);
     text-decoration: none;
     color: white;
 
@@ -276,7 +276,7 @@
   .servicio-icon-wrap {
     width: 52px;
     height: 52px;
-    background: rgba(179, 0, 0, 0.15);
+    background: rgba(0, 61, 214, 0.15);
     border-radius: $radius-lg;
     display: flex;
     align-items: center;
@@ -339,7 +339,7 @@
       background: #8a0000;
       border-color: #8a0000;
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(179, 0, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 61, 214, 0.3);
       text-decoration: none;
       color: white;
     }
@@ -364,7 +364,7 @@
     color: $dark-bg !important;
 
     .servicios-highlight {
-      background: linear-gradient(135deg, #B30000, #ff4444);
+      background: linear-gradient(135deg, #003DD6, #ff4444);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -395,7 +395,7 @@
     &:hover {
       color: $dark-bg;
       border-color: $p-500;
-      box-shadow: 0 16px 48px rgba(179, 0, 0, 0.12);
+      box-shadow: 0 16px 48px rgba(0, 61, 214, 0.12);
 
       h3,
       p {
@@ -437,9 +437,9 @@
 
   .servicios-eyebrow {
     display: inline-block;
-    background: rgba(179, 0, 0, 0.15);
-    color: #ff6b6b;
-    border: 1px solid rgba(179, 0, 0, 0.3);
+    background: rgba(0, 61, 214, 0.15);
+    color: #3a72ff;
+    border: 1px solid rgba(0, 61, 214, 0.3);
     padding: 6px 20px;
     border-radius: $radius-full;
     font-size: $text-sm;
@@ -457,7 +457,7 @@
     line-height: $leading-tight;
 
     .servicios-highlight {
-      background: linear-gradient(135deg, #B30000, #ff4444);
+      background: linear-gradient(135deg, #003DD6, #ff4444);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -506,7 +506,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(179, 0, 0, 0.06), transparent);
+    background: linear-gradient(135deg, rgba(0, 61, 214, 0.06), transparent);
     opacity: 0;
     @include tr-smooth(opacity, 350ms);
     border-radius: $radius-2xl;
@@ -514,8 +514,8 @@
 
   &:hover {
     transform: translateY(-8px);
-    border-color: rgba(179, 0, 0, 0.5);
-    box-shadow: 0 20px 60px rgba(179, 0, 0, 0.2);
+    border-color: rgba(0, 61, 214, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 61, 214, 0.2);
     text-decoration: none;
     color: white;
 
@@ -526,11 +526,11 @@
     .servicio-icon-wrap {
       background: $p-500;
       transform: scale(1.1);
-      box-shadow: 0 8px 24px rgba(179, 0, 0, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 61, 214, 0.4);
     }
 
     .servicio-cta {
-      color: #ff6b6b;
+      color: #3a72ff;
       gap: 10px;
     }
   }
@@ -538,13 +538,13 @@
   .servicio-icon-wrap {
     width: 60px;
     height: 60px;
-    background: rgba(179, 0, 0, 0.15);
+    background: rgba(0, 61, 214, 0.15);
     border-radius: $radius-xl;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
-    color: #ff6b6b;
+    color: #3a72ff;
     @include tr-smooth(all, 350ms);
     margin-bottom: $spacing-2;
   }
@@ -586,7 +586,7 @@
     gap: $spacing-3;
     background: transparent;
     color: white;
-    border: 2px solid rgba(179, 0, 0, 0.6);
+    border: 2px solid rgba(0, 61, 214, 0.6);
     padding: $spacing-4 $spacing-10;
     border-radius: $radius-full;
     font-size: $text-base;
@@ -598,7 +598,7 @@
       background: $p-500;
       border-color: $p-500;
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(179, 0, 0, 0.35);
+      box-shadow: 0 8px 30px rgba(0, 61, 214, 0.35);
       text-decoration: none;
       color: white;
     }

@@ -10,6 +10,8 @@ export class UseCasesService {
         {
             id: '1',
             slug: 'energia-inteligente',
+            seoTitle: 'Ahorro y eficiencia energética',
+            seoKeywords: 'ahorro energético zaragoza, eficiencia energética hogar, monitorización de consumo eléctrico, autoconsumo solar, calefacción inteligente, domótica energía Zaragoza',
             titulo: 'Energía Inteligente',
             subtitulo: 'Solar, Clima y Carga Inteligente',
             descripcion: 'Tu hogar, eficiente por naturaleza. El sistema orquesta persianas, excedentes solares y cargador de coche para reducir tu factura al mínimo.',
@@ -38,6 +40,8 @@ export class UseCasesService {
         {
             id: '2',
             slug: 'seguridad-inteligente',
+            seoTitle: 'Seguridad y cerraduras inteligentes',
+            seoKeywords: 'cerraduras inteligentes zaragoza, cámaras de seguridad para el hogar, videovigilancia inteligente, alarma conectada, seguridad domótica Zaragoza',
             titulo: 'Seguridad Inteligente',
             subtitulo: 'Alarmas sin cuotas y Cámaras IA',
             descripcion: 'Protección total sin letras pequeñas. Videovigilancia que distingue amenazas reales y disuasión activa automática.',
@@ -60,6 +64,8 @@ export class UseCasesService {
         {
             id: '3',
             slug: 'confort',
+            seoTitle: 'Iluminación y climatización inteligente',
+            seoKeywords: 'iluminación inteligente zaragoza, climatización inteligente, control por voz Alexa Google, escenas de luz, domótica confort Zaragoza',
             titulo: 'Confort y Estilo de Vida',
             subtitulo: 'Iluminación y Ambiente Perfecto',
             descripcion: 'El lujo de no tener que hacer nada. Luces que se ajustan a tu ánimo y escenas de cine con un toque.',
@@ -98,6 +104,8 @@ export class UseCasesService {
         {
             id: '6',
             slug: 'persianas-automaticas',
+            seoTitle: 'Persianas automáticas y motorizadas',
+            seoKeywords: 'persianas automáticas zaragoza, persianas motorizadas, motor de persiana wifi, control de persianas por móvil, domótica persianas Zaragoza',
             titulo: 'Persianas Automáticas',
             subtitulo: 'Control solar y privacidad total',
             descripcion: 'Persianas que se mueven solas con el sol para mantener el fresco en verano y el calor en invierno.',

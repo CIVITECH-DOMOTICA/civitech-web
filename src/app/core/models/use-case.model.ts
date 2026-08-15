@@ -3,6 +3,8 @@ export interface UseCase {
     slug: string;
     titulo: string;
     subtitulo: string;
+    seoTitle?: string;     // Título SEO específico (keywords de volumen) sin cambiar el display
+    seoKeywords?: string;  // Keywords SEO específicas de búsqueda real
     descripcion: string;
     descripcionDetallada: string;
     imagen: string;

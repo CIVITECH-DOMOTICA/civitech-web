@@ -18,7 +18,7 @@ export interface SeoConfig {
 })
 export class SeoService {
     private baseUrl = 'https://civitech.es';
-    private defaultImage = `${this.baseUrl}/assets/images/logo_negro_horizontal.png`;
+    private defaultImage = `${this.baseUrl}/assets/images/logo_civitec_domotica.png`;
     private isBrowser: boolean;
 
     constructor(
@@ -191,7 +191,7 @@ export class SeoService {
             '@id': 'https://civitech.es',
             name: 'Civitec Domótica',
             description: 'Civitec Domótica: Empresa líder en domótica en Zaragoza. Instalación sin obras y control centralizado.',
-            image: `${this.baseUrl}/assets/images/logo_negro_horizontal.png`,
+            image: `${this.baseUrl}/assets/images/logo_civitec_domotica.png`,
             url: this.baseUrl,
             telephone: '+34624074920',
             email: 'info@civitech.es',

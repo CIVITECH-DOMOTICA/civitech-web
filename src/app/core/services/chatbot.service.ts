@@ -147,7 +147,7 @@ export class ChatbotService {
         const lower = message.toLowerCase();
 
         if (lower.includes('precio') || lower.includes('cuánto') || lower.includes('coste')) {
-            return { text: 'Los precios varían según el proyecto. Podemos empezar desde instalaciones básicas hasta proyectos completos. Lo mejor es que te hagamos una valoración gratuita — ¿me dejas tu teléfono o email?', isUser: false, timestamp: new Date(), type: 'text' };
+            return { text: 'Los precios varían según el proyecto. Podemos empezar desde instalaciones básicas hasta proyectos completos. Lo mejor es que te hagamos una valoración gratuita. ¿Me dejas tu teléfono o email?', isUser: false, timestamp: new Date(), type: 'text' };
         }
         if (lower.includes('solar') || lower.includes('placa') || lower.includes('energi')) {
             return { text: 'La gestión solar es nuestro punto fuerte. ☀️ Con nuestro sistema de automatización y el hardware adecuado conseguimos que los excedentes fotovoltaicos carguen el coche, calienten el agua o enfríen la casa según prioridades. ¿Tienes ya instalación solar?', isUser: false, timestamp: new Date(), type: 'text' };
@@ -156,7 +156,7 @@ export class ChatbotService {
             return { text: 'Sin cuotas y sin nube externa. 🛡️ Usamos Frigate (IA local) para distinguir personas, coches o animales. Notificaciones instantáneas al móvil con vídeo clip. ¿Es para una vivienda principal o segunda residencia?', isUser: false, timestamp: new Date(), type: 'text' };
         }
 
-        return { text: '¿En qué te puedo ayudar exactamente? Cuéntame tu situación y te oriento. Somos especialistas en domótica en Zaragoza — sin cuotas, sin complicaciones. ☎️ +34 624 074 920', isUser: false, timestamp: new Date(), type: 'text' };
+        return { text: '¿En qué te puedo ayudar exactamente? Cuéntame tu situación y te oriento. Somos especialistas en domótica en Zaragoza, sin cuotas ni complicaciones. ☎️ +34 624 074 920', isUser: false, timestamp: new Date(), type: 'text' };
     }
 
     private looksLikeContact(text: string): boolean {

@@ -88,3 +88,21 @@ a {
 [data-aos] {
   transition-duration: 600ms !important;
 }
+/* Lightbox galería (proyectos) */
+.gallery figure::after{content:"";position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:rgba(15,19,28,.55) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>') center/15px no-repeat;opacity:0;transition:.2s;pointer-events:none}
+.gallery figure:hover::after{opacity:1}
+.lb{position:fixed;inset:0;background:rgba(9,11,16,.95);z-index:3000;display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .22s}
+.lb.open{display:flex;opacity:1}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb img{max-width:96vw;max-height:84vh;width:auto;height:auto;border-radius:4px;box-shadow:0 24px 70px rgba(0,0,0,.55);transform:scale(.97);transition:transform .22s}
+.lb.open img{transform:scale(1)}
+.lb figcaption{color:#fff;font-weight:600;font-size:.95rem}
+.lb-close{position:fixed;top:14px;right:16px;width:44px;height:44px;color:#fff;font-size:1.7rem;background:rgba(255,255,255,.12);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:46px;height:46px;color:#fff;background:rgba(255,255,255,.12);border:none;border-radius:50%;font-size:1.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-prev{left:12px}.lb-next{right:12px}
+.lb-count{position:fixed;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,255,255,.72);font-size:.85rem}
+
+/* Sección "Cómo funciona" — apilar en móvil (override de estilos inline) */
+@media (max-width: 780px) {
+  .como-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+}

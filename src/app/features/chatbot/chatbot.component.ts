@@ -99,13 +99,13 @@ export class Nl2brPipe implements PipeTransform {
       position: relative;
       width: 60px;
       height: 60px;
-      background: var(--primary, #B30000);
+      background: var(--primary, #003DD6);
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(179,0,0,0.4);
+      box-shadow: 0 4px 20px rgba(0,61,214,0.4);
       transition: transform 0.2s ease;
     }
     .chatbot-trigger:hover { transform: scale(1.08); }
@@ -138,7 +138,7 @@ export class Nl2brPipe implements PipeTransform {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 3px solid var(--primary, #B30000);
+      border: 3px solid var(--primary, #003DD6);
       animation: ping 1.5s ease-out infinite;
       opacity: 0.6;
     }
@@ -164,7 +164,7 @@ export class Nl2brPipe implements PipeTransform {
 
     /* ---- Header ---- */
     .chat-header {
-      background: var(--primary, #B30000);
+      background: var(--primary, #003DD6);
       padding: 14px 16px;
       display: flex;
       align-items: center;
@@ -233,7 +233,7 @@ export class Nl2brPipe implements PipeTransform {
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
     .user-msg {
-      background: var(--primary, #B30000);
+      background: var(--primary, #003DD6);
       color: white;
       border-bottom-right-radius: 4px;
       align-self: flex-end;
@@ -255,8 +255,8 @@ export class Nl2brPipe implements PipeTransform {
     }
     .chip-btn {
       background: white;
-      border: 1.5px solid var(--primary, #B30000);
-      color: var(--primary, #B30000);
+      border: 1.5px solid var(--primary, #003DD6);
+      color: var(--primary, #003DD6);
       padding: 5px 12px;
       border-radius: 16px;
       font-size: 12px;
@@ -264,7 +264,7 @@ export class Nl2brPipe implements PipeTransform {
       transition: all 0.2s;
       font-weight: 500;
     }
-    .chip-btn:hover { background: var(--primary, #B30000); color: white; }
+    .chip-btn:hover { background: var(--primary, #003DD6); color: white; }
     .whatsapp-btn { background: #25D366; border-color: #25D366; color: white; font-weight: bold; }
     .whatsapp-btn:hover { background: #128C7E; border-color: #128C7E; }
 
@@ -314,9 +314,9 @@ export class Nl2brPipe implements PipeTransform {
       background: #f8f9fa;
       transition: border-color 0.2s;
     }
-    .chat-input-area textarea:focus { border-color: var(--primary, #B30000); background: white; }
+    .chat-input-area textarea:focus { border-color: var(--primary, #003DD6); background: white; }
     .send-btn {
-      background: var(--primary, #B30000);
+      background: var(--primary, #003DD6);
       border: none;
       border-radius: 50%;
       width: 38px;

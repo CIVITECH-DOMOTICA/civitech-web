@@ -52,9 +52,9 @@ export class UseCaseDetalleComponent implements OnInit {
       : '';
 
     this.seoService.updateSeo({
-      title: `${this.useCase.titulo} | Domótica Zaragoza | Civitec Domótica`,
+      title: `${this.useCase.seoTitle || this.useCase.titulo} | Domótica Zaragoza | Civitec Domótica`,
       description: `${cleanDesc}${savingSuffix}. Instalación profesional en Zaragoza.`,
-      keywords: `${this.useCase.titulo}, domótica ${this.useCase.categoria}${techWords}, Zaragoza, Aragón`,
+      keywords: this.useCase.seoKeywords || `${this.useCase.titulo}, domótica ${this.useCase.categoria}${techWords}, Zaragoza, Aragón`,
       image: this.useCase.imagen,
       url: `https://civitech.es${this.router.url}`
     });

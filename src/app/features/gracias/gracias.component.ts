@@ -19,7 +19,7 @@ export class GraciasComponent implements OnInit {
   ngOnInit(): void {
     // SEO de la página de confirmación — noindex para no indexar páginas de conversión
     this.seoService.updateSeo({
-      title: '¡Solicitud Recibida! | Civitec Domótica — Domótica Zaragoza',
+      title: '¡Solicitud Recibida! | Civitec Domótica | Domótica Zaragoza',
       description: 'Hemos recibido tu solicitud de presupuesto. Un técnico de Civitec Domótica te contactará en menos de 24 horas. Gracias por confiar en nosotros.',
       url: 'https://civitech.es/gracias'
     });

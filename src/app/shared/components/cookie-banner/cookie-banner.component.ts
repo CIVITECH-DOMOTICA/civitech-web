@@ -82,14 +82,14 @@ import { Component, OnInit } from '@angular/core';
     }
 
     a {
-      color: #B30000; /* Civitec Domótica Red */
+      color: #003DD6; /* Civitec Domótica Red */
       font-weight: 600;
       text-decoration: none;
     }
     
     a:hover {
       text-decoration: underline;
-      color: #900000;
+      color: #0031ab;
     }
 
     .actions {
@@ -109,14 +109,14 @@ import { Component, OnInit } from '@angular/core';
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #B30000 0%, #7d0000 100%); /* Primary Gradient */
+      background: linear-gradient(135deg, #003DD6 0%, #002889 100%); /* Primary Gradient */
       color: white;
-      box-shadow: 0 4px 12px rgba(179, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 61, 214, 0.3);
     }
     
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(179, 0, 0, 0.4);
+        box-shadow: 0 8px 16px rgba(0, 61, 214, 0.4);
     }
 
     .btn-secondary {
